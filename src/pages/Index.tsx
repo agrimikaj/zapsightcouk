@@ -1,13 +1,34 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Helmet } from 'react-helmet-async';
+import Navbar from '@/components/layout/Navbar';
+import Footer from '@/components/layout/Footer';
+import HeroBanner from '@/components/home/HeroBanner';
+import SolutionGenerator from '@/components/home/SolutionGenerator';
+import ProductsShowcase from '@/components/home/ProductsShowcase';
+import ValuesSection from '@/components/home/ValuesSection';
+import CTASection from '@/components/home/CTASection';
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <>
+      <Helmet>
+        <title>ZapSight - Transforming Data Into Intelligent AI Agents</title>
+        <meta name="description" content="ZapSight builds ROI-driven AI agents and data solutions. 4-6 week engagements, 6-8X ROI, 95-99% accuracy. Transform your business with intelligent automation." />
+        <meta property="og:title" content="ZapSight - AI Agents & Data Solutions" />
+        <meta property="og:description" content="Transform your data into intelligent, ROI-driven AI agents. Enterprise solutions across Energy, Retail, Manufacturing, Security, and Insurance." />
+      </Helmet>
+
+      <div className="min-h-screen bg-background">
+        <Navbar />
+        <main>
+          <HeroBanner />
+          <SolutionGenerator />
+          <ProductsShowcase />
+          <ValuesSection />
+          <CTASection />
+        </main>
+        <Footer />
       </div>
-    </div>
+    </>
   );
 };
 
