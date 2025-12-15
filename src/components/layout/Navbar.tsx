@@ -4,14 +4,14 @@ import { ChevronDown, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import logo from '@/assets/zapsight-logo.png';
 
-const agentTypes = [
-  { name: 'Execution Agent', href: '/agents/execution' },
-  { name: 'Operation Agent', href: '/agents/operation' },
-  { name: 'Monitoring Agent', href: '/agents/monitoring' },
-  { name: 'Reporting Agent', href: '/agents/reporting' },
-  { name: 'Research Agent', href: '/agents/research' },
-  { name: 'Simulation Agent', href: '/agents/simulation' },
-  { name: 'Planning Agent', href: '/agents/planning' },
+const products = [
+  { name: 'Unifyer', href: '/products/unifyer' },
+  { name: 'DEasy', href: '/products/deasy' },
+  { name: 'DashIA', href: '/products/dashia' },
+  { name: 'Aisen', href: '/products/aisen' },
+  { name: 'Seai', href: '/products/seai' },
+  { name: 'Builder', href: '/products/builder' },
+  { name: 'Docai', href: '/products/docai' },
 ];
 
 const industries = [
@@ -28,7 +28,7 @@ const industries = [
 
 interface DropdownProps {
   label: string;
-  items: typeof agentTypes | typeof industries;
+  items: typeof products | typeof industries;
   isOpen: boolean;
   onToggle: () => void;
 }
@@ -95,10 +95,10 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-2">
             <Dropdown
-              label="Agents"
-              items={agentTypes}
-              isOpen={openDropdown === 'agents'}
-              onToggle={() => handleDropdownToggle('agents')}
+              label="Products"
+              items={products}
+              isOpen={openDropdown === 'products'}
+              onToggle={() => handleDropdownToggle('products')}
             />
             <Dropdown
               label="Industries"
@@ -135,14 +135,14 @@ const Navbar = () => {
           <div className="lg:hidden py-4 border-t border-border animate-fade-in">
             <div className="space-y-2">
               <div className="px-2">
-                <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">Agents</p>
-                {agentTypes.map((agent) => (
+                <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">Products</p>
+                {products.map((product) => (
                   <Link
-                    key={agent.name}
-                    to={agent.href}
+                    key={product.name}
+                    to={product.href}
                     className="block py-2 px-3 text-sm text-foreground/80 hover:text-primary"
                   >
-                    {agent.name}
+                    {product.name}
                   </Link>
                 ))}
               </div>
