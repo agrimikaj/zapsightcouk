@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Sparkles, ChevronDown } from 'lucide-react';
+import { Sparkles, ChevronDown, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const industries = [
@@ -156,7 +156,14 @@ const SolutionGenerator = () => {
 
             {/* Solution Output */}
             {solution && (
-              <div className="mt-8 p-6 bg-accent rounded-xl border border-primary/20 animate-fade-in">
+              <div className="mt-8 p-6 bg-accent rounded-xl border border-primary/20 animate-fade-in relative">
+                <button
+                  onClick={() => setSolution('')}
+                  className="absolute top-4 right-4 p-1 rounded-lg hover:bg-muted transition-colors text-muted-foreground hover:text-foreground"
+                  aria-label="Close solution"
+                >
+                  <X className="h-5 w-5" />
+                </button>
                 <div className="flex items-center gap-2 mb-4">
                   <Sparkles className="h-5 w-5 text-primary" />
                   <span className="font-semibold text-primary">Recommended Solution</span>
