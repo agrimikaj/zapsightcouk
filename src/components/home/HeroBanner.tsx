@@ -69,34 +69,41 @@ const HeroBanner = () => {
   const IconComponent = currentUSP.icon;
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-background via-background to-accent pt-20">
-      {/* Background Elements */}
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-background pt-20">
+      {/* Premium Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 -right-32 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-float" />
-        <div className="absolute bottom-1/4 -left-32 w-80 h-80 bg-primary/5 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-primary/5 to-transparent rounded-full" />
+        {/* Subtle grid pattern */}
+        <div className="absolute inset-0 bg-hero-mesh opacity-50" />
+        
+        {/* Gradient orbs */}
+        <div className="absolute top-1/4 -right-32 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] animate-float" />
+        <div className="absolute bottom-1/4 -left-32 w-[400px] h-[400px] bg-primary/3 rounded-full blur-[80px] animate-float" style={{ animationDelay: '3s' }} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-gradient-radial from-primary/[0.02] to-transparent rounded-full" />
+        
+        {/* Subtle noise overlay */}
+        <div className="absolute inset-0 noise-overlay" />
       </div>
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left Content */}
           <div className="space-y-8">
-            <div className="inline-flex items-center gap-2 bg-accent rounded-full px-4 py-2 text-sm font-medium text-accent-foreground">
-              <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+            <div className="inline-flex items-center gap-2 glass rounded-full px-4 py-2 text-sm font-medium text-foreground/80">
+              <span className="w-2 h-2 bg-primary rounded-full pulse-subtle" />
               AI-Powered Data Solutions
             </div>
             
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] tracking-tight text-balance">
               Transforming Data Into{' '}
               <span className="gradient-text">Intelligent AI Agents</span>
             </h1>
             
-            <p className="text-lg lg:text-xl text-muted-foreground max-w-xl">
+            <p className="text-lg lg:text-xl text-muted-foreground max-w-xl leading-relaxed">
               We dissect data problems and derive simple solutions. Our AI agents and products bring innovation to your day-to-day business functions.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="hero" size="xl" className="group">
+            <div className="flex flex-col sm:flex-row gap-4 pt-2">
+              <Button variant="hero" size="xl" className="group shadow-glow">
                 Start Your Journey
                 <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
@@ -106,20 +113,20 @@ const HeroBanner = () => {
             </div>
 
             {/* Trust Indicators */}
-            <div className="flex items-center gap-8 pt-4">
+            <div className="flex items-center gap-8 pt-6">
               <div className="text-center">
-                <p className="font-display text-2xl font-bold gradient-text">4</p>
-                <p className="text-xs text-muted-foreground">Global Offices</p>
+                <p className="font-display text-3xl font-bold gradient-text">4</p>
+                <p className="text-xs text-muted-foreground font-medium tracking-wide uppercase">Global Offices</p>
               </div>
-              <div className="w-px h-10 bg-border" />
+              <div className="w-px h-12 bg-border" />
               <div className="text-center">
-                <p className="font-display text-2xl font-bold gradient-text">50+</p>
-                <p className="text-xs text-muted-foreground">AI Agents Deployed</p>
+                <p className="font-display text-3xl font-bold gradient-text">50+</p>
+                <p className="text-xs text-muted-foreground font-medium tracking-wide uppercase">Agents Deployed</p>
               </div>
-              <div className="w-px h-10 bg-border" />
+              <div className="w-px h-12 bg-border" />
               <div className="text-center">
-                <p className="font-display text-2xl font-bold gradient-text">5</p>
-                <p className="text-xs text-muted-foreground">Industries Served</p>
+                <p className="font-display text-3xl font-bold gradient-text">5</p>
+                <p className="text-xs text-muted-foreground font-medium tracking-wide uppercase">Industries</p>
               </div>
             </div>
           </div>
@@ -130,24 +137,24 @@ const HeroBanner = () => {
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
           >
-            <div className="bg-card border border-border rounded-2xl p-8 lg:p-10 shadow-2xl glow-orange transition-all duration-500">
+            <div className="card-premium p-8 lg:p-10 shadow-premium-lg glow-orange transition-all duration-500">
               {/* Card Header */}
-              <div className="flex items-center gap-4 mb-6">
-                <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${currentUSP.gradient} flex items-center justify-center shadow-lg`}>
+              <div className="flex items-center gap-4 mb-8">
+                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${currentUSP.gradient} flex items-center justify-center shadow-lg`}>
                   <IconComponent className="h-8 w-8 text-primary-foreground" />
                 </div>
                 <div>
-                  <h3 className="font-display text-4xl lg:text-5xl font-bold gradient-text">{currentUSP.title}</h3>
+                  <h3 className="font-display text-4xl lg:text-5xl font-bold gradient-text tracking-tight">{currentUSP.title}</h3>
                   <p className="text-muted-foreground font-medium">{currentUSP.subtitle}</p>
                 </div>
               </div>
 
               {/* Stats List */}
-              <ul className="space-y-3 mb-8">
+              <ul className="space-y-4 mb-8">
                 {currentUSP.stats.map((stat, idx) => (
                   <li key={idx} className="flex items-center gap-3 text-foreground/80">
-                    <span className="w-1.5 h-1.5 bg-primary rounded-full" />
-                    {stat}
+                    <span className="w-1.5 h-1.5 bg-primary rounded-full flex-shrink-0" />
+                    <span className="text-sm lg:text-base">{stat}</span>
                   </li>
                 ))}
               </ul>
@@ -158,10 +165,10 @@ const HeroBanner = () => {
                   <button
                     key={idx}
                     onClick={() => setActiveIndex(idx)}
-                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    className={`h-2 rounded-full transition-all duration-500 ${
                       idx === activeIndex 
                         ? 'bg-primary w-8' 
-                        : 'bg-border hover:bg-primary/30'
+                        : 'bg-border hover:bg-primary/30 w-2'
                     }`}
                   />
                 ))}
@@ -169,8 +176,8 @@ const HeroBanner = () => {
             </div>
 
             {/* Decorative Elements */}
-            <div className="absolute -top-4 -right-4 w-24 h-24 border-2 border-primary/20 rounded-2xl" />
-            <div className="absolute -bottom-4 -left-4 w-32 h-32 border-2 border-primary/10 rounded-2xl" />
+            <div className="absolute -top-6 -right-6 w-28 h-28 border border-primary/10 rounded-3xl" />
+            <div className="absolute -bottom-6 -left-6 w-36 h-36 border border-primary/5 rounded-3xl" />
           </div>
         </div>
       </div>

@@ -47,18 +47,18 @@ const CustomSelect = ({ label, options, value, onChange }: SelectProps) => {
 
   return (
     <div className="relative">
-      <label className="block text-sm font-medium text-muted-foreground mb-2">{label}</label>
+      <label className="block text-sm font-medium text-muted-foreground mb-2.5 tracking-wide">{label}</label>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between gap-2 px-4 py-3 bg-card border border-border rounded-xl text-left hover:border-primary/50 transition-colors"
+        className="w-full flex items-center justify-between gap-2 px-4 py-3.5 bg-background border border-border rounded-xl text-left hover:border-primary/40 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary/20"
       >
-        <span className={value ? 'text-foreground' : 'text-muted-foreground'}>
+        <span className={value ? 'text-foreground font-medium' : 'text-muted-foreground'}>
           {value || `Select ${label}`}
         </span>
-        <ChevronDown className={`h-5 w-5 text-muted-foreground transition-transform ${isOpen ? 'rotate-180' : ''}`} />
+        <ChevronDown className={`h-5 w-5 text-muted-foreground transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
       </button>
       {isOpen && (
-        <div className="absolute top-full left-0 right-0 mt-2 bg-card border border-border rounded-xl shadow-xl z-50 max-h-60 overflow-auto">
+        <div className="absolute top-full left-0 right-0 mt-2 glass rounded-xl shadow-premium-lg z-50 max-h-60 overflow-auto animate-scale-in">
           {options.map((option) => (
             <button
               key={option}
@@ -66,8 +66,8 @@ const CustomSelect = ({ label, options, value, onChange }: SelectProps) => {
                 onChange(option);
                 setIsOpen(false);
               }}
-              className={`w-full px-4 py-3 text-left hover:bg-accent transition-colors first:rounded-t-xl last:rounded-b-xl ${
-                value === option ? 'bg-accent text-primary font-medium' : ''
+              className={`w-full px-4 py-3.5 text-left hover:bg-primary/5 transition-all duration-200 first:rounded-t-xl last:rounded-b-xl ${
+                value === option ? 'bg-primary/5 text-primary font-medium' : 'text-foreground/80'
               }`}
             >
               {option}
@@ -100,10 +100,14 @@ const SolutionGenerator = () => {
   const isComplete = industry && department && status;
 
   return (
-    <section className="py-20 lg:py-32 bg-secondary/30">
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+    <section className="section-padding bg-secondary/30 relative overflow-hidden">
+      {/* Background elements */}
+      <div className="absolute inset-0 bg-hero-mesh opacity-30" />
+      
+      <div className="container mx-auto px-4 lg:px-8 relative z-10">
+        <div className="text-center mb-14">
+          <p className="text-primary font-semibold mb-4 tracking-wide uppercase text-sm">Solution Finder</p>
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-5 tracking-tight">
             Find Your <span className="gradient-text">AI Solution</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
@@ -112,8 +116,8 @@ const SolutionGenerator = () => {
         </div>
 
         <div className="max-w-4xl mx-auto">
-          <div className="bg-card border border-border rounded-2xl p-6 lg:p-10 shadow-lg">
-            <div className="grid md:grid-cols-3 gap-6 mb-8">
+          <div className="card-premium p-8 lg:p-12 shadow-premium-lg">
+            <div className="grid md:grid-cols-3 gap-6 mb-10">
               <CustomSelect
                 label="Industry"
                 options={industries}
@@ -139,7 +143,7 @@ const SolutionGenerator = () => {
               disabled={!isComplete || isGenerating}
               variant="hero"
               size="lg"
-              className="w-full"
+              className="w-full shadow-glow"
             >
               {isGenerating ? (
                 <>
@@ -156,24 +160,26 @@ const SolutionGenerator = () => {
 
             {/* Solution Output */}
             {solution && (
-              <div className="mt-8 p-6 bg-accent rounded-xl border border-primary/20 animate-fade-in relative">
+              <div className="mt-10 p-8 bg-accent/50 rounded-2xl border border-primary/10 animate-scale-in relative">
                 <button
                   onClick={() => setSolution('')}
-                  className="absolute top-4 right-4 p-1 rounded-lg hover:bg-muted transition-colors text-muted-foreground hover:text-foreground"
+                  className="absolute top-4 right-4 p-2 rounded-xl hover:bg-muted transition-colors text-muted-foreground hover:text-foreground"
                   aria-label="Close solution"
                 >
                   <X className="h-5 w-5" />
                 </button>
-                <div className="flex items-center gap-2 mb-4">
-                  <Sparkles className="h-5 w-5 text-primary" />
-                  <span className="font-semibold text-primary">Recommended Solution</span>
+                <div className="flex items-center gap-2.5 mb-5">
+                  <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
+                    <Sparkles className="h-4 w-4 text-primary" />
+                  </div>
+                  <span className="font-display font-semibold text-primary tracking-tight">Recommended Solution</span>
                 </div>
-                <p className="text-foreground/90 leading-relaxed whitespace-pre-line">
+                <p className="text-foreground/85 leading-relaxed whitespace-pre-line">
                   {solution.split('**').map((part, i) => 
-                    i % 2 === 1 ? <strong key={i} className="text-primary">{part}</strong> : part
+                    i % 2 === 1 ? <strong key={i} className="text-primary font-semibold">{part}</strong> : part
                   )}
                 </p>
-                <Button variant="heroOutline" size="lg" className="mt-6">
+                <Button variant="heroOutline" size="lg" className="mt-8">
                   Schedule a Discovery Call
                 </Button>
               </div>

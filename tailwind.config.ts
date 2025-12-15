@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['Outfit', 'sans-serif'],
-        body: ['Inter', 'sans-serif'],
+        display: ['Syne', 'sans-serif'],
+        body: ['Plus Jakarta Sans', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -69,6 +69,9 @@ export default {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+        xl: "1rem",
+        "2xl": "1.25rem",
+        "3xl": "1.5rem",
       },
       keyframes: {
         "accordion-down": {
@@ -91,6 +94,10 @@ export default {
           "0%, 100%": { opacity: "1" },
           "50%": { opacity: "0.5" },
         },
+        "spin-slow": {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -98,10 +105,17 @@ export default {
         "slide-left": "slide-left 30s linear infinite",
         "fade-in-up": "fade-in-up 0.6s ease-out forwards",
         pulse: "pulse 2s ease-in-out infinite",
+        "spin-slow": "spin-slow 20s linear infinite",
       },
       boxShadow: {
-        glow: "0 0 60px hsl(24, 95%, 53%, 0.3)",
-        "glow-lg": "0 0 100px hsl(24, 95%, 53%, 0.4)",
+        glow: "0 0 40px hsl(24, 92%, 50%, 0.15)",
+        "glow-lg": "0 0 80px hsl(24, 92%, 50%, 0.2)",
+        "premium": "0 4px 20px -2px hsl(220, 25%, 8%, 0.08)",
+        "premium-lg": "0 8px 40px -4px hsl(220, 25%, 8%, 0.12)",
+      },
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "hero-mesh": "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f97316' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")",
       },
     },
   },
