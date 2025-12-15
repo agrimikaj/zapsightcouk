@@ -1,0 +1,176 @@
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { ChevronDown, Menu, X } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import logo from '@/assets/zapsight-logo.png';
+
+const agentTypes = [
+  { name: 'Execution Agent', href: '/agents/execution' },
+  { name: 'Operation Agent', href: '/agents/operation' },
+  { name: 'Monitoring Agent', href: '/agents/monitoring' },
+  { name: 'Reporting Agent', href: '/agents/reporting' },
+  { name: 'Research Agent', href: '/agents/research' },
+  { name: 'Simulation Agent', href: '/agents/simulation' },
+  { name: 'Planning Agent', href: '/agents/planning' },
+];
+
+const industries = [
+  { name: 'AI in Energy Sector', href: '/industries/energy', subItems: [
+    { name: 'Phase 1: Selling Projects', href: '/industries/energy/selling' },
+    { name: 'Phase 2: Building Projects', href: '/industries/energy/building' },
+    { name: 'Phase 3: Operations & Maintenance', href: '/industries/energy/operations' },
+  ]},
+  { name: 'AI in Retail', href: '/industries/retail' },
+  { name: 'AI in Manufacturing', href: '/industries/manufacturing' },
+  { name: 'AI in Security', href: '/industries/security' },
+  { name: 'AI in Insurance', href: '/industries/insurance' },
+];
+
+interface DropdownProps {
+  label: string;
+  items: typeof agentTypes | typeof industries;
+  isOpen: boolean;
+  onToggle: () => void;
+}
+
+const Dropdown = ({ label, items, isOpen, onToggle }: DropdownProps) => (
+  <div className="relative">
+    <button
+      onClick={onToggle}
+      className="nav-link flex items-center gap-1 py-2 px-3 text-sm font-medium"
+    >
+      {label}
+      <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
+    </button>
+    {isOpen && (
+      <div className="absolute top-full left-0 mt-2 w-64 bg-card border border-border rounded-xl shadow-xl z-50 overflow-hidden animate-fade-in">
+        <div className="py-2">
+          {items.map((item) => (
+            <div key={item.name}>
+              <Link
+                to={item.href}
+                className="block px-4 py-2.5 text-sm text-foreground/80 hover:bg-accent hover:text-accent-foreground transition-colors"
+              >
+                {item.name}
+              </Link>
+              {'subItems' in item && item.subItems && (
+                <div className="pl-4 border-l-2 border-primary/20 ml-4">
+                  {item.subItems.map((subItem) => (
+                    <Link
+                      key={subItem.name}
+                      to={subItem.href}
+                      className="block px-4 py-2 text-xs text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      {subItem.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    )}
+  </div>
+);
+
+const Navbar = () => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+
+  const handleDropdownToggle = (name: string) => {
+    setOpenDropdown(openDropdown === name ? null : name);
+  };
+
+  return (
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border/50">
+      <nav className="container mx-auto px-4 lg:px-8">
+        <div className="flex items-center justify-between h-16 lg:h-20">
+          {/* Logo */}
+          <Link to="/" className="flex items-center gap-2">
+            <img src={logo} alt="ZapSight" className="h-10 lg:h-12" />
+            <span className="font-display font-bold text-xl lg:text-2xl gradient-text">ZapSight</span>
+          </Link>
+
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex items-center gap-2">
+            <Dropdown
+              label="Agents"
+              items={agentTypes}
+              isOpen={openDropdown === 'agents'}
+              onToggle={() => handleDropdownToggle('agents')}
+            />
+            <Dropdown
+              label="Industries"
+              items={industries}
+              isOpen={openDropdown === 'industries'}
+              onToggle={() => handleDropdownToggle('industries')}
+            />
+            <Link to="/about" className="nav-link py-2 px-3 text-sm font-medium">
+              About Us
+            </Link>
+            <Link to="/contact" className="nav-link py-2 px-3 text-sm font-medium">
+              Contact Us
+            </Link>
+          </div>
+
+          {/* CTA Button */}
+          <div className="hidden lg:block">
+            <Button variant="hero" size="lg">
+              Get Started
+            </Button>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="lg:hidden p-2"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
+
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="lg:hidden py-4 border-t border-border animate-fade-in">
+            <div className="space-y-2">
+              <div className="px-2">
+                <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">Agents</p>
+                {agentTypes.map((agent) => (
+                  <Link
+                    key={agent.name}
+                    to={agent.href}
+                    className="block py-2 px-3 text-sm text-foreground/80 hover:text-primary"
+                  >
+                    {agent.name}
+                  </Link>
+                ))}
+              </div>
+              <div className="px-2 pt-4">
+                <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">Industries</p>
+                {industries.map((industry) => (
+                  <Link
+                    key={industry.name}
+                    to={industry.href}
+                    className="block py-2 px-3 text-sm text-foreground/80 hover:text-primary"
+                  >
+                    {industry.name}
+                  </Link>
+                ))}
+              </div>
+              <div className="pt-4 px-2 space-y-2">
+                <Link to="/about" className="block py-2 px-3 text-sm font-medium">About Us</Link>
+                <Link to="/contact" className="block py-2 px-3 text-sm font-medium">Contact Us</Link>
+              </div>
+              <div className="pt-4 px-2">
+                <Button variant="hero" className="w-full">Get Started</Button>
+              </div>
+            </div>
+          </div>
+        )}
+      </nav>
+    </header>
+  );
+};
+
+export default Navbar;
