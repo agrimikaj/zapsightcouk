@@ -6,6 +6,7 @@ import SolutionGenerator from '@/components/home/SolutionGenerator';
 import ProductsShowcase from '@/components/home/ProductsShowcase';
 import ValuesSection from '@/components/home/ValuesSection';
 import CTASection from '@/components/home/CTASection';
+import ProgressiveValueOverlay from '@/components/home/ProgressiveValueOverlay';
 
 const Index = () => {
   return (
@@ -27,6 +28,7 @@ const Index = () => {
           <CTASection />
         </main>
         <Footer />
+        <ProgressiveValueOverlay />
       </div>
     </>
   );
