@@ -50,8 +50,6 @@ const Dropdown = ({ label, items, isOpen, onToggle }: DropdownProps) => (
               {'external' in item && item.external ? (
                 <a
                   href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="block px-5 py-3 text-sm text-background/70 hover:bg-primary/10 hover:text-background transition-all duration-200"
                 >
                   {item.name}
@@ -161,8 +159,6 @@ const Navbar = () => {
                     <a
                       key={industry.name}
                       href={industry.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
                       className="block py-2.5 px-3 text-sm text-background/70 hover:text-primary transition-colors"
                     >
                       {industry.name}
