@@ -1,7 +1,51 @@
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
-import { Zap, TrendingUp, Wrench, Target, Users, BarChart3, FileText, Settings, Bell, Calendar, DollarSign, Activity, MessageSquare, ClipboardCheck } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Zap, Target, Settings, Wrench, Users, BarChart3, FileText, Activity, MessageSquare, Calendar, DollarSign, ClipboardCheck, ArrowRight, TrendingUp } from 'lucide-react';
+
+const phases = [
+  {
+    id: 1,
+    title: 'Selling Projects',
+    icon: Target,
+    description: 'AI-driven lead identification, prioritization, and sales enablement',
+    stat: '15-25%',
+    statLabel: 'Better Conversion',
+    agents: [
+      { icon: Users, name: 'Lead Identification', desc: 'Geospatial analysis to find high-potential sites' },
+      { icon: BarChart3, name: 'Lead Prioritization', desc: 'Smart scoring based on consumption & regulatory fit' },
+      { icon: FileText, name: 'Sales Operations', desc: 'Automated insights and news tracking for engagement' },
+    ]
+  },
+  {
+    id: 2,
+    title: 'Building Projects',
+    icon: Settings,
+    description: 'Construction monitoring, contractor management, and financial tracking',
+    stat: '70-80%',
+    statLabel: 'Of Project Costs',
+    agents: [
+      { icon: ClipboardCheck, name: 'Project Management', desc: 'WBS tracking with AI-generated status updates' },
+      { icon: Users, name: 'Contractor Management', desc: 'SPI/CPI monitoring with automated escalations' },
+      { icon: DollarSign, name: 'Project Financials', desc: 'Real-time cost forecasting and EVM dashboards' },
+    ]
+  },
+  {
+    id: 3,
+    title: 'Operations & Maintenance',
+    icon: Wrench,
+    description: 'Plant monitoring, customer engagement, and service automation',
+    stat: '40%',
+    statLabel: 'Less Downtime',
+    agents: [
+      { icon: Activity, name: 'Plant Monitoring', desc: 'SCADA integration with anomaly detection' },
+      { icon: MessageSquare, name: 'Customer Engagement', desc: 'Automated reports with ESG metrics' },
+      { icon: Calendar, name: 'Plant Servicing', desc: 'CMMS-integrated autonomous service coordination' },
+    ]
+  },
+];
 
 const EnergyIndustry = () => {
   return (
@@ -15,273 +59,154 @@ const EnergyIndustry = () => {
         <Navbar />
         
         {/* Hero Section */}
-        <section className="pt-32 pb-16 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-foreground via-foreground/95 to-background" />
-          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0wIDBoNjB2NjBIMHoiLz48cGF0aCBkPSJNMzAgMzBtLTEgMGExIDEgMCAxIDAgMiAwYTEgMSAwIDEgMCAtMiAwIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDMpIi8+PC9nPjwvc3ZnPg==')] opacity-50" />
+        <section className="relative min-h-[80vh] flex items-center overflow-hidden pt-20">
+          {/* Dark Premium Background */}
+          <div className="absolute inset-0 bg-gradient-to-b from-foreground via-[hsl(220,25%,8%)] to-[hsl(220,25%,12%)]" />
+          
+          {/* Neural Network Background */}
+          <svg className="absolute inset-0 w-full h-full opacity-20" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="energyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.6" />
+                <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0.1" />
+              </linearGradient>
+              <filter id="glow">
+                <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                <feMerge>
+                  <feMergeNode in="coloredBlur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+            </defs>
+            
+            <g className="animate-pulse" style={{ animationDuration: '4s' }}>
+              <line x1="10%" y1="30%" x2="30%" y2="50%" stroke="url(#energyGradient)" strokeWidth="1" />
+              <line x1="30%" y1="50%" x2="20%" y2="70%" stroke="url(#energyGradient)" strokeWidth="1" />
+              <line x1="70%" y1="20%" x2="85%" y2="40%" stroke="url(#energyGradient)" strokeWidth="1" />
+              <line x1="85%" y1="40%" x2="75%" y2="65%" stroke="url(#energyGradient)" strokeWidth="1" />
+            </g>
+            
+            <g filter="url(#glow)">
+              <circle cx="10%" cy="30%" r="3" fill="hsl(var(--primary))" className="animate-pulse" style={{ animationDuration: '3s' }} />
+              <circle cx="30%" cy="50%" r="4" fill="hsl(var(--primary))" className="animate-pulse" style={{ animationDuration: '4s' }} />
+              <circle cx="20%" cy="70%" r="3" fill="hsl(var(--primary))" className="animate-pulse" style={{ animationDuration: '3.5s' }} />
+              <circle cx="70%" cy="20%" r="3" fill="hsl(var(--primary))" className="animate-pulse" style={{ animationDuration: '4s' }} />
+              <circle cx="85%" cy="40%" r="4" fill="hsl(var(--primary))" className="animate-pulse" style={{ animationDuration: '3s' }} />
+              <circle cx="75%" cy="65%" r="3" fill="hsl(var(--primary))" className="animate-pulse" style={{ animationDuration: '3.5s' }} />
+            </g>
+          </svg>
+          
+          {/* Gradient orbs */}
+          <div className="absolute top-1/4 -right-32 w-[500px] h-[500px] bg-primary/[0.08] rounded-full blur-[120px] animate-float" />
+          <div className="absolute bottom-1/4 -left-32 w-[400px] h-[400px] bg-primary/[0.05] rounded-full blur-[100px] animate-float" style={{ animationDelay: '2s' }} />
           
           <div className="container mx-auto px-4 lg:px-8 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-background/5 backdrop-blur-sm border border-background/10 mb-8">
                 <Zap className="h-4 w-4 text-primary" />
-                <span className="text-sm font-medium text-primary">Industry Solutions</span>
+                <span className="text-sm font-medium text-background/70">Industry Solutions</span>
               </div>
-              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-background mb-6 tracking-tight">
-                AI in Energy Sector
+              
+              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-background mb-6 tracking-tight">
+                AI in <span className="text-primary">Energy Sector</span>
               </h1>
-              <p className="text-lg md:text-xl text-background/70 leading-relaxed max-w-3xl mx-auto">
-                We design and deploy specialized AI agents built exclusively for the energy sector, covering the full lifecycle of energy assets — from project origination to operations and maintenance.
+              
+              <p className="text-lg md:text-xl text-background/60 leading-relaxed max-w-2xl mx-auto mb-12">
+                Purpose-built AI agents covering the full lifecycle — from project origination to operations and maintenance.
               </p>
+
+              {/* Stats Row */}
+              <div className="flex flex-wrap items-center justify-center gap-8 lg:gap-16">
+                <div className="text-center">
+                  <p className="font-display text-4xl lg:text-5xl font-bold text-primary">60%</p>
+                  <p className="text-sm text-background/50 mt-1">Renewable Growth by 2030</p>
+                </div>
+                <div className="hidden sm:block w-px h-16 bg-background/10" />
+                <div className="text-center">
+                  <p className="font-display text-4xl lg:text-5xl font-bold text-primary">3</p>
+                  <p className="text-sm text-background/50 mt-1">Critical Phases Covered</p>
+                </div>
+                <div className="hidden sm:block w-px h-16 bg-background/10" />
+                <div className="text-center">
+                  <p className="font-display text-4xl lg:text-5xl font-bold text-primary">9</p>
+                  <p className="text-sm text-background/50 mt-1">Specialized Agents</p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Context Section */}
-        <section className="py-16 bg-muted/30">
+        {/* Phases Section */}
+        <section className="py-24 bg-gradient-to-b from-[hsl(220,25%,12%)] to-background">
           <div className="container mx-auto px-4 lg:px-8">
-            <div className="max-w-4xl mx-auto">
-              <p className="text-lg text-foreground/80 leading-relaxed mb-6">
-                In today's energy landscape — where global renewable capacity is projected to grow by over 60% between 2023 and 2030 (IEA, World Energy Outlook 2024) — efficiency, speed, and intelligence are not optional; they're survival imperatives.
-              </p>
-              <p className="text-foreground/70 leading-relaxed mb-8">
-                Every energy company, regardless of its size or focus area, typically operates across three critical phases:
-              </p>
-              
-              <div className="grid md:grid-cols-3 gap-6">
-                {[
-                  { icon: Target, title: 'Selling Projects', phase: '1' },
-                  { icon: Settings, title: 'Building Projects', phase: '2' },
-                  { icon: Wrench, title: 'Operating & Maintaining', phase: '3' },
-                ].map((item) => (
-                  <div key={item.phase} className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 text-center hover:shadow-elevated transition-all duration-300">
-                    <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-primary/10 mb-4">
-                      <item.icon className="h-6 w-6 text-primary" />
-                    </div>
-                    <p className="text-xs text-primary font-medium mb-2">Phase {item.phase}</p>
-                    <h3 className="font-semibold text-foreground">{item.title}</h3>
-                  </div>
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-16">
+                <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+                  The Energy Project Lifecycle
+                </h2>
+                <p className="text-foreground/60 max-w-2xl mx-auto">
+                  From small distributed installations to billion-dollar infrastructure projects, our agents address consistent challenges across every phase.
+                </p>
+              </div>
+
+              <div className="space-y-8">
+                {phases.map((phase, index) => (
+                  <PhaseCard key={phase.id} phase={phase} index={index} />
                 ))}
               </div>
-              
-              <p className="text-foreground/70 leading-relaxed mt-8">
-                These projects can range from distributed solar installations worth &lt;$5 million to utility-scale or infrastructure projects exceeding $1 billion. While scale differs, the operational challenges are consistent — data fragmentation, manual processes, and limited real-time visibility.
-              </p>
-              <p className="text-foreground/80 font-medium mt-4">
-                Our AI agents are purpose-built to address these challenges across each phase.
-              </p>
             </div>
           </div>
         </section>
 
-        {/* Phase 1: Selling Projects */}
-        <section className="py-20 bg-background">
-          <div className="container mx-auto px-4 lg:px-8">
-            <div className="max-w-5xl mx-auto">
-              <div className="flex items-center gap-4 mb-8">
-                <div className="flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-primary/70 shadow-glow">
-                  <Target className="h-7 w-7 text-primary-foreground" />
-                </div>
-                <div>
-                  <p className="text-sm text-primary font-semibold uppercase tracking-wider">Phase 1</p>
-                  <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">Selling Projects</h2>
-                </div>
-              </div>
-              
-              <p className="text-foreground/70 leading-relaxed mb-4">
-                The pre-construction phase is increasingly data-driven — from lead generation and qualification to proposal creation and client engagement.
-              </p>
-              <p className="text-foreground/80 mb-10 bg-muted/50 p-4 rounded-xl border-l-4 border-primary">
-                A McKinsey study (2023) found that sales teams using AI-driven targeting improve conversion rates by 15–25% and shorten deal cycles by up to 30%.
-              </p>
-
-              <h3 className="text-xl font-semibold text-foreground mb-6">Key Agents Deployed</h3>
-              
-              <div className="space-y-6">
-                <AgentCard
-                  number={1}
-                  title="Lead Identification Agent"
-                  description="Uses geospatial data (e.g., satellite imagery, GIS, cadastral datasets) and public infrastructure records to identify high-potential rooftops or land parcels suitable for solar or distributed energy projects."
-                  example="For instance, the agent can automatically shortlist industrial facilities with >10,000 sq. m. of roof space within a defined catchment area and cross-reference them with utility tariffs, grid access proximity, and energy consumption data."
-                  icon={Users}
-                />
-                
-                <AgentCard
-                  number={2}
-                  title="Lead Prioritization Agent"
-                  description="Integrates data from CRM, public filings, and credit databases to score leads based on energy consumption, regulatory alignment, and probability of conversion."
-                  example="The model dynamically updates prioritization scores based on client engagement signals, similar to how utilities like NextEra Energy and ENGIE are now applying predictive analytics for B2B sales optimization."
-                  icon={BarChart3}
-                />
-                
-                <AgentCard
-                  number={3}
-                  title="Sales Operations Agent"
-                  description="Acts as a data access layer to pull insights, client references, and case studies from internal repositories or cloud systems (e.g., SharePoint, Salesforce, HubSpot)."
-                  bullets={[
-                    'Includes a "news tracking" sub-agent that continuously scans industry sources (e.g., PV-Tech, Energy Storage News, Recharge) for events related to key prospects',
-                    'Enables timely outreach and contextual client engagement through mergers, expansions, or sustainability announcements'
-                  ]}
-                  icon={FileText}
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Phase 2: Building Projects */}
+        {/* Impact Section */}
         <section className="py-20 bg-muted/30">
           <div className="container mx-auto px-4 lg:px-8">
             <div className="max-w-5xl mx-auto">
-              <div className="flex items-center gap-4 mb-8">
-                <div className="flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-primary/70 shadow-glow">
-                  <Settings className="h-7 w-7 text-primary-foreground" />
-                </div>
-                <div>
-                  <p className="text-sm text-primary font-semibold uppercase tracking-wider">Phase 2</p>
-                  <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">Building Projects</h2>
-                </div>
+              <div className="text-center mb-12">
+                <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+                  Measurable Impact
+                </h2>
+                <p className="text-foreground/60">
+                  Real results from energy companies using our AI agents
+                </p>
               </div>
-              
-              <p className="text-foreground/70 leading-relaxed mb-4">
-                Construction is the most capital-intensive phase — often representing 70–80% of total project costs (according to IEA Project Data Review 2023).
-              </p>
-              <p className="text-foreground/80 mb-10 bg-background/50 p-4 rounded-xl border-l-4 border-primary">
-                Project delays or overruns can erode 2–4% of EBITDA per month of delay in large infrastructure programs. Our agents enhance predictability, compliance, and execution efficiency during project delivery.
-              </p>
 
-              <h3 className="text-xl font-semibold text-foreground mb-6">Key Agents Deployed</h3>
-              
-              <div className="space-y-6">
-                <AgentCard
-                  number={1}
-                  title="Project Management Agent"
-                  description="Integrates with ERP systems (SAP, Oracle Primavera, MS Project) and construction progress trackers to monitor Work Breakdown Structures (WBS)."
-                  bullets={[
-                    'Schedule adherence monitoring',
-                    'Budget variance detection',
-                    'Resource utilization tracking',
-                    'Critical path delay identification',
-                    'Daily progress analyses with AI-generated status summaries'
-                  ]}
-                  icon={ClipboardCheck}
-                />
-                
-                <AgentCard
-                  number={2}
-                  title="Contractor Management Agent"
-                  description="Continuously tracks contractor-level performance metrics such as Schedule Performance Index (SPI) and Cost Performance Index (CPI) derived from project control data."
-                  bullets={[
-                    'Auto-generates alerts for missed milestones',
-                    'Monitors non-compliance with contractual SLAs',
-                    'Tracks deviations from safety or quality benchmarks',
-                    'Maintains interaction logs and correspondence summaries',
-                    'Ensures traceable accountability in line with FIDIC or EPC contractual frameworks'
-                  ]}
-                  icon={Users}
-                />
-                
-                <AgentCard
-                  number={3}
-                  title="Project Financials Agent"
-                  description="Combines project cost data, cashflow forecasts, and payment milestones to deliver real-time cost-to-complete forecasting."
-                  example="Auto-updates Earned Value Management (EVM) dashboards and predicts likely budget variances or invoice delays. Several midstream EPCs have reported up to 20% faster project financial reconciliations and 30% reduction in manual spreadsheet dependencies after adopting this agent."
-                  icon={DollarSign}
-                />
+              <div className="grid md:grid-cols-4 gap-6">
+                {[
+                  { value: '2-5%', label: 'Margin Improvement' },
+                  { value: '30%', label: 'Faster Deal Cycles' },
+                  { value: '35%', label: 'Reduced MTTR' },
+                  { value: '15%', label: 'Extended Asset Life' },
+                ].map((stat) => (
+                  <div key={stat.label} className="bg-card/80 backdrop-blur-sm border border-border/50 rounded-2xl p-6 text-center hover:shadow-elevated transition-all duration-300">
+                    <p className="font-display text-3xl lg:text-4xl font-bold text-primary mb-2">{stat.value}</p>
+                    <p className="text-sm text-foreground/60">{stat.label}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         </section>
 
-        {/* Phase 3: Operations & Maintenance */}
-        <section className="py-20 bg-background">
-          <div className="container mx-auto px-4 lg:px-8">
-            <div className="max-w-5xl mx-auto">
-              <div className="flex items-center gap-4 mb-8">
-                <div className="flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-primary/70 shadow-glow">
-                  <Wrench className="h-7 w-7 text-primary-foreground" />
-                </div>
-                <div>
-                  <p className="text-sm text-primary font-semibold uppercase tracking-wider">Phase 3</p>
-                  <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">Operations & Maintenance (O&M)</h2>
-                </div>
-              </div>
-              
-              <p className="text-foreground/70 leading-relaxed mb-4">
-                Post-commissioning, O&M accounts for 20–30% of the total lifecycle cost of energy assets, according to BloombergNEF 2024.
-              </p>
-              <p className="text-foreground/80 mb-10 bg-muted/50 p-4 rounded-xl border-l-4 border-primary">
-                AI-driven monitoring and predictive maintenance can reduce unplanned downtime by 40% and extend asset life by 15%.
-              </p>
-
-              <h3 className="text-xl font-semibold text-foreground mb-6">Key Agents Deployed</h3>
-              
-              <div className="space-y-6">
-                <AgentCard
-                  number={1}
-                  title="Plant Monitoring Agent"
-                  description="Aggregates data from SCADA systems, IoT sensors, and performance dashboards to monitor generation efficiency (PR), downtime trends, and weather-adjusted yield forecasts."
-                  example="The agent benchmarks against expected baselines, flags anomalies (e.g., inverter degradation, soiling losses), and communicates alerts to O&M teams and asset managers in real-time."
-                  icon={Activity}
-                />
-                
-                <AgentCard
-                  number={2}
-                  title="Customer Engagement Agent"
-                  description="Automatically generates customized performance reports (monthly, quarterly) and pushes them to investors, utilities, or corporate clients."
-                  bullets={[
-                    'Actual vs. forecasted generation insights',
-                    'CO₂ savings and ESG metrics reporting',
-                    'Upcoming maintenance schedule notifications',
-                    'Shown to increase customer satisfaction and retention by 20–30%'
-                  ]}
-                  icon={MessageSquare}
-                />
-                
-                <AgentCard
-                  number={3}
-                  title="Plant Servicing Agent"
-                  description="Acts as an autonomous service coordinator that integrates with CMMS systems (like Maximo or Fiix)."
-                  bullets={[
-                    'Automatically logs service tickets',
-                    'Tracks service SLAs and technician responses',
-                    'Conducts post-maintenance validation using sensor data',
-                    'Up to 35% reduction in mean time to repair (MTTR)'
-                  ]}
-                  icon={Calendar}
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Conclusion */}
-        <section className="py-20 bg-foreground">
-          <div className="container mx-auto px-4 lg:px-8">
-            <div className="max-w-4xl mx-auto text-center">
+        {/* CTA Section */}
+        <section className="py-20 bg-foreground relative overflow-hidden">
+          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0wIDBoNjB2NjBIMHoiLz48cGF0aCBkPSJNMzAgMzBtLTEgMGExIDEgMCAxIDAgMiAwYTEgMSAwIDEgMCAtMiAwIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDMpIi8+PC9nPjwvc3ZnPg==')] opacity-50" />
+          <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-primary/10 rounded-full blur-[100px]" />
+          
+          <div className="container mx-auto px-4 lg:px-8 relative z-10">
+            <div className="max-w-3xl mx-auto text-center">
               <h2 className="font-display text-3xl md:text-4xl font-bold text-background mb-6">
-                Transforming Energy Operations
+                Ready to Transform Your Energy Operations?
               </h2>
-              <p className="text-background/70 leading-relaxed mb-6">
-                Our ecosystem of AI agents enables energy companies to operationalize intelligence across the value chain — from sales origination to asset management. These solutions help firms move towards data maturity, improve decision-making velocity, and unlock 2–5% margin improvements across large portfolios.
+              <p className="text-background/60 mb-8 text-lg">
+                Join renewable developers, EPCs, utilities, and IPPs transitioning into AI-ready organizations.
               </p>
-              <p className="text-background/80 leading-relaxed">
-                By integrating with existing enterprise systems and combining domain expertise, AI, and automation, our agents are helping renewable developers, EPCs, utilities, and IPPs transition into truly AI-ready energy organizations.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* References */}
-        <section className="py-16 bg-muted/30">
-          <div className="container mx-auto px-4 lg:px-8">
-            <div className="max-w-4xl mx-auto">
-              <h3 className="text-lg font-semibold text-foreground mb-6">References</h3>
-              <ul className="space-y-2 text-sm text-foreground/60">
-                <li>• International Energy Agency (IEA) – World Energy Outlook 2024</li>
-                <li>• McKinsey & Company – Reinventing Construction: A Route to Higher Productivity (2023)</li>
-                <li>• Bloomberg New Energy Finance (BNEF) – Global O&M Benchmarking Report 2024</li>
-                <li>• Wood Mackenzie – AI and Automation in the Energy Sector (2023)</li>
-                <li>• PwC – AI in Energy 2024: From Pilot to Production</li>
-              </ul>
+              <Button variant="hero" size="xl" className="group shadow-glow" asChild>
+                <Link to="/contact">
+                  Schedule a Consultation
+                  <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </Button>
             </div>
           </div>
         </section>
@@ -292,43 +217,70 @@ const EnergyIndustry = () => {
   );
 };
 
-interface AgentCardProps {
-  number: number;
+interface Phase {
+  id: number;
   title: string;
-  description: string;
-  example?: string;
-  bullets?: string[];
   icon: React.ComponentType<{ className?: string }>;
+  description: string;
+  stat: string;
+  statLabel: string;
+  agents: { icon: React.ComponentType<{ className?: string }>; name: string; desc: string }[];
 }
 
-const AgentCard = ({ number, title, description, example, bullets, icon: Icon }: AgentCardProps) => (
-  <div className="bg-card/80 backdrop-blur-sm border border-border/50 rounded-2xl p-6 hover:shadow-elevated transition-all duration-300">
-    <div className="flex items-start gap-4">
-      <div className="flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-xl bg-primary/10 text-primary font-bold">
-        {number}
+const PhaseCard = ({ phase, index }: { phase: Phase; index: number }) => {
+  const IconComponent = phase.icon;
+  
+  return (
+    <div className="group relative bg-card/80 backdrop-blur-sm border border-border/50 rounded-3xl p-8 lg:p-10 hover:shadow-elevated transition-all duration-500">
+      {/* Phase number indicator */}
+      <div className="absolute -top-4 left-8 px-4 py-1.5 bg-primary rounded-full">
+        <span className="text-sm font-bold text-primary-foreground">Phase {phase.id}</span>
       </div>
-      <div className="flex-1">
-        <div className="flex items-center gap-3 mb-3">
-          <Icon className="h-5 w-5 text-primary" />
-          <h4 className="text-lg font-semibold text-foreground">{title}</h4>
+      
+      <div className="grid lg:grid-cols-[1fr,2fr] gap-8 items-start pt-4">
+        {/* Left: Phase Info */}
+        <div className="space-y-6">
+          <div className="flex items-center gap-4">
+            <div className="w-14 h-14 rounded-2xl flex items-center justify-center bg-gradient-to-br from-primary to-primary/70 shadow-glow">
+              <IconComponent className="h-7 w-7 text-primary-foreground" />
+            </div>
+            <div>
+              <h3 className="font-display text-2xl font-bold text-foreground">{phase.title}</h3>
+              <p className="text-foreground/60 text-sm">{phase.description}</p>
+            </div>
+          </div>
+          
+          <div className="bg-muted/50 rounded-xl p-4 inline-block">
+            <p className="font-display text-3xl font-bold text-primary">{phase.stat}</p>
+            <p className="text-xs text-foreground/50 uppercase tracking-wider">{phase.statLabel}</p>
+          </div>
         </div>
-        <p className="text-foreground/70 leading-relaxed mb-3">{description}</p>
-        {example && (
-          <p className="text-foreground/60 text-sm italic leading-relaxed">{example}</p>
-        )}
-        {bullets && (
-          <ul className="mt-3 space-y-2">
-            {bullets.map((bullet, idx) => (
-              <li key={idx} className="flex items-start gap-2 text-sm text-foreground/70">
-                <span className="text-primary mt-1">•</span>
-                <span>{bullet}</span>
-              </li>
-            ))}
-          </ul>
-        )}
+        
+        {/* Right: Agents Grid */}
+        <div className="grid sm:grid-cols-3 gap-4">
+          {phase.agents.map((agent) => (
+            <AgentMiniCard key={agent.name} agent={agent} />
+          ))}
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
+
+const AgentMiniCard = ({ agent }: { agent: { icon: React.ComponentType<{ className?: string }>; name: string; desc: string } }) => {
+  const IconComponent = agent.icon;
+  
+  return (
+    <div className="bg-background/50 border border-border/30 rounded-xl p-4 hover:border-primary/30 transition-all duration-300">
+      <div className="flex items-center gap-3 mb-2">
+        <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
+          <IconComponent className="h-4 w-4 text-primary" />
+        </div>
+        <h4 className="font-semibold text-foreground text-sm">{agent.name}</h4>
+      </div>
+      <p className="text-xs text-foreground/50 leading-relaxed">{agent.desc}</p>
+    </div>
+  );
+};
 
 export default EnergyIndustry;
