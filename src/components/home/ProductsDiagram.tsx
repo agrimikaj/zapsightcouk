@@ -1,110 +1,218 @@
-import { Database, MessageSquare, BarChart3, Radio, Search, Wrench, FileText, ArrowRight, Layers } from 'lucide-react';
+import { Database, Radio, FileText, MessageSquare, BarChart3, Wrench, Search } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
 
-const products = [
-  { name: 'Unifyer', icon: Database, category: 'Data Foundation', description: 'AI-Assisted Pipelines' },
-  { name: 'DEasy', icon: MessageSquare, category: 'Data Access', description: 'Natural Language Queries' },
-  { name: 'DashIA', icon: BarChart3, category: 'Visualization', description: 'Next-Gen Dashboards' },
-  { name: 'Aisen', icon: Radio, category: 'IoT & Sensors', description: 'Sensor AI Integration' },
-  { name: 'Seai', icon: Search, category: 'Discovery', description: 'AI Search Optimization' },
-  { name: 'Builder', icon: Wrench, category: 'Automation', description: 'Workflow Platform' },
-  { name: 'Docai', icon: FileText, category: 'Documents', description: 'Document Intelligence' },
+interface ProductLayer {
+  id: string;
+  name: string;
+  tagline: string;
+  description: string;
+  outcome: string;
+  icon: LucideIcon;
+}
+
+const layers: ProductLayer[] = [
+  {
+    id: 'aivi',
+    name: 'AIVI',
+    tagline: 'AI Visibility Intelligence',
+    description: 'Improves AI-search ranking & discoverability',
+    outcome: 'Intelligence that gets found',
+    icon: Search,
+  },
+  {
+    id: 'builder',
+    name: 'Builder',
+    tagline: 'Actions & Automation',
+    description: 'Emails, tickets, ERP/CRM workflow orchestration',
+    outcome: 'Insights → execution',
+    icon: Wrench,
+  },
+  {
+    id: 'dashia',
+    name: 'DashIA',
+    tagline: 'Insightful Dashboards',
+    description: 'Engaging UI with embedded AI insights',
+    outcome: 'See → understand → act',
+    icon: BarChart3,
+  },
+  {
+    id: 'deasy',
+    name: 'DEasy',
+    tagline: 'Natural Language Access',
+    description: 'Ask questions in plain English',
+    outcome: 'Anyone can access data',
+    icon: MessageSquare,
+  },
+  {
+    id: 'docai',
+    name: 'DocAI',
+    tagline: 'Unstructured Data Intelligence',
+    description: 'OCR + visual LLM for documents',
+    outcome: 'Documents → structured insights',
+    icon: FileText,
+  },
+  {
+    id: 'aisac',
+    name: 'AISAC',
+    tagline: 'Sensor Intelligence',
+    description: 'Integrates with sensor hardware',
+    outcome: 'Real-world signals → decisions',
+    icon: Radio,
+  },
+  {
+    id: 'unifyer',
+    name: 'Unifyer',
+    tagline: 'AI-Assisted Data Pipelines',
+    description: 'Connects sources, builds AI-ready pipelines',
+    outcome: 'Clean, monitored, AI-ready data',
+    icon: Database,
+  },
 ];
 
 const ProductsDiagram = () => {
   return (
-    <section className="section-padding bg-background relative overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-hero-mesh opacity-15" />
+    <section className="py-24 lg:py-32 relative overflow-hidden">
+      {/* Dark gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-foreground via-[hsl(220,25%,8%)] to-foreground" />
       
+      {/* Subtle mesh overlay */}
+      <div className="absolute inset-0 opacity-[0.03]" style={{
+        backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--primary)) 1px, transparent 0)`,
+        backgroundSize: '40px 40px'
+      }} />
+      
+      {/* Ambient glow effects */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-primary/[0.03] rounded-full blur-[150px]" />
+      <div className="absolute bottom-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/[0.02] rounded-full blur-[120px]" />
+
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
-        <div className="text-center mb-16">
-          <p className="text-primary font-semibold mb-4 tracking-wide uppercase text-sm">Product Ecosystem</p>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-5 tracking-tight">
-            One Platform, <span className="gradient-text">Seven Solutions</span>
+        {/* Header */}
+        <div className="text-center mb-16 lg:mb-20">
+          <p className="text-primary font-medium mb-4 tracking-wide uppercase text-sm">AI Intelligence Platform</p>
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-5 tracking-tight text-background">
+            The Vertical <span className="text-primary">Intelligence Stack</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Our integrated suite of AI products work together to transform your entire data lifecycle.
+          <p className="text-background/50 text-lg max-w-2xl mx-auto">
+            From raw data to intelligent action — a unified platform where each layer amplifies the next.
           </p>
         </div>
 
-        {/* Diagram */}
-        <div className="max-w-5xl mx-auto">
-          {/* Central Hub */}
-          <div className="relative">
-            {/* Connection Lines - Desktop */}
-            <svg className="absolute inset-0 w-full h-full hidden lg:block" style={{ zIndex: 0 }}>
-              <defs>
-                <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.1" />
-                  <stop offset="50%" stopColor="hsl(var(--primary))" stopOpacity="0.3" />
-                  <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0.1" />
-                </linearGradient>
-              </defs>
-            </svg>
+        {/* Vertical Stack Diagram */}
+        <div className="max-w-4xl mx-auto relative">
+          {/* Central Intelligence Spine */}
+          <div className="absolute left-1/2 top-0 bottom-0 w-px -translate-x-1/2 hidden lg:block">
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/30 to-transparent" />
+            {/* Animated pulse line */}
+            <div className="absolute inset-0 bg-gradient-to-b from-primary/0 via-primary/60 to-primary/0 animate-pulse" 
+                 style={{ animationDuration: '3s' }} />
+          </div>
 
-            {/* Products Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-4 lg:gap-6">
-              {products.map((product, index) => {
-                const IconComponent = product.icon;
-                return (
-                  <div
-                    key={product.name}
-                    className="group relative"
-                    style={{ animationDelay: `${index * 0.1}s` }}
-                  >
-                    <div className="card-floating p-5 lg:p-6 text-center h-full flex flex-col items-center justify-center hover:shadow-glow transition-all duration-500">
-                      {/* Icon */}
-                      <div className="icon-container w-14 h-14 lg:w-16 lg:h-16 mb-4">
-                        <IconComponent className="h-7 w-7 lg:h-8 lg:w-8 text-primary-foreground" strokeWidth={1.5} />
-                      </div>
-                      
-                      {/* Product Name */}
-                      <h3 className="font-display font-bold text-base lg:text-lg tracking-tight mb-1">{product.name}</h3>
-                      
-                      {/* Category */}
-                      <p className="text-xs text-primary font-medium mb-1">{product.category}</p>
-                      
-                      {/* Description - Hidden on mobile */}
-                      <p className="text-xs text-muted-foreground hidden lg:block">{product.description}</p>
+          {/* Product Layers */}
+          <div className="space-y-4 lg:space-y-6">
+            {layers.map((layer, index) => {
+              const IconComponent = layer.icon;
+              const isLeft = index % 2 === 0;
+              
+              return (
+                <div 
+                  key={layer.id}
+                  className="relative"
+                >
+                  {/* Connection node on spine */}
+                  <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hidden lg:block z-10">
+                    <div className="w-4 h-4 rounded-full bg-foreground flex items-center justify-center">
+                      <div className="w-2 h-2 rounded-full bg-primary shadow-[0_0_12px_hsl(var(--primary))]" />
                     </div>
                   </div>
-                );
-              })}
-            </div>
 
-            {/* Flow Arrows - Mobile */}
-            <div className="lg:hidden flex justify-center items-center gap-2 my-8">
-              <span className="text-xs text-muted-foreground font-medium">Data flows seamlessly between products</span>
-            </div>
+                  {/* Horizontal connector line */}
+                  <div 
+                    className={`absolute top-1/2 -translate-y-1/2 h-px hidden lg:block ${
+                      isLeft ? 'right-1/2 left-0 lg:left-auto lg:right-1/2 lg:w-[calc(50%-140px)] lg:mr-8' : 'left-1/2 lg:w-[calc(50%-140px)] lg:ml-8'
+                    }`}
+                    style={{
+                      background: isLeft 
+                        ? 'linear-gradient(to right, transparent, hsl(var(--primary) / 0.3))' 
+                        : 'linear-gradient(to left, transparent, hsl(var(--primary) / 0.3))'
+                    }}
+                  />
 
-            {/* Integration Hub */}
-            <div className="mt-12 lg:mt-16">
-              <div className="card-floating p-8 lg:p-10 max-w-3xl mx-auto text-center shadow-glow">
-                <div className="flex items-center justify-center gap-4 mb-6">
-                  <div className="icon-container w-14 h-14">
-                    <Layers className="h-7 w-7 text-primary-foreground" strokeWidth={1.5} />
-                  </div>
-                  <div className="text-left">
-                    <h3 className="font-display text-xl lg:text-2xl font-bold tracking-tight">ZapSight Platform</h3>
-                    <p className="text-muted-foreground text-sm">Unified AI Infrastructure</p>
+                  {/* Product Card */}
+                  <div className={`lg:w-[calc(50%-60px)] ${isLeft ? 'lg:mr-auto' : 'lg:ml-auto'}`}>
+                    <div className="group relative rounded-2xl lg:rounded-3xl overflow-hidden transition-all duration-200 motion-reduce:transition-none">
+                      {/* Card background with gradient */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-[hsl(220,25%,12%)] to-[hsl(220,25%,8%)]" />
+                      
+                      {/* Subtle border glow */}
+                      <div className="absolute inset-0 rounded-2xl lg:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-200 motion-reduce:transition-none"
+                           style={{ 
+                             boxShadow: 'inset 0 0 0 1px hsl(var(--primary) / 0.2), 0 0 40px hsl(var(--primary) / 0.1)' 
+                           }} />
+                      
+                      {/* Inner glow overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200 motion-reduce:transition-none" />
+
+                      {/* Card content */}
+                      <div className="relative p-5 lg:p-6 flex items-start gap-4 lg:gap-5">
+                        {/* Icon container */}
+                        <div className="flex-shrink-0">
+                          <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-xl lg:rounded-2xl flex items-center justify-center relative"
+                               style={{
+                                 background: 'linear-gradient(135deg, hsl(var(--primary) / 0.15) 0%, hsl(var(--primary) / 0.05) 100%)'
+                               }}>
+                            <IconComponent className="h-6 w-6 lg:h-7 lg:w-7 text-primary" strokeWidth={1.5} />
+                            {/* Icon glow */}
+                            <div className="absolute inset-0 rounded-xl lg:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-200 motion-reduce:transition-none"
+                                 style={{ boxShadow: '0 0 20px hsl(var(--primary) / 0.3)' }} />
+                          </div>
+                        </div>
+
+                        {/* Text content */}
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-baseline gap-2 mb-1">
+                            <h3 className="font-display font-bold text-lg lg:text-xl text-background tracking-tight">
+                              {layer.name}
+                            </h3>
+                            <span className="text-primary/80 text-xs font-medium hidden sm:inline">
+                              {layer.tagline}
+                            </span>
+                          </div>
+                          
+                          <p className="text-background/40 text-sm mb-2 line-clamp-1">
+                            {layer.description}
+                          </p>
+                          
+                          {/* Outcome badge */}
+                          <div className="inline-flex items-center gap-1.5">
+                            <span className="w-1 h-1 rounded-full bg-primary/60" />
+                            <span className="text-xs text-primary/70 font-medium">
+                              {layer.outcome}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                
-                <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
-                  All products share a common data foundation, enabling seamless integration, unified insights, and coordinated AI agents across your organization.
-                </p>
+              );
+            })}
+          </div>
 
-                {/* Flow Indicators */}
-                <div className="flex flex-wrap items-center justify-center gap-3 text-sm">
-                  <span className="px-4 py-2 bg-secondary/60 backdrop-blur-sm rounded-full text-foreground/80 font-medium shadow-soft">Ingest</span>
-                  <ArrowRight className="h-4 w-4 text-primary" />
-                  <span className="px-4 py-2 bg-secondary/60 backdrop-blur-sm rounded-full text-foreground/80 font-medium shadow-soft">Transform</span>
-                  <ArrowRight className="h-4 w-4 text-primary" />
-                  <span className="px-4 py-2 bg-secondary/60 backdrop-blur-sm rounded-full text-foreground/80 font-medium shadow-soft">Analyze</span>
-                  <ArrowRight className="h-4 w-4 text-primary" />
-                  <span className="px-4 py-2 bg-secondary/60 backdrop-blur-sm rounded-full text-foreground/80 font-medium shadow-soft">Act</span>
-                </div>
+          {/* Bottom data source indicator */}
+          <div className="mt-12 lg:mt-16 text-center">
+            <div className="inline-flex items-center gap-3 px-5 py-3 rounded-full"
+                 style={{ background: 'linear-gradient(135deg, hsl(220,25%,12%) 0%, hsl(220,25%,8%) 100%)' }}>
+              <div className="flex -space-x-1">
+                {[...Array(3)].map((_, i) => (
+                  <div 
+                    key={i} 
+                    className="w-2 h-2 rounded-full bg-primary/60"
+                    style={{ opacity: 1 - (i * 0.25) }}
+                  />
+                ))}
               </div>
+              <span className="text-background/50 text-sm">Your Data Sources</span>
+              <div className="w-8 h-px bg-gradient-to-r from-primary/40 to-transparent" />
             </div>
           </div>
         </div>
