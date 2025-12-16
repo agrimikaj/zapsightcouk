@@ -36,17 +36,14 @@ const ProgressiveValueOverlay = () => {
             aria-label="Scroll progress indicator"
           >
             {/* Track */}
-            <div className="w-1.5 h-32 bg-muted/30 rounded-full overflow-hidden backdrop-blur-sm">
+            <div className="relative w-1.5 h-32 bg-muted/30 rounded-full overflow-hidden backdrop-blur-sm">
               {/* Fill - fills from bottom to top */}
               <div 
                 className={cn(
-                  "w-full bg-primary/80 rounded-full origin-bottom",
+                  "absolute bottom-0 left-0 w-full bg-primary/80 rounded-full",
                   !prefersReducedMotion && "transition-all duration-300 ease-out"
                 )}
-                style={{ 
-                  height: `${scrollProgress}%`,
-                  marginTop: `${100 - scrollProgress}%`
-                }}
+                style={{ height: `${scrollProgress}%` }}
               />
             </div>
             
