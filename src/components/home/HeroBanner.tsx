@@ -88,7 +88,7 @@ const HeroBanner = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left Content */}
           <div className="space-y-8">
-            <div className="inline-flex items-center gap-2 glass rounded-full px-4 py-2 text-sm font-medium text-foreground/80">
+            <div className="inline-flex items-center gap-2 bg-card/60 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium text-foreground/70 shadow-soft">
               <span className="w-2 h-2 bg-primary rounded-full pulse-subtle" />
               AI-Powered Data Solutions
             </div>
@@ -140,8 +140,8 @@ const HeroBanner = () => {
             <div className="card-floating p-8 lg:p-10 glow-orange">
               {/* Card Header */}
               <div className="flex items-center gap-4 mb-8">
-                <div className={`w-16 h-16 rounded-3xl bg-gradient-to-br ${currentUSP.gradient} flex items-center justify-center shadow-floating`}>
-                  <IconComponent className="h-8 w-8 text-primary-foreground" />
+                <div className={`icon-container w-16 h-16`}>
+                  <IconComponent className="h-8 w-8 text-primary-foreground" strokeWidth={1.5} />
                 </div>
                 <div>
                   <h3 className="font-display text-4xl lg:text-5xl font-bold gradient-text tracking-tight">{currentUSP.title}</h3>

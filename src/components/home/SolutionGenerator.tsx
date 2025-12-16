@@ -169,8 +169,8 @@ const SolutionGenerator = () => {
                   <X className="h-5 w-5" />
                 </button>
                 <div className="flex items-center gap-2.5 mb-5">
-                  <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
-                    <Sparkles className="h-4 w-4 text-primary" />
+                  <div className="w-8 h-8 rounded-xl bg-primary/10 flex items-center justify-center">
+                    <Sparkles className="h-4 w-4 text-primary" strokeWidth={1.5} />
                   </div>
                   <span className="font-display font-semibold text-primary tracking-tight">Recommended Solution</span>
                 </div>

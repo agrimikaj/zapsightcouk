@@ -173,89 +173,174 @@
     box-shadow: var(--glow-strong);
   }
 
+  /* Respect reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-float,
+    .animate-slide-up,
+    .animate-fade-in,
+    .animate-scale-in,
+    .animate-gradient {
+      animation: none;
+    }
+  }
+
   .animate-float {
     animation: float 8s ease-in-out infinite;
   }
 
-  .animate-slide-up {
-    animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  @media (prefers-reduced-motion: no-preference) {
+    .animate-slide-up {
+      animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .animate-fade-in {
+      animation: fadeIn 0.4s ease-out forwards;
+    }
+
+    .animate-scale-in {
+      animation: scaleIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .animate-gradient {
+      animation: gradientShift 8s ease infinite;
+      background-size: 200% 200%;
+    }
   }
 
-  .animate-fade-in {
-    animation: fadeIn 0.6s ease-out forwards;
+  /* Card with semi-transparent background and subtle gradient overlay */
+  .card-glass {
+    @apply rounded-3xl relative overflow-hidden;
+    background: linear-gradient(
+      135deg,
+      hsl(var(--card) / 0.7) 0%,
+      hsl(var(--card) / 0.5) 100%
+    );
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 
+      var(--shadow-elevated),
+      inset 0 1px 0 0 hsl(var(--primary-foreground) / 0.05);
   }
 
-  .animate-scale-in {
-    animation: scaleIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  .card-glass::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      hsl(var(--primary) / 0.02) 0%,
+      transparent 50%
+    );
+    pointer-events: none;
   }
 
-  .animate-gradient {
-    animation: gradientShift 8s ease infinite;
-    background-size: 200% 200%;
+  @media (prefers-reduced-motion: no-preference) {
+    .card-glass {
+      @apply transition-all duration-200 ease-out;
+    }
+
+    .card-glass:hover {
+      @apply -translate-y-0.5;
+      box-shadow: 
+        var(--shadow-floating),
+        inset 0 1px 0 0 hsl(var(--primary-foreground) / 0.08);
+    }
   }
 
-  .card-hover {
-    @apply transition-all duration-500 hover:-translate-y-1;
-    box-shadow: var(--shadow-elevated);
-  }
-
-  .card-hover:hover {
-    box-shadow: var(--shadow-floating);
-  }
-
-  /* Floating card with depth - no borders */
+  /* Floating card with depth - systemic hover */
   .card-floating {
-    @apply bg-card rounded-3xl transition-all duration-500;
-    box-shadow: var(--shadow-elevated);
+    @apply bg-card/80 backdrop-blur-sm rounded-3xl relative overflow-hidden;
+    background: linear-gradient(
+      180deg,
+      hsl(var(--card)) 0%,
+      hsl(var(--card) / 0.95) 100%
+    );
+    box-shadow: 
+      var(--shadow-elevated),
+      inset 0 1px 0 0 hsl(var(--primary-foreground) / 0.04);
   }
 
-  .card-floating:hover {
-    @apply -translate-y-1;
-    box-shadow: var(--shadow-floating);
+  @media (prefers-reduced-motion: no-preference) {
+    .card-floating {
+      @apply transition-all duration-200 ease-out;
+    }
+
+    .card-floating:hover {
+      @apply -translate-y-0.5;
+      box-shadow: 
+        var(--shadow-floating),
+        inset 0 1px 0 0 hsl(var(--primary-foreground) / 0.06);
+    }
   }
 
-  /* Elevated section that floats */
+  /* Section floating */
   .section-floating {
-    @apply bg-card rounded-[2rem] relative;
+    @apply bg-card/60 backdrop-blur-sm rounded-[2rem] relative;
     box-shadow: var(--shadow-soft);
   }
 
   /* Blur elevated card */
   .card-blur {
-    @apply rounded-3xl transition-all duration-500;
-    background: hsl(var(--card) / 0.8);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    box-shadow: var(--shadow-elevated);
+    @apply rounded-3xl relative overflow-hidden;
+    background: hsl(var(--card) / 0.6);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    box-shadow: 
+      var(--shadow-elevated),
+      inset 0 1px 0 0 hsl(var(--primary-foreground) / 0.03);
   }
 
-  .card-blur:hover {
-    @apply -translate-y-1;
-    box-shadow: var(--shadow-floating);
+  @media (prefers-reduced-motion: no-preference) {
+    .card-blur {
+      @apply transition-all duration-200 ease-out;
+    }
+
+    .card-blur:hover {
+      @apply -translate-y-0.5;
+      box-shadow: var(--shadow-floating);
+    }
   }
 
   /* Legacy support */
   .card-premium {
-    @apply bg-card rounded-3xl transition-all duration-500;
+    @apply bg-card/90 backdrop-blur-sm rounded-3xl relative;
     box-shadow: var(--shadow-elevated);
   }
 
-  .card-premium:hover {
-    @apply -translate-y-1;
-    box-shadow: var(--shadow-floating);
+  @media (prefers-reduced-motion: no-preference) {
+    .card-premium {
+      @apply transition-all duration-200 ease-out;
+    }
+
+    .card-premium:hover {
+      @apply -translate-y-0.5;
+      box-shadow: var(--shadow-floating);
+    }
+  }
+
+  .card-hover {
+    box-shadow: var(--shadow-elevated);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .card-hover {
+      @apply transition-all duration-200 ease-out;
+    }
+
+    .card-hover:hover {
+      @apply -translate-y-0.5;
+      box-shadow: var(--shadow-floating);
+    }
   }
 
   .nav-link {
-    @apply relative text-foreground/70 hover:text-foreground transition-all duration-300;
+    @apply relative text-foreground/60 hover:text-foreground;
   }
 
-  .nav-link::after {
-    content: '';
-    @apply absolute left-0 -bottom-1 w-0 h-0.5 bg-primary transition-all duration-300;
-  }
-
-  .nav-link:hover::after {
-    @apply w-full;
+  @media (prefers-reduced-motion: no-preference) {
+    .nav-link {
+      @apply transition-colors duration-200;
+    }
   }
 
   .text-balance {
@@ -273,8 +358,17 @@
   }
 
   .premium-border {
-    box-shadow: 0 0 0 1px hsl(var(--border) / 0.3);
-    @apply hover:shadow-lg transition-shadow duration-300;
+    box-shadow: 0 0 0 1px hsl(var(--border) / 0.2);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .premium-border {
+      @apply transition-shadow duration-200;
+    }
+
+    .premium-border:hover {
+      box-shadow: var(--shadow-soft);
+    }
   }
 
   .noise-overlay::before {
@@ -282,14 +376,74 @@
     position: absolute;
     inset: 0;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-    opacity: 0.012;
+    opacity: 0.01;
     pointer-events: none;
   }
 
   /* Canvas background for sections */
   .canvas-bg {
     @apply relative;
-    background: linear-gradient(180deg, hsl(var(--secondary) / 0.3) 0%, hsl(var(--background)) 100%);
+    background: linear-gradient(180deg, hsl(var(--secondary) / 0.25) 0%, hsl(var(--background)) 100%);
+  }
+
+  /* Icon styling - thin, muted, with subtle glow */
+  .icon-muted {
+    @apply text-muted-foreground/70;
+    stroke-width: 1.5;
+  }
+
+  .icon-glow {
+    filter: drop-shadow(0 0 8px hsl(var(--primary) / 0.2));
+  }
+
+  /* Scroll-triggered fade-in */
+  .fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .fade-in-section {
+      transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    }
+
+    .fade-in-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .fade-in-section {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  /* Gradient icon containers */
+  .icon-container {
+    @apply flex items-center justify-center rounded-2xl;
+    background: linear-gradient(
+      135deg,
+      hsl(var(--primary)) 0%,
+      hsl(var(--primary-dark)) 100%
+    );
+    box-shadow: 
+      var(--shadow-elevated),
+      0 0 20px hsl(var(--primary) / 0.15);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .icon-container {
+      @apply transition-all duration-200 ease-out;
+    }
+
+    .icon-container:hover,
+    .group:hover .icon-container {
+      box-shadow: 
+        var(--shadow-floating),
+        0 0 30px hsl(var(--primary) / 0.2);
+    }
   }
 }
 

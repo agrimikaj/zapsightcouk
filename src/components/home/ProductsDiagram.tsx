@@ -54,8 +54,8 @@ const ProductsDiagram = () => {
                   >
                     <div className="card-floating p-5 lg:p-6 text-center h-full flex flex-col items-center justify-center hover:shadow-glow transition-all duration-500">
                       {/* Icon */}
-                      <div className="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl gradient-primary flex items-center justify-center mb-4 shadow-elevated group-hover:scale-110 transition-transform duration-500">
-                        <IconComponent className="h-7 w-7 lg:h-8 lg:w-8 text-primary-foreground" />
+                      <div className="icon-container w-14 h-14 lg:w-16 lg:h-16 mb-4">
+                        <IconComponent className="h-7 w-7 lg:h-8 lg:w-8 text-primary-foreground" strokeWidth={1.5} />
                       </div>
                       
                       {/* Product Name */}
@@ -81,8 +81,8 @@ const ProductsDiagram = () => {
             <div className="mt-12 lg:mt-16">
               <div className="card-floating p-8 lg:p-10 max-w-3xl mx-auto text-center shadow-glow">
                 <div className="flex items-center justify-center gap-4 mb-6">
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center shadow-elevated">
-                    <Layers className="h-7 w-7 text-primary-foreground" />
+                  <div className="icon-container w-14 h-14">
+                    <Layers className="h-7 w-7 text-primary-foreground" strokeWidth={1.5} />
                   </div>
                   <div className="text-left">
                     <h3 className="font-display text-xl lg:text-2xl font-bold tracking-tight">ZapSight Platform</h3>

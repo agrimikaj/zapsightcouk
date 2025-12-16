@@ -99,7 +99,7 @@ const ProgressiveValueOverlay = () => {
             "w-6 h-6 text-primary mb-1",
             transitionClasses,
             state === 'deep' ? 'scale-110' : 'scale-100'
-          )} />
+          )} strokeWidth={1.5} />
           <span className={cn(
             "text-2xl font-bold text-foreground tabular-nums",
             transitionClasses
@@ -181,7 +181,7 @@ const ProgressiveValueOverlay = () => {
               Engage more → Higher efficiency
             </span>
           </div>
-          <ChevronUp className="w-4 h-4 text-muted-foreground" />
+          <ChevronUp className="w-4 h-4 text-muted-foreground" strokeWidth={1.5} />
         </div>
         {/* Progress indicator */}
         <div className="h-0.5 bg-muted">
@@ -227,9 +227,7 @@ const ProgressiveValueOverlay = () => {
       ref={overlayRef}
       className={cn(
         "fixed bottom-6 right-6 z-50 hidden md:block",
-        "bg-card/95 backdrop-blur-sm rounded-2xl shadow-lg border border-border/50",
-        transitionClasses,
-        "p-5"
+        "card-floating p-5"
       )}
     >
       <div className="flex flex-col items-center">
