@@ -91,7 +91,7 @@ const ProductsDiagram = () => {
         <div className="text-center mb-16 lg:mb-20">
           <p className="text-primary font-medium mb-4 tracking-wide uppercase text-sm">AI Intelligence Platform</p>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-5 tracking-tight text-background">
-            The Vertical <span className="text-primary">Intelligence Stack</span>
+            The <span className="text-primary">Intelligence Stack</span>
           </h2>
           <p className="text-background/50 text-lg max-w-2xl mx-auto">
             From raw data to intelligent action — a unified platform where each layer amplifies the next.
