@@ -117,7 +117,7 @@ const Navbar = () => {
           {/* CTA Button */}
           <div className="hidden lg:block">
             <Button variant="hero" size="lg" className="shadow-glow" asChild>
-              <Link to="/contact">Get Started</Link>
+              <Link to="/contact">Contact Us</Link>
             </Button>
           </div>
 
@@ -164,7 +164,7 @@ const Navbar = () => {
               </div>
               <div className="pt-4 px-2">
                 <Button variant="hero" className="w-full shadow-glow" asChild>
-                  <Link to="/contact">Get Started</Link>
+                  <Link to="/contact">Contact Us</Link>
                 </Button>
               </div>
             </div>
