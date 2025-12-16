@@ -16,11 +16,11 @@ const products = [
 
 const industries = [
   { name: 'AI in Energy Sector', href: '/industries/energy', subItems: [
-    { name: 'Phase 1: Selling Projects', href: '/industries/energy/selling' },
-    { name: 'Phase 2: Building Projects', href: '/industries/energy/building' },
-    { name: 'Phase 3: Operations & Maintenance', href: '/industries/energy/operations' },
+    { name: 'Phase 1: Selling Projects', href: '/industries/energy#phase-1' },
+    { name: 'Phase 2: Building Projects', href: '/industries/energy#phase-2' },
+    { name: 'Phase 3: Operations & Maintenance', href: '/industries/energy#phase-3' },
   ]},
-  { name: 'AI in Retail', href: '/industries/retail' },
+  { name: 'AI in Retail', href: 'https://zapsightindustriesfurniture.lovable.app', external: true },
   { name: 'AI in Manufacturing', href: '/industries/manufacturing' },
   { name: 'AI in Security', href: '/industries/security' },
   { name: 'AI in Insurance', href: '/industries/insurance' },
@@ -47,12 +47,23 @@ const Dropdown = ({ label, items, isOpen, onToggle }: DropdownProps) => (
         <div className="py-2">
           {items.map((item) => (
             <div key={item.name}>
-              <Link
-                to={item.href}
-                className="block px-5 py-3 text-sm text-background/70 hover:bg-primary/10 hover:text-background transition-all duration-200"
-              >
-                {item.name}
-              </Link>
+              {'external' in item && item.external ? (
+                <a
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block px-5 py-3 text-sm text-background/70 hover:bg-primary/10 hover:text-background transition-all duration-200"
+                >
+                  {item.name}
+                </a>
+              ) : (
+                <Link
+                  to={item.href}
+                  className="block px-5 py-3 text-sm text-background/70 hover:bg-primary/10 hover:text-background transition-all duration-200"
+                >
+                  {item.name}
+                </Link>
+              )}
               {'subItems' in item && item.subItems && (
                 <div className="pl-4 ml-5 mb-2 border-l border-background/10">
                   {item.subItems.map((subItem) => (
@@ -146,13 +157,25 @@ const Navbar = () => {
               <div className="px-2 pt-4 border-t border-background/5">
                 <p className="text-xs font-semibold text-background/40 uppercase tracking-wider mb-3">Industries</p>
                 {industries.map((industry) => (
-                  <Link
-                    key={industry.name}
-                    to={industry.href}
-                    className="block py-2.5 px-3 text-sm text-background/70 hover:text-primary transition-colors"
-                  >
-                    {industry.name}
-                  </Link>
+                  'external' in industry && industry.external ? (
+                    <a
+                      key={industry.name}
+                      href={industry.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block py-2.5 px-3 text-sm text-background/70 hover:text-primary transition-colors"
+                    >
+                      {industry.name}
+                    </a>
+                  ) : (
+                    <Link
+                      key={industry.name}
+                      to={industry.href}
+                      className="block py-2.5 px-3 text-sm text-background/70 hover:text-primary transition-colors"
+                    >
+                      {industry.name}
+                    </Link>
+                  )
                 ))}
               </div>
               <div className="pt-4 px-2 space-y-2 border-t border-background/5">
