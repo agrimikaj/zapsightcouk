@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Database, Radio, FileText, MessageSquare, BarChart3, Wrench, Search } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
@@ -71,7 +72,7 @@ const layers: ProductLayer[] = [
 
 const ProductsDiagram = () => {
   return (
-    <section className="py-24 lg:py-32 relative overflow-hidden">
+    <section id="products" className="py-24 lg:py-32 relative overflow-hidden">
       {/* Dark gradient background */}
       <div className="absolute inset-0 bg-gradient-to-b from-foreground via-[hsl(220,25%,8%)] to-foreground" />
       
@@ -137,40 +138,43 @@ const ProductsDiagram = () => {
                     }}
                   />
 
-                  {/* Product Card */}
-                  <div className={`lg:w-[calc(50%-60px)] ${isLeft ? 'lg:mr-auto' : 'lg:ml-auto'}`}>
-                    <div className="group relative rounded-2xl lg:rounded-3xl overflow-hidden transition-all duration-200 motion-reduce:transition-none">
+                  {/* Product Card - Now Clickable */}
+                  <Link 
+                    to={`/products/${layer.id}`}
+                    className={`block lg:w-[calc(50%-60px)] ${isLeft ? 'lg:mr-auto' : 'lg:ml-auto'}`}
+                  >
+                    <div className="group relative rounded-2xl lg:rounded-3xl overflow-hidden transition-all duration-200 motion-reduce:transition-none cursor-pointer">
                       {/* Card background with gradient */}
                       <div className="absolute inset-0 bg-gradient-to-br from-[hsl(220,25%,12%)] to-[hsl(220,25%,8%)]" />
                       
                       {/* Subtle border glow */}
                       <div className="absolute inset-0 rounded-2xl lg:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-200 motion-reduce:transition-none"
                            style={{ 
-                             boxShadow: 'inset 0 0 0 1px hsl(var(--primary) / 0.2), 0 0 40px hsl(var(--primary) / 0.1)' 
+                             boxShadow: 'inset 0 0 0 1px hsl(var(--primary) / 0.3), 0 0 50px hsl(var(--primary) / 0.15)' 
                            }} />
                       
                       {/* Inner glow overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200 motion-reduce:transition-none" />
+                      <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.05] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200 motion-reduce:transition-none" />
 
                       {/* Card content */}
                       <div className="relative p-5 lg:p-6 flex items-start gap-4 lg:gap-5">
                         {/* Icon container */}
                         <div className="flex-shrink-0">
-                          <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-xl lg:rounded-2xl flex items-center justify-center relative"
+                          <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-xl lg:rounded-2xl flex items-center justify-center relative group-hover:scale-105 transition-transform duration-200 motion-reduce:transition-none"
                                style={{
                                  background: 'linear-gradient(135deg, hsl(var(--primary) / 0.15) 0%, hsl(var(--primary) / 0.05) 100%)'
                                }}>
                             <IconComponent className="h-6 w-6 lg:h-7 lg:w-7 text-primary" strokeWidth={1.5} />
                             {/* Icon glow */}
                             <div className="absolute inset-0 rounded-xl lg:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-200 motion-reduce:transition-none"
-                                 style={{ boxShadow: '0 0 20px hsl(var(--primary) / 0.3)' }} />
+                                 style={{ boxShadow: '0 0 25px hsl(var(--primary) / 0.4)' }} />
                           </div>
                         </div>
 
                         {/* Text content */}
                         <div className="flex-1 min-w-0">
                           <div className="flex items-baseline gap-2 mb-1">
-                            <h3 className="font-display font-bold text-lg lg:text-xl text-background tracking-tight">
+                            <h3 className="font-display font-bold text-lg lg:text-xl text-background tracking-tight group-hover:text-primary transition-colors duration-200">
                               {layer.name}
                             </h3>
                             <span className="text-primary/80 text-xs font-medium hidden sm:inline">
@@ -190,9 +194,18 @@ const ProductsDiagram = () => {
                             </span>
                           </div>
                         </div>
+
+                        {/* Arrow indicator */}
+                        <div className="flex-shrink-0 self-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 motion-reduce:transition-none">
+                          <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+                            <svg className="w-4 h-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                            </svg>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  </Link>
                 </div>
               );
             })}
