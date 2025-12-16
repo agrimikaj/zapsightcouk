@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 const CTASection = () => {
   return (
     <section className="py-24 lg:py-32 relative overflow-hidden">
-      {/* Dark Premium Background with gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[hsl(220,25%,12%)] via-[hsl(var(--primary)/0.15)] to-[hsl(220,25%,8%)]" />
+      {/* Dark Premium Background matching site theme */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[hsl(220,25%,10%)] via-[hsl(220,25%,8%)] to-foreground" />
       
       {/* Subtle grid pattern */}
       <div className="absolute inset-0 opacity-[0.02]" style={{
@@ -15,8 +15,8 @@ const CTASection = () => {
       }} />
       
       {/* Decorative Elements - Soft glows */}
-      <div className="absolute top-1/4 left-0 w-[600px] h-[600px] bg-primary/[0.1] rounded-full blur-[150px]" />
-      <div className="absolute bottom-1/4 right-0 w-[500px] h-[500px] bg-primary/[0.08] rounded-full blur-[120px]" />
+      <div className="absolute top-1/4 left-0 w-[600px] h-[600px] bg-primary/[0.08] rounded-full blur-[150px]" />
+      <div className="absolute bottom-1/4 right-0 w-[500px] h-[500px] bg-primary/[0.06] rounded-full blur-[120px]" />
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
@@ -30,7 +30,7 @@ const CTASection = () => {
           </div>
 
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-background mb-6 tracking-tight text-balance">
-            Ready to Transform Your Data Into Intelligent Actions?
+            Ready to Transform Your Data Into <span className="text-primary">Intelligent Actions</span>?
           </h2>
           
           <p className="text-background/60 text-lg lg:text-xl mb-12 max-w-2xl mx-auto leading-relaxed">

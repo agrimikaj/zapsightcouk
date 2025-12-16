@@ -109,9 +109,6 @@ const Navbar = () => {
             <Link to="/about" className="py-2 px-4 text-sm font-medium text-background/70 hover:text-background transition-colors duration-200">
               About Us
             </Link>
-            <Link to="/contact" className="py-2 px-4 text-sm font-medium text-background/70 hover:text-background transition-colors duration-200">
-              Contact Us
-            </Link>
           </div>
 
           {/* CTA Button */}
@@ -160,7 +157,6 @@ const Navbar = () => {
               </div>
               <div className="pt-4 px-2 space-y-2 border-t border-background/5">
                 <Link to="/about" className="block py-2.5 px-3 text-sm font-medium text-background">About Us</Link>
-                <Link to="/contact" className="block py-2.5 px-3 text-sm font-medium text-background">Contact Us</Link>
               </div>
               <div className="pt-4 px-2">
                 <Button variant="hero" className="w-full shadow-glow" asChild>
