@@ -137,10 +137,10 @@ const HeroBanner = () => {
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
           >
-            <div className="card-premium p-8 lg:p-10 shadow-premium-lg glow-orange transition-all duration-500">
+            <div className="card-floating p-8 lg:p-10 glow-orange">
               {/* Card Header */}
               <div className="flex items-center gap-4 mb-8">
-                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${currentUSP.gradient} flex items-center justify-center shadow-lg`}>
+                <div className={`w-16 h-16 rounded-3xl bg-gradient-to-br ${currentUSP.gradient} flex items-center justify-center shadow-floating`}>
                   <IconComponent className="h-8 w-8 text-primary-foreground" />
                 </div>
                 <div>
@@ -167,17 +167,17 @@ const HeroBanner = () => {
                     onClick={() => setActiveIndex(idx)}
                     className={`h-2 rounded-full transition-all duration-500 ${
                       idx === activeIndex 
-                        ? 'bg-primary w-8' 
-                        : 'bg-border hover:bg-primary/30 w-2'
+                        ? 'bg-primary w-8 shadow-glow' 
+                        : 'bg-muted hover:bg-primary/30 w-2'
                     }`}
                   />
                 ))}
               </div>
             </div>
 
-            {/* Decorative Elements */}
-            <div className="absolute -top-6 -right-6 w-28 h-28 border border-primary/10 rounded-3xl" />
-            <div className="absolute -bottom-6 -left-6 w-36 h-36 border border-primary/5 rounded-3xl" />
+            {/* Decorative Elements - Soft shadows instead of borders */}
+            <div className="absolute -top-6 -right-6 w-28 h-28 bg-primary/[0.03] rounded-[2rem] blur-sm" />
+            <div className="absolute -bottom-6 -left-6 w-36 h-36 bg-primary/[0.02] rounded-[2.5rem] blur-sm" />
           </div>
         </div>
       </div>

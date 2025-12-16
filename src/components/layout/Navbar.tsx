@@ -43,8 +43,8 @@ const Dropdown = ({ label, items, isOpen, onToggle }: DropdownProps) => (
       <ChevronDown className={`h-4 w-4 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
     </button>
     {isOpen && (
-      <div className="absolute top-full left-0 mt-3 w-64 glass rounded-2xl shadow-premium-lg overflow-hidden animate-scale-in">
-        <div className="py-2">
+      <div className="absolute top-full left-0 mt-3 w-64 bg-card/95 backdrop-blur-xl rounded-3xl shadow-floating overflow-hidden animate-scale-in">
+        <div className="py-3">
           {items.map((item) => (
             <div key={item.name}>
               <Link
@@ -54,7 +54,7 @@ const Dropdown = ({ label, items, isOpen, onToggle }: DropdownProps) => (
                 {item.name}
               </Link>
               {'subItems' in item && item.subItems && (
-                <div className="pl-4 border-l-2 border-primary/20 ml-5 mb-2">
+                <div className="pl-4 ml-5 mb-2">
                   {item.subItems.map((subItem) => (
                     <Link
                       key={subItem.name}
@@ -83,7 +83,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 glass">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl shadow-soft">
       <nav className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
@@ -132,7 +132,7 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden py-6 border-t border-border/50 animate-fade-in">
+          <div className="lg:hidden py-6 animate-fade-in">
             <div className="space-y-4">
               <div className="px-2">
                 <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">Products</p>

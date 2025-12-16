@@ -155,17 +155,17 @@ const ProductsShowcase = () => {
                 key={product.id}
                 className="flex-shrink-0 w-[350px] lg:w-[400px] snap-start"
               >
-                <div className="bg-card border border-border rounded-2xl overflow-hidden card-hover h-full flex flex-col">
+                <div className="card-floating overflow-hidden h-full flex flex-col">
                   {/* Product Image */}
-                  <div className="relative h-48 overflow-hidden bg-secondary">
+                  <div className="relative h-48 overflow-hidden bg-secondary/50">
                     <img
                       src={product.image}
                       alt={product.name}
                       className="w-full h-full object-cover object-top"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent" />
                     <div className="absolute bottom-4 left-4">
-                      <div className="w-12 h-12 rounded-xl gradient-primary flex items-center justify-center">
+                      <div className="w-12 h-12 rounded-2xl gradient-primary flex items-center justify-center shadow-elevated">
                         <IconComponent className="h-6 w-6 text-primary-foreground" />
                       </div>
                     </div>
@@ -197,7 +197,7 @@ const ProductsShowcase = () => {
                       {product.tools.slice(0, 3).map((tool) => (
                         <span
                           key={tool}
-                          className="text-xs px-2 py-1 bg-secondary rounded-full text-muted-foreground"
+                          className="text-xs px-2.5 py-1.5 bg-secondary/60 rounded-full text-muted-foreground backdrop-blur-sm"
                         >
                           {tool}
                         </span>
