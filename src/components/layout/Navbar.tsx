@@ -6,12 +6,12 @@ import logo from '@/assets/zapsight-logo.png';
 
 const products = [
   { name: 'Unifyer', href: '/products/unifyer' },
+  { name: 'AISAC', href: '/products/aisac' },
+  { name: 'DocAI', href: '/products/docai' },
   { name: 'DEasy', href: '/products/deasy' },
   { name: 'DashIA', href: '/products/dashia' },
-  { name: 'Aisen', href: '/products/aisen' },
-  { name: 'Seai', href: '/products/seai' },
   { name: 'Builder', href: '/products/builder' },
-  { name: 'Docai', href: '/products/docai' },
+  { name: 'AIVI', href: '/products/aivi' },
 ];
 
 const industries = [
