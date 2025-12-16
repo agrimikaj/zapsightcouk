@@ -86,8 +86,8 @@ const About = () => {
               </h2>
               <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                 {[
-                  { name: 'Murtaza Bootwala', role: 'Co-Founder', education: 'IITB, INSEAD', experience: ['Amazon', 'PwC', 'MuSigma'] },
-                  { name: 'Pavan Sathiraju', role: 'Co-Founder', education: 'NIT-R, INSEAD', experience: ['TrueLayer', 'McKinsey'] },
+                  { name: 'Murtaza Bootwala', role: 'Co-Founder', education: 'IITB, INSEAD', experience: ['Amazon', 'PwC', 'TrueLayer'] },
+                  { name: 'Pavan Sathiraju', role: 'Co-Founder', education: 'NIT-R, INSEAD', experience: ['MuSigma', 'McKinsey'] },
                 ].map((leader) => (
                   <div key={leader.name} className="bg-background/[0.03] backdrop-blur-xl border border-background/10 rounded-3xl p-8 text-center transition-all duration-300 hover:bg-background/[0.05]"
                        style={{ boxShadow: '0 0 40px hsl(var(--primary) / 0.05)' }}>
