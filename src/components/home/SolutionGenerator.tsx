@@ -50,7 +50,7 @@ const CustomSelect = ({ label, options, value, onChange }: SelectProps) => {
       <label className="block text-sm font-medium text-muted-foreground mb-2.5 tracking-wide">{label}</label>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between gap-2 px-4 py-3.5 bg-background border border-border rounded-xl text-left hover:border-primary/40 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary/20"
+        className="w-full flex items-center justify-between gap-2 px-4 py-3.5 bg-card rounded-2xl text-left shadow-soft hover:shadow-elevated transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary/20"
       >
         <span className={value ? 'text-foreground font-medium' : 'text-muted-foreground'}>
           {value || `Select ${label}`}
@@ -58,7 +58,7 @@ const CustomSelect = ({ label, options, value, onChange }: SelectProps) => {
         <ChevronDown className={`h-5 w-5 text-muted-foreground transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
       </button>
       {isOpen && (
-        <div className="absolute top-full left-0 right-0 mt-2 glass rounded-xl shadow-premium-lg z-50 max-h-60 overflow-auto animate-scale-in">
+        <div className="absolute top-full left-0 right-0 mt-2 bg-card/95 backdrop-blur-xl rounded-2xl shadow-floating z-50 max-h-60 overflow-auto animate-scale-in">
           {options.map((option) => (
             <button
               key={option}
@@ -66,7 +66,7 @@ const CustomSelect = ({ label, options, value, onChange }: SelectProps) => {
                 onChange(option);
                 setIsOpen(false);
               }}
-              className={`w-full px-4 py-3.5 text-left hover:bg-primary/5 transition-all duration-200 first:rounded-t-xl last:rounded-b-xl ${
+              className={`w-full px-4 py-3.5 text-left hover:bg-primary/5 transition-all duration-200 first:rounded-t-2xl last:rounded-b-2xl ${
                 value === option ? 'bg-primary/5 text-primary font-medium' : 'text-foreground/80'
               }`}
             >
@@ -100,9 +100,9 @@ const SolutionGenerator = () => {
   const isComplete = industry && department && status;
 
   return (
-    <section className="section-padding bg-secondary/30 relative overflow-hidden">
+    <section className="section-padding canvas-bg relative overflow-hidden">
       {/* Background elements */}
-      <div className="absolute inset-0 bg-hero-mesh opacity-30" />
+      <div className="absolute inset-0 bg-hero-mesh opacity-20" />
       
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="text-center mb-14">
@@ -116,7 +116,7 @@ const SolutionGenerator = () => {
         </div>
 
         <div className="max-w-4xl mx-auto">
-          <div className="card-premium p-8 lg:p-12 shadow-premium-lg">
+          <div className="card-floating p-8 lg:p-12">
             <div className="grid md:grid-cols-3 gap-6 mb-10">
               <CustomSelect
                 label="Industry"
@@ -160,7 +160,7 @@ const SolutionGenerator = () => {
 
             {/* Solution Output */}
             {solution && (
-              <div className="mt-10 p-8 bg-accent/50 rounded-2xl border border-primary/10 animate-scale-in relative">
+              <div className="mt-10 p-8 bg-accent/30 backdrop-blur-sm rounded-3xl shadow-soft animate-scale-in relative">
                 <button
                   onClick={() => setSolution('')}
                   className="absolute top-4 right-4 p-2 rounded-xl hover:bg-muted transition-colors text-muted-foreground hover:text-foreground"

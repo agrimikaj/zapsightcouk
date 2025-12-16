@@ -26,9 +26,9 @@ const values = [
 
 const ValuesSection = () => {
   return (
-    <section className="section-padding bg-secondary/30 relative overflow-hidden">
+    <section className="section-padding canvas-bg relative overflow-hidden">
       {/* Background elements */}
-      <div className="absolute inset-0 bg-hero-mesh opacity-30" />
+      <div className="absolute inset-0 bg-hero-mesh opacity-20" />
       
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="text-center mb-16">
@@ -50,9 +50,9 @@ const ValuesSection = () => {
                 className="relative group"
                 style={{ animationDelay: `${index * 0.15}s` }}
               >
-                <div className="card-premium p-8 lg:p-10 text-center h-full">
+                <div className="card-floating p-8 lg:p-10 text-center h-full">
                   {/* Icon */}
-                  <div className={`w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br ${value.color} flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform duration-500`}>
+                  <div className={`w-20 h-20 mx-auto mb-6 rounded-3xl bg-gradient-to-br ${value.color} flex items-center justify-center shadow-floating group-hover:scale-105 transition-transform duration-500`}>
                     <IconComponent className="h-10 w-10 text-primary-foreground" />
                   </div>
 

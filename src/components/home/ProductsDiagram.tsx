@@ -14,7 +14,7 @@ const ProductsDiagram = () => {
   return (
     <section className="section-padding bg-background relative overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-hero-mesh opacity-20" />
+      <div className="absolute inset-0 bg-hero-mesh opacity-15" />
       
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="text-center mb-16">
@@ -52,9 +52,9 @@ const ProductsDiagram = () => {
                     className="group relative"
                     style={{ animationDelay: `${index * 0.1}s` }}
                   >
-                    <div className="card-premium p-5 lg:p-6 text-center h-full flex flex-col items-center justify-center hover:glow-orange transition-all duration-500">
+                    <div className="card-floating p-5 lg:p-6 text-center h-full flex flex-col items-center justify-center hover:shadow-glow transition-all duration-500">
                       {/* Icon */}
-                      <div className="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl gradient-primary flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform duration-500">
+                      <div className="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl gradient-primary flex items-center justify-center mb-4 shadow-elevated group-hover:scale-110 transition-transform duration-500">
                         <IconComponent className="h-7 w-7 lg:h-8 lg:w-8 text-primary-foreground" />
                       </div>
                       
@@ -79,9 +79,9 @@ const ProductsDiagram = () => {
 
             {/* Integration Hub */}
             <div className="mt-12 lg:mt-16">
-              <div className="card-premium p-8 lg:p-10 max-w-3xl mx-auto text-center glow-orange">
+              <div className="card-floating p-8 lg:p-10 max-w-3xl mx-auto text-center shadow-glow">
                 <div className="flex items-center justify-center gap-4 mb-6">
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center shadow-lg">
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center shadow-elevated">
                     <Layers className="h-7 w-7 text-primary-foreground" />
                   </div>
                   <div className="text-left">
@@ -96,13 +96,13 @@ const ProductsDiagram = () => {
 
                 {/* Flow Indicators */}
                 <div className="flex flex-wrap items-center justify-center gap-3 text-sm">
-                  <span className="px-4 py-2 bg-secondary rounded-full text-foreground/80 font-medium">Ingest</span>
+                  <span className="px-4 py-2 bg-secondary/60 backdrop-blur-sm rounded-full text-foreground/80 font-medium shadow-soft">Ingest</span>
                   <ArrowRight className="h-4 w-4 text-primary" />
-                  <span className="px-4 py-2 bg-secondary rounded-full text-foreground/80 font-medium">Transform</span>
+                  <span className="px-4 py-2 bg-secondary/60 backdrop-blur-sm rounded-full text-foreground/80 font-medium shadow-soft">Transform</span>
                   <ArrowRight className="h-4 w-4 text-primary" />
-                  <span className="px-4 py-2 bg-secondary rounded-full text-foreground/80 font-medium">Analyze</span>
+                  <span className="px-4 py-2 bg-secondary/60 backdrop-blur-sm rounded-full text-foreground/80 font-medium shadow-soft">Analyze</span>
                   <ArrowRight className="h-4 w-4 text-primary" />
-                  <span className="px-4 py-2 bg-secondary rounded-full text-foreground/80 font-medium">Act</span>
+                  <span className="px-4 py-2 bg-secondary/60 backdrop-blur-sm rounded-full text-foreground/80 font-medium shadow-soft">Act</span>
                 </div>
               </div>
             </div>

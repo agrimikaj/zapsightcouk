@@ -6,17 +6,17 @@ const CTASection = () => {
     <section className="section-padding relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 gradient-primary" />
-      <div className="absolute inset-0 bg-hero-mesh opacity-20" />
+      <div className="absolute inset-0 bg-hero-mesh opacity-10" />
       
-      {/* Decorative Elements */}
-      <div className="absolute top-0 left-0 w-80 h-80 bg-primary-foreground/10 rounded-full blur-[100px]" />
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-primary-foreground/5 rounded-full blur-[120px]" />
+      {/* Decorative Elements - Soft glows */}
+      <div className="absolute top-1/4 left-0 w-[600px] h-[600px] bg-primary-foreground/8 rounded-full blur-[150px]" />
+      <div className="absolute bottom-1/4 right-0 w-[500px] h-[500px] bg-primary-foreground/5 rounded-full blur-[120px]" />
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Icon */}
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-foreground/15 backdrop-blur-sm rounded-2xl mb-10">
-            <Zap className="h-8 w-8 text-primary-foreground" />
+          <div className="inline-flex items-center justify-center w-18 h-18 bg-primary-foreground/10 backdrop-blur-sm rounded-3xl mb-10 shadow-lg">
+            <Zap className="h-9 w-9 text-primary-foreground" />
           </div>
 
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-primary-foreground mb-6 tracking-tight text-balance">
@@ -30,7 +30,7 @@ const CTASection = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button
               size="xl"
-              className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 group"
+              className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 font-semibold shadow-floating hover:shadow-2xl transition-all duration-300 group rounded-2xl"
             >
               Schedule a Discovery Call
               <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -38,14 +38,14 @@ const CTASection = () => {
             <Button
               size="xl"
               variant="ghost"
-              className="text-primary-foreground border-2 border-primary-foreground/20 hover:bg-primary-foreground/10 hover:border-primary-foreground/30"
+              className="text-primary-foreground hover:bg-primary-foreground/10 rounded-2xl"
             >
               View Case Studies
             </Button>
           </div>
 
           {/* Trust Badges */}
-          <div className="mt-16 pt-10 border-t border-primary-foreground/10">
+          <div className="mt-16 pt-10">
             <p className="text-primary-foreground/50 text-sm mb-5 uppercase tracking-wider font-medium">Trusted by enterprises across</p>
             <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4 text-primary-foreground/70">
               <span className="font-semibold text-lg">Energy</span>
