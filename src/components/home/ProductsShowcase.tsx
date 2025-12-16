@@ -165,8 +165,8 @@ const ProductsShowcase = () => {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent" />
                     <div className="absolute bottom-4 left-4">
-                      <div className="w-12 h-12 rounded-2xl gradient-primary flex items-center justify-center shadow-elevated">
-                        <IconComponent className="h-6 w-6 text-primary-foreground" />
+                      <div className="icon-container w-12 h-12">
+                        <IconComponent className="h-6 w-6 text-primary-foreground" strokeWidth={1.5} />
                       </div>
                     </div>
                   </div>

@@ -16,7 +16,7 @@ const CTASection = () => {
         <div className="max-w-4xl mx-auto text-center">
           {/* Icon */}
           <div className="inline-flex items-center justify-center w-18 h-18 bg-primary-foreground/10 backdrop-blur-sm rounded-3xl mb-10 shadow-lg">
-            <Zap className="h-9 w-9 text-primary-foreground" />
+            <Zap className="h-9 w-9 text-primary-foreground" strokeWidth={1.5} />
           </div>
 
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-primary-foreground mb-6 tracking-tight text-balance">

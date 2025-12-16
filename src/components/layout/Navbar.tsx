@@ -40,7 +40,7 @@ const Dropdown = ({ label, items, isOpen, onToggle }: DropdownProps) => (
       className="nav-link flex items-center gap-1.5 py-2 px-4 text-sm font-medium"
     >
       {label}
-      <ChevronDown className={`h-4 w-4 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
+      <ChevronDown className={`h-4 w-4 text-muted-foreground transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} strokeWidth={1.5} />
     </button>
     {isOpen && (
       <div className="absolute top-full left-0 mt-3 w-64 bg-card/95 backdrop-blur-xl rounded-3xl shadow-floating overflow-hidden animate-scale-in">
@@ -126,7 +126,7 @@ const Navbar = () => {
             className="lg:hidden p-2 rounded-lg hover:bg-secondary transition-colors"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
-            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {mobileMenuOpen ? <X className="h-6 w-6" strokeWidth={1.5} /> : <Menu className="h-6 w-6" strokeWidth={1.5} />}
           </button>
         </div>
 

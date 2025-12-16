@@ -16,15 +16,15 @@ const Footer = () => {
             <p className="text-background/60 text-sm leading-relaxed">
               Transforming Data Into Intelligent, ROI-Driven AI Agents
             </p>
-            <div className="flex items-center gap-4 pt-2">
-              <a href="#" className="text-background/50 hover:text-primary transition-colors duration-300 p-2 hover:bg-background/5 rounded-lg">
-                <Linkedin className="h-5 w-5" />
+            <div className="flex items-center gap-3 pt-2">
+              <a href="#" className="text-background/40 hover:text-primary p-2 hover:bg-background/5 rounded-xl transition-colors duration-200">
+                <Linkedin className="h-5 w-5" strokeWidth={1.5} />
               </a>
-              <a href="#" className="text-background/50 hover:text-primary transition-colors duration-300 p-2 hover:bg-background/5 rounded-lg">
-                <Twitter className="h-5 w-5" />
+              <a href="#" className="text-background/40 hover:text-primary p-2 hover:bg-background/5 rounded-xl transition-colors duration-200">
+                <Twitter className="h-5 w-5" strokeWidth={1.5} />
               </a>
-              <a href="mailto:contact@zapsight.com" className="text-background/50 hover:text-primary transition-colors duration-300 p-2 hover:bg-background/5 rounded-lg">
-                <Mail className="h-5 w-5" />
+              <a href="mailto:contact@zapsight.com" className="text-background/40 hover:text-primary p-2 hover:bg-background/5 rounded-xl transition-colors duration-200">
+                <Mail className="h-5 w-5" strokeWidth={1.5} />
               </a>
             </div>
           </div>
@@ -35,7 +35,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {['Unifyer', 'DEasy', 'DashIA', 'Aisen', 'Seai', 'Builder', 'Docai'].map((product) => (
                 <li key={product}>
-                  <Link to={`/products/${product.toLowerCase()}`} className="text-background/60 hover:text-primary text-sm transition-colors duration-300">
+                  <Link to={`/products/${product.toLowerCase()}`} className="text-background/50 hover:text-primary text-sm transition-colors duration-200">
                     {product}
                   </Link>
                 </li>
@@ -49,7 +49,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {['Energy', 'Retail', 'Manufacturing', 'Security', 'Insurance'].map((industry) => (
                 <li key={industry}>
-                  <Link to={`/industries/${industry.toLowerCase()}`} className="text-background/60 hover:text-primary text-sm transition-colors duration-300">
+                  <Link to={`/industries/${industry.toLowerCase()}`} className="text-background/50 hover:text-primary text-sm transition-colors duration-200">
                     AI in {industry}
                   </Link>
                 </li>
@@ -62,8 +62,8 @@ const Footer = () => {
             <h4 className="font-display font-semibold text-lg mb-5 tracking-tight">Global Presence</h4>
             <ul className="space-y-3">
               {['US', 'UK', 'UAE', 'India'].map((location) => (
-                <li key={location} className="flex items-center gap-2.5 text-background/60 text-sm">
-                  <MapPin className="h-4 w-4 text-primary" />
+                <li key={location} className="flex items-center gap-2.5 text-background/50 text-sm">
+                  <MapPin className="h-4 w-4 text-primary/80" strokeWidth={1.5} />
                   {location}
                 </li>
               ))}
@@ -77,10 +77,10 @@ const Footer = () => {
               © {new Date().getFullYear()} ZapSight. All rights reserved.
             </p>
             <div className="flex gap-8">
-              <Link to="/privacy" className="text-background/40 hover:text-background text-sm transition-colors duration-300">
+              <Link to="/privacy" className="text-background/40 hover:text-background/80 text-sm transition-colors duration-200">
                 Privacy Policy
               </Link>
-              <Link to="/terms" className="text-background/40 hover:text-background text-sm transition-colors duration-300">
+              <Link to="/terms" className="text-background/40 hover:text-background/80 text-sm transition-colors duration-200">
                 Terms of Service
               </Link>
             </div>
