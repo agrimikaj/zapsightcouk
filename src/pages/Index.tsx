@@ -3,6 +3,7 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import HeroBanner from '@/components/home/HeroBanner';
 import SolutionGenerator from '@/components/home/SolutionGenerator';
+import ProductsDiagram from '@/components/home/ProductsDiagram';
 import ProductsShowcase from '@/components/home/ProductsShowcase';
 import ValuesSection from '@/components/home/ValuesSection';
 import CTASection from '@/components/home/CTASection';
@@ -23,6 +24,7 @@ const Index = () => {
         <main>
           <HeroBanner />
           <SolutionGenerator />
+          <ProductsDiagram />
           <ProductsShowcase />
           <ValuesSection />
           <CTASection />
