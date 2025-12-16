@@ -92,7 +92,7 @@ const HeroBanner = () => {
             
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] tracking-tight text-balance text-background">
               Transforming Data Into{' '}
-              <span className="bg-gradient-to-r from-primary via-primary to-[hsl(25,95%,60%)] bg-clip-text text-transparent">
+              <span className="text-primary">
                 Intelligent AI Agents
               </span>
             </h1>
@@ -118,17 +118,17 @@ const HeroBanner = () => {
             {/* Trust Indicators */}
             <div className="flex items-center gap-8 pt-6">
               <div className="text-center">
-                <p className="font-display text-3xl font-bold bg-gradient-to-r from-primary to-[hsl(25,95%,60%)] bg-clip-text text-transparent">4</p>
+                <p className="font-display text-3xl font-bold text-primary">4</p>
                 <p className="text-xs text-background/50 font-medium tracking-wide uppercase">Global Offices</p>
               </div>
               <div className="w-px h-12 bg-background/10" />
               <div className="text-center">
-                <p className="font-display text-3xl font-bold bg-gradient-to-r from-primary to-[hsl(25,95%,60%)] bg-clip-text text-transparent">50+</p>
+                <p className="font-display text-3xl font-bold text-primary">50+</p>
                 <p className="text-xs text-background/50 font-medium tracking-wide uppercase">Agents Deployed</p>
               </div>
               <div className="w-px h-12 bg-background/10" />
               <div className="text-center">
-                <p className="font-display text-3xl font-bold bg-gradient-to-r from-primary to-[hsl(25,95%,60%)] bg-clip-text text-transparent">5</p>
+                <p className="font-display text-3xl font-bold text-primary">5</p>
                 <p className="text-xs text-background/50 font-medium tracking-wide uppercase">Industries</p>
               </div>
             </div>
@@ -152,7 +152,7 @@ const HeroBanner = () => {
                   <IconComponent className="h-8 w-8 text-primary-foreground" strokeWidth={1.5} />
                 </div>
                 <div>
-                  <h3 className="font-display text-4xl lg:text-5xl font-bold bg-gradient-to-r from-primary to-[hsl(25,95%,60%)] bg-clip-text text-transparent tracking-tight">
+                  <h3 className="font-display text-4xl lg:text-5xl font-bold text-primary tracking-tight">
                     {currentUSP.title}
                   </h3>
                   <p className="text-background/50 font-medium">{currentUSP.subtitle}</p>
