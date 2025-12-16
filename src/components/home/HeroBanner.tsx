@@ -183,10 +183,6 @@ const HeroBanner = () => {
                 Intelligent AI Agents
               </span>
             </h1>
-            
-            <p className="text-lg lg:text-xl text-background/60 max-w-xl leading-relaxed">
-              We dissect data problems and derive simple solutions. Our AI agents and products bring innovation to your day-to-day business functions.
-            </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-2">
               <Button variant="hero" size="xl" className="group shadow-glow" asChild>
@@ -218,6 +214,10 @@ const HeroBanner = () => {
                 <p className="font-display text-3xl font-bold text-primary">5</p>
                 <p className="text-xs text-background/50 font-medium tracking-wide uppercase">Industries</p>
               </div>
+              <div className="w-px h-12 bg-background/10" />
+              <p className="text-sm text-background/60 max-w-xs leading-relaxed">
+                We dissect data problems and derive simple solutions. Our AI agents and products bring innovation to your day-to-day business functions.
+              </p>
             </div>
           </div>
 
