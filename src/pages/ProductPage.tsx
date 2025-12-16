@@ -40,7 +40,7 @@ const ProductPage = () => {
         <meta name="description" content={product.heroDescription} />
       </Helmet>
 
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen">
         <Navbar />
         
         <main>
@@ -103,22 +103,27 @@ const ProductPage = () => {
           </section>
 
           {/* Features & Benefits */}
-          <section className="py-20 lg:py-28">
-            <div className="container mx-auto px-4 lg:px-8">
+          <section className="py-20 lg:py-28 relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-b from-background via-[hsl(220,25%,10%)] to-[hsl(220,25%,8%)]" />
+            <div className="absolute inset-0 opacity-[0.02]" style={{
+              backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--primary)) 1px, transparent 0)`,
+              backgroundSize: '40px 40px'
+            }} />
+            <div className="container mx-auto px-4 lg:px-8 relative z-10">
               <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
                 {/* Features */}
                 <div>
                   <p className="text-primary font-medium mb-3 tracking-wide uppercase text-sm">Features</p>
-                  <h2 className="font-display text-2xl lg:text-3xl font-bold mb-8 tracking-tight">
+                  <h2 className="font-display text-2xl lg:text-3xl font-bold mb-8 tracking-tight text-background">
                     What {product.name} Does
                   </h2>
                   <div className="space-y-4">
                     {product.features.map((feature, i) => (
-                      <div key={i} className="flex items-start gap-4 p-4 card-floating">
-                        <div className="w-8 h-8 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <div key={i} className="flex items-start gap-4 p-4 bg-background/[0.03] backdrop-blur-xl border border-background/10 rounded-2xl">
+                        <div className="w-8 h-8 rounded-xl bg-primary/20 flex items-center justify-center flex-shrink-0">
                           <Check className="h-4 w-4 text-primary" strokeWidth={1.5} />
                         </div>
-                        <span className="text-foreground/80 pt-1">{feature}</span>
+                        <span className="text-background/70 pt-1">{feature}</span>
                       </div>
                     ))}
                   </div>
@@ -127,16 +132,16 @@ const ProductPage = () => {
                 {/* Benefits */}
                 <div>
                   <p className="text-primary font-medium mb-3 tracking-wide uppercase text-sm">Benefits</p>
-                  <h2 className="font-display text-2xl lg:text-3xl font-bold mb-8 tracking-tight">
+                  <h2 className="font-display text-2xl lg:text-3xl font-bold mb-8 tracking-tight text-background">
                     Why It Matters
                   </h2>
                   <div className="space-y-4">
                     {product.benefits.map((benefit, i) => (
-                      <div key={i} className="flex items-start gap-4 p-4 card-floating">
-                        <div className="w-8 h-8 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <div key={i} className="flex items-start gap-4 p-4 bg-background/[0.03] backdrop-blur-xl border border-background/10 rounded-2xl">
+                        <div className="w-8 h-8 rounded-xl bg-primary/20 flex items-center justify-center flex-shrink-0">
                           <Check className="h-4 w-4 text-primary" strokeWidth={1.5} />
                         </div>
-                        <span className="text-foreground/80 pt-1">{benefit}</span>
+                        <span className="text-background/70 pt-1">{benefit}</span>
                       </div>
                     ))}
                   </div>
@@ -146,22 +151,27 @@ const ProductPage = () => {
           </section>
 
           {/* Use Cases */}
-          <section className="py-20 lg:py-28 canvas-bg">
-            <div className="container mx-auto px-4 lg:px-8">
+          <section className="py-20 lg:py-28 relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-b from-[hsl(220,25%,8%)] to-[hsl(220,25%,10%)]" />
+            <div className="absolute inset-0 opacity-[0.02]" style={{
+              backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--primary)) 1px, transparent 0)`,
+              backgroundSize: '40px 40px'
+            }} />
+            <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-primary/[0.05] rounded-full blur-[120px]" />
+            <div className="container mx-auto px-4 lg:px-8 relative z-10">
               <div className="text-center mb-12">
                 <p className="text-primary font-medium mb-3 tracking-wide uppercase text-sm">Use Cases</p>
-                <h2 className="font-display text-2xl lg:text-3xl font-bold tracking-tight">
+                <h2 className="font-display text-2xl lg:text-3xl font-bold tracking-tight text-background">
                   How Teams Use {product.name}
                 </h2>
               </div>
-
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
                 {product.useCases.map((useCase, i) => (
-                  <div key={i} className="card-floating p-6 text-center">
-                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                  <div key={i} className="bg-background/[0.03] backdrop-blur-xl border border-background/10 rounded-2xl p-6 text-center">
+                    <div className="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center mx-auto mb-4">
                       <span className="font-display font-bold text-primary">{i + 1}</span>
                     </div>
-                    <p className="text-foreground/80 text-sm">{useCase}</p>
+                    <p className="text-background/70 text-sm">{useCase}</p>
                   </div>
                 ))}
               </div>
@@ -169,16 +179,23 @@ const ProductPage = () => {
           </section>
 
           {/* CTA */}
-          <section className="py-20 lg:py-28">
-            <div className="container mx-auto px-4 lg:px-8">
-              <div className="card-floating p-8 lg:p-12 text-center max-w-3xl mx-auto">
-                <h2 className="font-display text-2xl lg:text-3xl font-bold mb-4 tracking-tight">
+          <section className="py-20 lg:py-28 relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-b from-[hsl(220,25%,10%)] via-[hsl(var(--primary)/0.1)] to-[hsl(220,25%,8%)]" />
+            <div className="absolute inset-0 opacity-[0.02]" style={{
+              backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--primary)) 1px, transparent 0)`,
+              backgroundSize: '40px 40px'
+            }} />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/[0.08] rounded-full blur-[150px]" />
+            <div className="container mx-auto px-4 lg:px-8 relative z-10">
+              <div className="bg-background/[0.03] backdrop-blur-xl border border-background/10 rounded-3xl p-8 lg:p-12 text-center max-w-3xl mx-auto"
+                   style={{ boxShadow: '0 0 60px hsl(var(--primary) / 0.1)' }}>
+                <h2 className="font-display text-2xl lg:text-3xl font-bold mb-4 tracking-tight text-background">
                   Ready to Get Started with {product.name}?
                 </h2>
-                <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
+                <p className="text-background/60 mb-8 max-w-xl mx-auto">
                   Schedule a discovery call to see how {product.name} can transform your operations.
                 </p>
-                <Button variant="hero" size="xl" asChild>
+                <Button variant="hero" size="xl" className="shadow-glow" asChild>
                   <Link to="/contact">
                     Schedule a Call
                     <ArrowRight className="h-5 w-5" strokeWidth={1.5} />
@@ -189,13 +206,14 @@ const ProductPage = () => {
           </section>
 
           {/* Navigation between products */}
-          <section className="py-12 border-t border-border/50">
-            <div className="container mx-auto px-4 lg:px-8">
+          <section className="py-12 border-t border-background/5 relative">
+            <div className="absolute inset-0 bg-[hsl(220,25%,8%)]" />
+            <div className="container mx-auto px-4 lg:px-8 relative z-10">
               <div className="flex justify-between items-center">
                 {prevProduct ? (
                   <Link 
                     to={`/products/${prevProduct.id}`}
-                    className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors duration-200"
+                    className="flex items-center gap-3 text-background/50 hover:text-background transition-colors duration-200"
                   >
                     <ArrowLeft className="h-5 w-5" strokeWidth={1.5} />
                     <div className="text-left">
@@ -208,7 +226,7 @@ const ProductPage = () => {
                 {nextProduct ? (
                   <Link 
                     to={`/products/${nextProduct.id}`}
-                    className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors duration-200"
+                    className="flex items-center gap-3 text-background/50 hover:text-background transition-colors duration-200"
                   >
                     <div className="text-right">
                       <p className="text-xs uppercase tracking-wide">Next</p>
