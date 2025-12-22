@@ -4,6 +4,7 @@ import Footer from '@/components/layout/Footer';
 import HeroBanner from '@/components/home/HeroBanner';
 import SolutionGenerator from '@/components/home/SolutionGenerator';
 import ProductsDiagram from '@/components/home/ProductsDiagram';
+import WhyChooseSection from '@/components/home/WhyChooseSection';
 import ValuesSection from '@/components/home/ValuesSection';
 import CTASection from '@/components/home/CTASection';
 import ProgressiveValueOverlay from '@/components/home/ProgressiveValueOverlay';
@@ -12,10 +13,10 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>ZapSight - Transforming Data Into Intelligent AI Agents</title>
-        <meta name="description" content="ZapSight builds ROI-driven AI agents and data solutions. 4-6 week engagements, 6-8X ROI, 95-99% accuracy. Transform your business with intelligent automation." />
-        <meta property="og:title" content="ZapSight - AI Agents & Data Solutions" />
-        <meta property="og:description" content="Transform your data into intelligent, ROI-driven AI agents. Enterprise solutions across Energy, Retail, Manufacturing, Security, and Insurance." />
+        <title>ZapSight - AI Agents That Deliver 6-8X ROI in Weeks</title>
+        <meta name="description" content="Build ROI-driven AI agents in 4-6 weeks with ZapSight. 95-99% accuracy, 99.9% uptime. Enterprise AI solutions for Energy, Retail, Manufacturing & Insurance." />
+        <meta property="og:title" content="ZapSight - Transform Data Into Intelligent AI Agents" />
+        <meta property="og:description" content="Deploy AI agents that deliver 6-8X ROI in 4-6 weeks. Enterprise solutions with 95-99% accuracy for Energy, Retail, Manufacturing, Security & Insurance." />
       </Helmet>
 
       <div className="min-h-screen bg-background">
@@ -24,6 +25,7 @@ const Index = () => {
           <HeroBanner />
           <SolutionGenerator />
           <ProductsDiagram />
+          <WhyChooseSection />
           <ValuesSection />
           <CTASection />
         </main>

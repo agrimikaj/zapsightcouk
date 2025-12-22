@@ -118,7 +118,7 @@ const SolutionGenerator = () => {
         <div className="text-center mb-14">
           <p className="text-primary font-semibold mb-4 tracking-wide uppercase text-sm">Solution Finder</p>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-5 tracking-tight text-background">
-            Find Your <span className="bg-gradient-to-r from-primary to-[hsl(25,95%,60%)] bg-clip-text text-transparent">AI Solution</span>
+            AI-Powered Solutions <span className="bg-gradient-to-r from-primary to-[hsl(25,95%,60%)] bg-clip-text text-transparent">for Every Industry</span>
           </h2>
           <p className="text-background/60 text-lg max-w-2xl mx-auto">
             Tell us about your context and we'll recommend the perfect AI agent solution for your needs.

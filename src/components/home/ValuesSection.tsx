@@ -37,15 +37,15 @@ const ValuesSection = () => {
       <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-primary/[0.05] rounded-full blur-[120px]" />
       
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
-        <div className="text-center mb-16">
-          <p className="text-primary font-semibold mb-4 tracking-wide uppercase text-sm">Our Values</p>
+        <header className="text-center mb-16">
+          <p className="text-primary font-semibold mb-4 tracking-wide uppercase text-sm">Why Choose ZapSight</p>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-5 tracking-tight text-background">
-            Commitment To <span className="bg-gradient-to-r from-primary to-[hsl(25,95%,60%)] bg-clip-text text-transparent">Value, Customers, & Solutions</span>
+            Why Leading Enterprises <span className="bg-gradient-to-r from-primary to-[hsl(25,95%,60%)] bg-clip-text text-transparent">Choose ZapSight</span>
           </h2>
           <p className="text-background/60 text-lg max-w-2xl mx-auto">
             Our foundational principles that guide every engagement and drive exceptional outcomes.
           </p>
-        </div>
+        </header>
 
         <div className="grid md:grid-cols-3 gap-8 lg:gap-10">
           {values.map((value, index) => {
