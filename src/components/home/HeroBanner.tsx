@@ -178,9 +178,9 @@ const HeroBanner = () => {
             </div>
             
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] tracking-tight text-balance text-background">
-              Transforming Data Into{' '}
+              Deploy AI Agents That Deliver{' '}
               <span className="text-primary">
-                Intelligent AI Agents
+                6-8X ROI in Weeks
               </span>
             </h1>
 

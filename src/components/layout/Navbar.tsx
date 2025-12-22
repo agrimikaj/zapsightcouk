@@ -97,7 +97,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2.5">
-            <img src={logo} alt="ZapSight" className="h-10 lg:h-11" />
+            <img src={logo} alt="ZapSight AI Agents Platform - Enterprise AI Solutions Logo" className="h-10 lg:h-11" />
             <span className="font-display font-bold text-xl lg:text-2xl bg-gradient-to-r from-primary to-[hsl(25,95%,60%)] bg-clip-text text-transparent tracking-tight">ZapSight</span>
           </Link>
 
