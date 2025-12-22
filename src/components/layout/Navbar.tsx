@@ -26,6 +26,12 @@ const industries = [
   { name: 'AI in Insurance', href: '/industries/insurance' },
 ];
 
+const insights = [
+  { name: 'Blogs', href: '/insights/blogs' },
+  { name: 'Whitepapers', href: '/insights/whitepapers' },
+  { name: 'Case Studies', href: '/insights/case-studies' },
+];
+
 interface DropdownProps {
   label: string;
   items: typeof products | typeof industries;
@@ -115,6 +121,12 @@ const Navbar = () => {
               isOpen={openDropdown === 'industries'}
               onToggle={() => handleDropdownToggle('industries')}
             />
+            <Dropdown
+              label="Insights"
+              items={insights}
+              isOpen={openDropdown === 'insights'}
+              onToggle={() => handleDropdownToggle('insights')}
+            />
             <Link to="/about" className="py-2 px-4 text-sm font-medium text-background/70 hover:text-background transition-colors duration-200">
               About Us
             </Link>
@@ -172,6 +184,18 @@ const Navbar = () => {
                       {industry.name}
                     </Link>
                   )
+                ))}
+              </div>
+              <div className="px-2 pt-4 border-t border-background/5">
+                <p className="text-xs font-semibold text-background/40 uppercase tracking-wider mb-3">Insights</p>
+                {insights.map((item) => (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    className="block py-2.5 px-3 text-sm text-background/70 hover:text-primary transition-colors"
+                  >
+                    {item.name}
+                  </Link>
                 ))}
               </div>
               <div className="pt-4 px-2 space-y-2 border-t border-background/5">
