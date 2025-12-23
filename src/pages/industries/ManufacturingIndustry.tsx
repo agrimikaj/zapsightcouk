@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import NeuralBackground from '@/components/ui/NeuralBackground';
 import { Button } from '@/components/ui/button';
 import { Factory, Cog, Settings, Wrench, Package, Truck, BarChart3, AlertTriangle, ClipboardCheck, ArrowRight, TrendingUp, Zap } from 'lucide-react';
 
@@ -55,49 +56,24 @@ const ManufacturingIndustry = () => {
         <meta name="description" content="AI-powered solutions for manufacturing operations, supply chain optimization, and quality control." />
       </Helmet>
       
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen bg-[hsl(220,20%,6%)]">
         <Navbar />
         
         {/* Hero Section */}
         <section className="relative min-h-[80vh] flex items-center overflow-hidden pt-20">
-          <div className="absolute inset-0 bg-gradient-to-b from-foreground via-[hsl(220,25%,8%)] to-[hsl(220,25%,12%)]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[hsl(220,20%,8%)] via-[hsl(220,20%,6%)] to-[hsl(220,20%,6%)]" />
           
           {/* Neural Network Background */}
-          <svg className="absolute inset-0 w-full h-full opacity-20" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="mfgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.6" />
-                <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0.1" />
-              </linearGradient>
-              <filter id="glow">
-                <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
-                <feMerge>
-                  <feMergeNode in="coloredBlur"/>
-                  <feMergeNode in="SourceGraphic"/>
-                </feMerge>
-              </filter>
-            </defs>
-            
-            <g className="animate-pulse" style={{ animationDuration: '4s' }}>
-              <line x1="15%" y1="25%" x2="35%" y2="45%" stroke="url(#mfgGradient)" strokeWidth="1" />
-              <line x1="35%" y1="45%" x2="25%" y2="75%" stroke="url(#mfgGradient)" strokeWidth="1" />
-              <line x1="65%" y1="20%" x2="80%" y2="35%" stroke="url(#mfgGradient)" strokeWidth="1" />
-              <line x1="80%" y1="35%" x2="70%" y2="60%" stroke="url(#mfgGradient)" strokeWidth="1" />
-            </g>
-            
-            <g filter="url(#glow)">
-              <circle cx="15%" cy="25%" r="3" fill="hsl(var(--primary))" className="animate-pulse" style={{ animationDuration: '3s' }} />
-              <circle cx="35%" cy="45%" r="4" fill="hsl(var(--primary))" className="animate-pulse" style={{ animationDuration: '4s' }} />
-              <circle cx="25%" cy="75%" r="3" fill="hsl(var(--primary))" className="animate-pulse" style={{ animationDuration: '3.5s' }} />
-              <circle cx="65%" cy="20%" r="3" fill="hsl(var(--primary))" className="animate-pulse" style={{ animationDuration: '4s' }} />
-              <circle cx="80%" cy="35%" r="4" fill="hsl(var(--primary))" className="animate-pulse" style={{ animationDuration: '3s' }} />
-              <circle cx="70%" cy="60%" r="3" fill="hsl(var(--primary))" className="animate-pulse" style={{ animationDuration: '3.5s' }} />
-            </g>
-          </svg>
+          <NeuralBackground />
           
-          <div className="absolute top-1/4 -right-32 w-[500px] h-[500px] bg-primary/[0.08] rounded-full blur-[120px] animate-float" />
-          <div className="absolute bottom-1/4 -left-32 w-[400px] h-[400px] bg-primary/[0.05] rounded-full blur-[100px] animate-float" style={{ animationDelay: '2s' }} />
+          <div className="absolute inset-0 opacity-[0.015]" style={{
+            backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--primary)) 1px, transparent 0)`,
+            backgroundSize: '48px 48px'
+          }} />
           
+          <div className="absolute top-1/4 -right-32 w-[500px] h-[500px] bg-primary/[0.03] rounded-full blur-[180px]" />
+          <div className="absolute bottom-1/4 -left-32 w-[400px] h-[400px] bg-primary/[0.02] rounded-full blur-[150px]" />
+
           <div className="container mx-auto px-4 lg:px-8 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-background/5 backdrop-blur-sm border border-background/10 mb-8">

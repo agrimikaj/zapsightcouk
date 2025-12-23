@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowRight, Check, Zap, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import NeuralBackground from '@/components/ui/NeuralBackground';
 import { getProductById, products } from '@/lib/products';
 
 const ProductPage = () => {
@@ -49,13 +50,16 @@ const ProductPage = () => {
             {/* Unified dark background */}
             <div className="absolute inset-0 bg-gradient-to-b from-[hsl(220,20%,8%)] via-[hsl(220,20%,6%)] to-[hsl(220,20%,6%)]" />
             
+            {/* Neural network animation */}
+            <NeuralBackground />
+            
             {/* Subtle dot pattern */}
             <div className="absolute inset-0 opacity-[0.015]" style={{
               backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--primary)) 1px, transparent 0)`,
               backgroundSize: '48px 48px'
             }} />
             
-            {/* Soft ambient glow - much subtler */}
+            {/* Soft ambient glow */}
             <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] bg-primary/[0.02] rounded-full blur-[200px]" />
 
             <div className="container mx-auto px-4 lg:px-8 relative z-10">
