@@ -3,33 +3,33 @@ import { Bot, Zap, Smartphone, Layout, Cloud, Wrench } from 'lucide-react';
 const features = [
   {
     icon: Bot,
-    title: 'AI-Powered Development',
-    description: 'Build intelligent agents through our intuitive platform with natural language configuration',
+    title: 'Agentic AI Workflows',
+    description: 'Design, build, and deploy intelligent AI workflows that integrate seamlessly into existing systems',
   },
   {
     icon: Zap,
-    title: '6-8X ROI Guaranteed',
-    description: 'Proven track record delivering measurable returns within 12-18 months of deployment',
+    title: '6-8X ROI Delivery',
+    description: 'Proven returns per business use-case, measured across 12-18 months of deployment',
   },
   {
     icon: Smartphone,
-    title: 'Mobile-Responsive',
-    description: 'Solutions designed to work seamlessly across all devices and platforms',
+    title: '4-6 Week Deployments',
+    description: 'Rapid engagement per use-case including data pipelines, transformation, and ML algorithms',
   },
   {
     icon: Layout,
-    title: 'Industry Templates',
-    description: 'Pre-built AI agent templates for Energy, Retail, Manufacturing, Security & Insurance',
+    title: 'Industry Expertise',
+    description: 'Solutions for Energy, Retail, Manufacturing, Financial Services & Infrastructure',
   },
   {
     icon: Cloud,
-    title: 'One-Click Deployment',
-    description: 'Deploy on AWS, Azure, or Google Cloud with enterprise-grade 99.9% uptime SLA',
+    title: '99.9% Uptime',
+    description: 'Enterprise-grade deployment on AWS, Azure, and Google Cloud with best-in-class AI models',
   },
   {
     icon: Wrench,
-    title: 'Full Customization',
-    description: 'Tailor every aspect of your AI agents without writing complex code',
+    title: '95-99% Accuracy',
+    description: 'Gen-AI output accuracy with human-in-the-loop controls and E2E workflow measurement',
   },
 ];
 
@@ -52,11 +52,10 @@ const WhyChooseSection = () => {
         <header className="text-center mb-16">
           <p className="text-primary font-semibold mb-4 tracking-wide uppercase text-sm">Why Choose ZapSight</p>
           <h2 id="why-choose-heading" className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-5 tracking-tight text-background">
-            Why Choose ZapSight's <span className="bg-gradient-to-r from-primary to-[hsl(25,95%,60%)] bg-clip-text text-transparent">AI Agent Platform?</span>
+            Turn AI into <span className="bg-gradient-to-r from-primary to-[hsl(25,95%,60%)] bg-clip-text text-transparent">Operational Outcomes</span>
           </h2>
           <p className="text-background/60 text-lg max-w-3xl mx-auto">
-            ZapSight revolutionizes enterprise AI by deploying intelligent agents that deliver measurable ROI. 
-            Our platform combines AI expertise with industry knowledge, making advanced automation accessible to every organization.
+            We combine data engineering, applied AI, and workflow design to help organizations adopt agentic AI in their core operations—delivering measurable ROI within weeks.
           </p>
         </header>
 

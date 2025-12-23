@@ -4,20 +4,20 @@ const values = [
   {
     icon: TrendingUp,
     title: 'Value',
-    subtitle: 'Commitment to',
-    description: 'We measure success by the tangible value we create. Every solution is designed to deliver measurable ROI and lasting business impact.',
+    subtitle: 'Committed to',
+    description: 'We measure success by outcomes, not activity. Every engagement is designed to deliver measurable ROI through faster decisions, higher accuracy, operational efficiency, and systems that perform reliably in production.',
   },
   {
     icon: Users,
     title: 'Customers',
-    subtitle: 'Commitment to',
-    description: 'Your success is our success. We prioritize understanding your unique challenges and building partnerships that drive mutual growth.',
+    subtitle: 'Committed to',
+    description: 'Your success defines ours. We invest time in understanding your business context, constraints, and workflows—ensuring the solutions we build are adopted, trusted, and aligned with long-term goals.',
   },
   {
     icon: Lightbulb,
     title: 'Solutions',
-    subtitle: 'Commitment to',
-    description: 'We don\'t just solve problems—we innovate. Our solutions are tailored, forward-thinking, and designed to evolve with your needs.',
+    subtitle: 'Committed to',
+    description: 'Our solutions are tailored, execution-focused, and built to evolve with your business—turning AI into a practical, scalable part of everyday operations.',
   },
 ];
 
@@ -38,12 +38,12 @@ const ValuesSection = () => {
       
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <header className="text-center mb-16">
-          <p className="text-primary font-semibold mb-4 tracking-wide uppercase text-sm">Why Choose ZapSight</p>
+          <p className="text-primary font-semibold mb-4 tracking-wide uppercase text-sm">Our Values</p>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-5 tracking-tight text-background">
-            Why Leading Enterprises <span className="bg-gradient-to-r from-primary to-[hsl(25,95%,60%)] bg-clip-text text-transparent">Choose ZapSight</span>
+            <span className="bg-gradient-to-r from-primary to-[hsl(25,95%,60%)] bg-clip-text text-transparent">Committed</span> to Value, Customers and Solutions
           </h2>
           <p className="text-background/60 text-lg max-w-2xl mx-auto">
-            Our foundational principles that guide every engagement and drive exceptional outcomes.
+            Why Leading Enterprises Choose ZapSight
           </p>
         </header>
 
