@@ -4,7 +4,7 @@ import Footer from '@/components/layout/Footer';
 import { Users, Award, Globe, Lightbulb } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-
+import EngagementMetrics from '@/components/about/EngagementMetrics';
 const About = () => {
   return (
     <>
@@ -70,6 +70,9 @@ const About = () => {
               </div>
             </div>
           </section>
+
+          {/* Engagement Metrics */}
+          <EngagementMetrics />
 
           {/* Leadership */}
           <section className="py-20 lg:py-32 relative overflow-hidden">
