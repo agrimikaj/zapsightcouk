@@ -35,7 +35,7 @@ const features = [
 
 const WhyChooseSection = () => {
   return (
-    <section className="py-24 lg:py-32 relative overflow-hidden" aria-labelledby="why-choose-heading">
+    <section className="py-16 lg:py-20 relative overflow-hidden" aria-labelledby="why-choose-heading">
       {/* Dark Premium Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-[hsl(220,25%,12%)] via-[hsl(220,25%,10%)] to-[hsl(220,25%,8%)]" />
       

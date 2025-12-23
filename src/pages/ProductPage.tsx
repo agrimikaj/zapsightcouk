@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { ArrowLeft, ArrowRight, Check } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Check, Zap, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
@@ -45,7 +45,7 @@ const ProductPage = () => {
         
         <main>
           {/* Hero Section */}
-          <section className="pt-28 pb-20 lg:pt-36 lg:pb-28 relative overflow-hidden">
+          <section className="pt-28 pb-16 lg:pt-36 lg:pb-20 relative overflow-hidden">
             {/* Background */}
             <div className="absolute inset-0 bg-gradient-to-b from-foreground via-[hsl(220,25%,10%)] to-background" />
             <div className="absolute inset-0 opacity-[0.02]" style={{
@@ -94,17 +94,62 @@ const ProductPage = () => {
                       <ArrowRight className="h-5 w-5" strokeWidth={1.5} />
                     </Link>
                   </Button>
-                  <Button variant="heroOutline" size="xl" className="text-background hover:text-background">
-                    Watch Demo
-                  </Button>
+                  {product.demoUrl ? (
+                    <Button variant="heroOutline" size="xl" className="text-background hover:text-background" asChild>
+                      <a href={product.demoUrl} target="_blank" rel="noopener noreferrer">
+                        View Demo
+                        <ExternalLink className="h-4 w-4 ml-2" strokeWidth={1.5} />
+                      </a>
+                    </Button>
+                  ) : (
+                    <Button variant="heroOutline" size="xl" className="text-background hover:text-background">
+                      Watch Demo
+                    </Button>
+                  )}
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Key Benefits Section */}
+          <section className="py-16 lg:py-20 relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-b from-background via-[hsl(220,25%,10%)] to-[hsl(220,25%,8%)]" />
+            <div className="absolute inset-0 opacity-[0.02]" style={{
+              backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--primary)) 1px, transparent 0)`,
+              backgroundSize: '40px 40px'
+            }} />
+            <div className="absolute top-1/4 right-0 w-[400px] h-[400px] bg-primary/[0.05] rounded-full blur-[120px]" />
+            
+            <div className="container mx-auto px-4 lg:px-8 relative z-10">
+              <div className="text-center mb-12">
+                <p className="text-primary font-medium mb-3 tracking-wide uppercase text-sm">Key Benefits</p>
+                <h2 className="font-display text-2xl lg:text-3xl font-bold tracking-tight text-background">
+                  What {product.name} Delivers
+                </h2>
+              </div>
+              
+              <div className="max-w-4xl mx-auto">
+                <div className="grid gap-4">
+                  {product.keyBenefits.map((benefit, i) => (
+                    <div key={i} className="flex items-start gap-4 p-5 bg-background/[0.03] backdrop-blur-xl border border-background/10 rounded-2xl transition-all duration-300 hover:bg-background/[0.05] hover:border-primary/20">
+                      <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
+                           style={{
+                             background: 'linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-dark)) 100%)',
+                             boxShadow: '0 0 20px hsl(var(--primary) / 0.3)'
+                           }}>
+                        <Zap className="h-5 w-5 text-primary-foreground" strokeWidth={1.5} />
+                      </div>
+                      <span className="text-background/80 text-base lg:text-lg pt-2">{benefit}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
           </section>
 
           {/* Features & Benefits */}
-          <section className="py-20 lg:py-28 relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-b from-background via-[hsl(220,25%,10%)] to-[hsl(220,25%,8%)]" />
+          <section className="py-16 lg:py-20 relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-b from-[hsl(220,25%,8%)] to-[hsl(220,25%,10%)]" />
             <div className="absolute inset-0 opacity-[0.02]" style={{
               backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--primary)) 1px, transparent 0)`,
               backgroundSize: '40px 40px'
@@ -151,8 +196,8 @@ const ProductPage = () => {
           </section>
 
           {/* Use Cases */}
-          <section className="py-20 lg:py-28 relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-b from-[hsl(220,25%,8%)] to-[hsl(220,25%,10%)]" />
+          <section className="py-16 lg:py-20 relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-b from-[hsl(220,25%,10%)] to-[hsl(220,25%,8%)]" />
             <div className="absolute inset-0 opacity-[0.02]" style={{
               backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--primary)) 1px, transparent 0)`,
               backgroundSize: '40px 40px'
@@ -179,8 +224,8 @@ const ProductPage = () => {
           </section>
 
           {/* CTA */}
-          <section className="py-20 lg:py-28 relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-b from-[hsl(220,25%,10%)] via-[hsl(var(--primary)/0.1)] to-[hsl(220,25%,8%)]" />
+          <section className="py-16 lg:py-20 relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-b from-[hsl(220,25%,8%)] via-[hsl(var(--primary)/0.1)] to-[hsl(220,25%,10%)]" />
             <div className="absolute inset-0 opacity-[0.02]" style={{
               backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--primary)) 1px, transparent 0)`,
               backgroundSize: '40px 40px'

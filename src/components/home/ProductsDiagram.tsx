@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Database, Radio, FileText, MessageSquare, BarChart3, Wrench, Search } from 'lucide-react';
+import { Database, Radio, MessageSquare, Search, Users, Package, ClipboardList, Factory } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
 interface ProductLayer {
@@ -13,6 +13,30 @@ interface ProductLayer {
 
 const layers: ProductLayer[] = [
   {
+    id: 'unifyer',
+    name: 'Unifyer',
+    tagline: 'AI-Assisted Data Pipelines',
+    description: 'Builds AI-assisted and monitored data pipelines',
+    outcome: 'Clean, monitored, AI-ready data',
+    icon: Database,
+  },
+  {
+    id: 'aidr',
+    name: 'AIDR',
+    tagline: 'Natural Language Data Access',
+    description: 'Easy access of your data through Natural Language',
+    outcome: 'Data access at your fingertips',
+    icon: MessageSquare,
+  },
+  {
+    id: 'aisac',
+    name: 'AISAC',
+    tagline: 'Sensor Intelligence',
+    description: 'Integrates with sensor hardware ecosystem',
+    outcome: 'Real-world signals → decisions',
+    icon: Radio,
+  },
+  {
     id: 'aivi',
     name: 'AIVI',
     tagline: 'AI Visibility Intelligence',
@@ -21,58 +45,50 @@ const layers: ProductLayer[] = [
     icon: Search,
   },
   {
-    id: 'builder',
-    name: 'Builder',
-    tagline: 'Actions & Automation',
-    description: 'Emails, tickets, ERP/CRM workflow orchestration',
-    outcome: 'Insights → execution',
-    icon: Wrench,
+    id: 'sapro',
+    name: 'SAPRO',
+    tagline: 'Sales Productivity Agent',
+    description: 'Helps sales team be more productive & coached',
+    outcome: 'Empowered sales teams',
+    icon: Users,
   },
   {
-    id: 'dashia',
-    name: 'DashIA',
-    tagline: 'Insightful Dashboards',
-    description: 'Engaging UI with embedded AI insights',
-    outcome: 'See → understand → act',
-    icon: BarChart3,
+    id: 'aiven',
+    name: 'AIVEN',
+    tagline: 'Inventory Intelligence',
+    description: 'Managing inventory and building workflows',
+    outcome: 'Optimized inventory operations',
+    icon: Package,
   },
   {
-    id: 'deasy',
-    name: 'DEasy',
-    tagline: 'Natural Language Access',
-    description: 'Ask questions in plain English',
-    outcome: 'Anyone can access data',
+    id: 'custex',
+    name: 'Custex',
+    tagline: 'Customer Experience Agent',
+    description: 'Managing customer communications & engagement',
+    outcome: 'Personalized customer engagement',
     icon: MessageSquare,
   },
   {
-    id: 'docai',
-    name: 'DocAI',
-    tagline: 'Unstructured Data Intelligence',
-    description: 'OCR + visual LLM for documents',
-    outcome: 'Documents → structured insights',
-    icon: FileText,
+    id: 'profast',
+    name: 'ProFast',
+    tagline: 'Project Management Agent',
+    description: 'Manage large-scale projects and executions',
+    outcome: 'Accountable project delivery',
+    icon: ClipboardList,
   },
   {
-    id: 'aisac',
-    name: 'AISAC',
-    tagline: 'Sensor Intelligence',
-    description: 'Integrates with sensor hardware',
-    outcome: 'Real-world signals → decisions',
-    icon: Radio,
-  },
-  {
-    id: 'unifyer',
-    name: 'Unifyer',
-    tagline: 'AI-Assisted Data Pipelines',
-    description: 'Connects sources, builds AI-ready pipelines',
-    outcome: 'Clean, monitored, AI-ready data',
-    icon: Database,
+    id: 'proman',
+    name: 'ProMan',
+    tagline: 'Production & Labour Management',
+    description: 'AI-led production and labour management',
+    outcome: 'Optimized production operations',
+    icon: Factory,
   },
 ];
 
 const ProductsDiagram = () => {
   return (
-    <section id="products" className="py-24 lg:py-32 relative overflow-hidden">
+    <section id="products" className="py-16 lg:py-20 relative overflow-hidden">
       {/* Dark gradient background */}
       <div className="absolute inset-0 bg-gradient-to-b from-foreground via-[hsl(220,25%,8%)] to-foreground" />
       
@@ -88,115 +104,57 @@ const ProductsDiagram = () => {
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         {/* Header */}
-        <header className="text-center mb-16 lg:mb-20">
-          <p className="text-primary font-medium mb-4 tracking-wide uppercase text-sm">AI Intelligence Platform</p>
+        <header className="text-center mb-12 lg:mb-16">
+          <p className="text-primary font-medium mb-4 tracking-wide uppercase text-sm">Our Products</p>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-5 tracking-tight text-background">
-            Deploy Your AI Agents <span className="text-primary">in Minutes</span>
+            AI Agents <span className="text-primary">Embedded in Your Data</span>
           </h2>
           <p className="text-background/50 text-lg max-w-2xl mx-auto">
-            From raw data to intelligent action — a unified platform where each layer amplifies the next.
+            All our products are AI-agents that are embedded in the companies' data and customized to deliver business needs.
           </p>
         </header>
 
-        {/* Vertical Stack Diagram */}
-        <div className="max-w-4xl mx-auto relative">
-          {/* Central Intelligence Spine */}
-          <div className="absolute left-1/2 top-0 bottom-0 w-px -translate-x-1/2 hidden lg:block">
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/30 to-transparent" />
-            {/* Animated pulse line */}
-            <div className="absolute inset-0 bg-gradient-to-b from-primary/0 via-primary/60 to-primary/0 animate-pulse" 
-                 style={{ animationDuration: '3s' }} />
-          </div>
-
-          {/* Product Layers */}
-          <div className="space-y-4 lg:space-y-6">
+        {/* Product Grid */}
+        <div className="max-w-6xl mx-auto">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
             {layers.map((layer, index) => {
               const IconComponent = layer.icon;
-              const isLeft = index % 2 === 0;
               
               return (
-                <div 
+                <Link 
                   key={layer.id}
-                  className="relative"
+                  to={`/products/${layer.id}`}
+                  className="block group"
                 >
-                  {/* Connection node on spine */}
-                  <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hidden lg:block z-10">
-                    <div className="w-4 h-4 rounded-full bg-foreground flex items-center justify-center">
-                      <div className="w-2 h-2 rounded-full bg-primary shadow-[0_0_12px_hsl(var(--primary))]" />
-                    </div>
-                  </div>
+                  <div className="relative rounded-2xl lg:rounded-3xl overflow-hidden transition-all duration-200 motion-reduce:transition-none cursor-pointer h-full">
+                    {/* Card background with gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-[hsl(220,25%,12%)] to-[hsl(220,25%,8%)]" />
+                    
+                    {/* Subtle border glow */}
+                    <div className="absolute inset-0 rounded-2xl lg:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-200 motion-reduce:transition-none"
+                         style={{ 
+                           boxShadow: 'inset 0 0 0 1px hsl(var(--primary) / 0.3), 0 0 50px hsl(var(--primary) / 0.15)' 
+                         }} />
+                    
+                    {/* Inner glow overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.05] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200 motion-reduce:transition-none" />
 
-                  {/* Horizontal connector line */}
-                  <div 
-                    className={`absolute top-1/2 -translate-y-1/2 h-px hidden lg:block ${
-                      isLeft ? 'right-1/2 left-0 lg:left-auto lg:right-1/2 lg:w-[calc(50%-140px)] lg:mr-8' : 'left-1/2 lg:w-[calc(50%-140px)] lg:ml-8'
-                    }`}
-                    style={{
-                      background: isLeft 
-                        ? 'linear-gradient(to right, transparent, hsl(var(--primary) / 0.3))' 
-                        : 'linear-gradient(to left, transparent, hsl(var(--primary) / 0.3))'
-                    }}
-                  />
-
-                  {/* Product Card - Now Clickable */}
-                  <Link 
-                    to={`/products/${layer.id}`}
-                    className={`block lg:w-[calc(50%-60px)] ${isLeft ? 'lg:mr-auto' : 'lg:ml-auto'}`}
-                  >
-                    <div className="group relative rounded-2xl lg:rounded-3xl overflow-hidden transition-all duration-200 motion-reduce:transition-none cursor-pointer">
-                      {/* Card background with gradient */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-[hsl(220,25%,12%)] to-[hsl(220,25%,8%)]" />
-                      
-                      {/* Subtle border glow */}
-                      <div className="absolute inset-0 rounded-2xl lg:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-200 motion-reduce:transition-none"
-                           style={{ 
-                             boxShadow: 'inset 0 0 0 1px hsl(var(--primary) / 0.3), 0 0 50px hsl(var(--primary) / 0.15)' 
-                           }} />
-                      
-                      {/* Inner glow overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.05] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200 motion-reduce:transition-none" />
-
-                      {/* Card content */}
-                      <div className="relative p-5 lg:p-6 flex items-start gap-4 lg:gap-5">
-                        {/* Icon container */}
-                        <div className="flex-shrink-0">
-                          <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-xl lg:rounded-2xl flex items-center justify-center relative group-hover:scale-105 transition-transform duration-200 motion-reduce:transition-none"
-                               style={{
-                                 background: 'linear-gradient(135deg, hsl(var(--primary) / 0.15) 0%, hsl(var(--primary) / 0.05) 100%)'
-                               }}>
-                            <IconComponent className="h-6 w-6 lg:h-7 lg:w-7 text-primary" strokeWidth={1.5} />
-                            {/* Icon glow */}
-                            <div className="absolute inset-0 rounded-xl lg:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-200 motion-reduce:transition-none"
-                                 style={{ boxShadow: '0 0 25px hsl(var(--primary) / 0.4)' }} />
-                          </div>
+                    {/* Card content */}
+                    <div className="relative p-5 lg:p-6 flex flex-col h-full">
+                      {/* Icon container */}
+                      <div className="flex items-start justify-between mb-4">
+                        <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-xl lg:rounded-2xl flex items-center justify-center relative group-hover:scale-105 transition-transform duration-200 motion-reduce:transition-none"
+                             style={{
+                               background: 'linear-gradient(135deg, hsl(var(--primary) / 0.15) 0%, hsl(var(--primary) / 0.05) 100%)'
+                             }}>
+                          <IconComponent className="h-6 w-6 lg:h-7 lg:w-7 text-primary" strokeWidth={1.5} />
+                          {/* Icon glow */}
+                          <div className="absolute inset-0 rounded-xl lg:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-200 motion-reduce:transition-none"
+                               style={{ boxShadow: '0 0 25px hsl(var(--primary) / 0.4)' }} />
                         </div>
-
-                        {/* Text content */}
-                        <div className="flex-1 min-w-0">
-                          <div className="flex items-baseline gap-2 mb-1">
-                            <h3 className="font-display font-bold text-lg lg:text-xl text-background tracking-tight group-hover:text-primary transition-colors duration-200">
-                              {layer.name}
-                            </h3>
-                            <span className="text-primary/80 text-xs font-medium hidden sm:inline">
-                              {layer.tagline}
-                            </span>
-                          </div>
-                          
-                          <p className="text-background/40 text-sm mb-2 line-clamp-1">
-                            {layer.description}
-                          </p>
-                          
-                          {/* Outcome badge */}
-                          <div className="inline-flex items-center gap-1.5">
-                            <span className="w-1 h-1 rounded-full bg-primary/60" />
-                            <span className="text-xs text-primary/70 font-medium">
-                              {layer.outcome}
-                            </span>
-                          </div>
-                        </div>
-
+                        
                         {/* Arrow indicator */}
-                        <div className="flex-shrink-0 self-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 motion-reduce:transition-none">
+                        <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 motion-reduce:transition-none">
                           <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
                             <svg className="w-4 h-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                               <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
@@ -204,29 +162,33 @@ const ProductsDiagram = () => {
                           </div>
                         </div>
                       </div>
+
+                      {/* Text content */}
+                      <div className="flex-1">
+                        <h3 className="font-display font-bold text-lg lg:text-xl text-background tracking-tight group-hover:text-primary transition-colors duration-200 mb-1">
+                          {layer.name}
+                        </h3>
+                        <span className="text-primary/80 text-xs font-medium">
+                          {layer.tagline}
+                        </span>
+                        
+                        <p className="text-background/40 text-sm mt-3 line-clamp-2">
+                          {layer.description}
+                        </p>
+                      </div>
+                      
+                      {/* Outcome badge */}
+                      <div className="inline-flex items-center gap-1.5 mt-4">
+                        <span className="w-1 h-1 rounded-full bg-primary/60" />
+                        <span className="text-xs text-primary/70 font-medium">
+                          {layer.outcome}
+                        </span>
+                      </div>
                     </div>
-                  </Link>
-                </div>
+                  </div>
+                </Link>
               );
             })}
-          </div>
-
-          {/* Bottom data source indicator */}
-          <div className="mt-12 lg:mt-16 text-center">
-            <div className="inline-flex items-center gap-3 px-5 py-3 rounded-full"
-                 style={{ background: 'linear-gradient(135deg, hsl(220,25%,12%) 0%, hsl(220,25%,8%) 100%)' }}>
-              <div className="flex -space-x-1">
-                {[...Array(3)].map((_, i) => (
-                  <div 
-                    key={i} 
-                    className="w-2 h-2 rounded-full bg-primary/60"
-                    style={{ opacity: 1 - (i * 0.25) }}
-                  />
-                ))}
-              </div>
-              <span className="text-background/50 text-sm">Your Data Sources</span>
-              <div className="w-8 h-px bg-gradient-to-r from-primary/40 to-transparent" />
-            </div>
           </div>
         </div>
       </div>

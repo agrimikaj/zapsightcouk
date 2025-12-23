@@ -101,7 +101,7 @@ const SolutionGenerator = () => {
   const isComplete = industry && department && status;
 
   return (
-    <section className="py-24 lg:py-32 relative overflow-hidden">
+    <section className="py-16 lg:py-20 relative overflow-hidden">
       {/* Dark Premium Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-[hsl(220,25%,12%)] via-[hsl(220,25%,10%)] to-[hsl(220,25%,8%)]" />
       
