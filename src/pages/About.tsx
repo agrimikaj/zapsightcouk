@@ -50,20 +50,6 @@ const About = () => {
             }} />
             
             <div className="container mx-auto px-4 lg:px-8 relative z-10">
-            <div className="max-w-4xl mx-auto mb-12">
-              <p className="text-background/70 text-lg leading-relaxed mb-6">
-                ZapSight is built for enterprises that see AI as a competitive necessity but struggle to translate it into day-to-day operational impact.
-              </p>
-              <p className="text-background/70 text-lg leading-relaxed mb-6">
-                We combine data engineering, applied AI, and workflow design to help organizations adopt agentic AI in their core operations. Our philosophy is simple: start with a high-impact business problem, design the workflow that solves it, and then build the data and AI layers required to make it work reliably at scale.
-              </p>
-              <p className="text-background/70 text-lg leading-relaxed mb-6">
-                Our solutions consistently deliver 6–8× ROI over a 12–18 month horizon, with 95–99% output accuracy and human-in-the-loop controls where required. All deployments are enterprise-grade, achieving 99.9% uptime on leading cloud providers including AWS, Azure, and Google Cloud, while leveraging best-in-class AI models and open-source technologies.
-              </p>
-              <p className="text-background/70 text-lg leading-relaxed">
-                ZapSight serves clients across retail, energy, manufacturing, financial services, and infrastructure—helping them move from fragmented data and manual decision-making to AI-driven, scalable operations.
-              </p>
-            </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {[
                   { icon: Users, title: 'Data Engineering', desc: 'Building data pipelines and transformation for reliable AI foundations' },
