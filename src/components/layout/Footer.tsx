@@ -35,12 +35,14 @@ const Footer = () => {
             <ul className="space-y-3">
               {[
                 { name: 'Unifyer', id: 'unifyer' },
+                { name: 'AIDR', id: 'aidr' },
                 { name: 'AISAC', id: 'aisac' },
-                { name: 'DocAI', id: 'docai' },
-                { name: 'DEasy', id: 'deasy' },
-                { name: 'DashIA', id: 'dashia' },
-                { name: 'Builder', id: 'builder' },
                 { name: 'AIVI', id: 'aivi' },
+                { name: 'SAPRO', id: 'sapro' },
+                { name: 'AIVEN', id: 'aiven' },
+                { name: 'Custex', id: 'custex' },
+                { name: 'ProFast', id: 'profast' },
+                { name: 'ProMan', id: 'proman' },
               ].map((product) => (
                 <li key={product.id}>
                   <Link to={`/products/${product.id}`} className="text-background/50 hover:text-primary text-sm transition-colors duration-200">
