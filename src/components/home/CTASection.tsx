@@ -1,10 +1,10 @@
-import { ArrowRight, Zap } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
 const CTASection = () => {
   return (
-    <section className="py-24 lg:py-32 relative overflow-hidden">
+    <section className="py-20 lg:py-24 relative overflow-hidden">
       {/* Dark Premium Background matching site theme */}
       <div className="absolute inset-0 bg-gradient-to-b from-[hsl(220,25%,10%)] via-[hsl(220,25%,8%)] to-foreground" />
       
@@ -20,15 +20,6 @@ const CTASection = () => {
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          {/* Icon */}
-          <div className="inline-flex items-center justify-center w-18 h-18 rounded-3xl mb-10"
-               style={{
-                 background: 'linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-dark)) 100%)',
-                 boxShadow: '0 0 40px hsl(var(--primary) / 0.4)'
-               }}>
-            <Zap className="h-9 w-9 text-primary-foreground" strokeWidth={1.5} />
-          </div>
-
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-background mb-6 tracking-tight text-balance">
             Ready to Transform Your Data Into <span className="text-primary">Intelligent Actions</span>?
           </h2>
