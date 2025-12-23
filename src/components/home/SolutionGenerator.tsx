@@ -48,18 +48,18 @@ const CustomSelect = ({ label, options, value, onChange }: SelectProps) => {
 
   return (
     <div className="relative">
-      <label className="block text-sm font-medium text-background/50 mb-2.5 tracking-wide">{label}</label>
+      <label className="block text-sm font-medium text-[hsl(220,10%,50%)] mb-2.5 tracking-wide">{label}</label>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between gap-2 px-4 py-3.5 bg-background/5 border border-background/10 rounded-2xl text-left hover:bg-background/10 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary/30"
+        className="w-full flex items-center justify-between gap-2 px-4 py-3.5 bg-[hsl(220,20%,10%)] border border-[hsl(220,16%,14%)] rounded-2xl text-left hover:bg-[hsl(220,20%,11%)] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary/30"
       >
-        <span className={value ? 'text-background font-medium' : 'text-background/50'}>
+        <span className={value ? 'text-[hsl(0,0%,94%)] font-medium' : 'text-[hsl(220,10%,45%)]'}>
           {value || `Select ${label}`}
         </span>
-        <ChevronDown className={`h-5 w-5 text-background/50 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
+        <ChevronDown className={`h-5 w-5 text-[hsl(220,10%,45%)] transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
       </button>
       {isOpen && (
-        <div className="absolute top-full left-0 right-0 mt-2 bg-[hsl(220,25%,12%)] backdrop-blur-xl border border-background/10 rounded-2xl shadow-floating z-50 max-h-60 overflow-auto animate-scale-in">
+        <div className="absolute top-full left-0 right-0 mt-2 bg-[hsl(220,20%,10%)] border border-[hsl(220,16%,14%)] rounded-2xl shadow-floating z-50 max-h-60 overflow-auto animate-scale-in">
           {options.map((option) => (
             <button
               key={option}
@@ -68,7 +68,7 @@ const CustomSelect = ({ label, options, value, onChange }: SelectProps) => {
                 setIsOpen(false);
               }}
               className={`w-full px-4 py-3.5 text-left hover:bg-primary/10 transition-all duration-200 first:rounded-t-2xl last:rounded-b-2xl ${
-                value === option ? 'bg-primary/10 text-primary font-medium' : 'text-background/70'
+                value === option ? 'bg-primary/10 text-primary font-medium' : 'text-[hsl(220,10%,60%)]'
               }`}
             >
               {option}
@@ -101,33 +101,33 @@ const SolutionGenerator = () => {
   const isComplete = industry && department && status;
 
   return (
-    <section className="py-16 lg:py-20 relative overflow-hidden">
-      {/* Dark Premium Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[hsl(220,25%,12%)] via-[hsl(220,25%,10%)] to-[hsl(220,25%,8%)]" />
+    <section className="py-16 lg:py-24 relative overflow-hidden">
+      {/* Unified dark background */}
+      <div className="absolute inset-0 bg-[hsl(220,20%,6%)]" />
       
-      {/* Subtle grid pattern */}
-      <div className="absolute inset-0 opacity-[0.02]" style={{
+      {/* Subtle dot pattern */}
+      <div className="absolute inset-0 opacity-[0.015]" style={{
         backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--primary)) 1px, transparent 0)`,
-        backgroundSize: '40px 40px'
+        backgroundSize: '48px 48px'
       }} />
       
-      {/* Gradient orbs */}
-      <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-primary/[0.05] rounded-full blur-[120px]" />
+      {/* Soft ambient glow */}
+      <div className="absolute top-0 right-1/4 w-[500px] h-[400px] bg-primary/[0.02] rounded-full blur-[180px]" />
       
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="text-center mb-14">
           <p className="text-primary font-semibold mb-4 tracking-wide uppercase text-sm">Solution Finder</p>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-5 tracking-tight text-background">
-            AI-Powered Solutions <span className="bg-gradient-to-r from-primary to-[hsl(25,95%,60%)] bg-clip-text text-transparent">for Every Industry</span>
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-5 tracking-tight text-[hsl(0,0%,97%)]">
+            AI-Powered Solutions <span className="text-primary">for Every Industry</span>
           </h2>
-          <p className="text-background/60 text-lg max-w-2xl mx-auto">
+          <p className="text-[hsl(220,10%,55%)] text-lg max-w-2xl mx-auto">
             Tell us about your context and we'll recommend the perfect AI agent solution for your needs.
           </p>
         </div>
 
         <div className="max-w-4xl mx-auto">
-          <div className="bg-background/[0.03] backdrop-blur-xl border border-background/10 rounded-3xl p-8 lg:p-12"
-               style={{ boxShadow: '0 0 60px hsl(var(--primary) / 0.08), inset 0 1px 0 hsl(var(--background) / 0.05)' }}>
+          <div className="bg-[hsl(220,20%,8%)] border border-[hsl(220,16%,12%)] rounded-3xl p-8 lg:p-12"
+               style={{ boxShadow: '0 0 60px hsl(var(--primary) / 0.03)' }}>
             <div className="grid md:grid-cols-3 gap-6 mb-10">
               <CustomSelect
                 label="Industry"
@@ -171,26 +171,26 @@ const SolutionGenerator = () => {
 
             {/* Solution Output */}
             {solution && (
-              <div className="mt-10 p-8 bg-primary/[0.08] backdrop-blur-sm border border-primary/20 rounded-3xl animate-scale-in relative">
+              <div className="mt-10 p-8 bg-primary/[0.05] border border-primary/15 rounded-3xl animate-scale-in relative">
                 <button
                   onClick={() => setSolution('')}
-                  className="absolute top-4 right-4 p-2 rounded-xl hover:bg-background/10 transition-colors text-background/50 hover:text-background"
+                  className="absolute top-4 right-4 p-2 rounded-xl hover:bg-[hsl(220,20%,12%)] transition-colors text-[hsl(220,10%,50%)] hover:text-[hsl(0,0%,90%)]"
                   aria-label="Close solution"
                 >
                   <X className="h-5 w-5" />
                 </button>
                 <div className="flex items-center gap-2.5 mb-5">
-                  <div className="w-8 h-8 rounded-xl bg-primary/20 flex items-center justify-center">
+                  <div className="w-8 h-8 rounded-xl bg-primary/15 border border-primary/20 flex items-center justify-center">
                     <Sparkles className="h-4 w-4 text-primary" strokeWidth={1.5} />
                   </div>
                   <span className="font-display font-semibold text-primary tracking-tight">Recommended Solution</span>
                 </div>
-                <p className="text-background/80 leading-relaxed whitespace-pre-line">
+                <p className="text-[hsl(220,10%,70%)] leading-relaxed whitespace-pre-line">
                   {solution.split('**').map((part, i) => 
                     i % 2 === 1 ? <strong key={i} className="text-primary font-semibold">{part}</strong> : part
                   )}
                 </p>
-                <Button variant="heroOutline" size="lg" className="mt-8 text-background border-background/20 hover:bg-background/10" asChild>
+                <Button variant="heroOutline" size="lg" className="mt-8" asChild>
                   <Link to="/contact">Schedule a Discovery Call</Link>
                 </Button>
               </div>
