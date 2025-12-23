@@ -88,28 +88,27 @@ const layers: ProductLayer[] = [
 
 const ProductsDiagram = () => {
   return (
-    <section id="products" className="py-16 lg:py-20 relative overflow-hidden">
-      {/* Dark gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-foreground via-[hsl(220,25%,8%)] to-foreground" />
+    <section id="products" className="py-16 lg:py-24 relative overflow-hidden">
+      {/* Unified dark background */}
+      <div className="absolute inset-0 bg-[hsl(220,20%,6%)]" />
       
-      {/* Subtle mesh overlay */}
-      <div className="absolute inset-0 opacity-[0.03]" style={{
+      {/* Subtle dot pattern */}
+      <div className="absolute inset-0 opacity-[0.015]" style={{
         backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--primary)) 1px, transparent 0)`,
-        backgroundSize: '40px 40px'
+        backgroundSize: '48px 48px'
       }} />
       
-      {/* Ambient glow effects */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-primary/[0.03] rounded-full blur-[150px]" />
-      <div className="absolute bottom-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/[0.02] rounded-full blur-[120px]" />
+      {/* Soft ambient glows */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/[0.015] rounded-full blur-[200px]" />
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         {/* Header */}
         <header className="text-center mb-12 lg:mb-16">
           <p className="text-primary font-medium mb-4 tracking-wide uppercase text-sm">Our Products</p>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-5 tracking-tight text-background">
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-5 tracking-tight text-[hsl(0,0%,97%)]">
             AI Agents <span className="text-primary">Embedded in Your Data</span>
           </h2>
-          <p className="text-background/50 text-lg max-w-2xl mx-auto">
+          <p className="text-[hsl(220,10%,50%)] text-lg max-w-2xl mx-auto">
             All our products are AI-agents that are embedded in the companies' data and customized to deliver business needs.
           </p>
         </header>
@@ -118,7 +117,7 @@ const ProductsDiagram = () => {
         <div className="max-w-5xl mx-auto relative">
           {/* Central spine line */}
           <div className="absolute left-1/2 top-0 bottom-0 w-px -translate-x-1/2 hidden lg:block">
-            <div className="h-full w-full bg-gradient-to-b from-primary/0 via-primary/40 to-primary/0" />
+            <div className="h-full w-full bg-gradient-to-b from-primary/0 via-primary/30 to-primary/0" />
           </div>
 
           {/* Products along the spine */}
@@ -131,8 +130,8 @@ const ProductsDiagram = () => {
                 <div key={layer.id} className="relative lg:flex lg:items-center lg:min-h-[100px]">
                   {/* Connection node on spine - desktop only */}
                   <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 hidden lg:block">
-                    <div className="w-4 h-4 rounded-full bg-[hsl(220,25%,10%)] border-2 border-primary/60 relative">
-                      <div className="absolute inset-0 rounded-full bg-primary/20 animate-pulse" />
+                    <div className="w-4 h-4 rounded-full bg-[hsl(220,20%,8%)] border-2 border-primary/50 relative">
+                      <div className="absolute inset-0 rounded-full bg-primary/15 animate-pulse" />
                     </div>
                   </div>
 
@@ -141,7 +140,7 @@ const ProductsDiagram = () => {
                     isLeft ? 'right-1/2 mr-2' : 'left-1/2 ml-2'
                   }`}>
                     <div className={`h-full w-full bg-gradient-to-r ${
-                      isLeft ? 'from-primary/40 to-primary/20' : 'from-primary/20 to-primary/40'
+                      isLeft ? 'from-primary/30 to-primary/15' : 'from-primary/15 to-primary/30'
                     }`} />
                   </div>
 
@@ -151,18 +150,9 @@ const ProductsDiagram = () => {
                       to={`/products/${layer.id}`}
                       className="block group"
                     >
-                      <div className="relative rounded-xl lg:rounded-2xl overflow-hidden transition-all duration-200 motion-reduce:transition-none cursor-pointer">
-                        {/* Card background with gradient */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-[hsl(220,25%,12%)] to-[hsl(220,25%,8%)]" />
-                        
-                        {/* Subtle border glow */}
-                        <div className="absolute inset-0 rounded-xl lg:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-200 motion-reduce:transition-none"
-                             style={{ 
-                               boxShadow: 'inset 0 0 0 1px hsl(var(--primary) / 0.3), 0 0 50px hsl(var(--primary) / 0.15)' 
-                             }} />
-                        
+                      <div className="relative rounded-xl lg:rounded-2xl overflow-hidden transition-all duration-200 motion-reduce:transition-none cursor-pointer bg-[hsl(220,20%,8%)] border border-[hsl(220,16%,12%)] hover:border-primary/25">
                         {/* Inner glow overlay */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.05] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200 motion-reduce:transition-none" />
+                        <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200 motion-reduce:transition-none" />
 
                         {/* Card content */}
                         <div className={`relative p-4 lg:p-5 flex items-center gap-4 ${
@@ -170,36 +160,33 @@ const ProductsDiagram = () => {
                         }`}>
                           {/* Icon container */}
                           <div className="flex-shrink-0">
-                            <div className="w-12 h-12 rounded-xl flex items-center justify-center relative group-hover:scale-105 transition-transform duration-200 motion-reduce:transition-none"
-                                 style={{
-                                   background: 'linear-gradient(135deg, hsl(var(--primary) / 0.15) 0%, hsl(var(--primary) / 0.05) 100%)'
-                                 }}>
+                            <div className="w-12 h-12 rounded-xl flex items-center justify-center relative group-hover:scale-105 transition-transform duration-200 motion-reduce:transition-none bg-primary/10 border border-primary/15">
                               <IconComponent className="h-6 w-6 text-primary" strokeWidth={1.5} />
                               {/* Icon glow */}
                               <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-200 motion-reduce:transition-none"
-                                   style={{ boxShadow: '0 0 25px hsl(var(--primary) / 0.4)' }} />
+                                   style={{ boxShadow: '0 0 20px hsl(var(--primary) / 0.25)' }} />
                             </div>
                           </div>
 
                           {/* Text content */}
                           <div className="flex-1 min-w-0">
                             <div className="flex items-center gap-2 mb-1">
-                              <h3 className="font-display font-bold text-base lg:text-lg text-background tracking-tight group-hover:text-primary transition-colors duration-200">
+                              <h3 className="font-display font-bold text-base lg:text-lg text-[hsl(0,0%,94%)] tracking-tight group-hover:text-primary transition-colors duration-200">
                                 {layer.name}
                               </h3>
-                              <span className="text-primary/60 text-xs font-medium hidden sm:inline">
+                              <span className="text-primary/50 text-xs font-medium hidden sm:inline">
                                 {layer.tagline}
                               </span>
                             </div>
                             
-                            <p className="text-background/40 text-sm line-clamp-1">
+                            <p className="text-[hsl(220,10%,45%)] text-sm line-clamp-1">
                               {layer.description}
                             </p>
                           </div>
 
                           {/* Arrow indicator */}
                           <div className="flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200 motion-reduce:transition-none">
-                            <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+                            <div className="w-8 h-8 rounded-full bg-primary/10 border border-primary/15 flex items-center justify-center">
                               <svg className="w-4 h-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                               </svg>
