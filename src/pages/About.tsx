@@ -32,7 +32,10 @@ const About = () => {
                   We Make <span className="bg-gradient-to-r from-primary to-[hsl(25,95%,60%)] bg-clip-text text-transparent">AI Work</span> for Enterprises
                 </h1>
                 <p className="text-lg lg:text-xl text-background/60 max-w-3xl mx-auto">
-                  ZapSight is an AI partnerships business that believes in data supremacy. There's no problem data cannot solve—and above solving it, data can bring innovation to everyday business functions.
+                  ZapSight is an AI solutions company focused on turning artificial intelligence into real, operational outcomes. We work with enterprises to design, build, and deploy agentic AI workflows that integrate seamlessly into existing systems.
+                </p>
+                <p className="text-base text-background/50 max-w-3xl mx-auto mt-4">
+                  Our approach starts with business-critical use cases, works backward into the right data and AI architecture, and delivers measurable ROI within weeks.
                 </p>
               </div>
             </div>
@@ -47,12 +50,26 @@ const About = () => {
             }} />
             
             <div className="container mx-auto px-4 lg:px-8 relative z-10">
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="max-w-4xl mx-auto mb-12">
+              <p className="text-background/70 text-lg leading-relaxed mb-6">
+                ZapSight is built for enterprises that see AI as a competitive necessity but struggle to translate it into day-to-day operational impact.
+              </p>
+              <p className="text-background/70 text-lg leading-relaxed mb-6">
+                We combine data engineering, applied AI, and workflow design to help organizations adopt agentic AI in their core operations. Our philosophy is simple: start with a high-impact business problem, design the workflow that solves it, and then build the data and AI layers required to make it work reliably at scale.
+              </p>
+              <p className="text-background/70 text-lg leading-relaxed mb-6">
+                Our solutions consistently deliver 6–8× ROI over a 12–18 month horizon, with 95–99% output accuracy and human-in-the-loop controls where required. All deployments are enterprise-grade, achieving 99.9% uptime on leading cloud providers including AWS, Azure, and Google Cloud, while leveraging best-in-class AI models and open-source technologies.
+              </p>
+              <p className="text-background/70 text-lg leading-relaxed">
+                ZapSight serves clients across retail, energy, manufacturing, financial services, and infrastructure—helping them move from fragmented data and manual decision-making to AI-driven, scalable operations.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {[
-                  { icon: Users, title: 'Unified Data Platform', desc: 'Seamlessly connects siloed systems into a single, trusted data foundation' },
-                  { icon: Lightbulb, title: 'AI-Driven Insights', desc: 'Transforms raw data into actionable intelligence for decision-making' },
-                  { icon: Award, title: 'Agentic Workflows', desc: 'Automates complex business processes with intelligent AI agents' },
-                  { icon: Globe, title: 'Global Presence', desc: 'Serving enterprises across US, UK, UAE, and India' },
+                  { icon: Users, title: 'Data Engineering', desc: 'Building data pipelines and transformation for reliable AI foundations' },
+                  { icon: Lightbulb, title: 'Applied AI', desc: 'ML algorithms and AI-agentic workflows tailored to your business' },
+                  { icon: Award, title: 'Workflow Design', desc: 'End-to-end operational workflows with human-in-the-loop controls' },
+                  { icon: Globe, title: 'Global Presence', desc: 'Teams across US, UK, UAE, and India with development based in India' },
                 ].map((item) => (
                   <div key={item.title} className="bg-background/[0.03] backdrop-blur-xl border border-background/10 rounded-3xl p-6 transition-all duration-300 hover:bg-background/[0.05]"
                        style={{ boxShadow: '0 0 40px hsl(var(--primary) / 0.05)' }}>
@@ -87,10 +104,20 @@ const About = () => {
               <h2 className="font-display text-3xl md:text-4xl font-bold text-center mb-16 text-background tracking-tight">
                 Our <span className="bg-gradient-to-r from-primary to-[hsl(25,95%,60%)] bg-clip-text text-transparent">Leadership</span>
               </h2>
-              <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
                 {[
-                  { name: 'Murtaza Bootwala', role: 'Co-Founder', education: 'IITB, INSEAD', experience: ['Amazon', 'PwC', 'TrueLayer'] },
-                  { name: 'Pavan Sathiraju', role: 'Co-Founder', education: 'NIT-R, INSEAD', experience: ['MuSigma', 'McKinsey'] },
+                  { 
+                    name: 'Murtaza Bootwala', 
+                    role: 'Co-Founder (Product & Technology)', 
+                    bio: 'Former product leader at Amazon and TrueLayer, with a background in AI systems and enterprise platforms.',
+                    education: 'INSEAD MBA, IIT Bombay'
+                  },
+                  { 
+                    name: 'Pavan Sathiraju', 
+                    role: 'Co-Founder (Revenue & Sales)', 
+                    bio: 'Former McKinsey consultant with deep experience in enterprise strategy, data, and AI-led transformation.',
+                    education: 'INSEAD MBA, NIT Rourkela'
+                  },
                 ].map((leader) => (
                   <div key={leader.name} className="bg-background/[0.03] backdrop-blur-xl border border-background/10 rounded-3xl p-8 text-center transition-all duration-300 hover:bg-background/[0.05]"
                        style={{ boxShadow: '0 0 40px hsl(var(--primary) / 0.05)' }}>
@@ -103,14 +130,15 @@ const About = () => {
                     </div>
                     <h3 className="font-display text-xl font-bold mb-1 text-background">{leader.name}</h3>
                     <p className="text-primary font-medium mb-2">{leader.role}</p>
-                    <p className="text-background/50 text-sm mb-4">{leader.education}</p>
-                    <div className="flex flex-wrap justify-center gap-2">
-                      {leader.experience.map((exp) => (
-                        <span key={exp} className="text-xs px-3 py-1 bg-background/5 border border-background/10 rounded-full text-background/60">{exp}</span>
-                      ))}
-                    </div>
+                    <p className="text-background/60 text-sm mb-3">{leader.bio}</p>
+                    <p className="text-background/50 text-xs">{leader.education}</p>
                   </div>
                 ))}
+              </div>
+              <div className="max-w-3xl mx-auto text-center">
+                <p className="text-background/60 text-base leading-relaxed">
+                  ZapSight brings together top-tier business talent from retail, energy, and financial services, alongside deep technical expertise in AI, data science, and data engineering. With teams across the US, UK, UAE, and India, and development based in India, we combine global perspective with execution depth. Industry veterans support our work as advisors, ensuring solutions are grounded in operational reality.
+                </p>
               </div>
             </div>
           </section>
