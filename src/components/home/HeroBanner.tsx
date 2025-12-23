@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { ArrowRight, Clock, TrendingUp, Target, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import NeuralBackground from '@/components/ui/NeuralBackground';
 
 const usps = [
   {
@@ -69,6 +70,9 @@ const HeroBanner = () => {
     <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
       {/* Unified dark background */}
       <div className="absolute inset-0 bg-gradient-to-b from-[hsl(220,20%,8%)] via-[hsl(220,20%,6%)] to-[hsl(220,20%,6%)]" />
+      
+      {/* Neural network animation */}
+      <NeuralBackground />
       
       {/* Subtle dot pattern */}
       <div className="absolute inset-0 opacity-[0.015]" style={{

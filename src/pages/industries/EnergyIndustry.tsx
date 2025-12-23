@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import NeuralBackground from '@/components/ui/NeuralBackground';
 import { Button } from '@/components/ui/button';
 import { Zap, Target, Settings, Wrench, Users, BarChart3, FileText, Activity, MessageSquare, Calendar, DollarSign, ClipboardCheck, ArrowRight, TrendingUp } from 'lucide-react';
 
@@ -55,50 +56,26 @@ const EnergyIndustry = () => {
         <meta name="description" content="Specialized AI agents for the energy sector covering project origination to operations and maintenance." />
       </Helmet>
       
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen bg-[hsl(220,20%,6%)]">
         <Navbar />
         
         {/* Hero Section */}
         <section className="relative min-h-[80vh] flex items-center overflow-hidden pt-20">
-          {/* Dark Premium Background */}
-          <div className="absolute inset-0 bg-gradient-to-b from-foreground via-[hsl(220,25%,8%)] to-[hsl(220,25%,12%)]" />
+          {/* Unified dark background */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[hsl(220,20%,8%)] via-[hsl(220,20%,6%)] to-[hsl(220,20%,6%)]" />
           
           {/* Neural Network Background */}
-          <svg className="absolute inset-0 w-full h-full opacity-20" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="energyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.6" />
-                <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0.1" />
-              </linearGradient>
-              <filter id="glow">
-                <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
-                <feMerge>
-                  <feMergeNode in="coloredBlur"/>
-                  <feMergeNode in="SourceGraphic"/>
-                </feMerge>
-              </filter>
-            </defs>
-            
-            <g className="animate-pulse" style={{ animationDuration: '4s' }}>
-              <line x1="10%" y1="30%" x2="30%" y2="50%" stroke="url(#energyGradient)" strokeWidth="1" />
-              <line x1="30%" y1="50%" x2="20%" y2="70%" stroke="url(#energyGradient)" strokeWidth="1" />
-              <line x1="70%" y1="20%" x2="85%" y2="40%" stroke="url(#energyGradient)" strokeWidth="1" />
-              <line x1="85%" y1="40%" x2="75%" y2="65%" stroke="url(#energyGradient)" strokeWidth="1" />
-            </g>
-            
-            <g filter="url(#glow)">
-              <circle cx="10%" cy="30%" r="3" fill="hsl(var(--primary))" className="animate-pulse" style={{ animationDuration: '3s' }} />
-              <circle cx="30%" cy="50%" r="4" fill="hsl(var(--primary))" className="animate-pulse" style={{ animationDuration: '4s' }} />
-              <circle cx="20%" cy="70%" r="3" fill="hsl(var(--primary))" className="animate-pulse" style={{ animationDuration: '3.5s' }} />
-              <circle cx="70%" cy="20%" r="3" fill="hsl(var(--primary))" className="animate-pulse" style={{ animationDuration: '4s' }} />
-              <circle cx="85%" cy="40%" r="4" fill="hsl(var(--primary))" className="animate-pulse" style={{ animationDuration: '3s' }} />
-              <circle cx="75%" cy="65%" r="3" fill="hsl(var(--primary))" className="animate-pulse" style={{ animationDuration: '3.5s' }} />
-            </g>
-          </svg>
+          <NeuralBackground />
           
-          {/* Gradient orbs */}
-          <div className="absolute top-1/4 -right-32 w-[500px] h-[500px] bg-primary/[0.08] rounded-full blur-[120px] animate-float" />
-          <div className="absolute bottom-1/4 -left-32 w-[400px] h-[400px] bg-primary/[0.05] rounded-full blur-[100px] animate-float" style={{ animationDelay: '2s' }} />
+          {/* Subtle dot pattern */}
+          <div className="absolute inset-0 opacity-[0.015]" style={{
+            backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--primary)) 1px, transparent 0)`,
+            backgroundSize: '48px 48px'
+          }} />
+          
+          {/* Soft ambient glows */}
+          <div className="absolute top-1/4 -right-32 w-[500px] h-[500px] bg-primary/[0.03] rounded-full blur-[180px]" />
+          <div className="absolute bottom-1/4 -left-32 w-[400px] h-[400px] bg-primary/[0.02] rounded-full blur-[150px]" />
           
           <div className="container mx-auto px-4 lg:px-8 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
