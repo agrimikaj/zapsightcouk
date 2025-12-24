@@ -1,7 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ArrowRight, Clock, TrendingUp, Target, Shield } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
+import { Clock, TrendingUp, Target, Shield, ArrowLeftRight } from 'lucide-react';
 import NeuralBackground from '@/components/ui/NeuralBackground';
 
 const usps = [
@@ -30,12 +28,12 @@ const usps = [
   {
     icon: Target,
     title: '95-99%',
-    subtitle: 'Gen-AI Accuracy',
+    subtitle: 'Solutions Embedded in Your Data',
     stats: [
-      'High precision output',
-      'Human-in-the-loop when needed',
-      'E2E workflow measurement',
-      'Agentic operations verified'
+      'Integrate into data systems',
+      'Transform data',
+      'Build advanced analytics on your data',
+      'Execute workflows'
     ],
   },
   {
@@ -100,22 +98,17 @@ const HeroBanner = () => {
               </span>
             </h1>
 
-            <div className="flex flex-col sm:flex-row gap-4 pt-2">
-              <Button variant="hero" size="xl" className="group shadow-glow" asChild>
-                <Link to="/contact">
-                  Start Your Journey
-                  <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </Button>
-              <Button variant="heroOutline" size="xl" asChild>
-                <Link to="/#products">
-                  Explore Solutions
-                </Link>
-              </Button>
+            {/* ETL ↔ AI ↔ Workflows subtitle */}
+            <div className="flex items-center justify-center sm:justify-start gap-3 py-4">
+              <span className="text-lg lg:text-xl font-semibold text-[hsl(220,10%,70%)]">ETL</span>
+              <ArrowLeftRight className="h-5 w-5 text-primary" strokeWidth={1.5} />
+              <span className="text-lg lg:text-xl font-semibold text-primary">AI</span>
+              <ArrowLeftRight className="h-5 w-5 text-primary" strokeWidth={1.5} />
+              <span className="text-lg lg:text-xl font-semibold text-[hsl(220,10%,70%)]">Workflows</span>
             </div>
 
             {/* Trust Indicators */}
-            <div className="flex items-center gap-8 pt-6">
+            <div className="flex items-center gap-8 pt-2">
               <div className="text-center">
                 <p className="font-display text-3xl font-bold text-primary">4</p>
                 <p className="text-xs text-[hsl(220,10%,45%)] font-medium tracking-wide uppercase">Global Offices</p>

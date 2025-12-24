@@ -14,6 +14,10 @@ import EnergyIndustry from "./pages/industries/EnergyIndustry";
 import ManufacturingIndustry from "./pages/industries/ManufacturingIndustry";
 import SecurityIndustry from "./pages/industries/SecurityIndustry";
 import InsuranceIndustry from "./pages/industries/InsuranceIndustry";
+import HowWeWork from "./pages/about/HowWeWork";
+import CaseStudies from "./pages/CaseStudies";
+import FAQs from "./pages/FAQs";
+import Insights from "./pages/Insights";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +32,10 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/about" element={<About />} />
+            <Route path="/about/how-we-work" element={<HowWeWork />} />
+            <Route path="/case-studies" element={<CaseStudies />} />
+            <Route path="/faqs" element={<FAQs />} />
+            <Route path="/insights" element={<Insights />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/products/:productId" element={<ProductPage />} />
             <Route path="/industries/energy" element={<EnergyIndustry />} />
