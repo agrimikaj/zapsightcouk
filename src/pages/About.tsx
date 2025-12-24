@@ -47,7 +47,10 @@ const About = () => {
           {/* Values Section - moved from homepage */}
           <ValuesSection />
 
-          {/* What We Do */}
+          {/* What You Can Expect */}
+          <EngagementMetrics />
+
+          {/* Capabilities Cards - after What You Can Expect */}
           <section className="py-16 lg:py-24 relative overflow-hidden">
             <div className="absolute inset-0 bg-[hsl(220,20%,6%)]" />
             <div className="absolute inset-0 opacity-[0.015]" style={{
@@ -79,8 +82,6 @@ const About = () => {
               </div>
             </div>
           </section>
-
-          <EngagementMetrics />
 
           {/* Leadership */}
           <section className="py-16 lg:py-24 relative overflow-hidden">
