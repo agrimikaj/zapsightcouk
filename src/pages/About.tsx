@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import NeuralBackground from '@/components/ui/NeuralBackground';
+import ValuesSection from '@/components/home/ValuesSection';
 import { Users, Award, Globe, Lightbulb } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -20,19 +21,12 @@ const About = () => {
         <main>
           {/* Hero */}
           <section className="pt-28 pb-20 lg:pt-36 lg:pb-28 relative overflow-hidden">
-            {/* Unified dark background */}
             <div className="absolute inset-0 bg-gradient-to-b from-[hsl(220,20%,8%)] via-[hsl(220,20%,6%)] to-[hsl(220,20%,6%)]" />
-            
-            {/* Neural network animation */}
             <NeuralBackground />
-            
-            {/* Subtle dot pattern */}
             <div className="absolute inset-0 opacity-[0.015]" style={{
               backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--primary)) 1px, transparent 0)`,
               backgroundSize: '48px 48px'
             }} />
-            
-            {/* Soft ambient glow */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-primary/[0.02] rounded-full blur-[200px]" />
 
             <div className="container mx-auto px-4 lg:px-8 relative z-10">
@@ -49,6 +43,9 @@ const About = () => {
               </div>
             </div>
           </section>
+
+          {/* Values Section - moved from homepage */}
+          <ValuesSection />
 
           {/* What We Do */}
           <section className="py-16 lg:py-24 relative overflow-hidden">
@@ -83,7 +80,6 @@ const About = () => {
             </div>
           </section>
 
-          {/* Engagement Metrics */}
           <EngagementMetrics />
 
           {/* Leadership */}
@@ -132,7 +128,7 @@ const About = () => {
               </div>
               <div className="max-w-3xl mx-auto text-center">
                 <p className="text-[hsl(220,10%,55%)] text-base leading-relaxed">
-                  ZapSight brings together top-tier business talent from retail, energy, and financial services, alongside deep technical expertise in AI, data science, and data engineering. With teams across the US, UK, UAE, and India, and development based in India, we combine global perspective with execution depth. Industry veterans support our work as advisors, ensuring solutions are grounded in operational reality.
+                  ZapSight brings together top-tier business talent from retail, energy, and financial services, alongside deep technical expertise in AI, data science, and data engineering. With teams across the US, UK, UAE, and India, and development based in India, we combine global perspective with execution depth.
                 </p>
               </div>
             </div>

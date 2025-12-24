@@ -4,9 +4,8 @@ import Footer from '@/components/layout/Footer';
 import HeroBanner from '@/components/home/HeroBanner';
 import SolutionGenerator from '@/components/home/SolutionGenerator';
 import ProductsDiagram from '@/components/home/ProductsDiagram';
-import DataSourcesSection from '@/components/home/DataSourcesSection';
-import ValuesSection from '@/components/home/ValuesSection';
-import CTASection from '@/components/home/CTASection';
+import IndustriesSection from '@/components/home/IndustriesSection';
+import CaseStudiesSection from '@/components/home/CaseStudiesSection';
 import ProgressiveValueOverlay from '@/components/home/ProgressiveValueOverlay';
 
 const Index = () => {
@@ -23,11 +22,10 @@ const Index = () => {
         <Navbar />
         <main>
           <HeroBanner />
-          <SolutionGenerator />
           <ProductsDiagram />
-          <DataSourcesSection />
-          <ValuesSection />
-          <CTASection />
+          <IndustriesSection />
+          <SolutionGenerator />
+          <CaseStudiesSection />
         </main>
         <Footer />
         <ProgressiveValueOverlay />

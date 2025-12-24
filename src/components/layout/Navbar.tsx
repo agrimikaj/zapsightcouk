@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronDown, Menu, X } from 'lucide-react';
+import { ChevronDown, Menu, X, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import logo from '@/assets/zapsight-logo.png';
 
@@ -17,26 +17,37 @@ const products = [
 ];
 
 const industries = [
-  { name: 'AI in Energy Sector', href: '/industries/energy', subItems: [
-    { name: 'Phase 1: Selling Projects', href: '/industries/energy#phase-1' },
-    { name: 'Phase 2: Building Projects', href: '/industries/energy#phase-2' },
-    { name: 'Phase 3: Operations & Maintenance', href: '/industries/energy#phase-3' },
-  ]},
-  { name: 'AI in Retail', href: 'https://zapsightindustriesfurniture.lovable.app', external: true },
-  { name: 'AI in Manufacturing', href: '/industries/manufacturing' },
-  { name: 'AI in Security', href: '/industries/security' },
-  { name: 'AI in Insurance', href: '/industries/insurance' },
+  { name: 'Retail', href: 'https://zapsightindustriesfurniture.lovable.app', external: true },
+  { name: 'Manufacturing', href: '/industries/manufacturing' },
+  { name: 'Construction', href: '/industries/construction' },
+  { name: 'Energy', href: '/industries/energy' },
+  { name: 'Insurance', href: '/industries/insurance' },
+  { name: 'IoT Security', href: '/industries/security' },
 ];
 
-const insights = [
-  { name: 'Blogs', href: '/insights/blogs' },
-  { name: 'Whitepapers', href: '/insights/whitepapers' },
-  { name: 'Case Studies', href: '/insights/case-studies' },
+const caseStudies = [
+  { name: 'Overview', href: '/case-studies' },
+  { name: 'VCA', href: 'https://presentation-to-polish.lovable.app', external: true, featured: true },
+  { name: 'Bosch', href: 'https://quantum-weave-desk.lovable.app', external: true, featured: true },
 ];
+
+const aboutUs = [
+  { name: 'Overview', href: '/about' },
+  { name: 'How We Work', href: '/about/how-we-work' },
+  { name: 'Insights', href: '/insights' },
+  { name: 'FAQs', href: '/faqs' },
+];
+
+interface NavItem {
+  name: string;
+  href: string;
+  external?: boolean;
+  featured?: boolean;
+}
 
 interface DropdownProps {
   label: string;
-  items: typeof products | typeof industries;
+  items: NavItem[];
   isOpen: boolean;
   onToggle: () => void;
 }
@@ -55,12 +66,20 @@ const Dropdown = ({ label, items, isOpen, onToggle }: DropdownProps) => (
         <div className="py-2">
           {items.map((item) => (
             <div key={item.name}>
-              {'external' in item && item.external ? (
+              {item.external ? (
                 <a
                   href={item.href}
-                  className="block px-5 py-3 text-sm text-[hsl(220,10%,60%)] hover:bg-primary/10 hover:text-[hsl(0,0%,94%)] transition-all duration-200"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-between px-5 py-3 text-sm text-[hsl(220,10%,60%)] hover:bg-primary/10 hover:text-[hsl(0,0%,94%)] transition-all duration-200"
                 >
-                  {item.name}
+                  <span className="flex items-center gap-2">
+                    {item.name}
+                    {item.featured && (
+                      <span className="text-[10px] font-semibold uppercase tracking-wider text-primary bg-primary/10 px-1.5 py-0.5 rounded">Featured</span>
+                    )}
+                  </span>
+                  <ExternalLink className="h-3.5 w-3.5 text-[hsl(220,10%,40%)]" strokeWidth={1.5} />
                 </a>
               ) : (
                 <Link
@@ -69,19 +88,6 @@ const Dropdown = ({ label, items, isOpen, onToggle }: DropdownProps) => (
                 >
                   {item.name}
                 </Link>
-              )}
-              {'subItems' in item && item.subItems && (
-                <div className="pl-4 ml-5 mb-2 border-l border-[hsl(220,16%,14%)]">
-                  {item.subItems.map((subItem) => (
-                    <Link
-                      key={subItem.name}
-                      to={subItem.href}
-                      className="block px-4 py-2 text-xs text-[hsl(220,10%,45%)] hover:text-primary transition-colors"
-                    >
-                      {subItem.name}
-                    </Link>
-                  ))}
-                </div>
               )}
             </div>
           ))}
@@ -124,14 +130,17 @@ const Navbar = () => {
               onToggle={() => handleDropdownToggle('industries')}
             />
             <Dropdown
-              label="Insights"
-              items={insights}
-              isOpen={openDropdown === 'insights'}
-              onToggle={() => handleDropdownToggle('insights')}
+              label="Case Studies"
+              items={caseStudies}
+              isOpen={openDropdown === 'caseStudies'}
+              onToggle={() => handleDropdownToggle('caseStudies')}
             />
-            <Link to="/about" className="py-2 px-4 text-sm font-medium text-[hsl(220,10%,60%)] hover:text-[hsl(0,0%,94%)] transition-colors duration-200">
-              About Us
-            </Link>
+            <Dropdown
+              label="About Us"
+              items={aboutUs}
+              isOpen={openDropdown === 'aboutUs'}
+              onToggle={() => handleDropdownToggle('aboutUs')}
+            />
           </div>
 
           {/* CTA Button */}
@@ -161,6 +170,7 @@ const Navbar = () => {
                     key={product.name}
                     to={product.href}
                     className="block py-2.5 px-3 text-sm text-[hsl(220,10%,60%)] hover:text-primary transition-colors"
+                    onClick={() => setMobileMenuOpen(false)}
                   >
                     {product.name}
                   </Link>
@@ -169,19 +179,24 @@ const Navbar = () => {
               <div className="px-2 pt-4 border-t border-[hsl(220,16%,10%)]">
                 <p className="text-xs font-semibold text-[hsl(220,10%,40%)] uppercase tracking-wider mb-3">Industries</p>
                 {industries.map((industry) => (
-                  'external' in industry && industry.external ? (
+                  industry.external ? (
                     <a
                       key={industry.name}
                       href={industry.href}
-                      className="block py-2.5 px-3 text-sm text-[hsl(220,10%,60%)] hover:text-primary transition-colors"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-between py-2.5 px-3 text-sm text-[hsl(220,10%,60%)] hover:text-primary transition-colors"
+                      onClick={() => setMobileMenuOpen(false)}
                     >
                       {industry.name}
+                      <ExternalLink className="h-3.5 w-3.5" strokeWidth={1.5} />
                     </a>
                   ) : (
                     <Link
                       key={industry.name}
                       to={industry.href}
                       className="block py-2.5 px-3 text-sm text-[hsl(220,10%,60%)] hover:text-primary transition-colors"
+                      onClick={() => setMobileMenuOpen(false)}
                     >
                       {industry.name}
                     </Link>
@@ -189,23 +204,53 @@ const Navbar = () => {
                 ))}
               </div>
               <div className="px-2 pt-4 border-t border-[hsl(220,16%,10%)]">
-                <p className="text-xs font-semibold text-[hsl(220,10%,40%)] uppercase tracking-wider mb-3">Insights</p>
-                {insights.map((item) => (
+                <p className="text-xs font-semibold text-[hsl(220,10%,40%)] uppercase tracking-wider mb-3">Case Studies</p>
+                {caseStudies.map((item) => (
+                  item.external ? (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-between py-2.5 px-3 text-sm text-[hsl(220,10%,60%)] hover:text-primary transition-colors"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      <span className="flex items-center gap-2">
+                        {item.name}
+                        {item.featured && (
+                          <span className="text-[10px] font-semibold uppercase tracking-wider text-primary bg-primary/10 px-1.5 py-0.5 rounded">Featured</span>
+                        )}
+                      </span>
+                      <ExternalLink className="h-3.5 w-3.5" strokeWidth={1.5} />
+                    </a>
+                  ) : (
+                    <Link
+                      key={item.name}
+                      to={item.href}
+                      className="block py-2.5 px-3 text-sm text-[hsl(220,10%,60%)] hover:text-primary transition-colors"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {item.name}
+                    </Link>
+                  )
+                ))}
+              </div>
+              <div className="px-2 pt-4 border-t border-[hsl(220,16%,10%)]">
+                <p className="text-xs font-semibold text-[hsl(220,10%,40%)] uppercase tracking-wider mb-3">About Us</p>
+                {aboutUs.map((item) => (
                   <Link
                     key={item.name}
                     to={item.href}
                     className="block py-2.5 px-3 text-sm text-[hsl(220,10%,60%)] hover:text-primary transition-colors"
+                    onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.name}
                   </Link>
                 ))}
               </div>
-              <div className="pt-4 px-2 space-y-2 border-t border-[hsl(220,16%,10%)]">
-                <Link to="/about" className="block py-2.5 px-3 text-sm font-medium text-[hsl(0,0%,90%)]">About Us</Link>
-              </div>
               <div className="pt-4 px-2">
                 <Button variant="hero" className="w-full shadow-glow" asChild>
-                  <Link to="/contact">Contact Us</Link>
+                  <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>Contact Us</Link>
                 </Button>
               </div>
             </div>

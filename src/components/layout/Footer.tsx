@@ -1,14 +1,15 @@
 import { Link } from 'react-router-dom';
-import { Linkedin, Twitter, Mail, MapPin } from 'lucide-react';
+import { Linkedin, Twitter, Mail, MapPin, ArrowRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import logo from '@/assets/zapsight-logo.png';
 
 const Footer = () => {
   return (
     <footer className="bg-[hsl(220,20%,5%)] text-[hsl(0,0%,94%)] border-t border-[hsl(220,16%,10%)]">
       <div className="container mx-auto px-4 lg:px-8 py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-10">
           {/* Brand */}
-          <div className="space-y-5">
+          <div className="space-y-5 lg:col-span-1">
             <Link to="/" className="flex items-center gap-2.5">
               <img src={logo} alt="ZapSight AI Agents Platform - Enterprise AI Solutions Logo" className="h-10" />
               <span className="font-display font-bold text-xl text-[hsl(0,0%,94%)] tracking-tight">ZapSight</span>
@@ -57,10 +58,10 @@ const Footer = () => {
           <div>
             <h4 className="font-display font-semibold text-lg mb-5 tracking-tight text-[hsl(0,0%,90%)]">Industries</h4>
             <ul className="space-y-3">
-              {['Energy', 'Retail', 'Manufacturing', 'Security', 'Insurance'].map((industry) => (
+              {['Energy', 'Retail', 'Manufacturing', 'Construction', 'Insurance', 'IoT Security'].map((industry) => (
                 <li key={industry}>
-                  <Link to={`/industries/${industry.toLowerCase()}`} className="text-[hsl(220,10%,50%)] hover:text-primary text-sm transition-colors duration-200">
-                    AI in {industry}
+                  <Link to={`/industries/${industry.toLowerCase().replace(' ', '-')}`} className="text-[hsl(220,10%,50%)] hover:text-primary text-sm transition-colors duration-200">
+                    {industry}
                   </Link>
                 </li>
               ))}
@@ -78,6 +79,22 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
+          </div>
+
+          {/* CTA Buttons */}
+          <div className="space-y-4">
+            <h4 className="font-display font-semibold text-lg mb-5 tracking-tight text-[hsl(0,0%,90%)]">Get Started</h4>
+            <Button variant="hero" size="lg" className="w-full shadow-glow" asChild>
+              <Link to="/contact">
+                Discovery Call
+                <ArrowRight className="h-4 w-4 ml-2" />
+              </Link>
+            </Button>
+            <Button variant="heroOutline" size="lg" className="w-full" asChild>
+              <Link to="/about/how-we-work">
+                How We Work
+              </Link>
+            </Button>
           </div>
         </div>
 
