@@ -4,8 +4,6 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
 const industries = [
-  'Energy',
-  'Retail', 
   'Manufacturing',
   'Security',
   'Insurance',
@@ -14,8 +12,6 @@ const industries = [
 ];
 
 const departments = [
-  'Sales',
-  'Operations',
   'Marketing',
   'Finance',
   'HR',
@@ -29,11 +25,47 @@ const problemStatuses = [
   'I know I need AI Agents',
 ];
 
-const solutionTemplates: Record<string, string> = {
-  "Energy-Operations-I know I need AI Agents": "Based on your profile, we recommend implementing our **Monitoring Agent** combined with **Aisen** sensor integration. This solution can automate equipment health monitoring, predict maintenance needs, and optimize operational efficiency. Our agents typically achieve 20-30% reduction in unplanned downtime and 15% improvement in energy efficiency within the first 6 months.",
-  "Retail-Sales-What more can be done": "For retail sales optimization, our **Execution Agent** paired with **DEasy** analytics platform can transform your approach. We can implement AI-driven inventory optimization, personalized customer recommendations, and automated reorder triggers. Clients typically see 6-8X ROI through improved conversion rates and reduced stockouts.",
-  "Manufacturing-Supply Chain-Reasons for inefficiency unidentified": "Let's start with a discovery phase using our **Research Agent**. We'll analyze your current supply chain data to identify bottlenecks, predict demand patterns, and optimize vendor relationships. Our **Unifyer** platform will connect your siloed systems into a unified data foundation, revealing opportunities you didn't know existed.",
-  "default": "Based on your selection, we recommend starting with a discovery workshop. Our team will analyze your specific context and design a custom AI agent solution. Typical engagements include data pipeline setup, ML model development, and agentic workflow automation—all delivered in 4-6 weeks with measurable ROI targets."
+// Solution database
+const solutionDatabase: Record<string, Record<string, Record<string, string>>> = {
+  Manufacturing: {
+    Marketing: {
+      "Reasons for inefficiency unidentified": "Unify campaign, lead, and sales data into a structured database. Apply AI to surface funnel gaps and attribution issues. Enable clear dashboards tied to revenue outcomes. Based on your selection, we recommend starting with a discovery workshop.",
+      "What more can be done": "Standardize CRM and ERP-linked marketing datasets. Use AI for demand forecasting and spend optimization. Automate insights across products and regions. Based on your selection, we recommend starting with a discovery workshop.",
+      "I know I need AI Agents": "Deploy AI agents on governed marketing and sales data. Agents continuously optimize campaigns using real-time signals. Decisions remain explainable via structured schemas. Based on your selection, we recommend starting with a discovery workshop.",
+    },
+    Finance: {
+      "Reasons for inefficiency unidentified": "Centralize cost, revenue, and plant data into a financial warehouse. Apply AI to detect anomalies and variance drivers. Enable consistent, structured reporting. Based on your selection, we recommend starting with a discovery workshop.",
+      "What more can be done": "Normalize financial schemas and transaction data. Use AI for forecasting and cost optimization. Automate reconciliations and controls. Based on your selection, we recommend starting with a discovery workshop.",
+      "I know I need AI Agents": "Introduce AI agents to monitor financial KPIs continuously. Agents act on structured ledgers and approval workflows. Auditability is maintained through clean data models. Based on your selection, we recommend starting with a discovery workshop.",
+    },
+    HR: {
+      "Reasons for inefficiency unidentified": "Consolidate employee, role, and shift data into a unified HR database. Use AI to identify attrition and productivity drivers. Align workforce data with operations. Based on your selection, we recommend starting with a discovery workshop.",
+      "What more can be done": "Standardize skills, roles, and performance data. Apply AI for workforce planning and hiring forecasts. Automate HR insights across locations. Based on your selection, we recommend starting with a discovery workshop.",
+      "I know I need AI Agents": "Deploy AI agents for scheduling and talent matching. Agents rely on clean, governed HR datasets. Decisions remain transparent and explainable. Based on your selection, we recommend starting with a discovery workshop.",
+    },
+    "Supply Chain": {
+      "Reasons for inefficiency unidentified": "Integrate supplier, inventory, and logistics data into one database. Use AI to identify bottlenecks and mismatches. Enable end‑to‑end visibility. Based on your selection, we recommend starting with a discovery workshop.",
+      "What more can be done": "Normalize SKU, vendor, and location master data. Apply AI for demand sensing and inventory optimization. Automate alerts and planning. Based on your selection, we recommend starting with a discovery workshop.",
+      "I know I need AI Agents": "Deploy AI agents for replenishment and supplier coordination. Agents act on real‑time structured supply data. Governance ensures reliable automation. Based on your selection, we recommend starting with a discovery workshop.",
+    },
+    "Customer Service": {
+      "Reasons for inefficiency unidentified": "Consolidate tickets, orders, and product data into a single system. Use AI to detect recurring issues and delays. Enable structured case analysis. Based on your selection, we recommend starting with a discovery workshop.",
+      "What more can be done": "Standardize issue categories and resolution codes. Apply AI for root‑cause analysis and response optimization. Automate SLA tracking. Based on your selection, we recommend starting with a discovery workshop.",
+      "I know I need AI Agents": "Introduce AI agents to triage and resolve service requests. Agents operate on clean customer and product data. Accuracy is ensured via governed schemas. Based on your selection, we recommend starting with a discovery workshop.",
+    },
+  },
+};
+
+// Default solution for Security, Insurance, Finance, Healthcare industries
+const defaultIndustrySolution = "Centralize domain‑specific operational data into secure, structured databases. Apply AI to detect inefficiencies, risks, and optimization opportunities. Introduce AI agents only on trusted, governed data. Based on your selection, we recommend starting with a discovery workshop.";
+
+const getSolution = (industry: string, department: string, status: string): string => {
+  // Check if we have a specific solution for Manufacturing
+  if (industry === 'Manufacturing' && solutionDatabase.Manufacturing[department]?.[status]) {
+    return solutionDatabase.Manufacturing[department][status];
+  }
+  // For Security, Insurance, Finance, Healthcare - return default solution
+  return defaultIndustrySolution;
 };
 
 interface SelectProps {
@@ -92,8 +124,7 @@ const SolutionGenerator = () => {
     
     setIsGenerating(true);
     setTimeout(() => {
-      const key = `${industry}-${department}-${status}`;
-      setSolution(solutionTemplates[key] || solutionTemplates['default']);
+      setSolution(getSolution(industry, department, status));
       setIsGenerating(false);
     }, 1500);
   };
