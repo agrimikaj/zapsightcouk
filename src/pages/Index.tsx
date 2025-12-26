@@ -4,6 +4,7 @@ import Footer from '@/components/layout/Footer';
 import HeroBanner from '@/components/home/HeroBanner';
 import SolutionGenerator from '@/components/home/SolutionGenerator';
 import ProductsDiagram from '@/components/home/ProductsDiagram';
+import ValuePropositionSection from '@/components/home/ValuePropositionSection';
 import IndustriesSection from '@/components/home/IndustriesSection';
 import CaseStudiesSection from '@/components/home/CaseStudiesSection';
 import ProgressiveValueOverlay from '@/components/home/ProgressiveValueOverlay';
@@ -22,9 +23,10 @@ const Index = () => {
         <Navbar />
         <main>
           <HeroBanner />
-          <ProductsDiagram />
-          <IndustriesSection />
           <SolutionGenerator />
+          <ProductsDiagram />
+          <ValuePropositionSection />
+          <IndustriesSection />
           <CaseStudiesSection />
         </main>
         <Footer />
