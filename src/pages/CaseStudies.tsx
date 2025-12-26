@@ -12,7 +12,7 @@ interface CaseStudy {
   industry: string;
   description: string;
   results: string[];
-  href: string;
+  href?: string;
   external?: boolean;
   featured?: boolean;
 }
@@ -44,7 +44,6 @@ const caseStudies: CaseStudy[] = [
     industry: 'Retail',
     description: 'Integrated data from 5 siloed systems (CRM, PoS, Logistics, Finance) into a single AWS-based infrastructure with business context layering for retail operations.',
     results: ['$440K savings', '$1M revenue increase', '5X ROI achieved', 'Self-service reporting'],
-    href: '/case-studies/furniture-retailer',
     featured: true,
   },
   {
@@ -53,7 +52,6 @@ const caseStudies: CaseStudy[] = [
     industry: 'Healthcare',
     description: 'Optimized pricing levers for an allergy brand to reduce reliance on unsustainable promotions using econometric models and what-if simulators.',
     results: ['Improved category profitability', 'Price elasticity modeling', 'ROI forecasting simulator'],
-    href: '/case-studies/pharma-pricing',
   },
   {
     id: 'tire-mroi',
@@ -61,7 +59,6 @@ const caseStudies: CaseStudy[] = [
     industry: 'Manufacturing',
     description: 'Determined optimal allocation of marketing resources across national and local promotional programs to maximize profitability.',
     results: ['Optimized marketing spend', 'ROI measurement per promotion', 'Revenue & profit impact analysis'],
-    href: '/case-studies/tire-mroi',
   },
   {
     id: 'software-churn',
@@ -69,7 +66,6 @@ const caseStudies: CaseStudy[] = [
     industry: 'Technology',
     description: 'Built a churn probability model for advertisers to enable proactive retention activities and maximize revenue from text advertising.',
     results: ['Additional churn captured', 'Monthly high-risk advertiser list', 'Proactive intervention steps'],
-    href: '/case-studies/software-churn',
   },
   {
     id: 'solar-data',
@@ -77,7 +73,6 @@ const caseStudies: CaseStudy[] = [
     industry: 'Energy',
     description: 'Streamlined data across 5 systems (100+ tables, 10K+ columns) by building semantic layer for quick, on-the-go business insights.',
     results: ['2X ROI (1st year)', '4X ROI (2nd year)', '3-day reduction in turnaround'],
-    href: '/case-studies/solar-data',
   },
   {
     id: 'agri-quality',
@@ -85,7 +80,6 @@ const caseStudies: CaseStudy[] = [
     industry: 'Manufacturing',
     description: 'Optimized SAP-based data setup to automate 100+ reports and deployed quality agent to evaluate seed-lots and automate shipment-lots.',
     results: ['50% productivity improvement', '2X-5X ROI achieved', '48-hour turnaround reduction'],
-    href: '/case-studies/agri-quality',
   },
 ];
 
@@ -209,35 +203,36 @@ const CaseStudies = () => {
               
               <div className="grid sm:grid-cols-2 gap-6">
                 {caseStudies.filter(s => !s.featured).map((study) => (
-                  <Link
+                  <div
                     key={study.id}
-                    to={study.href}
-                    className="group block"
+                    className="block"
                   >
-                    <div className="relative bg-[hsl(220,20%,8%)] border border-[hsl(220,16%,12%)] rounded-2xl p-6 transition-all duration-300 hover:border-primary/25 h-full"
+                    <div className="relative bg-[hsl(220,20%,8%)] border border-[hsl(220,16%,12%)] rounded-2xl p-6 h-full"
                          style={{ boxShadow: '0 0 40px hsl(var(--primary) / 0.02)' }}>
-                      <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
-                      
                       <div className="relative">
                         <span className="text-xs font-semibold uppercase tracking-wider text-primary bg-primary/10 px-2 py-1 rounded">
                           {study.industry}
                         </span>
                         
-                        <h3 className="font-display font-bold text-lg text-[hsl(0,0%,94%)] tracking-tight mt-4 mb-3 group-hover:text-primary transition-colors duration-200">
+                        <h3 className="font-display font-bold text-lg text-[hsl(0,0%,94%)] tracking-tight mt-4 mb-3">
                           {study.title}
                         </h3>
                         
-                        <p className="text-[hsl(220,10%,50%)] text-sm leading-relaxed">
+                        <p className="text-[hsl(220,10%,50%)] text-sm leading-relaxed mb-4">
                           {study.description}
                         </p>
 
-                        <div className="flex items-center gap-2 text-primary text-sm font-medium mt-4 group-hover:gap-3 transition-all duration-200">
-                          <span>Read More</span>
-                          <ArrowRight className="h-4 w-4" strokeWidth={1.5} />
+                        <div className="space-y-1.5">
+                          {study.results.map((result) => (
+                            <div key={result} className="flex items-center gap-2 text-sm text-[hsl(220,10%,60%)]">
+                              <span className="w-1.5 h-1.5 bg-primary rounded-full flex-shrink-0" />
+                              {result}
+                            </div>
+                          ))}
                         </div>
                       </div>
                     </div>
-                  </Link>
+                  </div>
                 ))}
               </div>
             </div>

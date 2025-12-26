@@ -8,7 +8,7 @@ interface CaseStudy {
   title: string;
   industry: string;
   description: string;
-  href: string;
+  href?: string;
   external?: boolean;
   featured?: boolean;
 }
@@ -37,7 +37,6 @@ const caseStudies: CaseStudy[] = [
     title: 'Data Integration & AI Agents',
     industry: 'Retail',
     description: 'Integrated data from 5 siloed systems into a single infrastructure with business context layering. Achieved $440K savings and $1M revenue increase with 5X ROI.',
-    href: '/case-studies/furniture-retailer',
     featured: true,
   },
   {
@@ -45,35 +44,30 @@ const caseStudies: CaseStudy[] = [
     title: 'Pricing Optimization',
     industry: 'Healthcare',
     description: 'Optimized pricing levers for an allergy brand by building econometric models and a "what-if" simulator to forecast ROI of pricing strategies.',
-    href: '/case-studies/pharma-pricing',
   },
   {
     id: 'tire-mroi',
     title: 'Marketing ROI Optimization',
     industry: 'Manufacturing',
     description: 'Determined optimal allocation of marketing resources across promotional programs to maximize profitability using sales and traffic data analysis.',
-    href: '/case-studies/tire-mroi',
   },
   {
     id: 'software-churn',
     title: 'Churn Prediction Model',
     industry: 'Technology',
     description: 'Built a churn probability model to identify high-risk advertisers and enable proactive retention activities with monthly intervention recommendations.',
-    href: '/case-studies/software-churn',
   },
   {
     id: 'solar-data',
     title: 'Data Access Agent',
     industry: 'Energy',
     description: 'Streamlined data across 5 systems (100+ tables, 10K+ columns) with semantic layer for quick on-the-go business insights. Achieved 2X-4X ROI.',
-    href: '/case-studies/solar-data',
   },
   {
     id: 'agri-quality',
     title: 'Reporting & Quality Agent',
     industry: 'Manufacturing',
     description: 'Optimized SAP-based data setup to automate 100+ reports and deployed quality agent for seed-lot evaluation. Improved analyst productivity by 50%.',
-    href: '/case-studies/agri-quality',
   },
 ];
 
@@ -164,13 +158,17 @@ const CaseStudiesSection = () => {
           className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
-          {caseStudies.map((study) => {
+        {caseStudies.map((study) => {
+            const isClickable = study.external && study.href;
+            
             const CardContent = (
-              <div className="group flex-shrink-0 w-[340px] md:w-[380px] snap-start">
-                <div className="relative bg-[hsl(220,20%,8%)] border border-[hsl(220,16%,12%)] rounded-2xl p-6 lg:p-8 transition-all duration-300 hover:border-primary/25 h-full"
+              <div className={`flex-shrink-0 w-[340px] md:w-[380px] snap-start ${isClickable ? 'group' : ''}`}>
+                <div className={`relative bg-[hsl(220,20%,8%)] border border-[hsl(220,16%,12%)] rounded-2xl p-6 lg:p-8 transition-all duration-300 h-full ${isClickable ? 'hover:border-primary/25' : ''}`}
                      style={{ boxShadow: '0 0 40px hsl(var(--primary) / 0.02)' }}>
                   {/* Inner glow overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
+                  {isClickable && (
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
+                  )}
                   
                   <div className="relative h-full flex flex-col">
                     {/* Badge */}
@@ -186,7 +184,7 @@ const CaseStudiesSection = () => {
                     </div>
 
                     {/* Title */}
-                    <h3 className="font-display font-bold text-xl text-[hsl(0,0%,94%)] tracking-tight mb-3 group-hover:text-primary transition-colors duration-200">
+                    <h3 className={`font-display font-bold text-xl text-[hsl(0,0%,94%)] tracking-tight mb-3 ${isClickable ? 'group-hover:text-primary transition-colors duration-200' : ''}`}>
                       {study.title}
                     </h3>
                     
@@ -195,21 +193,19 @@ const CaseStudiesSection = () => {
                       {study.description}
                     </p>
 
-                    {/* CTA */}
-                    <div className="flex items-center gap-2 text-primary text-sm font-medium group-hover:gap-3 transition-all duration-200">
-                      <span>Read Case Study</span>
-                      {study.external ? (
+                    {/* CTA - only show if clickable */}
+                    {isClickable && (
+                      <div className="flex items-center gap-2 text-primary text-sm font-medium group-hover:gap-3 transition-all duration-200">
+                        <span>Read Case Study</span>
                         <ExternalLink className="h-4 w-4" strokeWidth={1.5} />
-                      ) : (
-                        <ArrowRight className="h-4 w-4" strokeWidth={1.5} />
-                      )}
-                    </div>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
             );
 
-            return study.external ? (
+            return isClickable ? (
               <a
                 key={study.id}
                 href={study.href}
@@ -219,9 +215,9 @@ const CaseStudiesSection = () => {
                 {CardContent}
               </a>
             ) : (
-              <Link key={study.id} to={study.href}>
+              <div key={study.id}>
                 {CardContent}
-              </Link>
+              </div>
             );
           })}
         </div>

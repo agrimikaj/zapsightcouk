@@ -18,12 +18,12 @@ const Footer = () => {
               Transforming Data Into Intelligent, ROI-Driven AI Agents
             </p>
             <div className="flex items-center gap-3 pt-2">
-              <a href="#" className="text-[hsl(220,10%,40%)] hover:text-primary p-2 hover:bg-[hsl(220,20%,8%)] rounded-xl transition-colors duration-200">
+              <span className="text-[hsl(220,10%,40%)] p-2">
                 <Linkedin className="h-5 w-5" strokeWidth={1.5} />
-              </a>
-              <a href="#" className="text-[hsl(220,10%,40%)] hover:text-primary p-2 hover:bg-[hsl(220,20%,8%)] rounded-xl transition-colors duration-200">
+              </span>
+              <span className="text-[hsl(220,10%,40%)] p-2">
                 <Twitter className="h-5 w-5" strokeWidth={1.5} />
-              </a>
+              </span>
               <a href="mailto:contact@zapsight.com" className="text-[hsl(220,10%,40%)] hover:text-primary p-2 hover:bg-[hsl(220,20%,8%)] rounded-xl transition-colors duration-200">
                 <Mail className="h-5 w-5" strokeWidth={1.5} />
               </a>
@@ -60,13 +60,23 @@ const Footer = () => {
           <div>
             <h4 className="font-display font-semibold text-lg mb-5 tracking-tight text-[hsl(0,0%,90%)]">Industries</h4>
             <ul className="space-y-3">
-              {['Energy', 'Retail', 'Manufacturing', 'Construction', 'Insurance', 'IoT Security'].map((industry) => (
+              <li>
+                <a href="https://zapsightindustriesfurniture.lovable.app" target="_blank" rel="noopener noreferrer" className="text-[hsl(220,10%,50%)] hover:text-primary text-sm transition-colors duration-200">
+                  Retail
+                </a>
+              </li>
+              {['Energy', 'Manufacturing', 'Construction', 'Insurance'].map((industry) => (
                 <li key={industry}>
                   <Link to={`/industries/${industry.toLowerCase().replace(' ', '-')}`} className="text-[hsl(220,10%,50%)] hover:text-primary text-sm transition-colors duration-200">
                     {industry}
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link to="/industries/security" className="text-[hsl(220,10%,50%)] hover:text-primary text-sm transition-colors duration-200">
+                  IoT Security
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -116,12 +126,12 @@ const Footer = () => {
               © {new Date().getFullYear()} ZapSight. All rights reserved.
             </p>
             <div className="flex gap-8">
-              <Link to="/privacy" className="text-[hsl(220,10%,40%)] hover:text-[hsl(220,10%,70%)] text-sm transition-colors duration-200">
+              <span className="text-[hsl(220,10%,40%)] text-sm">
                 Privacy Policy
-              </Link>
-              <Link to="/terms" className="text-[hsl(220,10%,40%)] hover:text-[hsl(220,10%,70%)] text-sm transition-colors duration-200">
+              </span>
+              <span className="text-[hsl(220,10%,40%)] text-sm">
                 Terms of Service
-              </Link>
+              </span>
             </div>
           </div>
         </div>
