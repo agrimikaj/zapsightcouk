@@ -134,6 +134,7 @@ export const products: Product[] = [
       'Infrastructure site protection',
       'Nationwide security operations',
     ],
+    demoUrl: 'https://v0.app/chat/alerts-screen-security-staff-2-AX5mn0ofYNP',
     technicalSpecs: {
       latency: '<100ms end-to-end',
       scalability: '10,000+ alerts/hour',
