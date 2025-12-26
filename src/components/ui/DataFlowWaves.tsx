@@ -5,7 +5,7 @@ interface DataFlowWavesProps {
 
 const DataFlowWaves = ({ position = 'both', className = '' }: DataFlowWavesProps) => {
   return (
-    <div className={`absolute inset-0 overflow-hidden pointer-events-none ${className}`}>
+    <div className={`absolute inset-0 overflow-hidden pointer-events-none z-0 ${className}`}>
       {/* Top waves */}
       {(position === 'top' || position === 'both') && (
         <svg 
