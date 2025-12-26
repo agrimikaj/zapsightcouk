@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { ArrowLeft, ArrowRight, Check, Zap, ExternalLink } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Check, Zap, ExternalLink, Gauge, Server, Shield, Users, Database, Cloud } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
@@ -230,6 +230,84 @@ const ProductPage = () => {
               </div>
             </div>
           </section>
+
+          {/* Technical Specifications - only show if product has specs */}
+          {product.technicalSpecs && (
+            <section className="py-16 lg:py-24 relative overflow-hidden">
+              <div className="absolute inset-0 bg-[hsl(220,20%,7%)]" />
+              <div className="absolute inset-0 opacity-[0.015]" style={{
+                backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--primary)) 1px, transparent 0)`,
+                backgroundSize: '48px 48px'
+              }} />
+              <div className="absolute top-1/4 right-0 w-[400px] h-[400px] bg-primary/[0.02] rounded-full blur-[150px]" />
+              
+              <div className="container mx-auto px-4 lg:px-8 relative z-10">
+                <div className="text-center mb-12">
+                  <p className="text-primary font-medium mb-3 tracking-wide uppercase text-sm">Technical Specifications</p>
+                  <h2 className="font-display text-2xl lg:text-3xl font-bold tracking-tight text-[hsl(0,0%,97%)]">
+                    Built for Mission-Critical Operations
+                  </h2>
+                </div>
+                
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                  {product.technicalSpecs.latency && (
+                    <div className="bg-[hsl(220,20%,8%)] border border-[hsl(220,16%,12%)] rounded-2xl p-6 text-center hover:border-primary/20 transition-colors duration-300">
+                      <div className="w-12 h-12 rounded-xl bg-primary/15 border border-primary/20 flex items-center justify-center mx-auto mb-4">
+                        <Gauge className="h-6 w-6 text-primary" strokeWidth={1.5} />
+                      </div>
+                      <p className="text-primary font-display font-bold text-xl mb-1">{product.technicalSpecs.latency}</p>
+                      <p className="text-[hsl(220,10%,50%)] text-sm">End-to-End Latency</p>
+                    </div>
+                  )}
+                  {product.technicalSpecs.scalability && (
+                    <div className="bg-[hsl(220,20%,8%)] border border-[hsl(220,16%,12%)] rounded-2xl p-6 text-center hover:border-primary/20 transition-colors duration-300">
+                      <div className="w-12 h-12 rounded-xl bg-primary/15 border border-primary/20 flex items-center justify-center mx-auto mb-4">
+                        <Server className="h-6 w-6 text-primary" strokeWidth={1.5} />
+                      </div>
+                      <p className="text-primary font-display font-bold text-xl mb-1">{product.technicalSpecs.scalability}</p>
+                      <p className="text-[hsl(220,10%,50%)] text-sm">Alert Processing</p>
+                    </div>
+                  )}
+                  {product.technicalSpecs.reliability && (
+                    <div className="bg-[hsl(220,20%,8%)] border border-[hsl(220,16%,12%)] rounded-2xl p-6 text-center hover:border-primary/20 transition-colors duration-300">
+                      <div className="w-12 h-12 rounded-xl bg-primary/15 border border-primary/20 flex items-center justify-center mx-auto mb-4">
+                        <Shield className="h-6 w-6 text-primary" strokeWidth={1.5} />
+                      </div>
+                      <p className="text-primary font-display font-bold text-xl mb-1">{product.technicalSpecs.reliability}</p>
+                      <p className="text-[hsl(220,10%,50%)] text-sm">Uptime SLA</p>
+                    </div>
+                  )}
+                  {product.technicalSpecs.concurrency && (
+                    <div className="bg-[hsl(220,20%,8%)] border border-[hsl(220,16%,12%)] rounded-2xl p-6 text-center hover:border-primary/20 transition-colors duration-300">
+                      <div className="w-12 h-12 rounded-xl bg-primary/15 border border-primary/20 flex items-center justify-center mx-auto mb-4">
+                        <Users className="h-6 w-6 text-primary" strokeWidth={1.5} />
+                      </div>
+                      <p className="text-primary font-display font-bold text-xl mb-1">{product.technicalSpecs.concurrency}</p>
+                      <p className="text-[hsl(220,10%,50%)] text-sm">Concurrent Users</p>
+                    </div>
+                  )}
+                  {product.technicalSpecs.dataRetention && (
+                    <div className="bg-[hsl(220,20%,8%)] border border-[hsl(220,16%,12%)] rounded-2xl p-6 text-center hover:border-primary/20 transition-colors duration-300">
+                      <div className="w-12 h-12 rounded-xl bg-primary/15 border border-primary/20 flex items-center justify-center mx-auto mb-4">
+                        <Database className="h-6 w-6 text-primary" strokeWidth={1.5} />
+                      </div>
+                      <p className="text-primary font-display font-bold text-xl mb-1">{product.technicalSpecs.dataRetention}</p>
+                      <p className="text-[hsl(220,10%,50%)] text-sm">Data Retention</p>
+                    </div>
+                  )}
+                  {product.technicalSpecs.deployment && (
+                    <div className="bg-[hsl(220,20%,8%)] border border-[hsl(220,16%,12%)] rounded-2xl p-6 text-center hover:border-primary/20 transition-colors duration-300">
+                      <div className="w-12 h-12 rounded-xl bg-primary/15 border border-primary/20 flex items-center justify-center mx-auto mb-4">
+                        <Cloud className="h-6 w-6 text-primary" strokeWidth={1.5} />
+                      </div>
+                      <p className="text-primary font-display font-bold text-xl mb-1">Flexible</p>
+                      <p className="text-[hsl(220,10%,50%)] text-sm">{product.technicalSpecs.deployment}</p>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </section>
+          )}
 
           {/* CTA */}
           <section className="py-16 lg:py-24 relative overflow-hidden">

@@ -14,6 +14,14 @@ export interface Product {
   benefits: string[];
   useCases: string[];
   demoUrl?: string;
+  technicalSpecs?: {
+    latency?: string;
+    scalability?: string;
+    reliability?: string;
+    concurrency?: string;
+    dataRetention?: string;
+    deployment?: string;
+  };
 }
 
 export const products: Product[] = [
@@ -86,35 +94,54 @@ export const products: Product[] = [
   {
     id: 'aisac',
     name: 'AISAC',
-    tagline: 'Sensor Intelligence',
-    description: 'Integrates with industry leading sensor hardware ecosystem',
-    outcome: 'Real-world signals → decisions',
+    tagline: 'AI-led Sensors & Control',
+    description: 'Intelligence and orchestration layer for large-scale security operations',
+    outcome: 'Raw alerts → Prioritized, actionable decisions',
     icon: Radio,
-    heroDescription: 'Our product integrates with industry leading sensor hardware ecosystem to provide AI-generated insights and actions. The applications range from Security monitoring, machine maintenance, to industrial automation.',
+    heroDescription: 'AISAC is an AI-led Sensors and Control platform designed to modernize large-scale security operations. It acts as an intelligence and orchestration layer on top of existing cameras, sensors, alarms, and monitoring systems—transforming raw alerts into prioritized, contextual, and actionable security decisions. Move from reactive alert handling to proactive, outcome-driven security operations across geographically distributed estates like banks, ATMs, retail outlets, factories, and infrastructure sites.',
     keyBenefits: [
-      'Put contextual feedback on sensor alerts to help drive better actions',
-      'Assign tickets or escalate with relevant stakeholders or systems based on context',
-      'Track ticket resolutions and impact to the performance',
-      'Monitor sensor health to drive maintenance and ongoing monitoring',
+      'Real-time alert prioritization correlating motion, tamper, vibration, video, temperature, and fire signals',
+      'Video & sensor fusion for visual confirmation and false positive elimination',
+      'AI summarization with contextual alerts explaining what happened, why it matters, and historical patterns',
+      'Smart alert assignment based on risk level, guard availability, and location proximity',
+      'Automated action triggers (auto-alarm, lockdown, notifications) with human oversight',
+      'Predictive sensor health monitoring to prevent downtime and blind spots',
+      'Operational dashboards with threat scores, response times, and guard performance metrics',
     ],
     features: [
-      'IoT sensor integration',
-      'Real-time monitoring',
-      'Predictive maintenance',
-      'Automated alerting & ticketing',
+      'Real-time alert prioritization & risk ranking',
+      'Video analytics & sensor data fusion',
+      'AI-generated contextual summaries',
+      'Smart alert assignment & workload balancing',
+      'Automated actions with human-in-the-loop controls',
+      'Predictive sensor health monitoring',
+      'Custom workflows & escalation rules',
+      'IDS panel controls (arm/disarm, real-time access)',
+      'Mobile alerts & branded interfaces',
     ],
     benefits: [
-      'Prevent equipment failures',
-      'Optimize asset performance',
-      'Reduce downtime',
-      'Enable predictive operations',
+      'Eliminate alert fatigue with intelligent prioritization',
+      'Reduce false positives through cross-validation',
+      'Enable faster, more accurate security decisions',
+      'Balance guard workloads automatically',
+      'Prevent sensor failures before downtime',
+      'Complete visibility into security posture and efficiency',
     ],
     useCases: [
-      'Security monitoring',
-      'Machine maintenance',
-      'Industrial automation',
-      'Environmental monitoring',
+      'Bank & ATM security networks',
+      'Retail outlet monitoring',
+      'Factory & manufacturing security',
+      'Infrastructure site protection',
+      'Nationwide security operations',
     ],
+    technicalSpecs: {
+      latency: '<100ms end-to-end',
+      scalability: '10,000+ alerts/hour',
+      reliability: '99.9% uptime SLA',
+      concurrency: '100+ simultaneous users',
+      dataRetention: 'Unlimited history',
+      deployment: 'On-prem, private cloud, or bank cloud',
+    },
   },
   {
     id: 'aivi',
