@@ -26,29 +26,37 @@ const Index = () => {
           <HeroBanner />
           
           {/* Data flow waves between Solution Generator and Products */}
-          <div className="relative">
-            <DataFlowWaves position="top" />
-            <SolutionGenerator />
+          <div className="relative overflow-visible">
+            <DataFlowWaves position="top" className="z-10" />
+            <div className="relative z-0">
+              <SolutionGenerator />
+            </div>
           </div>
           
           {/* Data flow waves around Products Diagram */}
-          <div className="relative">
-            <DataFlowWaves position="both" />
-            <ProductsDiagram />
+          <div className="relative overflow-visible">
+            <DataFlowWaves position="both" className="z-10" />
+            <div className="relative z-0">
+              <ProductsDiagram />
+            </div>
           </div>
           
           {/* Data flow waves for Value Proposition */}
-          <div className="relative">
-            <DataFlowWaves position="top" />
-            <ValuePropositionSection />
+          <div className="relative overflow-visible">
+            <DataFlowWaves position="top" className="z-10" />
+            <div className="relative z-0">
+              <ValuePropositionSection />
+            </div>
           </div>
           
           <IndustriesSection />
           
           {/* Data flow waves for Case Studies */}
-          <div className="relative">
-            <DataFlowWaves position="bottom" />
-            <CaseStudiesSection />
+          <div className="relative overflow-visible">
+            <DataFlowWaves position="bottom" className="z-10" />
+            <div className="relative z-0">
+              <CaseStudiesSection />
+            </div>
           </div>
         </main>
         <Footer />
