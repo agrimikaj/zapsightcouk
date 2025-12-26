@@ -98,7 +98,7 @@ export const products: Product[] = [
     description: 'Intelligence and orchestration layer for large-scale security operations',
     outcome: 'Raw alerts → Prioritized, actionable decisions',
     icon: Radio,
-    heroDescription: 'AISAC is an AI-led Sensors and Control platform designed to modernize large-scale security operations. It acts as an intelligence and orchestration layer on top of existing cameras, sensors, alarms, and monitoring systems—transforming raw alerts into prioritized, contextual, and actionable security decisions. Move from reactive alert handling to proactive, outcome-driven security operations across geographically distributed estates like banks, ATMs, retail outlets, factories, and infrastructure sites.',
+    heroDescription: 'AISAC is an AI-led Sensors and Control platform designed to modernize large-scale security operations. It acts as an intelligence and orchestration layer on top of existing cameras, sensors, alarms, and monitoring systems.',
     keyBenefits: [
       'Real-time alert prioritization correlating motion, tamper, vibration, video, temperature, and fire signals',
       'Video & sensor fusion for visual confirmation and false positive elimination',
