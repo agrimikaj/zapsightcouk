@@ -27,8 +27,8 @@ const industries = [
 
 const caseStudies = [
   { name: 'Overview', href: '/case-studies' },
-  { name: 'VCA', href: 'https://presentation-to-polish.lovable.app', external: true, featured: true },
-  { name: 'Bosch', href: 'https://quantum-weave-desk.lovable.app', external: true, featured: true },
+  { name: 'Retail Client', href: 'https://presentation-to-polish.lovable.app', external: true, featured: true },
+  { name: 'Manufacturing Client', href: 'https://quantum-weave-desk.lovable.app', external: true, featured: true },
 ];
 
 const aboutUs = [
