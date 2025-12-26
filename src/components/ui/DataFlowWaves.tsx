@@ -13,6 +13,7 @@ const DataFlowWaves = ({ position = 'both', className = '' }: DataFlowWavesProps
           xmlns="http://www.w3.org/2000/svg"
           preserveAspectRatio="none"
           viewBox="0 0 1920 160"
+          style={{ background: 'transparent' }}
         >
           <defs>
             <linearGradient id="waveGradientTop" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -89,6 +90,7 @@ const DataFlowWaves = ({ position = 'both', className = '' }: DataFlowWavesProps
           xmlns="http://www.w3.org/2000/svg"
           preserveAspectRatio="none"
           viewBox="0 0 1920 160"
+          style={{ background: 'transparent' }}
         >
           <defs>
             <linearGradient id="waveGradientBottom" x1="0%" y1="0%" x2="100%" y2="0%">
