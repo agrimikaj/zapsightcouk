@@ -88,7 +88,7 @@ const layers: ProductLayer[] = [
 
 const ProductsDiagram = () => {
   return (
-    <section id="products" className="py-16 lg:py-24 relative overflow-hidden">
+    <section id="products" className="py-12 lg:py-16 relative overflow-hidden">
       {/* Unified dark background */}
       <div className="absolute inset-0 bg-[hsl(220,20%,6%)]" />
       
@@ -100,12 +100,26 @@ const ProductsDiagram = () => {
       
       {/* Soft ambient glows */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/[0.015] rounded-full blur-[200px]" />
+      
+      {/* Tech wave backgrounds */}
+      <svg className="absolute inset-0 w-full h-full opacity-[0.08]" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="waveGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0" />
+            <stop offset="50%" stopColor="hsl(var(--primary))" stopOpacity="0.6" />
+            <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0" />
+          </linearGradient>
+        </defs>
+        <path d="M0,30% Q25%,25% 50%,30% T100%,30%" fill="none" stroke="url(#waveGradient1)" strokeWidth="1" className="animate-pulse" style={{ animationDuration: '8s' }} />
+        <path d="M0,50% Q25%,45% 50%,50% T100%,50%" fill="none" stroke="url(#waveGradient1)" strokeWidth="1" className="animate-pulse" style={{ animationDuration: '10s', animationDelay: '1s' }} />
+        <path d="M0,70% Q25%,65% 50%,70% T100%,70%" fill="none" stroke="url(#waveGradient1)" strokeWidth="1" className="animate-pulse" style={{ animationDuration: '9s', animationDelay: '2s' }} />
+      </svg>
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         {/* Header */}
-        <header className="text-center mb-12 lg:mb-16">
-          <p className="text-primary font-medium mb-4 tracking-wide uppercase text-sm">Our Products</p>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-5 tracking-tight text-[hsl(0,0%,97%)]">
+        <header className="text-center mb-10 lg:mb-12">
+          <p className="text-primary font-medium mb-3 tracking-wide uppercase text-sm">Our Products</p>
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-4 tracking-tight text-[hsl(0,0%,97%)]">
             AI Agents <span className="text-primary">Embedded in Your Data</span>
           </h2>
           <p className="text-[hsl(220,10%,60%)] text-lg max-w-2xl mx-auto">
@@ -150,18 +164,19 @@ const ProductsDiagram = () => {
                       to={`/products/${layer.id}`}
                       className="block group"
                     >
-                      <div className="relative rounded-xl lg:rounded-2xl overflow-hidden transition-all duration-200 motion-reduce:transition-none cursor-pointer bg-[hsl(220,20%,8%)] border border-[hsl(220,16%,12%)] hover:border-primary/25">
+                      <div className="relative rounded-xl lg:rounded-2xl overflow-hidden transition-all duration-200 motion-reduce:transition-none cursor-pointer bg-[hsl(220,20%,8%)] border border-[hsl(220,16%,12%)] hover:border-primary/25"
+                           style={{ boxShadow: '0 0 30px hsl(var(--primary) / 0.03)' }}>
                         {/* Inner glow overlay */}
                         <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200 motion-reduce:transition-none" />
 
                         {/* Card content */}
-                        <div className={`relative p-4 lg:p-5 flex items-center gap-4 ${
+                        <div className={`relative p-5 lg:p-6 flex items-start gap-5 ${
                           !isLeft ? 'lg:flex-row-reverse lg:text-right' : ''
                         }`}>
                           {/* Icon container */}
                           <div className="flex-shrink-0">
-                            <div className="w-12 h-12 rounded-xl flex items-center justify-center relative group-hover:scale-105 transition-transform duration-200 motion-reduce:transition-none bg-primary/10 border border-primary/15">
-                              <IconComponent className="h-6 w-6 text-primary" strokeWidth={1.5} />
+                            <div className="w-14 h-14 rounded-xl flex items-center justify-center relative group-hover:scale-105 transition-transform duration-200 motion-reduce:transition-none bg-primary/10 border border-primary/15">
+                              <IconComponent className="h-7 w-7 text-primary" strokeWidth={1.5} />
                               {/* Icon glow */}
                               <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-200 motion-reduce:transition-none"
                                    style={{ boxShadow: '0 0 20px hsl(var(--primary) / 0.25)' }} />
@@ -169,17 +184,14 @@ const ProductsDiagram = () => {
                           </div>
 
                           {/* Text content */}
-                          <div className="flex-1 min-w-0">
-                            <div className="flex items-center gap-2 mb-1">
-                              <h3 className="font-display font-bold text-base lg:text-lg text-[hsl(0,0%,94%)] tracking-tight group-hover:text-primary transition-colors duration-200">
-                                {layer.name}
-                              </h3>
-                              <span className="text-primary/50 text-xs font-medium hidden sm:inline">
-                                {layer.tagline}
-                              </span>
-                            </div>
-                            
-                            <p className="text-[hsl(220,10%,55%)] text-sm line-clamp-1">
+                          <div className="flex-1 min-w-0 space-y-1.5">
+                            <h3 className="font-display font-bold text-lg lg:text-xl text-[hsl(0,0%,94%)] tracking-tight group-hover:text-primary transition-colors duration-200">
+                              {layer.name}
+                            </h3>
+                            <p className="text-primary/70 text-sm font-medium">
+                              {layer.tagline}
+                            </p>
+                            <p className="text-[hsl(220,10%,55%)] text-sm leading-relaxed">
                               {layer.description}
                             </p>
                           </div>

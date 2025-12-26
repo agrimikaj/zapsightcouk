@@ -30,10 +30,10 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Products */}
-          <div>
+          {/* Products - 2 columns */}
+          <div className="lg:col-span-1">
             <h4 className="font-display font-semibold text-lg mb-5 tracking-tight text-[hsl(0,0%,90%)]">Products</h4>
-            <ul className="space-y-3">
+            <div className="grid grid-cols-2 gap-x-6 gap-y-3">
               {[
                 { name: 'Unifyer', id: 'unifyer' },
                 { name: 'AIDR', id: 'aidr' },
@@ -45,13 +45,15 @@ const Footer = () => {
                 { name: 'ProFast', id: 'profast' },
                 { name: 'ProMan', id: 'proman' },
               ].map((product) => (
-                <li key={product.id}>
-                  <Link to={`/products/${product.id}`} className="text-[hsl(220,10%,50%)] hover:text-primary text-sm transition-colors duration-200">
-                    {product.name}
-                  </Link>
-                </li>
+                <Link 
+                  key={product.id}
+                  to={`/products/${product.id}`} 
+                  className="text-[hsl(220,10%,50%)] hover:text-primary text-sm transition-colors duration-200"
+                >
+                  {product.name}
+                </Link>
               ))}
-            </ul>
+            </div>
           </div>
 
           {/* Industries */}
@@ -84,13 +86,23 @@ const Footer = () => {
           {/* CTA Buttons */}
           <div className="space-y-4">
             <h4 className="font-display font-semibold text-lg mb-5 tracking-tight text-[hsl(0,0%,90%)]">Get Started</h4>
-            <Button variant="hero" size="lg" className="w-full shadow-glow" asChild>
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-200" 
+              asChild
+            >
               <Link to="/contact">
                 Discovery Call
                 <ArrowRight className="h-4 w-4 ml-2" />
               </Link>
             </Button>
-            <Button variant="heroOutline" size="lg" className="w-full" asChild>
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-200" 
+              asChild
+            >
               <Link to="/about/how-we-work">
                 How We Work
               </Link>

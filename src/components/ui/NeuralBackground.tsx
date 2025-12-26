@@ -2,7 +2,7 @@ const NeuralBackground = () => {
   return (
     <>
       {/* Neural Network SVG */}
-      <svg className="absolute inset-0 w-full h-full opacity-20" xmlns="http://www.w3.org/2000/svg">
+      <svg className="absolute inset-0 w-full h-full opacity-[0.24]" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <linearGradient id="neuronGradient" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.6" />

@@ -102,9 +102,9 @@ const HeroBanner = () => {
             <div className="flex items-center justify-center sm:justify-start gap-3 py-4">
               <span className="text-lg lg:text-xl font-semibold text-[hsl(220,10%,75%)]">ETL</span>
               <ArrowLeftRight className="h-5 w-5 text-primary" strokeWidth={1.5} />
-              <span className="text-lg lg:text-xl font-semibold text-primary">AI</span>
+              <span className="text-lg lg:text-xl font-semibold text-[hsl(220,10%,75%)]">AI</span>
               <ArrowLeftRight className="h-5 w-5 text-primary" strokeWidth={1.5} />
-              <span className="text-lg lg:text-xl font-semibold text-[hsl(220,10%,75%)]">Workflows</span>
+              <span className="text-lg lg:text-xl font-semibold text-[hsl(220,10%,75%)] uppercase">Workflows</span>
             </div>
 
             {/* Trust Indicators */}
