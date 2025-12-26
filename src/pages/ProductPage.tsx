@@ -124,7 +124,7 @@ const ProductPage = () => {
           </section>
 
           {/* Key Benefits Section */}
-          <section className="py-16 lg:py-24 relative overflow-hidden">
+          <section className="py-10 lg:py-14 relative overflow-hidden">
             <div className="absolute inset-0 bg-[hsl(220,20%,6%)]" />
             <div className="absolute inset-0 opacity-[0.015]" style={{
               backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--primary)) 1px, transparent 0)`,
@@ -160,7 +160,7 @@ const ProductPage = () => {
           </section>
 
           {/* Features & Benefits */}
-          <section className="py-16 lg:py-24 relative overflow-hidden">
+          <section className="py-10 lg:py-14 relative overflow-hidden">
             <div className="absolute inset-0 bg-[hsl(220,20%,6%)]" />
             <div className="absolute inset-0 opacity-[0.015]" style={{
               backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--primary)) 1px, transparent 0)`,
@@ -208,7 +208,7 @@ const ProductPage = () => {
           </section>
 
           {/* Use Cases */}
-          <section className="py-16 lg:py-24 relative overflow-hidden">
+          <section className="py-10 lg:py-14 relative overflow-hidden">
             <div className="absolute inset-0 bg-[hsl(220,20%,6%)]" />
             <div className="absolute inset-0 opacity-[0.015]" style={{
               backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--primary)) 1px, transparent 0)`,
@@ -237,7 +237,7 @@ const ProductPage = () => {
 
           {/* Technical Specifications - only show if product has specs */}
           {product.technicalSpecs && (
-            <section className="py-16 lg:py-24 relative overflow-hidden">
+            <section className="py-10 lg:py-14 relative overflow-hidden">
               <div className="absolute inset-0 bg-[hsl(220,20%,7%)]" />
               <div className="absolute inset-0 opacity-[0.015]" style={{
                 backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--primary)) 1px, transparent 0)`,
@@ -314,7 +314,7 @@ const ProductPage = () => {
           )}
 
           {/* CTA */}
-          <section className="py-16 lg:py-24 relative overflow-hidden">
+          <section className="py-10 lg:py-14 relative overflow-hidden">
             <div className="absolute inset-0 bg-[hsl(220,20%,6%)]" />
             <div className="absolute inset-0 opacity-[0.015]" style={{
               backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--primary)) 1px, transparent 0)`,

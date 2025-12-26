@@ -48,7 +48,7 @@ const dataCategories: DataCategory[] = [
 
 const DataSourcesSection = () => {
   return (
-    <section className="py-16 lg:py-24 relative overflow-hidden">
+    <section className="py-10 lg:py-14 relative overflow-hidden">
       {/* Unified dark background */}
       <div className="absolute inset-0 bg-[hsl(220,20%,6%)]" />
       

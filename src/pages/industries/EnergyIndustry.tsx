@@ -114,7 +114,7 @@ const EnergyIndustry = () => {
         </section>
 
         {/* Phases Section */}
-        <section className="py-24 bg-gradient-to-b from-[hsl(220,25%,12%)] to-background">
+        <section className="py-14 bg-gradient-to-b from-[hsl(220,25%,12%)] to-background">
           <div className="container mx-auto px-4 lg:px-8">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-16">
@@ -136,7 +136,7 @@ const EnergyIndustry = () => {
         </section>
 
         {/* Impact Section */}
-        <section className="py-20 bg-muted/30">
+        <section className="py-12 bg-muted/30">
           <div className="container mx-auto px-4 lg:px-8">
             <div className="max-w-5xl mx-auto">
               <div className="text-center mb-12">
@@ -166,7 +166,7 @@ const EnergyIndustry = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-foreground relative overflow-hidden">
+        <section className="py-12 bg-foreground relative overflow-hidden">
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0wIDBoNjB2NjBIMHoiLz48cGF0aCBkPSJNMzAgMzBtLTEgMGExIDEgMCAxIDAgMiAwYTEgMSAwIDEgMCAtMiAwIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDMpIi8+PC9nPjwvc3ZnPg==')] opacity-50" />
           <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-primary/10 rounded-full blur-[100px]" />
           
