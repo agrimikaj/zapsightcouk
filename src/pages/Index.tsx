@@ -24,35 +24,10 @@ const Index = () => {
         <Navbar />
         <main className="relative">
           <HeroBanner />
-          
-          {/* Data flow wave separator */}
-          <div className="relative h-32 -mt-16 z-10">
-            <DataFlowWaves position="bottom" />
-          </div>
-          
           <SolutionGenerator />
-          
-          {/* Data flow wave separator */}
-          <div className="relative h-32 -mt-8 -mb-8 z-10">
-            <DataFlowWaves position="both" />
-          </div>
-          
           <ProductsDiagram />
-          
-          {/* Data flow wave separator */}
-          <div className="relative h-32 -mt-8 -mb-8 z-10">
-            <DataFlowWaves position="both" />
-          </div>
-          
           <ValuePropositionSection />
-          
           <IndustriesSection />
-          
-          {/* Data flow wave separator */}
-          <div className="relative h-32 -mt-8 -mb-8 z-10">
-            <DataFlowWaves position="both" />
-          </div>
-          
           <CaseStudiesSection />
         </main>
         <Footer />
