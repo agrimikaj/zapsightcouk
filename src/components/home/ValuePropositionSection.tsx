@@ -26,37 +26,14 @@ const ValuePropositionSection = () => {
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-4 tracking-tight text-[hsl(0,0%,97%)]">
             Intelligence That <span className="text-primary">Operates</span>, Not Just Advises
           </h2>
-          <p className="text-[hsl(220,10%,60%)] text-lg max-w-2xl mx-auto">
-            Built for organizations that care about outcomes, authority, and durability—not experiments.
-          </p>
         </div>
 
         {/* Sub-sections Grid */}
         <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
-          {/* Embedded Proximity */}
+          {/* SME Intelligence */}
           <div className="group relative bg-[hsl(220,20%,8%)] border border-[hsl(220,16%,12%)] rounded-2xl p-6 lg:p-8 transition-all duration-300 hover:border-primary/25"
                style={{ boxShadow: '0 0 40px hsl(var(--primary) / 0.02)' }}>
             {/* Inner glow overlay */}
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
-            
-            <div className="relative">
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 group-hover:scale-105 transition-transform duration-300 bg-primary/10 border border-primary/15">
-                <Target className="w-6 h-6 text-primary" strokeWidth={1.5} />
-                <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                     style={{ boxShadow: '0 0 20px hsl(var(--primary) / 0.25)' }} />
-              </div>
-              <h3 className="font-display text-xl font-bold text-[hsl(0,0%,94%)] mb-3 tracking-tight group-hover:text-primary transition-colors duration-200">
-                Embedded Proximity
-              </h3>
-              <p className="text-[hsl(220,10%,60%)] text-sm leading-relaxed">
-                ZapSight operates inside client teams—not from the outside. We work closely with product, marketing, security, and operations to identify where AI is misinterpreting, overlooking, or underperforming—and intervene directly.
-              </p>
-            </div>
-          </div>
-
-          {/* Structured Intelligence */}
-          <div className="group relative bg-[hsl(220,20%,8%)] border border-[hsl(220,16%,12%)] rounded-2xl p-6 lg:p-8 transition-all duration-300 hover:border-primary/25"
-               style={{ boxShadow: '0 0 40px hsl(var(--primary) / 0.02)' }}>
             <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
             
             <div className="relative">
@@ -66,10 +43,30 @@ const ValuePropositionSection = () => {
                      style={{ boxShadow: '0 0 20px hsl(var(--primary) / 0.25)' }} />
               </div>
               <h3 className="font-display text-xl font-bold text-[hsl(0,0%,94%)] mb-3 tracking-tight group-hover:text-primary transition-colors duration-200">
-                Structured Intelligence
+                SME Intelligence
               </h3>
               <p className="text-[hsl(220,10%,60%)] text-sm leading-relaxed">
-                We systematize tacit knowledge—brand nuance, craftsmanship, operational judgment, risk logic—into reusable intelligence that powers discovery engines, AI assistants, and autonomous workflows.
+                Our SMEs systemise—brand nuance, craftsmanship, operational judgment, risk logic—into reusable intelligence with our engineers that powers discovery engines, AI assistants, and autonomous workflows.
+              </p>
+            </div>
+          </div>
+
+          {/* Engineering Proximity */}
+          <div className="group relative bg-[hsl(220,20%,8%)] border border-[hsl(220,16%,12%)] rounded-2xl p-6 lg:p-8 transition-all duration-300 hover:border-primary/25"
+               style={{ boxShadow: '0 0 40px hsl(var(--primary) / 0.02)' }}>
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
+            
+            <div className="relative">
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 group-hover:scale-105 transition-transform duration-300 bg-primary/10 border border-primary/15">
+                <Target className="w-6 h-6 text-primary" strokeWidth={1.5} />
+                <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                     style={{ boxShadow: '0 0 20px hsl(var(--primary) / 0.25)' }} />
+              </div>
+              <h3 className="font-display text-xl font-bold text-[hsl(0,0%,94%)] mb-3 tracking-tight group-hover:text-primary transition-colors duration-200">
+                Engineering Proximity
+              </h3>
+              <p className="text-[hsl(220,10%,60%)] text-sm leading-relaxed">
+                ZapSight's engineers operate inside client teams—not from the outside. We work closely with product, marketing, security, and operations to identify where AI is misinterpreting, overlooking, or underperforming—and intervene directly.
               </p>
             </div>
           </div>
