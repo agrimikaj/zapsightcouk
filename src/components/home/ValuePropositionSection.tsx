@@ -46,7 +46,7 @@ const ValuePropositionSection = () => {
                 SME Intelligence
               </h3>
               <p className="text-[hsl(220,10%,60%)] text-sm leading-relaxed">
-                Our SMEs systemise—brand nuance, craftsmanship, operational judgment, risk logic—into reusable intelligence with our engineers that powers discovery engines, AI assistants, and autonomous workflows.
+                Our SMEs systematize—brand nuance, craftsmanship, operational judgment, risk logic—into reusable intelligence with our engineers that powers discovery engines, AI assistants, and autonomous workflows.
               </p>
             </div>
           </div>
