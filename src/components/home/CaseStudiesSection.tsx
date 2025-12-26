@@ -6,7 +6,6 @@ import { Button } from '@/components/ui/button';
 interface CaseStudy {
   id: string;
   title: string;
-  company: string;
   industry: string;
   description: string;
   href: string;
@@ -18,7 +17,6 @@ const caseStudies: CaseStudy[] = [
   {
     id: 'vca',
     title: 'AI-Powered Customer Analytics',
-    company: 'Retail Client',
     industry: 'Retail',
     description: 'Implementing advanced customer segmentation and predictive analytics to drive personalized experiences and increase conversion rates.',
     href: 'https://presentation-to-polish.lovable.app',
@@ -28,7 +26,6 @@ const caseStudies: CaseStudy[] = [
   {
     id: 'bosch',
     title: 'Predictive Maintenance Platform',
-    company: 'Manufacturing Client',
     industry: 'Manufacturing',
     description: 'Deploying AI agents for equipment monitoring and predictive maintenance, reducing downtime and optimizing operational efficiency.',
     href: 'https://quantum-weave-desk.lovable.app',
@@ -38,7 +35,6 @@ const caseStudies: CaseStudy[] = [
   {
     id: 'furniture-retailer',
     title: 'Data Integration & AI Agents',
-    company: 'Furniture Retailer',
     industry: 'Retail',
     description: 'Integrated data from 5 siloed systems into a single infrastructure with business context layering. Achieved $440K savings and $1M revenue increase with 5X ROI.',
     href: '/case-studies/furniture-retailer',
@@ -47,7 +43,6 @@ const caseStudies: CaseStudy[] = [
   {
     id: 'pharma-pricing',
     title: 'Pricing Optimization',
-    company: 'Pharma Client',
     industry: 'Healthcare',
     description: 'Optimized pricing levers for an allergy brand by building econometric models and a "what-if" simulator to forecast ROI of pricing strategies.',
     href: '/case-studies/pharma-pricing',
@@ -55,7 +50,6 @@ const caseStudies: CaseStudy[] = [
   {
     id: 'tire-mroi',
     title: 'Marketing ROI Optimization',
-    company: 'Tire Company',
     industry: 'Manufacturing',
     description: 'Determined optimal allocation of marketing resources across promotional programs to maximize profitability using sales and traffic data analysis.',
     href: '/case-studies/tire-mroi',
@@ -63,7 +57,6 @@ const caseStudies: CaseStudy[] = [
   {
     id: 'software-churn',
     title: 'Churn Prediction Model',
-    company: 'Software Company',
     industry: 'Technology',
     description: 'Built a churn probability model to identify high-risk advertisers and enable proactive retention activities with monthly intervention recommendations.',
     href: '/case-studies/software-churn',
@@ -71,7 +64,6 @@ const caseStudies: CaseStudy[] = [
   {
     id: 'solar-data',
     title: 'Data Access Agent',
-    company: 'Solar Infrastructure',
     industry: 'Energy',
     description: 'Streamlined data across 5 systems (100+ tables, 10K+ columns) with semantic layer for quick on-the-go business insights. Achieved 2X-4X ROI.',
     href: '/case-studies/solar-data',
@@ -79,7 +71,6 @@ const caseStudies: CaseStudy[] = [
   {
     id: 'agri-quality',
     title: 'Reporting & Quality Agent',
-    company: 'Agri & Food Manufacturing',
     industry: 'Manufacturing',
     description: 'Optimized SAP-based data setup to automate 100+ reports and deployed quality agent for seed-lot evaluation. Improved analyst productivity by 50%.',
     href: '/case-studies/agri-quality',

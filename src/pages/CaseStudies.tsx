@@ -9,7 +9,6 @@ import { Link } from 'react-router-dom';
 interface CaseStudy {
   id: string;
   title: string;
-  company: string;
   industry: string;
   description: string;
   results: string[];
@@ -22,7 +21,6 @@ const caseStudies: CaseStudy[] = [
   {
     id: 'vca',
     title: 'AI-Powered Customer Analytics',
-    company: 'Retail Client',
     industry: 'Retail',
     description: 'Implementing advanced customer segmentation and predictive analytics to drive personalized experiences and increase conversion rates.',
     results: ['35% increase in conversion', '25% reduction in churn', 'Real-time customer insights'],
@@ -33,7 +31,6 @@ const caseStudies: CaseStudy[] = [
   {
     id: 'bosch',
     title: 'Predictive Maintenance Platform',
-    company: 'Manufacturing Client',
     industry: 'Manufacturing',
     description: 'Deploying AI agents for equipment monitoring and predictive maintenance, reducing downtime and optimizing operational efficiency.',
     results: ['40% reduction in downtime', '6.5X ROI achieved', 'Automated alerts & scheduling'],
@@ -44,7 +41,6 @@ const caseStudies: CaseStudy[] = [
   {
     id: 'furniture-retailer',
     title: 'Data Integration & AI Agents',
-    company: 'Furniture Retailer',
     industry: 'Retail',
     description: 'Integrated data from 5 siloed systems (CRM, PoS, Logistics, Finance) into a single AWS-based infrastructure with business context layering for retail operations.',
     results: ['$440K savings', '$1M revenue increase', '5X ROI achieved', 'Self-service reporting'],
@@ -54,7 +50,6 @@ const caseStudies: CaseStudy[] = [
   {
     id: 'pharma-pricing',
     title: 'Pricing Optimization',
-    company: 'Pharma Client',
     industry: 'Healthcare',
     description: 'Optimized pricing levers for an allergy brand to reduce reliance on unsustainable promotions using econometric models and what-if simulators.',
     results: ['Improved category profitability', 'Price elasticity modeling', 'ROI forecasting simulator'],
@@ -63,7 +58,6 @@ const caseStudies: CaseStudy[] = [
   {
     id: 'tire-mroi',
     title: 'Marketing ROI Optimization',
-    company: 'Tire Company',
     industry: 'Manufacturing',
     description: 'Determined optimal allocation of marketing resources across national and local promotional programs to maximize profitability.',
     results: ['Optimized marketing spend', 'ROI measurement per promotion', 'Revenue & profit impact analysis'],
@@ -72,16 +66,14 @@ const caseStudies: CaseStudy[] = [
   {
     id: 'software-churn',
     title: 'Churn Prediction Model',
-    company: 'Software Company',
     industry: 'Technology',
     description: 'Built a churn probability model for advertisers to enable proactive retention activities and maximize revenue from text advertising.',
-    results: ['X% additional churn captured', 'Monthly high-risk advertiser list', 'Proactive intervention steps'],
+    results: ['Additional churn captured', 'Monthly high-risk advertiser list', 'Proactive intervention steps'],
     href: '/case-studies/software-churn',
   },
   {
     id: 'solar-data',
     title: 'Data Access Agent',
-    company: 'Solar Infrastructure',
     industry: 'Energy',
     description: 'Streamlined data across 5 systems (100+ tables, 10K+ columns) by building semantic layer for quick, on-the-go business insights.',
     results: ['2X ROI (1st year)', '4X ROI (2nd year)', '3-day reduction in turnaround'],
@@ -90,7 +82,6 @@ const caseStudies: CaseStudy[] = [
   {
     id: 'agri-quality',
     title: 'Reporting & Quality Agent',
-    company: 'Agri & Food Manufacturing',
     industry: 'Manufacturing',
     description: 'Optimized SAP-based data setup to automate 100+ reports and deployed quality agent to evaluate seed-lots and automate shipment-lots.',
     results: ['50% productivity improvement', '2X-5X ROI achieved', '48-hour turnaround reduction'],
@@ -161,10 +152,8 @@ const CaseStudies = () => {
                             Featured
                           </span>
                         </div>
-
-                        <p className="text-[hsl(220,10%,45%)] text-sm font-medium mb-2">{study.company}</p>
                         
-                        <h3 className="font-display font-bold text-2xl text-[hsl(0,0%,94%)] tracking-tight mb-4 group-hover:text-primary transition-colors duration-200">
+                        <h3 className="font-display font-bold text-2xl text-[hsl(0,0%,94%)] tracking-tight mb-4 mt-4 group-hover:text-primary transition-colors duration-200">
                           {study.title}
                         </h3>
                         
@@ -233,10 +222,8 @@ const CaseStudies = () => {
                         <span className="text-xs font-semibold uppercase tracking-wider text-primary bg-primary/10 px-2 py-1 rounded">
                           {study.industry}
                         </span>
-
-                        <p className="text-[hsl(220,10%,45%)] text-sm font-medium mt-4 mb-2">{study.company}</p>
                         
-                        <h3 className="font-display font-bold text-lg text-[hsl(0,0%,94%)] tracking-tight mb-3 group-hover:text-primary transition-colors duration-200">
+                        <h3 className="font-display font-bold text-lg text-[hsl(0,0%,94%)] tracking-tight mt-4 mb-3 group-hover:text-primary transition-colors duration-200">
                           {study.title}
                         </h3>
                         
