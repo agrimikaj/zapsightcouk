@@ -24,7 +24,7 @@ const ValuePropositionSection = () => {
         <div className="text-center mb-10 lg:mb-12">
           <p className="text-primary font-medium mb-3 tracking-wide uppercase text-sm">Our Approach</p>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-4 tracking-tight text-[hsl(0,0%,97%)]">
-            Intelligence That <span className="text-primary">Operates</span>, Not Just Advises
+            Engineering intelligence meets <span className="text-primary">SME expertise</span>
           </h2>
         </div>
 
