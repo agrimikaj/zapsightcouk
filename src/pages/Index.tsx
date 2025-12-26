@@ -25,39 +25,35 @@ const Index = () => {
         <main className="relative">
           <HeroBanner />
           
-          {/* Data flow waves between Solution Generator and Products */}
-          <div className="relative overflow-visible">
-            <DataFlowWaves position="top" className="z-10" />
-            <div className="relative z-0">
-              <SolutionGenerator />
-            </div>
+          {/* Data flow wave separator */}
+          <div className="relative h-32 -mt-16 z-10">
+            <DataFlowWaves position="bottom" />
           </div>
           
-          {/* Data flow waves around Products Diagram */}
-          <div className="relative overflow-visible">
-            <DataFlowWaves position="both" className="z-10" />
-            <div className="relative z-0">
-              <ProductsDiagram />
-            </div>
+          <SolutionGenerator />
+          
+          {/* Data flow wave separator */}
+          <div className="relative h-32 -mt-8 -mb-8 z-10">
+            <DataFlowWaves position="both" />
           </div>
           
-          {/* Data flow waves for Value Proposition */}
-          <div className="relative overflow-visible">
-            <DataFlowWaves position="top" className="z-10" />
-            <div className="relative z-0">
-              <ValuePropositionSection />
-            </div>
+          <ProductsDiagram />
+          
+          {/* Data flow wave separator */}
+          <div className="relative h-32 -mt-8 -mb-8 z-10">
+            <DataFlowWaves position="both" />
           </div>
+          
+          <ValuePropositionSection />
           
           <IndustriesSection />
           
-          {/* Data flow waves for Case Studies */}
-          <div className="relative overflow-visible">
-            <DataFlowWaves position="bottom" className="z-10" />
-            <div className="relative z-0">
-              <CaseStudiesSection />
-            </div>
+          {/* Data flow wave separator */}
+          <div className="relative h-32 -mt-8 -mb-8 z-10">
+            <DataFlowWaves position="both" />
           </div>
+          
+          <CaseStudiesSection />
         </main>
         <Footer />
         <ProgressiveValueOverlay />
