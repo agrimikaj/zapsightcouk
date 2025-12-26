@@ -110,14 +110,14 @@ const ManufacturingIndustry = () => {
         </section>
 
         {/* Capabilities Section */}
-        <section className="py-14 bg-gradient-to-b from-[hsl(220,25%,12%)] to-background">
+        <section className="py-14 bg-gradient-to-b from-[hsl(220,20%,8%)] to-[hsl(220,20%,6%)]">
           <div className="container mx-auto px-4 lg:px-8">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-16">
-                <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+                <h2 className="font-display text-3xl md:text-4xl font-bold text-background mb-4">
                   Manufacturing Intelligence
                 </h2>
-                <p className="text-foreground/60 max-w-2xl mx-auto">
+                <p className="text-background/60 max-w-2xl mx-auto">
                   From predictive maintenance to supply chain optimization, our agents integrate seamlessly with existing systems.
                 </p>
               </div>
