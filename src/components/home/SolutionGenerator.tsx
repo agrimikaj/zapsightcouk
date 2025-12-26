@@ -120,7 +120,7 @@ const SolutionGenerator = () => {
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-5 tracking-tight text-[hsl(0,0%,97%)]">
             AI-Powered Solutions <span className="text-primary">for Every Industry</span>
           </h2>
-          <p className="text-[hsl(220,10%,55%)] text-lg max-w-2xl mx-auto">
+          <p className="text-[hsl(220,10%,60%)] text-lg max-w-2xl mx-auto">
             Tell us about your context and we'll recommend the perfect AI agent solution for your needs.
           </p>
         </div>

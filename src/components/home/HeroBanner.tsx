@@ -27,13 +27,13 @@ const usps = [
   },
   {
     icon: Target,
-    title: '95-99%',
-    subtitle: 'Solutions Embedded in Your Data',
+    title: 'Your Data',
+    subtitle: 'Solutions Embedded Within',
     stats: [
-      'Integrate into data systems',
-      'Transform data',
-      'Build advanced analytics on your data',
-      'Execute workflows'
+      'Integrate into existing data systems',
+      'Transform & enrich your data',
+      'Build advanced analytics layers',
+      'Execute intelligent workflows'
     ],
   },
   {
@@ -100,28 +100,28 @@ const HeroBanner = () => {
 
             {/* ETL ↔ AI ↔ Workflows subtitle */}
             <div className="flex items-center justify-center sm:justify-start gap-3 py-4">
-              <span className="text-lg lg:text-xl font-semibold text-[hsl(220,10%,70%)]">ETL</span>
+              <span className="text-lg lg:text-xl font-semibold text-[hsl(220,10%,75%)]">ETL</span>
               <ArrowLeftRight className="h-5 w-5 text-primary" strokeWidth={1.5} />
               <span className="text-lg lg:text-xl font-semibold text-primary">AI</span>
               <ArrowLeftRight className="h-5 w-5 text-primary" strokeWidth={1.5} />
-              <span className="text-lg lg:text-xl font-semibold text-[hsl(220,10%,70%)]">Workflows</span>
+              <span className="text-lg lg:text-xl font-semibold text-[hsl(220,10%,75%)]">Workflows</span>
             </div>
 
             {/* Trust Indicators */}
             <div className="flex items-center gap-8 pt-2">
               <div className="text-center">
                 <p className="font-display text-3xl font-bold text-primary">4</p>
-                <p className="text-xs text-[hsl(220,10%,45%)] font-medium tracking-wide uppercase">Global Offices</p>
+                <p className="text-xs text-[hsl(220,10%,55%)] font-medium tracking-wide uppercase">Global Offices</p>
               </div>
               <div className="w-px h-12 bg-[hsl(220,16%,14%)]" />
               <div className="text-center">
                 <p className="font-display text-3xl font-bold text-primary">50+</p>
-                <p className="text-xs text-[hsl(220,10%,45%)] font-medium tracking-wide uppercase">Agents Deployed</p>
+                <p className="text-xs text-[hsl(220,10%,55%)] font-medium tracking-wide uppercase">Agents Deployed</p>
               </div>
               <div className="w-px h-12 bg-[hsl(220,16%,14%)]" />
               <div className="text-center">
                 <p className="font-display text-3xl font-bold text-primary">5</p>
-                <p className="text-xs text-[hsl(220,10%,45%)] font-medium tracking-wide uppercase">Industries</p>
+                <p className="text-xs text-[hsl(220,10%,55%)] font-medium tracking-wide uppercase">Industries</p>
               </div>
             </div>
           </div>
@@ -147,14 +147,14 @@ const HeroBanner = () => {
                   <h3 className="font-display text-4xl lg:text-5xl font-bold text-primary tracking-tight">
                     {currentUSP.title}
                   </h3>
-                  <p className="text-[hsl(220,10%,50%)] font-medium">{currentUSP.subtitle}</p>
+                  <p className="text-[hsl(220,10%,60%)] font-medium">{currentUSP.subtitle}</p>
                 </div>
               </div>
 
               {/* Stats List */}
               <ul className="space-y-4 mb-8">
                 {currentUSP.stats.map((stat, idx) => (
-                  <li key={idx} className="flex items-center gap-3 text-[hsl(220,10%,60%)]">
+                  <li key={idx} className="flex items-center gap-3 text-[hsl(220,10%,70%)]">
                     <span className="w-1.5 h-1.5 bg-primary rounded-full flex-shrink-0" />
                     <span className="text-sm lg:text-base">{stat}</span>
                   </li>

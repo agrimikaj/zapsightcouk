@@ -162,7 +162,7 @@ const CaseStudiesSection = () => {
                     </div>
 
                     {/* Company */}
-                    <p className="text-[hsl(220,10%,45%)] text-sm font-medium mb-2">{study.company}</p>
+                    <p className="text-[hsl(220,10%,55%)] text-sm font-medium mb-2">{study.company}</p>
                     
                     {/* Title */}
                     <h3 className="font-display font-bold text-xl text-[hsl(0,0%,94%)] tracking-tight mb-3 group-hover:text-primary transition-colors duration-200">
@@ -170,7 +170,7 @@ const CaseStudiesSection = () => {
                     </h3>
                     
                     {/* Description */}
-                    <p className="text-[hsl(220,10%,50%)] text-sm leading-relaxed flex-1 mb-6">
+                    <p className="text-[hsl(220,10%,60%)] text-sm leading-relaxed flex-1 mb-6">
                       {study.description}
                     </p>
 
