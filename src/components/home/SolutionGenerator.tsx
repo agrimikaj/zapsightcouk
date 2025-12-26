@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Sparkles, ChevronDown, X } from 'lucide-react';
+import { Sparkles, ChevronDown, X, Search } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
@@ -101,7 +101,7 @@ const SolutionGenerator = () => {
   const isComplete = industry && department && status;
 
   return (
-    <section className="py-16 lg:py-24 relative overflow-hidden">
+    <section className="py-12 lg:py-16 relative overflow-hidden">
       {/* Unified dark background */}
       <div className="absolute inset-0 bg-[hsl(220,20%,6%)]" />
       
@@ -115,9 +115,12 @@ const SolutionGenerator = () => {
       <div className="absolute top-0 right-1/4 w-[500px] h-[400px] bg-primary/[0.02] rounded-full blur-[180px]" />
       
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
-        <div className="text-center mb-14">
-          <p className="text-primary font-semibold mb-4 tracking-wide uppercase text-sm">Solution Finder</p>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-5 tracking-tight text-[hsl(0,0%,97%)]">
+        <div className="text-center mb-8">
+          <div className="inline-flex items-center gap-2 text-primary font-semibold mb-3 tracking-wide uppercase text-sm">
+            <Search className="h-4 w-4" strokeWidth={1.5} />
+            Solution Finder
+          </div>
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-4 tracking-tight text-[hsl(0,0%,97%)]">
             AI-Powered Solutions <span className="text-primary">for Every Industry</span>
           </h2>
           <p className="text-[hsl(220,10%,60%)] text-lg max-w-2xl mx-auto">

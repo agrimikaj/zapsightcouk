@@ -59,7 +59,7 @@ const industries: Industry[] = [
 
 const IndustriesSection = () => {
   return (
-    <section className="py-16 lg:py-24 relative overflow-hidden">
+    <section className="py-12 lg:py-16 relative overflow-hidden">
       {/* Unified dark background */}
       <div className="absolute inset-0 bg-[hsl(220,20%,6%)]" />
       
@@ -74,9 +74,9 @@ const IndustriesSection = () => {
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         {/* Header */}
-        <header className="text-center mb-12 lg:mb-16">
-          <p className="text-primary font-medium mb-4 tracking-wide uppercase text-sm">Industries We Serve</p>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-5 tracking-tight text-[hsl(0,0%,97%)]">
+        <header className="text-center mb-10 lg:mb-12">
+          <p className="text-primary font-medium mb-3 tracking-wide uppercase text-sm">Industries We Serve</p>
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-4 tracking-tight text-[hsl(0,0%,97%)]">
             AI Solutions <span className="text-primary">Across Industries</span>
           </h2>
           <p className="text-[hsl(220,10%,60%)] text-lg max-w-2xl mx-auto">

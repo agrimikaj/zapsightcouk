@@ -2,7 +2,7 @@ import { Target, Brain, Shield, TrendingUp } from 'lucide-react';
 
 const ValuePropositionSection = () => {
   return (
-    <section className="py-16 lg:py-24 relative overflow-hidden">
+    <section className="py-12 lg:py-16 relative overflow-hidden">
       {/* Unified dark background */}
       <div className="absolute inset-0 bg-[hsl(220,20%,6%)]" />
       
@@ -21,10 +21,10 @@ const ValuePropositionSection = () => {
       
       <div className="container relative z-10 mx-auto px-4 lg:px-8 max-w-5xl">
         {/* Section Header */}
-        <div className="text-center mb-14 lg:mb-16">
-          <p className="text-primary font-medium mb-4 tracking-wide uppercase text-sm">Our Approach</p>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-5 tracking-tight text-[hsl(0,0%,97%)]">
-            Intelligence That <span className="text-primary">Operates</span>, Not Advises
+        <div className="text-center mb-10 lg:mb-12">
+          <p className="text-primary font-medium mb-3 tracking-wide uppercase text-sm">Our Approach</p>
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-4 tracking-tight text-[hsl(0,0%,97%)]">
+            Intelligence That <span className="text-primary">Operates</span>, Not Just Advises
           </h2>
           <p className="text-[hsl(220,10%,60%)] text-lg max-w-2xl mx-auto">
             Built for organizations that care about outcomes, authority, and durability—not experiments.

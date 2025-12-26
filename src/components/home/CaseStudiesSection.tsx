@@ -18,7 +18,7 @@ const caseStudies: CaseStudy[] = [
   {
     id: 'vca',
     title: 'AI-Powered Customer Analytics',
-    company: 'VCA',
+    company: 'Retail Client',
     industry: 'Retail',
     description: 'Implementing advanced customer segmentation and predictive analytics to drive personalized experiences and increase conversion rates.',
     href: 'https://presentation-to-polish.lovable.app',
@@ -28,7 +28,7 @@ const caseStudies: CaseStudy[] = [
   {
     id: 'bosch',
     title: 'Predictive Maintenance Platform',
-    company: 'Bosch',
+    company: 'Manufacturing Client',
     industry: 'Manufacturing',
     description: 'Deploying AI agents for equipment monitoring and predictive maintenance, reducing downtime and optimizing operational efficiency.',
     href: 'https://quantum-weave-desk.lovable.app',
@@ -38,7 +38,7 @@ const caseStudies: CaseStudy[] = [
   {
     id: 'energy-monitoring',
     title: 'Smart Energy Monitoring',
-    company: 'Energy Corp',
+    company: 'Energy Client',
     industry: 'Energy',
     description: 'Real-time monitoring and optimization of energy assets using AI-driven analytics and automated workflows.',
     href: '/case-studies/energy-monitoring',
@@ -46,7 +46,7 @@ const caseStudies: CaseStudy[] = [
   {
     id: 'insurance-claims',
     title: 'Automated Claims Processing',
-    company: 'InsureTech',
+    company: 'Insurance Client',
     industry: 'Insurance',
     description: 'Streamlining claims processing with AI agents for faster resolution and improved customer satisfaction.',
     href: '/case-studies/insurance-claims',
@@ -85,7 +85,7 @@ const CaseStudiesSection = () => {
   };
 
   return (
-    <section className="py-16 lg:py-24 relative overflow-hidden">
+    <section className="py-12 lg:py-16 relative overflow-hidden">
       {/* Unified dark background */}
       <div className="absolute inset-0 bg-[hsl(220,20%,6%)]" />
       
@@ -161,9 +161,6 @@ const CaseStudiesSection = () => {
                       )}
                     </div>
 
-                    {/* Company */}
-                    <p className="text-[hsl(220,10%,55%)] text-sm font-medium mb-2">{study.company}</p>
-                    
                     {/* Title */}
                     <h3 className="font-display font-bold text-xl text-[hsl(0,0%,94%)] tracking-tight mb-3 group-hover:text-primary transition-colors duration-200">
                       {study.title}
