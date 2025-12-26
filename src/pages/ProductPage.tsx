@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import NeuralBackground from '@/components/ui/NeuralBackground';
+import CircuitBoardBackground from '@/components/ui/CircuitBoardBackground';
 import { getProductById, products } from '@/lib/products';
 
 const ProductPage = () => {
@@ -52,6 +53,9 @@ const ProductPage = () => {
             
             {/* Neural network animation */}
             <NeuralBackground />
+            
+            {/* Circuit board traces */}
+            <CircuitBoardBackground />
             
             {/* Subtle dot pattern */}
             <div className="absolute inset-0 opacity-[0.015]" style={{
