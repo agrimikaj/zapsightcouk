@@ -26,7 +26,7 @@ const ValuePropositionSection = () => {
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-5 tracking-tight text-[hsl(0,0%,97%)]">
             Intelligence That <span className="text-primary">Operates</span>, Not Advises
           </h2>
-          <p className="text-[hsl(220,10%,50%)] text-lg max-w-2xl mx-auto">
+          <p className="text-[hsl(220,10%,60%)] text-lg max-w-2xl mx-auto">
             Built for organizations that care about outcomes, authority, and durability—not experiments.
           </p>
         </div>
@@ -48,7 +48,7 @@ const ValuePropositionSection = () => {
               <h3 className="font-display text-xl font-bold text-[hsl(0,0%,94%)] mb-3 tracking-tight group-hover:text-primary transition-colors duration-200">
                 Embedded Proximity
               </h3>
-              <p className="text-[hsl(220,10%,50%)] text-sm leading-relaxed">
+              <p className="text-[hsl(220,10%,60%)] text-sm leading-relaxed">
                 ZapSight operates inside client teams—not from the outside. We work closely with product, marketing, security, and operations to identify where AI is misinterpreting, overlooking, or underperforming—and intervene directly.
               </p>
             </div>
@@ -68,7 +68,7 @@ const ValuePropositionSection = () => {
               <h3 className="font-display text-xl font-bold text-[hsl(0,0%,94%)] mb-3 tracking-tight group-hover:text-primary transition-colors duration-200">
                 Structured Intelligence
               </h3>
-              <p className="text-[hsl(220,10%,50%)] text-sm leading-relaxed">
+              <p className="text-[hsl(220,10%,60%)] text-sm leading-relaxed">
                 We systematize tacit knowledge—brand nuance, craftsmanship, operational judgment, risk logic—into reusable intelligence that powers discovery engines, AI assistants, and autonomous workflows.
               </p>
             </div>
@@ -88,7 +88,7 @@ const ValuePropositionSection = () => {
               <h3 className="font-display text-xl font-bold text-[hsl(0,0%,94%)] mb-3 tracking-tight group-hover:text-primary transition-colors duration-200">
                 Built for Production Reality
               </h3>
-              <p className="text-[hsl(220,10%,50%)] text-sm leading-relaxed">
+              <p className="text-[hsl(220,10%,60%)] text-sm leading-relaxed">
                 Everything we build is designed for messy data, partial automation, regulatory constraints, and human-in-the-loop requirements. Our infrastructure prioritizes reliability, observability, and adaptability.
               </p>
             </div>
@@ -108,7 +108,7 @@ const ValuePropositionSection = () => {
               <h3 className="font-display text-xl font-bold text-[hsl(0,0%,94%)] mb-3 tracking-tight group-hover:text-primary transition-colors duration-200">
                 Measured by Real Impact
               </h3>
-              <p className="text-[hsl(220,10%,50%)] text-sm leading-relaxed">
+              <p className="text-[hsl(220,10%,60%)] text-sm leading-relaxed">
                 Success isn't models or dashboards—it's stronger AI-led discovery, faster and more accurate decisions, reduced operational noise and cost, and compounding system-level gains.
               </p>
             </div>

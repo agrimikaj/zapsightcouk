@@ -108,7 +108,7 @@ const ProductsDiagram = () => {
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-5 tracking-tight text-[hsl(0,0%,97%)]">
             AI Agents <span className="text-primary">Embedded in Your Data</span>
           </h2>
-          <p className="text-[hsl(220,10%,50%)] text-lg max-w-2xl mx-auto">
+          <p className="text-[hsl(220,10%,60%)] text-lg max-w-2xl mx-auto">
             All our products are AI-agents that are embedded in the companies' data and customized to deliver business needs.
           </p>
         </header>
@@ -179,7 +179,7 @@ const ProductsDiagram = () => {
                               </span>
                             </div>
                             
-                            <p className="text-[hsl(220,10%,45%)] text-sm line-clamp-1">
+                            <p className="text-[hsl(220,10%,55%)] text-sm line-clamp-1">
                               {layer.description}
                             </p>
                           </div>

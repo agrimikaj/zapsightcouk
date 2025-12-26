@@ -79,7 +79,7 @@ const IndustriesSection = () => {
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-5 tracking-tight text-[hsl(0,0%,97%)]">
             AI Solutions <span className="text-primary">Across Industries</span>
           </h2>
-          <p className="text-[hsl(220,10%,50%)] text-lg max-w-2xl mx-auto">
+          <p className="text-[hsl(220,10%,60%)] text-lg max-w-2xl mx-auto">
             Tailored AI agents designed for the unique challenges of each industry.
           </p>
         </header>
@@ -112,7 +112,7 @@ const IndustriesSection = () => {
                     )}
                   </div>
                   
-                  <p className="text-[hsl(220,10%,50%)] text-sm leading-relaxed">
+                  <p className="text-[hsl(220,10%,60%)] text-sm leading-relaxed">
                     {industry.description}
                   </p>
                 </div>
