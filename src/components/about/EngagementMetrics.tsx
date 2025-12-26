@@ -62,7 +62,7 @@ const metrics = [
 
 const EngagementMetrics = () => {
   return (
-    <section className="py-20 lg:py-28 relative overflow-hidden">
+    <section className="py-12 lg:py-16 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-[hsl(220,25%,10%)] to-[hsl(220,25%,8%)]" />
       <div className="absolute inset-0 opacity-[0.02]" style={{

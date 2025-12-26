@@ -82,7 +82,7 @@ const FAQs = () => {
           </section>
 
           {/* FAQs */}
-          <section className="py-16 lg:py-24 relative overflow-hidden">
+          <section className="py-10 lg:py-14 relative overflow-hidden">
             <div className="absolute inset-0 bg-[hsl(220,20%,6%)]" />
             <div className="absolute inset-0 opacity-[0.015]" style={{
               backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--primary)) 1px, transparent 0)`,
@@ -112,7 +112,7 @@ const FAQs = () => {
           </section>
 
           {/* CTA */}
-          <section className="py-16 lg:py-24 relative overflow-hidden">
+          <section className="py-10 lg:py-14 relative overflow-hidden">
             <div className="absolute inset-0 bg-[hsl(220,20%,6%)]" />
             <div className="absolute inset-0 opacity-[0.015]" style={{
               backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--primary)) 1px, transparent 0)`,
