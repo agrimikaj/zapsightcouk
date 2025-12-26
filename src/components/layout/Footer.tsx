@@ -89,7 +89,7 @@ const Footer = () => {
             <Button 
               variant="outline" 
               size="lg" 
-              className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-200" 
+              className="w-full bg-[hsl(220,20%,5%)] border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-200" 
               asChild
             >
               <Link to="/contact">
@@ -100,7 +100,7 @@ const Footer = () => {
             <Button 
               variant="outline" 
               size="lg" 
-              className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-200" 
+              className="w-full bg-[hsl(220,20%,5%)] border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-200" 
               asChild
             >
               <Link to="/about/how-we-work">
