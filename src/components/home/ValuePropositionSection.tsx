@@ -117,7 +117,7 @@ const ValuePropositionSection = () => {
           <div className="inline-block bg-[hsl(220,20%,8%)] border border-[hsl(220,16%,12%)] rounded-2xl px-8 py-6"
                style={{ boxShadow: '0 0 60px hsl(var(--primary) / 0.03)' }}>
             <p className="text-[hsl(0,0%,90%)] text-base md:text-lg font-medium max-w-3xl">
-              We don't "add AI"—we re-architect how intelligence flows from expertise to system to outcome.
+              We don't "add AI." We re-architect how intelligence flows from expertise to system to outcome.
             </p>
           </div>
         </div>

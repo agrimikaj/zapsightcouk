@@ -64,9 +64,9 @@ const DataSourcesSection = () => {
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         {/* Header */}
         <div className="text-center mb-12">
-          <p className="text-primary font-medium mb-3 tracking-wide uppercase text-sm">Integrations</p>
+          <p className="text-primary font-medium mb-3 tracking-wide uppercase text-sm">Your Data</p>
           <h2 className="font-display text-3xl md:text-4xl font-bold mb-4 tracking-tight text-[hsl(0,0%,97%)]">
-            Data Sources
+            Form the Foundation of Our <span className="text-primary">AI Solutions</span>
           </h2>
           <p className="text-[hsl(220,10%,55%)] text-lg max-w-2xl mx-auto">
             Connect to your existing systems and data sources seamlessly.

@@ -5,24 +5,16 @@ import { Button } from '@/components/ui/button';
 import logo from '@/assets/zapsight-logo.png';
 
 const products = [
-  { name: 'Unifyer', href: '/products/unifyer' },
-  { name: 'AIDR', href: '/products/aidr' },
   { name: 'AISAC', href: '/products/aisac' },
   { name: 'AIVI', href: '/products/aivi' },
-  { name: 'SAPRO', href: '/products/sapro' },
-  { name: 'AIVEN', href: '/products/aiven' },
-  { name: 'Custex', href: '/products/custex' },
-  { name: 'ProFast', href: '/products/profast' },
-  { name: 'ProMan', href: '/products/proman' },
 ];
 
 const industries = [
-  { name: 'Retail', href: 'https://zapsightindustriesfurniture.lovable.app', external: true },
+  { name: 'Retail & Security', href: 'https://zapsightindustriesfurniture.lovable.app', external: true },
   { name: 'Manufacturing', href: '/industries/manufacturing' },
   { name: 'Construction', href: '/industries/construction' },
   { name: 'Energy', href: '/industries/energy' },
-  { name: 'Insurance', href: '/industries/insurance' },
-  { name: 'IoT Security', href: '/industries/security' },
+  { name: 'Insurance & Finance', href: '/industries/insurance' },
 ];
 
 const caseStudies = [

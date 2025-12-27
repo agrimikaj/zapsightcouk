@@ -1,23 +1,23 @@
-import { TrendingUp, Users, Lightbulb } from 'lucide-react';
+import { TrendingUp, Users, Shield } from 'lucide-react';
 
 const values = [
-  {
-    icon: TrendingUp,
-    title: 'Value',
-    subtitle: 'Committed to',
-    description: 'We measure success by outcomes, not activity. Every engagement is designed to deliver measurable ROI through faster decisions, higher accuracy, operational efficiency, and systems that perform reliably in production.',
-  },
   {
     icon: Users,
     title: 'Customers',
     subtitle: 'Committed to',
-    description: 'Your success defines ours. We invest time in understanding your business context, constraints, and workflows—ensuring the solutions we build are adopted, trusted, and aligned with long-term goals.',
+    description: 'We obsess in enabling success for our customers. We invest time in understanding your business context, constraints, and workflows—ensuring the solutions we build are adopted, trusted, and aligned with long-term goals.',
   },
   {
-    icon: Lightbulb,
-    title: 'Solutions',
+    icon: TrendingUp,
+    title: 'Value Generation',
     subtitle: 'Committed to',
-    description: 'Our solutions are tailored, execution-focused, and built to evolve with your business—turning AI into a practical, scalable part of everyday operations.',
+    description: 'We measure success by outcomes, not activity. Every engagement is designed to deliver measurable ROI through faster decisions, higher accuracy, operational efficiency, and systems that perform reliably in production.',
+  },
+  {
+    icon: Shield,
+    title: 'Trust',
+    subtitle: 'Committed to',
+    description: 'Building and maintaining trust is a critical pillar of our value system. We think long-term while building a trusted relationship with our customers, partners and employees.',
   },
 ];
 
@@ -40,7 +40,7 @@ const ValuesSection = () => {
         <header className="text-center mb-16">
           <p className="text-primary font-semibold mb-4 tracking-wide uppercase text-sm">Our Values</p>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-5 tracking-tight text-[hsl(0,0%,97%)]">
-            <span className="text-primary">Committed</span> to Value, Customers and Solutions
+            <span className="text-primary">Committed</span> to Customers, Value Generation, and Trust
           </h2>
           <p className="text-[hsl(220,10%,55%)] text-lg max-w-2xl mx-auto">
             Why Leading Enterprises Choose ZapSight

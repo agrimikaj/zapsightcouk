@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ShoppingCart, Factory, HardHat, Zap, Shield, Cpu, ExternalLink } from 'lucide-react';
+import { ShoppingCart, Factory, HardHat, Zap, Shield, ExternalLink } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
 interface Industry {
@@ -14,8 +14,8 @@ interface Industry {
 const industries: Industry[] = [
   {
     id: 'retail',
-    name: 'Retail',
-    description: 'AI-powered inventory optimization, customer analytics, and personalized experiences',
+    name: 'Retail & Security',
+    description: 'AI-powered inventory optimization, customer analytics, security monitoring, and traffic assessment',
     icon: ShoppingCart,
     href: 'https://zapsightindustriesfurniture.lovable.app',
     external: true,
@@ -43,17 +43,10 @@ const industries: Industry[] = [
   },
   {
     id: 'insurance',
-    name: 'Insurance',
-    description: 'Claims processing, risk assessment, and customer engagement',
+    name: 'Insurance & Finance',
+    description: 'Claims processing, risk assessment, fraud detection, and customer engagement',
     icon: Shield,
     href: '/industries/insurance',
-  },
-  {
-    id: 'iot-security',
-    name: 'IoT Security',
-    description: 'Threat detection, device monitoring, and security automation',
-    icon: Cpu,
-    href: '/industries/security',
   },
 ];
 

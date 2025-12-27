@@ -118,7 +118,7 @@ const ProductsDiagram = () => {
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         {/* Header */}
         <header className="text-center mb-10 lg:mb-12">
-          <p className="text-primary font-medium mb-3 tracking-wide uppercase text-sm">Our Products</p>
+          <p className="text-primary font-medium mb-3 tracking-wide uppercase text-sm">AI Products</p>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-4 tracking-tight text-[hsl(0,0%,97%)]">
             AI Agents <span className="text-primary">Embedded in Your Data</span>
           </h2>
@@ -164,10 +164,10 @@ const ProductsDiagram = () => {
                       to={`/products/${layer.id}`}
                       className="block group"
                     >
-                      <div className="relative rounded-xl lg:rounded-2xl overflow-hidden transition-all duration-200 motion-reduce:transition-none cursor-pointer bg-[hsl(220,20%,8%)] border border-[hsl(220,16%,12%)] hover:border-primary/25"
+                      <div className="relative rounded-xl lg:rounded-2xl overflow-hidden transition-all duration-300 motion-reduce:transition-none cursor-pointer bg-[hsl(220,20%,8%)] border border-[hsl(220,16%,12%)] hover:border-primary/40 hover:scale-[1.02] hover:shadow-[0_0_40px_hsl(var(--primary)/0.15)]"
                            style={{ boxShadow: '0 0 30px hsl(var(--primary) / 0.03)' }}>
                         {/* Inner glow overlay */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200 motion-reduce:transition-none" />
+                        <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.06] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 motion-reduce:transition-none" />
 
                         {/* Card content */}
                         <div className={`relative p-5 lg:p-6 flex items-start gap-5 ${
@@ -175,17 +175,17 @@ const ProductsDiagram = () => {
                         }`}>
                           {/* Icon container */}
                           <div className="flex-shrink-0">
-                            <div className="w-14 h-14 rounded-xl flex items-center justify-center relative group-hover:scale-105 transition-transform duration-200 motion-reduce:transition-none bg-primary/10 border border-primary/15">
-                              <IconComponent className="h-7 w-7 text-primary" strokeWidth={1.5} />
+                            <div className="w-14 h-14 rounded-xl flex items-center justify-center relative group-hover:scale-110 transition-all duration-300 motion-reduce:transition-none bg-primary/10 border border-primary/15 group-hover:bg-primary/20 group-hover:border-primary/30">
+                              <IconComponent className="h-7 w-7 text-primary group-hover:text-primary transition-colors duration-300" strokeWidth={1.5} />
                               {/* Icon glow */}
-                              <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-200 motion-reduce:transition-none"
-                                   style={{ boxShadow: '0 0 20px hsl(var(--primary) / 0.25)' }} />
+                              <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 motion-reduce:transition-none"
+                                   style={{ boxShadow: '0 0 30px hsl(var(--primary) / 0.4)' }} />
                             </div>
                           </div>
 
                           {/* Text content */}
                           <div className="flex-1 min-w-0 space-y-1.5">
-                            <h3 className="font-display font-bold text-lg lg:text-xl text-[hsl(0,0%,94%)] tracking-tight group-hover:text-primary transition-colors duration-200">
+                            <h3 className="font-display font-bold text-lg lg:text-xl text-[hsl(0,0%,94%)] tracking-tight group-hover:text-primary transition-colors duration-300">
                               {layer.name}
                             </h3>
                             <p className="text-primary/70 text-sm font-medium">
