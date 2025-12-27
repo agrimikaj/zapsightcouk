@@ -1,4 +1,4 @@
-import { Database, Radio, FileText, MessageSquare, BarChart3, Wrench, Search, Users, Package, ClipboardList, Factory } from 'lucide-react';
+import { Radio, Search } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
 export interface Product {
@@ -24,73 +24,8 @@ export interface Product {
   };
 }
 
+// Active products shown in navigation
 export const products: Product[] = [
-  {
-    id: 'unifyer',
-    name: 'Unifyer',
-    tagline: 'AI-Assisted Data Pipelines',
-    description: 'Builds AI-assisted and monitored data pipelines across different data sources',
-    outcome: 'Clean, monitored, AI-ready data',
-    icon: Database,
-    heroDescription: 'Our product helps build AI-assisted and monitored data pipelines across different data sources.',
-    keyBenefits: [
-      'Quick turnaround time in building your data warehouse / AI applications',
-      'Smart monitoring of the data pipelines through pro-active alerting',
-      'AI-ready data transformations that helps in building agents',
-    ],
-    features: [
-      'Multi-source data integration',
-      'AI-assisted pipeline creation',
-      'Proactive monitoring & alerts',
-      'Data quality management',
-      'Process of building the data-pipeline',
-    ],
-    benefits: [
-      'Faster data warehouse setup',
-      'Reduced data engineering effort',
-      'Reliable data quality',
-      'AI-ready transformations',
-    ],
-    useCases: [
-      'Enterprise data integration',
-      'Cloud migration',
-      'Data lake creation',
-      'Real-time data streaming',
-    ],
-  },
-  {
-    id: 'aidr',
-    name: 'AIDR',
-    tagline: 'Natural Language Data Access',
-    description: 'Enables easy access of your data through Natural Language',
-    outcome: 'Data access at your fingertips',
-    icon: MessageSquare,
-    heroDescription: 'Our product enables easy access of your data through Natural Language. Building personalized / business specific dashboards, running routine analysis or getting insights is now on your fingertips.',
-    keyBenefits: [
-      'Create business specific dashboards across all your data sources',
-      'Automate insight generation, helping business leaders to start with a hypothesis',
-      'Enable employees to deep-dive with NLP',
-      'Employees can generate their own analytics workflows that run on a cadence and create reports to review',
-    ],
-    features: [
-      'Natural language queries',
-      'Instant dashboard creation',
-      'Routine analysis automation',
-      'Multi-source data access',
-    ],
-    benefits: [
-      'No SQL knowledge required',
-      'Faster time to insights',
-      'Reduced IT dependency',
-      'Self-service analytics',
-    ],
-    useCases: [
-      'Ad-hoc business questions',
-      'Quick report generation',
-      'Data exploration',
-      'Cross-department collaboration',
-    ],
-  },
   {
     id: 'aisac',
     name: 'AISAC',
@@ -180,181 +115,14 @@ export const products: Product[] = [
     ],
     demoUrl: 'https://v0.app/chat/aivi-dashboard-design-kqe8KTizDTk?ref=LOE3T2',
   },
-  {
-    id: 'sapro',
-    name: 'SAPRO',
-    tagline: 'Sales Productivity Agent',
-    description: 'Helps sales team be more productive, informed and coached',
-    outcome: 'Empowered sales teams',
-    icon: Users,
-    heroDescription: 'The AI agent focuses on helping the sales team be more productive, informed and coached.',
-    keyBenefits: [
-      'Tracking key sales KPI as per business needs',
-      'Provide contextual insights based on each sales rep\'s performance',
-      'Translate insights to feedback and personalized coaching messages',
-      'Create, communicate and track sales incentives to deliver the right ROI',
-      'Provide customer and product information at sales reps\' fingertips',
-      'Create workflows for customer follow-ups and engagements',
-    ],
-    features: [
-      'Sales KPI tracking',
-      'Performance analytics',
-      'AI-powered coaching',
-      'Incentive management',
-      'Customer engagement workflows',
-    ],
-    benefits: [
-      'Increased sales productivity',
-      'Better-informed sales reps',
-      'Personalized coaching at scale',
-      'Optimized incentive ROI',
-    ],
-    useCases: [
-      'Sales performance management',
-      'Rep coaching automation',
-      'Customer follow-up workflows',
-      'Incentive program tracking',
-    ],
-  },
-  {
-    id: 'aiven',
-    name: 'AIVEN',
-    tagline: 'Inventory Intelligence',
-    description: 'Managing inventory and building workflows around inventory use cases',
-    outcome: 'Optimized inventory operations',
-    icon: Package,
-    heroDescription: 'This product focuses on managing the inventory and building workflows around the inventory use cases.',
-    keyBenefits: [
-      'Track inventory by SKUs / Category',
-      'Recommend and generate POs based on sales plan and time-to-deliver',
-      'Send requirements to different selected vendors and compare responses',
-      'Track POs and follow escalations if delayed',
-      'Monitor existing POs and potentially delay if facing over-stock',
-      'Create vendor performance reports',
-      'Recommend inventory assortment across different stores and warehouses',
-      'Enable buying/purchase team to create specific workflows to automate tasks',
-    ],
-    features: [
-      'SKU-level inventory tracking',
-      'Automated PO generation',
-      'Vendor comparison & selection',
-      'PO tracking & escalation',
-      'Inventory assortment optimization',
-    ],
-    benefits: [
-      'Reduced stockouts',
-      'Optimized inventory levels',
-      'Better vendor management',
-      'Automated purchasing workflows',
-    ],
-    useCases: [
-      'Retail inventory management',
-      'Warehouse optimization',
-      'Vendor relationship management',
-      'Purchase order automation',
-    ],
-  },
-  {
-    id: 'custex',
-    name: 'Custex',
-    tagline: 'Customer Experience Agent',
-    description: 'Managing customer communications and building engagement workflows',
-    outcome: 'Personalized customer engagement',
-    icon: MessageSquare,
-    heroDescription: 'The AI agent focuses on managing customer experience and building workflows around customer engagement use cases.',
-    keyBenefits: [
-      'Create personalized messaging for customers about their order/delivery status',
-      'Respond to customer queries by helping draft responses with accurate data and full context',
-      'Next Product Recommendation based on product information, sales trends and customer data',
-      'Create messaging for customer engagement or share with sales reps for upsell opportunities',
-    ],
-    features: [
-      'Personalized customer messaging',
-      'AI-assisted response drafting',
-      'Product recommendations',
-      'Customer context management',
-    ],
-    benefits: [
-      'Improved customer satisfaction',
-      'Faster response times',
-      'Increased upsell opportunities',
-      'Consistent brand communication',
-    ],
-    useCases: [
-      'Order status communications',
-      'Customer query handling',
-      'Personalized recommendations',
-      'Customer engagement campaigns',
-    ],
-  },
-  {
-    id: 'profast',
-    name: 'ProFast',
-    tagline: 'Project Management Agent',
-    description: 'Helps companies manage their large-scale projects and executions',
-    outcome: 'Accountable project delivery',
-    icon: ClipboardList,
-    heroDescription: 'The AI agent focuses on helping companies manage their large-scale projects and executions.',
-    keyBenefits: [
-      'Track the key metrics for each project to drive accountability',
-      'Track current budget & timelines, and continuously predict new estimated budget & timelines based on progress',
-      'Get insights from the agent to focus on critical activities and escalation',
-      'Let AI do the regular escalations and contractor engagement to push progress when there are delays',
-    ],
-    features: [
-      'Project metrics tracking',
-      'Budget & timeline prediction',
-      'AI-powered escalations',
-      'Contractor engagement automation',
-    ],
-    benefits: [
-      'Better project visibility',
-      'Proactive delay management',
-      'Improved accountability',
-      'Automated stakeholder communication',
-    ],
-    useCases: [
-      'Large-scale project management',
-      'Construction project tracking',
-      'Budget forecasting',
-      'Contractor management',
-    ],
-  },
-  {
-    id: 'proman',
-    name: 'ProMan',
-    tagline: 'Production & Labour Management',
-    description: 'Enables AI-led production and labour management',
-    outcome: 'Optimized production operations',
-    icon: Factory,
-    heroDescription: 'This product focuses on enabling AI-led production and labour management. Used in construction and heavy industries to drive more productivity and efficiency throughout their operations.',
-    keyBenefits: [
-      'Create daily or weekly production plans based on defined constraints and new inputs',
-      'Provide rationale and reasoning to the plan, and allow leaders to iterate through prompts',
-      'Finalize and communicate the plan to the broader organization',
-      'Track performance to the plan, and suggest changes or opportunities to improve efficiency',
-    ],
-    features: [
-      'AI-powered production planning',
-      'Constraint-based scheduling',
-      'Plan iteration through prompts',
-      'Performance tracking & optimization',
-    ],
-    benefits: [
-      'Increased production efficiency',
-      'Better resource utilization',
-      'Data-driven planning decisions',
-      'Continuous improvement insights',
-    ],
-    useCases: [
-      'Construction planning',
-      'Manufacturing scheduling',
-      'Labour allocation',
-      'Operations optimization',
-    ],
-  },
 ];
 
+// Import archived products for backward compatibility
+import { archivedProducts } from './products-archive';
+
+// Combined list for product page routing (allows archived products to still be accessible via URL)
+export const allProducts: Product[] = [...products, ...archivedProducts];
+
 export const getProductById = (id: string): Product | undefined => {
-  return products.find(p => p.id === id);
+  return allProducts.find(p => p.id === id);
 };
