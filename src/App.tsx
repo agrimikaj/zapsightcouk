@@ -9,6 +9,7 @@ import Index from "./pages/Index";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import ProductPage from "./pages/ProductPage";
+import AIVIDemo from "./pages/AIVIDemo";
 import NotFound from "./pages/NotFound";
 import EnergyIndustry from "./pages/industries/EnergyIndustry";
 import ManufacturingIndustry from "./pages/industries/ManufacturingIndustry";
@@ -42,6 +43,7 @@ const App = () => (
             <Route path="/insights" element={<Insights />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/products/:productId" element={<ProductPage />} />
+            <Route path="/demo/aivi" element={<AIVIDemo />} />
             <Route path="/industries/energy" element={<EnergyIndustry />} />
             <Route path="/industries/manufacturing" element={<ManufacturingIndustry />} />
             <Route path="/industries/security" element={<SecurityIndustry />} />
