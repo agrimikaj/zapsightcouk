@@ -188,7 +188,7 @@ const ProductsDiagram = () => {
                             <h3 className="font-display font-bold text-lg lg:text-xl text-[hsl(0,0%,94%)] tracking-tight group-hover:text-primary transition-colors duration-300">
                               {layer.name}
                             </h3>
-                            <p className="text-primary/70 text-sm font-medium">
+                            <p className="text-primary text-sm font-medium">
                               {layer.tagline}
                             </p>
                             <p className="text-[hsl(220,10%,55%)] text-sm leading-relaxed">

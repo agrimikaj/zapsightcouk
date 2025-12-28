@@ -80,15 +80,15 @@ const CustomSelect = ({ label, options, value, onChange }: SelectProps) => {
 
   return (
     <div className="relative">
-      <label className="block text-sm font-medium text-[hsl(220,10%,50%)] mb-2.5 tracking-wide">{label}</label>
+      <label className="block text-sm font-medium text-[hsl(220,10%,58%)] mb-2.5 tracking-wide">{label}</label>
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="w-full flex items-center justify-between gap-2 px-4 py-3.5 bg-[hsl(220,20%,10%)] border border-[hsl(220,16%,14%)] rounded-2xl text-left hover:bg-[hsl(220,20%,11%)] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary/30"
       >
-        <span className={value ? 'text-[hsl(0,0%,94%)] font-medium' : 'text-[hsl(220,10%,45%)]'}>
+        <span className={value ? 'text-[hsl(0,0%,94%)] font-medium' : 'text-[hsl(220,10%,58%)]'}>
           {value || `Select ${label}`}
         </span>
-        <ChevronDown className={`h-5 w-5 text-[hsl(220,10%,45%)] transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
+        <ChevronDown className={`h-5 w-5 text-[hsl(220,10%,58%)] transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
       </button>
       {isOpen && (
         <div className="absolute top-full left-0 right-0 mt-2 bg-[hsl(220,20%,10%)] border border-[hsl(220,16%,14%)] rounded-2xl shadow-floating z-50 max-h-60 overflow-auto animate-scale-in">

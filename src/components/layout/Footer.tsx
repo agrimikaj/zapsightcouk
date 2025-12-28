@@ -18,13 +18,13 @@ const Footer = () => {
               Transforming Data Into Intelligent, ROI-Driven AI Agents
             </p>
             <div className="flex items-center gap-3 pt-2">
-              <span className="text-[hsl(220,10%,40%)] p-2">
+              <span className="text-[hsl(220,10%,50%)] p-2">
                 <Linkedin className="h-5 w-5" strokeWidth={1.5} />
               </span>
-              <span className="text-[hsl(220,10%,40%)] p-2">
+              <span className="text-[hsl(220,10%,50%)] p-2">
                 <Twitter className="h-5 w-5" strokeWidth={1.5} />
               </span>
-              <a href="mailto:contact@zapsight.com" className="text-[hsl(220,10%,40%)] hover:text-primary p-2 hover:bg-[hsl(220,20%,8%)] rounded-xl transition-colors duration-200">
+              <a href="mailto:contact@zapsight.com" aria-label="Email ZapSight" className="text-[hsl(220,10%,50%)] hover:text-primary p-2 hover:bg-[hsl(220,20%,8%)] rounded-xl transition-colors duration-200">
                 <Mail className="h-5 w-5" strokeWidth={1.5} />
               </a>
             </div>
@@ -122,14 +122,14 @@ const Footer = () => {
 
         <div className="mt-20 pt-8 border-t border-[hsl(220,16%,10%)]">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-[hsl(220,10%,40%)] text-sm">
+            <p className="text-[hsl(220,10%,50%)] text-sm">
               © {new Date().getFullYear()} ZapSight. All rights reserved.
             </p>
             <div className="flex gap-8">
-              <span className="text-[hsl(220,10%,40%)] text-sm">
+              <span className="text-[hsl(220,10%,50%)] text-sm">
                 Privacy Policy
               </span>
-              <span className="text-[hsl(220,10%,40%)] text-sm">
+              <span className="text-[hsl(220,10%,50%)] text-sm">
                 Terms of Service
               </span>
             </div>
