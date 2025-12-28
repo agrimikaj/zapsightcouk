@@ -17,8 +17,7 @@ const industries: Industry[] = [
     name: 'Retail & Security',
     description: 'AI-powered inventory optimization, customer analytics, security monitoring, and traffic assessment',
     icon: ShoppingCart,
-    href: 'https://zapsightindustriesfurniture.lovable.app',
-    external: true,
+    href: '/industries/retail',
   },
   {
     id: 'manufacturing',

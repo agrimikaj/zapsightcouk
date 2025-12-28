@@ -15,6 +15,7 @@ import ManufacturingIndustry from "./pages/industries/ManufacturingIndustry";
 import SecurityIndustry from "./pages/industries/SecurityIndustry";
 import InsuranceIndustry from "./pages/industries/InsuranceIndustry";
 import ConstructionIndustry from "./pages/industries/ConstructionIndustry";
+import RetailIndustry from "./pages/industries/RetailIndustry";
 import HowWeWork from "./pages/about/HowWeWork";
 import CaseStudies from "./pages/CaseStudies";
 import FAQs from "./pages/FAQs";
@@ -44,6 +45,7 @@ const App = () => (
             <Route path="/industries/security" element={<SecurityIndustry />} />
             <Route path="/industries/insurance" element={<InsuranceIndustry />} />
             <Route path="/industries/construction" element={<ConstructionIndustry />} />
+            <Route path="/industries/retail" element={<RetailIndustry />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
