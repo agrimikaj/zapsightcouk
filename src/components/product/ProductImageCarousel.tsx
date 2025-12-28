@@ -5,7 +5,9 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel';
-import dashboardProductivity from '@/assets/dashboard-productivity.png';
+import aiviDashboardOverview from '@/assets/aivi-dashboard-overview.png';
+import aiviSourceAttribution from '@/assets/aivi-source-attribution.png';
+import aiviContentGaps from '@/assets/aivi-content-gaps.png';
 import dashboardSecurity1 from '@/assets/dashboard-security-1.png';
 import dashboardSecurity2 from '@/assets/dashboard-security-2.png';
 
@@ -16,19 +18,19 @@ interface ProductImageCarouselProps {
 const productImages: Record<string, { src: string; alt: string; caption: string }[]> = {
   aivi: [
     {
-      src: dashboardProductivity,
+      src: aiviDashboardOverview,
       alt: 'AIVI Dashboard Overview',
       caption: 'AI Visibility Dashboard with real-time metrics and insights',
     },
     {
-      src: dashboardSecurity1,
+      src: aiviSourceAttribution,
       alt: 'AIVI Source Attribution',
       caption: 'Track where AI systems pull your brand information from',
     },
     {
-      src: dashboardSecurity2,
-      alt: 'AIVI Content Analysis',
-      caption: 'Identify content gaps and optimization opportunities',
+      src: aiviContentGaps,
+      alt: 'AIVI Content Gaps & Sentiment',
+      caption: 'Identify content gaps and analyze narrative sentiment',
     },
   ],
   aisac: [
