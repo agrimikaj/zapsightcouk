@@ -19,6 +19,8 @@ const industries = [
 
 const caseStudies = [
   { name: 'Overview', href: '/case-studies' },
+  { name: 'Customer Analytics', href: '/case-studies/vca', featured: true },
+  { name: 'Predictive Maintenance', href: '/case-studies/bosch', featured: true },
 ];
 
 const aboutUs = [
@@ -74,9 +76,12 @@ const Dropdown = ({ label, items, isOpen, onToggle }: DropdownProps) => (
               ) : (
                 <Link
                   to={item.href}
-                  className="block px-5 py-3 text-sm text-[hsl(220,10%,60%)] hover:bg-primary/10 hover:text-[hsl(0,0%,94%)] transition-all duration-200"
+                  className="flex items-center gap-2 px-5 py-3 text-sm text-[hsl(220,10%,60%)] hover:bg-primary/10 hover:text-[hsl(0,0%,94%)] transition-all duration-200"
                 >
                   {item.name}
+                  {item.featured && (
+                    <span className="text-[10px] font-semibold uppercase tracking-wider text-primary bg-primary/10 px-1.5 py-0.5 rounded">Featured</span>
+                  )}
                 </Link>
               )}
             </div>
