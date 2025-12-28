@@ -110,7 +110,7 @@ const CaseStudiesSection = () => {
                         {study.industry}
                       </span>
                       {study.featured && (
-                        <span className="text-[10px] font-semibold uppercase tracking-wider text-[hsl(220,10%,50%)] bg-[hsl(220,16%,14%)] px-2 py-1 rounded">
+                        <span className="text-[10px] font-semibold uppercase tracking-wider text-[hsl(220,10%,65%)] bg-[hsl(220,16%,14%)] px-2 py-1 rounded">
                           Featured
                         </span>
                       )}
