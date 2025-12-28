@@ -6,6 +6,7 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import NeuralBackground from '@/components/ui/NeuralBackground';
 import CircuitBoardBackground from '@/components/ui/CircuitBoardBackground';
+import ProductImageCarousel from '@/components/product/ProductImageCarousel';
 import { getProductById, products } from '@/lib/products';
 
 const ProductPage = () => {
@@ -106,7 +107,14 @@ const ProductPage = () => {
                       <ArrowRight className="h-5 w-5" strokeWidth={1.5} />
                     </Link>
                   </Button>
-                  {product.demoUrl ? (
+                  {product.id === 'aivi' ? (
+                    <Button variant="heroOutline" size="xl" asChild>
+                      <Link to="/demo/aivi">
+                        View Demo
+                        <ArrowRight className="h-4 w-4 ml-2" strokeWidth={1.5} />
+                      </Link>
+                    </Button>
+                  ) : product.demoUrl ? (
                     <Button variant="heroOutline" size="xl" asChild>
                       <a href={product.demoUrl} target="_blank" rel="noopener noreferrer">
                         View Demo
@@ -122,6 +130,9 @@ const ProductPage = () => {
               </div>
             </div>
           </section>
+
+          {/* Product Image Carousel */}
+          <ProductImageCarousel productId={product.id} />
 
           {/* Key Benefits Section */}
           <section className="py-10 lg:py-14 relative overflow-hidden">
