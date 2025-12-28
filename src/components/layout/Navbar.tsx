@@ -10,7 +10,7 @@ const products = [
 ];
 
 const industries = [
-  { name: 'Retail & Security', href: 'https://zapsightindustriesfurniture.lovable.app', external: true },
+  { name: 'Retail & Security', href: '/industries/retail' },
   { name: 'Manufacturing', href: '/industries/manufacturing' },
   { name: 'Construction', href: '/industries/construction' },
   { name: 'Energy', href: '/industries/energy' },
@@ -19,8 +19,6 @@ const industries = [
 
 const caseStudies = [
   { name: 'Overview', href: '/case-studies' },
-  { name: 'Retail Client', href: 'https://presentation-to-polish.lovable.app', external: true, featured: true },
-  { name: 'Manufacturing Client', href: 'https://quantum-weave-desk.lovable.app', external: true, featured: true },
 ];
 
 const aboutUs = [
@@ -171,60 +169,27 @@ const Navbar = () => {
               <div className="px-2 pt-4 border-t border-[hsl(220,16%,10%)]">
                 <p className="text-xs font-semibold text-[hsl(220,10%,40%)] uppercase tracking-wider mb-3">Industries</p>
                 {industries.map((industry) => (
-                  industry.external ? (
-                    <a
-                      key={industry.name}
-                      href={industry.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-between py-2.5 px-3 text-sm text-[hsl(220,10%,60%)] hover:text-primary transition-colors"
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      {industry.name}
-                      <ExternalLink className="h-3.5 w-3.5" strokeWidth={1.5} />
-                    </a>
-                  ) : (
-                    <Link
-                      key={industry.name}
-                      to={industry.href}
-                      className="block py-2.5 px-3 text-sm text-[hsl(220,10%,60%)] hover:text-primary transition-colors"
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      {industry.name}
-                    </Link>
-                  )
+                  <Link
+                    key={industry.name}
+                    to={industry.href}
+                    className="block py-2.5 px-3 text-sm text-[hsl(220,10%,60%)] hover:text-primary transition-colors"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {industry.name}
+                  </Link>
                 ))}
               </div>
               <div className="px-2 pt-4 border-t border-[hsl(220,16%,10%)]">
                 <p className="text-xs font-semibold text-[hsl(220,10%,40%)] uppercase tracking-wider mb-3">Case Studies</p>
                 {caseStudies.map((item) => (
-                  item.external ? (
-                    <a
-                      key={item.name}
-                      href={item.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-between py-2.5 px-3 text-sm text-[hsl(220,10%,60%)] hover:text-primary transition-colors"
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      <span className="flex items-center gap-2">
-                        {item.name}
-                        {item.featured && (
-                          <span className="text-[10px] font-semibold uppercase tracking-wider text-primary bg-primary/10 px-1.5 py-0.5 rounded">Featured</span>
-                        )}
-                      </span>
-                      <ExternalLink className="h-3.5 w-3.5" strokeWidth={1.5} />
-                    </a>
-                  ) : (
-                    <Link
-                      key={item.name}
-                      to={item.href}
-                      className="block py-2.5 px-3 text-sm text-[hsl(220,10%,60%)] hover:text-primary transition-colors"
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      {item.name}
-                    </Link>
-                  )
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    className="block py-2.5 px-3 text-sm text-[hsl(220,10%,60%)] hover:text-primary transition-colors"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
                 ))}
               </div>
               <div className="px-2 pt-4 border-t border-[hsl(220,16%,10%)]">
