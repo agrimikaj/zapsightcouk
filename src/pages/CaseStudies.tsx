@@ -2,82 +2,10 @@ import { Helmet } from 'react-helmet-async';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import NeuralBackground from '@/components/ui/NeuralBackground';
-import { ExternalLink, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-
-interface CaseStudy {
-  id: string;
-  title: string;
-  industry: string;
-  description: string;
-  results: string[];
-  href?: string;
-  external?: boolean;
-  featured?: boolean;
-}
-
-const caseStudies: CaseStudy[] = [
-  {
-    id: 'vca',
-    title: 'AI-Powered Customer Analytics',
-    industry: 'Retail',
-    description: 'Implementing advanced customer segmentation and predictive analytics to drive personalized experiences and increase conversion rates.',
-    results: ['35% increase in conversion', '25% reduction in churn', 'Real-time customer insights'],
-    featured: true,
-  },
-  {
-    id: 'bosch',
-    title: 'Predictive Maintenance Platform',
-    industry: 'Manufacturing',
-    description: 'Deploying AI agents for equipment monitoring and predictive maintenance, reducing downtime and optimizing operational efficiency.',
-    results: ['40% reduction in downtime', '6.5X ROI achieved', 'Automated alerts & scheduling'],
-    featured: true,
-  },
-  {
-    id: 'furniture-retailer',
-    title: 'Data Integration & AI Agents',
-    industry: 'Retail',
-    description: 'Integrated data from 5 siloed systems (CRM, PoS, Logistics, Finance) into a single AWS-based infrastructure with business context layering for retail operations.',
-    results: ['$440K savings', '$1M revenue increase', '5X ROI achieved', 'Self-service reporting'],
-    featured: true,
-  },
-  {
-    id: 'pharma-pricing',
-    title: 'Pricing Optimization',
-    industry: 'Healthcare',
-    description: 'Optimized pricing levers for an allergy brand to reduce reliance on unsustainable promotions using econometric models and what-if simulators.',
-    results: ['Improved category profitability', 'Price elasticity modeling', 'ROI forecasting simulator'],
-  },
-  {
-    id: 'tire-mroi',
-    title: 'Marketing ROI Optimization',
-    industry: 'Manufacturing',
-    description: 'Determined optimal allocation of marketing resources across national and local promotional programs to maximize profitability.',
-    results: ['Optimized marketing spend', 'ROI measurement per promotion', 'Revenue & profit impact analysis'],
-  },
-  {
-    id: 'software-churn',
-    title: 'Churn Prediction Model',
-    industry: 'Technology',
-    description: 'Built a churn probability model for advertisers to enable proactive retention activities and maximize revenue from text advertising.',
-    results: ['Additional churn captured', 'Monthly high-risk advertiser list', 'Proactive intervention steps'],
-  },
-  {
-    id: 'solar-data',
-    title: 'Data Access Agent',
-    industry: 'Energy',
-    description: 'Streamlined data across 5 systems (100+ tables, 10K+ columns) by building semantic layer for quick, on-the-go business insights.',
-    results: ['2X ROI (1st year)', '4X ROI (2nd year)', '3-day reduction in turnaround'],
-  },
-  {
-    id: 'agri-quality',
-    title: 'Reporting & Quality Agent',
-    industry: 'Manufacturing',
-    description: 'Optimized SAP-based data setup to automate 100+ reports and deployed quality agent to evaluate seed-lots and automate shipment-lots.',
-    results: ['50% productivity improvement', '2X-5X ROI achieved', '48-hour turnaround reduction'],
-  },
-];
+import { caseStudies } from '@/lib/case-studies';
 
 const CaseStudies = () => {
   return (
@@ -127,8 +55,12 @@ const CaseStudies = () => {
               </h2>
               
               <div className="grid lg:grid-cols-2 gap-8">
-                {caseStudies.filter(s => s.featured).map((study) => {
-                  const CardContent = (
+                {caseStudies.filter(s => s.featured).map((study) => (
+                  <Link
+                    key={study.id}
+                    to={`/case-studies/${study.id}`}
+                    className="block"
+                  >
                     <div className="group relative bg-[hsl(220,20%,8%)] border border-[hsl(220,16%,12%)] rounded-2xl p-8 transition-all duration-300 hover:border-primary/25 h-full"
                          style={{ boxShadow: '0 0 40px hsl(var(--primary) / 0.02)' }}>
                       <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
@@ -152,33 +84,22 @@ const CaseStudies = () => {
                         </p>
 
                         <div className="space-y-2 mb-6">
-                          {study.results.map((result) => (
-                            <div key={result} className="flex items-center gap-2 text-sm text-[hsl(220,10%,65%)]">
+                          {study.results.slice(0, 3).map((result) => (
+                            <div key={result.label} className="flex items-center gap-2 text-sm text-[hsl(220,10%,65%)]">
                               <span className="w-1.5 h-1.5 bg-primary rounded-full flex-shrink-0" />
-                              {result}
+                              {result.value} {result.label}
                             </div>
                           ))}
                         </div>
 
                         <div className="flex items-center gap-2 text-primary text-sm font-medium group-hover:gap-3 transition-all duration-200">
                           <span>View Full Case Study</span>
-                          <ExternalLink className="h-4 w-4" strokeWidth={1.5} />
+                          <ArrowRight className="h-4 w-4" strokeWidth={1.5} />
                         </div>
                       </div>
                     </div>
-                  );
-
-                  return (
-                    <a
-                      key={study.id}
-                      href={study.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {CardContent}
-                    </a>
-                  );
-                })}
+                  </Link>
+                ))}
               </div>
             </div>
           </section>
@@ -199,18 +120,20 @@ const CaseStudies = () => {
               
               <div className="grid sm:grid-cols-2 gap-6">
                 {caseStudies.filter(s => !s.featured).map((study) => (
-                  <div
+                  <Link
                     key={study.id}
-                    className="block"
+                    to={`/case-studies/${study.id}`}
+                    className="block group"
                   >
-                    <div className="relative bg-[hsl(220,20%,8%)] border border-[hsl(220,16%,12%)] rounded-2xl p-6 h-full"
+                    <div className="relative bg-[hsl(220,20%,8%)] border border-[hsl(220,16%,12%)] rounded-2xl p-6 h-full hover:border-primary/25 transition-all duration-300"
                          style={{ boxShadow: '0 0 40px hsl(var(--primary) / 0.02)' }}>
+                      <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
                       <div className="relative">
                         <span className="text-xs font-semibold uppercase tracking-wider text-primary bg-primary/10 px-2 py-1 rounded">
                           {study.industry}
                         </span>
                         
-                        <h3 className="font-display font-bold text-lg text-[hsl(0,0%,94%)] tracking-tight mt-4 mb-3">
+                        <h3 className="font-display font-bold text-lg text-[hsl(0,0%,94%)] tracking-tight mt-4 mb-3 group-hover:text-primary transition-colors">
                           {study.title}
                         </h3>
                         
@@ -218,17 +141,22 @@ const CaseStudies = () => {
                           {study.description}
                         </p>
 
-                        <div className="space-y-1.5">
-                          {study.results.map((result) => (
-                            <div key={result} className="flex items-center gap-2 text-sm text-[hsl(220,10%,60%)]">
+                        <div className="space-y-1.5 mb-4">
+                          {study.results.slice(0, 3).map((result) => (
+                            <div key={result.label} className="flex items-center gap-2 text-sm text-[hsl(220,10%,60%)]">
                               <span className="w-1.5 h-1.5 bg-primary rounded-full flex-shrink-0" />
-                              {result}
+                              {result.value} {result.label}
                             </div>
                           ))}
                         </div>
+
+                        <div className="flex items-center gap-2 text-primary text-sm font-medium group-hover:gap-3 transition-all duration-200">
+                          <span>View Case Study</span>
+                          <ArrowRight className="h-4 w-4" strokeWidth={1.5} />
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  </Link>
                 ))}
               </div>
             </div>

@@ -18,6 +18,7 @@ import ConstructionIndustry from "./pages/industries/ConstructionIndustry";
 import RetailIndustry from "./pages/industries/RetailIndustry";
 import HowWeWork from "./pages/about/HowWeWork";
 import CaseStudies from "./pages/CaseStudies";
+import CaseStudyDetail from "./pages/CaseStudyDetail";
 import FAQs from "./pages/FAQs";
 import Insights from "./pages/Insights";
 
@@ -36,6 +37,7 @@ const App = () => (
             <Route path="/about" element={<About />} />
             <Route path="/about/how-we-work" element={<HowWeWork />} />
             <Route path="/case-studies" element={<CaseStudies />} />
+            <Route path="/case-studies/:caseStudyId" element={<CaseStudyDetail />} />
             <Route path="/faqs" element={<FAQs />} />
             <Route path="/insights" element={<Insights />} />
             <Route path="/contact" element={<Contact />} />
