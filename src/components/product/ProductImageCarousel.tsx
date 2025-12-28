@@ -5,9 +5,10 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel';
-import aiviDashboardOverview from '@/assets/aivi-dashboard-overview.png';
-import aiviSourceAttribution from '@/assets/aivi-source-attribution.png';
-import aiviContentGaps from '@/assets/aivi-content-gaps.png';
+import aiviDashboardStats from '@/assets/aivi-dashboard-stats.png';
+import aiviCharts from '@/assets/aivi-charts.png';
+import aiviContentSentiment from '@/assets/aivi-content-sentiment.png';
+import aiviAeoRecommendations from '@/assets/aivi-aeo-recommendations.png';
 import dashboardSecurity1 from '@/assets/dashboard-security-1.png';
 import dashboardSecurity2 from '@/assets/dashboard-security-2.png';
 
@@ -18,19 +19,24 @@ interface ProductImageCarouselProps {
 const productImages: Record<string, { src: string; alt: string; caption: string }[]> = {
   aivi: [
     {
-      src: aiviDashboardOverview,
+      src: aiviDashboardStats,
       alt: 'AIVI Dashboard Overview',
-      caption: 'AI Visibility Dashboard with real-time metrics and insights',
+      caption: 'AI Visibility Dashboard with real-time metrics and KPIs',
     },
     {
-      src: aiviSourceAttribution,
-      alt: 'AIVI Source Attribution',
-      caption: 'Track where AI systems pull your brand information from',
+      src: aiviCharts,
+      alt: 'AIVI Visibility Trend & Source Attribution',
+      caption: 'Track visibility trends and source attribution analytics',
     },
     {
-      src: aiviContentGaps,
+      src: aiviContentSentiment,
       alt: 'AIVI Content Gaps & Sentiment',
       caption: 'Identify content gaps and analyze narrative sentiment',
+    },
+    {
+      src: aiviAeoRecommendations,
+      alt: 'AIVI AEO Recommendations',
+      caption: 'Get actionable recommendations to boost AI visibility',
     },
   ],
   aisac: [
@@ -70,7 +76,7 @@ const ProductImageCarousel = ({ productId }: ProductImageCarouselProps) => {
           </h2>
         </div>
 
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <Carousel
             opts={{
               align: 'center',
@@ -80,7 +86,7 @@ const ProductImageCarousel = ({ productId }: ProductImageCarouselProps) => {
           >
             <CarouselContent>
               {images.map((image, index) => (
-                <CarouselItem key={index} className="md:basis-4/5 lg:basis-3/4">
+                <CarouselItem key={index} className="md:basis-[90%] lg:basis-[85%]">
                   <div className="p-2">
                     <div className="relative overflow-hidden rounded-2xl border border-[hsl(220,16%,15%)] bg-[hsl(220,20%,8%)] shadow-2xl">
                       {/* Browser-like header */}
@@ -97,11 +103,11 @@ const ProductImageCarousel = ({ productId }: ProductImageCarouselProps) => {
                         </div>
                       </div>
                       {/* Image */}
-                      <div className="aspect-[16/10] overflow-hidden">
+                      <div className="overflow-hidden">
                         <img
                           src={image.src}
                           alt={image.alt}
-                          className="w-full h-full object-cover object-top"
+                          className="w-full h-auto object-contain"
                         />
                       </div>
                     </div>
