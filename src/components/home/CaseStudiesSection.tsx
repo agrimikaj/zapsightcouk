@@ -19,8 +19,6 @@ const caseStudies: CaseStudy[] = [
     title: 'AI-Powered Customer Analytics',
     industry: 'Retail',
     description: 'Implementing advanced customer segmentation and predictive analytics to drive personalized experiences and increase conversion rates.',
-    href: 'https://presentation-to-polish.lovable.app',
-    external: true,
     featured: true,
   },
   {
@@ -28,8 +26,6 @@ const caseStudies: CaseStudy[] = [
     title: 'Predictive Maintenance Platform',
     industry: 'Manufacturing',
     description: 'Deploying AI agents for equipment monitoring and predictive maintenance, reducing downtime and optimizing operational efficiency.',
-    href: 'https://quantum-weave-desk.lovable.app',
-    external: true,
     featured: true,
   },
   {
