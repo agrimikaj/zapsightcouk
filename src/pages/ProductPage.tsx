@@ -107,21 +107,23 @@ const ProductPage = () => {
                       <ArrowRight className="h-5 w-5" strokeWidth={1.5} />
                     </Link>
                   </Button>
-                  {product.id === 'aivi' ? (
+                  {product.id === 'aivi' && (
                     <Button variant="heroOutline" size="xl" asChild>
                       <Link to="/demo/aivi">
                         View Demo
                         <ArrowRight className="h-4 w-4 ml-2" strokeWidth={1.5} />
                       </Link>
                     </Button>
-                  ) : product.demoUrl ? (
+                  )}
+                  {product.id !== 'aivi' && product.id !== 'aisac' && product.demoUrl && (
                     <Button variant="heroOutline" size="xl" asChild>
                       <a href={product.demoUrl} target="_blank" rel="noopener noreferrer">
                         View Demo
                         <ExternalLink className="h-4 w-4 ml-2" strokeWidth={1.5} />
                       </a>
                     </Button>
-                  ) : (
+                  )}
+                  {product.id !== 'aivi' && product.id !== 'aisac' && !product.demoUrl && (
                     <Button variant="heroOutline" size="xl">
                       Watch Demo
                     </Button>
