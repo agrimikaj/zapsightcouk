@@ -163,10 +163,11 @@ const HeroBanner = () => {
 
               {/* Pagination Dots */}
               <div className="flex items-center justify-center gap-3">
-                {usps.map((_, idx) => (
+                {usps.map((usp, idx) => (
                   <button
                     key={idx}
                     onClick={() => setActiveIndex(idx)}
+                    aria-label={`Go to slide ${idx + 1}: ${usp.title}`}
                     className={`h-2 rounded-full transition-all duration-500 ${
                       idx === activeIndex 
                         ? 'bg-primary w-8' 

@@ -63,6 +63,7 @@ const CaseStudiesSection = () => {
             <button
               onClick={() => scroll('left')}
               disabled={!canScrollLeft}
+              aria-label="Scroll to previous case study"
               className={`p-3 rounded-xl border transition-all duration-200 ${
                 canScrollLeft
                   ? 'border-[hsl(220,16%,14%)] bg-[hsl(220,20%,8%)] hover:bg-[hsl(220,20%,10%)] hover:border-primary/20 text-[hsl(220,10%,60%)] hover:text-primary'
@@ -74,6 +75,7 @@ const CaseStudiesSection = () => {
             <button
               onClick={() => scroll('right')}
               disabled={!canScrollRight}
+              aria-label="Scroll to next case study"
               className={`p-3 rounded-xl border transition-all duration-200 ${
                 canScrollRight
                   ? 'border-[hsl(220,16%,14%)] bg-[hsl(220,20%,8%)] hover:bg-[hsl(220,20%,10%)] hover:border-primary/20 text-[hsl(220,10%,60%)] hover:text-primary'
