@@ -154,20 +154,6 @@ const Contact = () => {
                       </div>
                     </div>
 
-                    <div className="bg-[hsl(220,20%,8%)] border border-primary/20 rounded-3xl p-8 relative overflow-hidden"
-                         style={{ boxShadow: '0 0 60px hsl(var(--primary) / 0.08)' }}>
-                      <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.05] to-transparent" />
-                      <div className="relative z-10">
-                        <h3 className="font-display text-xl font-bold mb-4 text-[hsl(0,0%,94%)]">Quick Start</h3>
-                        <p className="text-[hsl(220,10%,55%)] mb-6">
-                          Get started in just 4-6 weeks with measurable ROI outcomes.
-                        </p>
-                        <Button size="lg" variant="hero" className="w-full shadow-glow group">
-                          Book Discovery Call
-                          <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" strokeWidth={1.5} />
-                        </Button>
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>
