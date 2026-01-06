@@ -144,9 +144,9 @@ const HeroBanner = () => {
                   <IconComponent className="h-8 w-8 text-primary-foreground" strokeWidth={1.5} />
                 </div>
                 <div>
-                  <h3 className="font-display text-4xl lg:text-5xl font-bold text-primary tracking-tight">
+                  <h2 className="font-display text-4xl lg:text-5xl font-bold text-primary tracking-tight">
                     {currentUSP.title}
-                  </h3>
+                  </h2>
                   <p className="text-[hsl(220,10%,60%)] font-medium">{currentUSP.subtitle}</p>
                 </div>
               </div>
