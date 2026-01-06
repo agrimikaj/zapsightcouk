@@ -2,7 +2,7 @@ const NeuralBackground = () => {
   return (
     <>
       {/* Neural Network SVG */}
-      <svg className="absolute inset-0 w-full h-full opacity-[0.24]" xmlns="http://www.w3.org/2000/svg">
+      <svg className="absolute inset-0 w-full h-full opacity-[0.24]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
         <defs>
           <linearGradient id="neuronGradient" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.6" />
@@ -54,7 +54,7 @@ const NeuralBackground = () => {
         
         {/* Data wave paths */}
         <path
-          d="M0,50% Q25%,30% 50%,50% T100%,50%"
+          d="M0,50 Q25,30 50,50 T100,50"
           fill="none"
           stroke="hsl(var(--primary))"
           strokeWidth="0.5"
@@ -63,7 +63,7 @@ const NeuralBackground = () => {
           style={{ animationDuration: '6s' }}
         />
         <path
-          d="M0,60% Q25%,40% 50%,60% T100%,60%"
+          d="M0,60 Q25,40 50,60 T100,60"
           fill="none"
           stroke="hsl(var(--primary))"
           strokeWidth="0.5"
