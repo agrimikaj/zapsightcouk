@@ -78,9 +78,6 @@ const HeroBanner = () => {
         backgroundSize: '48px 48px'
       }} />
       
-      {/* Soft ambient glows */}
-      <div className="absolute top-1/4 -right-32 w-[500px] h-[500px] bg-primary/[0.03] rounded-full blur-[180px]" />
-      <div className="absolute bottom-1/4 -left-32 w-[400px] h-[400px] bg-primary/[0.02] rounded-full blur-[150px]" />
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -183,9 +180,6 @@ const HeroBanner = () => {
               </div>
             </div>
 
-            {/* Decorative Elements */}
-            <div className="absolute -top-6 -right-6 w-28 h-28 bg-primary/[0.02] rounded-[2rem] blur-xl" />
-            <div className="absolute -bottom-6 -left-6 w-36 h-36 bg-primary/[0.015] rounded-[2.5rem] blur-xl" />
           </div>
         </div>
       </div>
