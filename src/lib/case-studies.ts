@@ -103,7 +103,7 @@ export const caseStudies: CaseStudy[] = [
       author: 'Chief Data Officer',
       role: 'Leading Furniture Retailer',
     },
-    featured: true,
+    featured: false,
   },
   {
     id: 'pharma-pricing',

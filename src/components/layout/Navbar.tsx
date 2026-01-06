@@ -1,20 +1,28 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronDown, Menu, X, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import logo from '@/assets/zapsight-logo.png';
 
 const products = [
-  { name: 'AISAC', href: '/products/aisac' },
-  { name: 'AIVI', href: '/products/aivi' },
+  { name: 'AISAC', href: '/products/aisac', featured: true },
+  { name: 'AIVI', href: '/products/aivi', featured: true },
+  { name: 'Unifyer', href: '/products/unifyer' },
+  { name: 'AIDR', href: '/products/aidr' },
+  { name: 'SAPRO', href: '/products/sapro' },
+  { name: 'AIVEN', href: '/products/aiven' },
+  { name: 'Custex', href: '/products/custex' },
+  { name: 'ProFast', href: '/products/profast' },
+  { name: 'ProMan', href: '/products/proman' },
 ];
 
 const industries = [
-  { name: 'Retail & Security', href: '/industries/retail' },
+  { name: 'Retail', href: '/industries/retail' },
   { name: 'Manufacturing', href: '/industries/manufacturing' },
   { name: 'Construction', href: '/industries/construction' },
   { name: 'Energy', href: '/industries/energy' },
   { name: 'Insurance & Finance', href: '/industries/insurance' },
+  { name: 'Security', href: '/industries/security' },
 ];
 
 const caseStudies = [
@@ -26,7 +34,6 @@ const caseStudies = [
 const aboutUs = [
   { name: 'Overview', href: '/about' },
   { name: 'How We Work', href: '/about/how-we-work' },
-  { name: 'Insights', href: '/insights' },
   { name: 'FAQs', href: '/faqs' },
 ];
 
@@ -41,13 +48,18 @@ interface DropdownProps {
   label: string;
   items: NavItem[];
   isOpen: boolean;
-  onToggle: () => void;
+  onMouseEnter: () => void;
+  onMouseLeave: () => void;
+  onLinkClick: () => void;
 }
 
-const Dropdown = ({ label, items, isOpen, onToggle }: DropdownProps) => (
-  <div className="relative">
+const Dropdown = ({ label, items, isOpen, onMouseEnter, onMouseLeave, onLinkClick }: DropdownProps) => (
+  <div 
+    className="relative"
+    onMouseEnter={onMouseEnter}
+    onMouseLeave={onMouseLeave}
+  >
     <button
-      onClick={onToggle}
       className="flex items-center gap-1.5 py-2 px-4 text-sm font-medium text-[hsl(220,10%,60%)] hover:text-[hsl(0,0%,94%)] transition-colors duration-200"
     >
       {label}
@@ -63,6 +75,7 @@ const Dropdown = ({ label, items, isOpen, onToggle }: DropdownProps) => (
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={onLinkClick}
                   className="flex items-center justify-between px-5 py-3 text-sm text-[hsl(220,10%,60%)] hover:bg-primary/10 hover:text-[hsl(0,0%,94%)] transition-all duration-200"
                 >
                   <span className="flex items-center gap-2">
@@ -76,6 +89,7 @@ const Dropdown = ({ label, items, isOpen, onToggle }: DropdownProps) => (
               ) : (
                 <Link
                   to={item.href}
+                  onClick={onLinkClick}
                   className="flex items-center gap-2 px-5 py-3 text-sm text-[hsl(220,10%,60%)] hover:bg-primary/10 hover:text-[hsl(0,0%,94%)] transition-all duration-200"
                 >
                   {item.name}
@@ -95,10 +109,33 @@ const Dropdown = ({ label, items, isOpen, onToggle }: DropdownProps) => (
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  const handleDropdownToggle = (name: string) => {
-    setOpenDropdown(openDropdown === name ? null : name);
+  const handleMouseEnter = (name: string) => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+    setOpenDropdown(name);
   };
+
+  const handleMouseLeave = () => {
+    closeTimeoutRef.current = setTimeout(() => {
+      setOpenDropdown(null);
+    }, 150);
+  };
+
+  const handleLinkClick = () => {
+    setOpenDropdown(null);
+  };
+
+  useEffect(() => {
+    return () => {
+      if (closeTimeoutRef.current) {
+        clearTimeout(closeTimeoutRef.current);
+      }
+    };
+  }, []);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-[hsl(220,20%,6%)]/95 backdrop-blur-xl border-b border-[hsl(220,16%,10%)]">
@@ -116,25 +153,33 @@ const Navbar = () => {
               label="Products"
               items={products}
               isOpen={openDropdown === 'products'}
-              onToggle={() => handleDropdownToggle('products')}
+              onMouseEnter={() => handleMouseEnter('products')}
+              onMouseLeave={handleMouseLeave}
+              onLinkClick={handleLinkClick}
             />
             <Dropdown
               label="Industries"
               items={industries}
               isOpen={openDropdown === 'industries'}
-              onToggle={() => handleDropdownToggle('industries')}
+              onMouseEnter={() => handleMouseEnter('industries')}
+              onMouseLeave={handleMouseLeave}
+              onLinkClick={handleLinkClick}
             />
             <Dropdown
               label="Case Studies"
               items={caseStudies}
               isOpen={openDropdown === 'caseStudies'}
-              onToggle={() => handleDropdownToggle('caseStudies')}
+              onMouseEnter={() => handleMouseEnter('caseStudies')}
+              onMouseLeave={handleMouseLeave}
+              onLinkClick={handleLinkClick}
             />
             <Dropdown
               label="About Us"
               items={aboutUs}
               isOpen={openDropdown === 'aboutUs'}
-              onToggle={() => handleDropdownToggle('aboutUs')}
+              onMouseEnter={() => handleMouseEnter('aboutUs')}
+              onMouseLeave={handleMouseLeave}
+              onLinkClick={handleLinkClick}
             />
           </div>
 
@@ -164,10 +209,13 @@ const Navbar = () => {
                   <Link
                     key={product.name}
                     to={product.href}
-                    className="block py-2.5 px-3 text-sm text-[hsl(220,10%,60%)] hover:text-primary transition-colors"
+                    className="flex items-center gap-2 py-2.5 px-3 text-sm text-[hsl(220,10%,60%)] hover:text-primary transition-colors"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {product.name}
+                    {product.featured && (
+                      <span className="text-[10px] font-semibold uppercase tracking-wider text-primary bg-primary/10 px-1.5 py-0.5 rounded">Featured</span>
+                    )}
                   </Link>
                 ))}
               </div>

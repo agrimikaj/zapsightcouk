@@ -139,11 +139,11 @@ const Contact = () => {
                          style={{ boxShadow: '0 0 40px hsl(var(--primary) / 0.02)' }}>
                       <h3 className="font-display text-xl font-bold mb-6 text-[hsl(0,0%,94%)]">Get in Touch</h3>
                       <div className="space-y-4">
-                        <a href="mailto:contact@zapsight.com" className="flex items-center gap-3 text-[hsl(220,10%,55%)] hover:text-primary transition-colors">
+                        <a href="mailto:info@zapsight.com" className="flex items-center gap-3 text-[hsl(220,10%,55%)] hover:text-primary transition-colors">
                           <div className="w-8 h-8 rounded-lg bg-primary/15 border border-primary/20 flex items-center justify-center">
                             <Mail className="h-4 w-4 text-primary" strokeWidth={1.5} />
                           </div>
-                          contact@zapsight.com
+                          info@zapsight.com
                         </a>
                         <a href="tel:+1234567890" className="flex items-center gap-3 text-[hsl(220,10%,55%)] hover:text-primary transition-colors">
                           <div className="w-8 h-8 rounded-lg bg-primary/15 border border-primary/20 flex items-center justify-center">
