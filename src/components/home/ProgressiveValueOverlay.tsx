@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { cn } from '@/lib/utils';
 import {
   Tooltip,
@@ -9,19 +9,40 @@ import {
 
 const ProgressiveValueOverlay = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
+  const rafRef = useRef<number | null>(null);
+  const lastProgressRef = useRef(0);
+
+  const updateProgress = useCallback(() => {
+    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = scrollHeight > 0 ? Math.min((window.scrollY / scrollHeight) * 100, 100) : 0;
+    
+    // Only update state if progress changed significantly (reduces re-renders)
+    if (Math.abs(progress - lastProgressRef.current) > 0.5) {
+      lastProgressRef.current = progress;
+      setScrollProgress(progress);
+    }
+    rafRef.current = null;
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const progress = Math.min((window.scrollY / scrollHeight) * 100, 100);
-      setScrollProgress(progress);
+      // Use RAF to batch layout reads and avoid forced reflows
+      if (rafRef.current === null) {
+        rafRef.current = requestAnimationFrame(updateProgress);
+      }
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
+    // Initial calculation
+    updateProgress();
 
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (rafRef.current !== null) {
+        cancelAnimationFrame(rafRef.current);
+      }
+    };
+  }, [updateProgress]);
 
   const prefersReducedMotion = typeof window !== 'undefined' 
     ? window.matchMedia('(prefers-reduced-motion: reduce)').matches 
