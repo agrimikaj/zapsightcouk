@@ -1,14 +1,20 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-45C8VFZ8CG"></script>
+    <!-- Google tag (gtag.js) - deferred for better performance -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-45C8VFZ8CG');
+      
+      // Defer loading Google Analytics until after page load
+      window.addEventListener('load', function() {
+        var script = document.createElement('script');
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-45C8VFZ8CG';
+        script.async = true;
+        document.head.appendChild(script);
+      });
     </script>
 
     <meta charset="UTF-8" />
