@@ -7,8 +7,6 @@ import {
 } from '@/components/ui/carousel';
 import aiviDashboardStats from '@/assets/aivi-dashboard-stats.png';
 import aiviCharts from '@/assets/aivi-charts.png';
-import aiviContentSentiment from '@/assets/aivi-content-sentiment.png';
-import aiviAeoRecommendations from '@/assets/aivi-aeo-recommendations.png';
 
 interface ProductImageCarouselProps {
   productId: string;
@@ -25,16 +23,6 @@ const productImages: Record<string, { src: string; alt: string; caption: string 
       src: aiviCharts,
       alt: 'AIVI Visibility Trend & Source Attribution',
       caption: 'Track visibility trends and source attribution analytics',
-    },
-    {
-      src: aiviContentSentiment,
-      alt: 'AIVI Content Gaps & Sentiment',
-      caption: 'Identify content gaps and analyze narrative sentiment',
-    },
-    {
-      src: aiviAeoRecommendations,
-      alt: 'AIVI AEO Recommendations',
-      caption: 'Get actionable recommendations to boost AI visibility',
     },
   ],
 };

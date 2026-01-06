@@ -115,17 +115,12 @@ const ProductPage = () => {
                       </Link>
                     </Button>
                   )}
-                  {product.id !== 'aivi' && product.id !== 'aisac' && product.demoUrl && (
+                  {product.id !== 'aivi' && product.id !== 'aisac' && product.id !== 'custex' && product.id !== 'proman' && product.id !== 'aidr' && product.id !== 'profast' && product.demoUrl && (
                     <Button variant="heroOutline" size="xl" asChild>
                       <a href={product.demoUrl} target="_blank" rel="noopener noreferrer">
                         View Demo
                         <ExternalLink className="h-4 w-4 ml-2" strokeWidth={1.5} />
                       </a>
-                    </Button>
-                  )}
-                  {product.id !== 'aivi' && product.id !== 'aisac' && !product.demoUrl && (
-                    <Button variant="heroOutline" size="xl">
-                      Watch Demo
                     </Button>
                   )}
                 </div>

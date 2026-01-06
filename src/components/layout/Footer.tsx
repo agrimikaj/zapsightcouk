@@ -1,7 +1,14 @@
 import { Link } from 'react-router-dom';
-import { Linkedin, Twitter, Mail, MapPin, ArrowRight } from 'lucide-react';
+import { Linkedin, Mail, MapPin, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import logo from '@/assets/zapsight-logo.png';
+
+// Medium icon component
+const MediumIcon = ({ className }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/>
+  </svg>
+);
 
 const Footer = () => {
   return (
@@ -18,13 +25,29 @@ const Footer = () => {
               Transforming Data Into Intelligent, ROI-Driven AI Agents
             </p>
             <div className="flex items-center gap-3 pt-2">
-              <span className="text-[hsl(220,10%,50%)] p-2">
+              <a 
+                href="https://www.linkedin.com/company/zapsight/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                aria-label="LinkedIn" 
+                className="text-[hsl(220,10%,50%)] hover:text-primary p-2 hover:bg-[hsl(220,20%,8%)] rounded-xl transition-colors duration-200"
+              >
                 <Linkedin className="h-5 w-5" strokeWidth={1.5} />
-              </span>
-              <span className="text-[hsl(220,10%,50%)] p-2">
-                <Twitter className="h-5 w-5" strokeWidth={1.5} />
-              </span>
-              <a href="mailto:contact@zapsight.com" aria-label="Email ZapSight" className="text-[hsl(220,10%,50%)] hover:text-primary p-2 hover:bg-[hsl(220,20%,8%)] rounded-xl transition-colors duration-200">
+              </a>
+              <a 
+                href="https://medium.com/@zapsight" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                aria-label="Medium Blog" 
+                className="text-[hsl(220,10%,50%)] hover:text-primary p-2 hover:bg-[hsl(220,20%,8%)] rounded-xl transition-colors duration-200"
+              >
+                <MediumIcon className="h-5 w-5" />
+              </a>
+              <a 
+                href="mailto:sarah@zapsight.co.uk" 
+                aria-label="Email ZapSight" 
+                className="text-[hsl(220,10%,50%)] hover:text-primary p-2 hover:bg-[hsl(220,20%,8%)] rounded-xl transition-colors duration-200"
+              >
                 <Mail className="h-5 w-5" strokeWidth={1.5} />
               </a>
             </div>
@@ -61,9 +84,9 @@ const Footer = () => {
             <h4 className="font-display font-semibold text-lg mb-5 tracking-tight text-[hsl(0,0%,90%)]">Industries</h4>
             <ul className="space-y-3">
               <li>
-                <a href="https://zapsightindustriesfurniture.lovable.app" target="_blank" rel="noopener noreferrer" className="text-[hsl(220,10%,50%)] hover:text-primary text-sm transition-colors duration-200">
+                <Link to="/industries/retail" className="text-[hsl(220,10%,50%)] hover:text-primary text-sm transition-colors duration-200">
                   Retail
-                </a>
+                </Link>
               </li>
               {['Energy', 'Manufacturing', 'Construction', 'Insurance'].map((industry) => (
                 <li key={industry}>
@@ -74,7 +97,7 @@ const Footer = () => {
               ))}
               <li>
                 <Link to="/industries/security" className="text-[hsl(220,10%,50%)] hover:text-primary text-sm transition-colors duration-200">
-                  IoT Security
+                  Security
                 </Link>
               </li>
             </ul>
@@ -94,12 +117,11 @@ const Footer = () => {
           </div>
 
           {/* CTA Buttons */}
-          <div className="space-y-4">
-            <h4 className="font-display font-semibold text-lg mb-5 tracking-tight text-[hsl(0,0%,90%)]">Get Started</h4>
+          <div className="flex flex-col gap-4">
+            <h4 className="font-display font-semibold text-lg mb-1 tracking-tight text-[hsl(0,0%,90%)]">Get Started</h4>
             <Button 
               variant="outline" 
-              size="lg" 
-              className="w-full bg-[hsl(220,20%,5%)] border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-200" 
+              className="w-full h-11 bg-[hsl(220,20%,5%)] border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-200" 
               asChild
             >
               <Link to="/contact">
@@ -109,12 +131,12 @@ const Footer = () => {
             </Button>
             <Button 
               variant="outline" 
-              size="lg" 
-              className="w-full bg-[hsl(220,20%,5%)] border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-200" 
+              className="w-full h-11 bg-[hsl(220,20%,5%)] border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-200" 
               asChild
             >
               <Link to="/about/how-we-work">
                 How We Work
+                <ArrowRight className="h-4 w-4 ml-2" />
               </Link>
             </Button>
           </div>

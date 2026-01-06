@@ -52,8 +52,8 @@ const RetailIndustry = () => {
   return (
     <>
       <Helmet>
-        <title>AI in Retail & Security | ZapSight</title>
-        <meta name="description" content="AI-powered retail intelligence for floor analytics, team performance, inventory optimization, and security monitoring." />
+        <title>AI in Retail | ZapSight</title>
+        <meta name="description" content="AI-powered retail intelligence for floor analytics, team performance, and inventory optimization." />
       </Helmet>
       
       <div className="min-h-screen bg-[hsl(220,20%,6%)]">
@@ -82,7 +82,7 @@ const RetailIndustry = () => {
               </div>
               
               <h1 className="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-background mb-6 tracking-tight">
-                AI in <span className="text-primary">Retail & Security</span>
+                AI in <span className="text-primary">Retail</span>
               </h1>
               
               <p className="text-lg md:text-xl text-background/60 leading-relaxed max-w-2xl mx-auto mb-12">
