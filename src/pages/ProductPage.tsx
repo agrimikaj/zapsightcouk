@@ -54,14 +54,6 @@ const ProductPage = () => {
             {/* Neural network animation */}
             <NeuralBackground />
             
-            {/* Subtle dot pattern */}
-            <div className="absolute inset-0 opacity-[0.015]" style={{
-              backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--primary)) 1px, transparent 0)`,
-              backgroundSize: '48px 48px'
-            }} />
-            
-            {/* Soft ambient glow */}
-            <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] bg-primary/[0.02] rounded-full blur-[200px]" />
 
             <div className="container mx-auto px-4 lg:px-8 relative z-10">
               {/* Back link */}
@@ -130,11 +122,6 @@ const ProductPage = () => {
           {/* Key Benefits Section */}
           <section className="py-10 lg:py-14 relative overflow-hidden">
             <div className="absolute inset-0 bg-[hsl(220,20%,6%)]" />
-            <div className="absolute inset-0 opacity-[0.015]" style={{
-              backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--primary)) 1px, transparent 0)`,
-              backgroundSize: '48px 48px'
-            }} />
-            <div className="absolute top-1/4 right-0 w-[400px] h-[400px] bg-primary/[0.02] rounded-full blur-[150px]" />
             
             <div className="container mx-auto px-4 lg:px-8 relative z-10">
               <div className="text-center mb-12">
@@ -166,10 +153,6 @@ const ProductPage = () => {
           {/* Features & Benefits */}
           <section className="py-10 lg:py-14 relative overflow-hidden">
             <div className="absolute inset-0 bg-[hsl(220,20%,6%)]" />
-            <div className="absolute inset-0 opacity-[0.015]" style={{
-              backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--primary)) 1px, transparent 0)`,
-              backgroundSize: '48px 48px'
-            }} />
             <div className="container mx-auto px-4 lg:px-8 relative z-10">
               <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
                 {/* Features */}
@@ -214,11 +197,6 @@ const ProductPage = () => {
           {/* Use Cases */}
           <section className="py-10 lg:py-14 relative overflow-hidden">
             <div className="absolute inset-0 bg-[hsl(220,20%,6%)]" />
-            <div className="absolute inset-0 opacity-[0.015]" style={{
-              backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--primary)) 1px, transparent 0)`,
-              backgroundSize: '48px 48px'
-            }} />
-            <div className="absolute top-1/2 left-0 w-[400px] h-[400px] bg-primary/[0.02] rounded-full blur-[150px]" />
             <div className="container mx-auto px-4 lg:px-8 relative z-10">
               <div className="text-center mb-12">
                 <p className="text-primary font-medium mb-3 tracking-wide uppercase text-sm">Use Cases</p>
@@ -243,11 +221,6 @@ const ProductPage = () => {
           {product.technicalSpecs && (
             <section className="py-10 lg:py-14 relative overflow-hidden">
               <div className="absolute inset-0 bg-[hsl(220,20%,7%)]" />
-              <div className="absolute inset-0 opacity-[0.015]" style={{
-                backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--primary)) 1px, transparent 0)`,
-                backgroundSize: '48px 48px'
-              }} />
-              <div className="absolute top-1/4 right-0 w-[400px] h-[400px] bg-primary/[0.02] rounded-full blur-[150px]" />
               
               <div className="container mx-auto px-4 lg:px-8 relative z-10">
                 <div className="text-center mb-12">

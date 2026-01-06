@@ -72,11 +72,6 @@ const HeroBanner = () => {
       {/* Neural network animation */}
       <NeuralBackground />
       
-      {/* Subtle dot pattern */}
-      <div className="absolute inset-0 opacity-[0.015]" style={{
-        backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--primary)) 1px, transparent 0)`,
-        backgroundSize: '48px 48px'
-      }} />
       
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">

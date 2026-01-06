@@ -67,15 +67,6 @@ const EnergyIndustry = () => {
           {/* Neural Network Background */}
           <NeuralBackground />
           
-          {/* Subtle dot pattern */}
-          <div className="absolute inset-0 opacity-[0.015]" style={{
-            backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--primary)) 1px, transparent 0)`,
-            backgroundSize: '48px 48px'
-          }} />
-          
-          {/* Soft ambient glows */}
-          <div className="absolute top-1/4 -right-32 w-[500px] h-[500px] bg-primary/[0.03] rounded-full blur-[180px]" />
-          <div className="absolute bottom-1/4 -left-32 w-[400px] h-[400px] bg-primary/[0.02] rounded-full blur-[150px]" />
           
           <div className="container mx-auto px-4 lg:px-8 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
