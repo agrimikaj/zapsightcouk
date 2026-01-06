@@ -33,7 +33,11 @@ const ProgressiveValueOverlay = () => {
         <TooltipTrigger asChild>
           <div 
             className="fixed right-3 top-1/2 -translate-y-1/2 z-50 cursor-pointer group"
+            role="progressbar"
             aria-label="Scroll progress indicator"
+            aria-valuenow={Math.round(scrollProgress)}
+            aria-valuemin={0}
+            aria-valuemax={100}
           >
             {/* Track */}
             <div className="relative w-1.5 h-32 bg-muted/30 rounded-full overflow-hidden backdrop-blur-sm">
