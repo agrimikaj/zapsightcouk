@@ -162,19 +162,23 @@ const HeroBanner = () => {
               </ul>
 
               {/* Pagination Dots */}
-              <div className="flex items-center justify-center gap-3">
+              <div className="flex items-center justify-center gap-1">
                 {usps.map((usp, idx) => (
                   <button
                     key={idx}
                     onClick={() => setActiveIndex(idx)}
                     aria-label={`Go to slide ${idx + 1}: ${usp.title}`}
-                    className={`h-2 rounded-full transition-all duration-500 ${
-                      idx === activeIndex 
-                        ? 'bg-primary w-8' 
-                        : 'bg-[hsl(220,16%,18%)] hover:bg-[hsl(220,16%,22%)] w-2'
-                    }`}
-                    style={idx === activeIndex ? { boxShadow: '0 0 12px hsl(var(--primary) / 0.5)' } : {}}
-                  />
+                    className="p-2 flex items-center justify-center"
+                  >
+                    <span 
+                      className={`h-2 rounded-full transition-all duration-500 ${
+                        idx === activeIndex 
+                          ? 'bg-primary w-8' 
+                          : 'bg-[hsl(220,16%,18%)] hover:bg-[hsl(220,16%,22%)] w-2'
+                      }`}
+                      style={idx === activeIndex ? { boxShadow: '0 0 12px hsl(var(--primary) / 0.5)' } : {}}
+                    />
+                  </button>
                 ))}
               </div>
             </div>
