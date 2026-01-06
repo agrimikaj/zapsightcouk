@@ -23,11 +23,6 @@ const About = () => {
           <section className="pt-28 pb-20 lg:pt-36 lg:pb-28 relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-b from-[hsl(220,20%,8%)] via-[hsl(220,20%,6%)] to-[hsl(220,20%,6%)]" />
             <NeuralBackground />
-            <div className="absolute inset-0 opacity-[0.015]" style={{
-              backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--primary)) 1px, transparent 0)`,
-              backgroundSize: '48px 48px'
-            }} />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-primary/[0.02] rounded-full blur-[200px]" />
 
             <div className="container mx-auto px-4 lg:px-8 relative z-10">
               <div className="max-w-4xl mx-auto text-center">
@@ -53,10 +48,6 @@ const About = () => {
           {/* Our Core Skills */}
           <section className="py-10 lg:py-14 relative overflow-hidden">
             <div className="absolute inset-0 bg-[hsl(220,20%,6%)]" />
-            <div className="absolute inset-0 opacity-[0.015]" style={{
-              backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--primary)) 1px, transparent 0)`,
-              backgroundSize: '48px 48px'
-            }} />
             
             <div className="container mx-auto px-4 lg:px-8 relative z-10">
               <header className="text-center mb-12">
@@ -93,11 +84,6 @@ const About = () => {
           {/* Our Approach - mirrors the homepage section */}
           <section className="py-10 lg:py-14 relative overflow-hidden">
             <div className="absolute inset-0 bg-[hsl(220,20%,6%)]" />
-            <div className="absolute inset-0 opacity-[0.015]" style={{
-              backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--primary)) 1px, transparent 0)`,
-              backgroundSize: '48px 48px'
-            }} />
-            <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-primary/[0.02] rounded-full blur-[180px]" />
             
             <div className="container mx-auto px-4 lg:px-8 relative z-10 max-w-5xl">
               <header className="text-center mb-10 lg:mb-12">
@@ -153,11 +139,6 @@ const About = () => {
           {/* Leadership */}
           <section className="py-10 lg:py-14 relative overflow-hidden">
             <div className="absolute inset-0 bg-[hsl(220,20%,6%)]" />
-            <div className="absolute inset-0 opacity-[0.015]" style={{
-              backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--primary)) 1px, transparent 0)`,
-              backgroundSize: '48px 48px'
-            }} />
-            <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-primary/[0.02] rounded-full blur-[150px]" />
             
             <div className="container mx-auto px-4 lg:px-8 relative z-10">
               <h2 className="font-display text-3xl md:text-4xl font-bold text-center mb-16 text-[hsl(0,0%,97%)] tracking-tight">
@@ -205,11 +186,6 @@ const About = () => {
           {/* CTA */}
           <section className="py-10 lg:py-14 relative overflow-hidden">
             <div className="absolute inset-0 bg-[hsl(220,20%,6%)]" />
-            <div className="absolute inset-0 opacity-[0.015]" style={{
-              backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--primary)) 1px, transparent 0)`,
-              backgroundSize: '48px 48px'
-            }} />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[400px] bg-primary/[0.03] rounded-full blur-[180px]" />
             
             <div className="container mx-auto px-4 lg:px-8 text-center relative z-10">
               <h2 className="font-display text-3xl md:text-4xl font-bold text-[hsl(0,0%,97%)] mb-6 tracking-tight">
