@@ -19,7 +19,7 @@ export interface CaseStudy {
 
 export const caseStudies: CaseStudy[] = [
   {
-    id: 'vca',
+    id: 'customer-analytics',
     title: 'AI-Powered Customer Analytics',
     industry: 'Retail',
     client: 'Major Retail Chain',
@@ -48,7 +48,7 @@ export const caseStudies: CaseStudy[] = [
     featured: true,
   },
   {
-    id: 'bosch',
+    id: 'predictive-maintenance',
     title: 'Predictive Maintenance Platform',
     industry: 'Manufacturing',
     client: 'Global Manufacturing Company',
