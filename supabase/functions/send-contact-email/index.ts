@@ -41,7 +41,7 @@ const handler = async (req: Request): Promise<Response> => {
         Authorization: `Bearer ${RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: "ZapSight Contact Form <onboarding@resend.dev>",
+        from: "ZapSight Contact Form <noreply@zapsight.co.uk>",
         to: ["sarah@zapsight.co.uk"],
         subject: `New Contact Form Submission from ${name}`,
         html: `
@@ -72,7 +72,7 @@ const handler = async (req: Request): Promise<Response> => {
         Authorization: `Bearer ${RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: "ZapSight <onboarding@resend.dev>",
+        from: "ZapSight <noreply@zapsight.co.uk>",
         to: [email],
         subject: "We received your message - ZapSight",
         html: `
