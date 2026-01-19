@@ -11,9 +11,9 @@ const products = [
   { name: 'AIDR', href: '/products/aidr' },
   { name: 'SAPRO', href: '/products/sapro' },
   { name: 'AIVEN', href: '/products/aiven' },
-  { name: 'Custex', href: '/products/custex' },
-  { name: 'ProFast', href: '/products/profast' },
-  { name: 'ProMan', href: '/products/proman' },
+  { name: '5on5', href: '/products/5on5' },
+  { name: 'Voyager', href: '/products/voyager' },
+  { name: 'CLiP', href: '/products/clip' },
 ];
 
 const industries = [
