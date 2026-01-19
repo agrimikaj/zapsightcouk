@@ -123,6 +123,15 @@ import { archivedProducts } from './products-archive';
 // Combined list for product page routing (allows archived products to still be accessible via URL)
 export const allProducts: Product[] = [...products, ...archivedProducts];
 
+// Map old product IDs to new ones for URL backward compatibility
+const productIdAliases: Record<string, string> = {
+  'custex': '5on5',
+  'profast': 'voyager',
+  'proman': 'clip',
+};
+
 export const getProductById = (id: string): Product | undefined => {
-  return allProducts.find(p => p.id === id);
+  // Check for aliased IDs first
+  const resolvedId = productIdAliases[id] || id;
+  return allProducts.find(p => p.id === resolvedId);
 };
