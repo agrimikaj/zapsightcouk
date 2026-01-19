@@ -29,11 +29,11 @@ export const products: Product[] = [
   {
     id: 'aisac',
     name: 'AISAC',
-    tagline: 'AI-led Sensors & Control',
-    description: 'Intelligence and orchestration layer for large-scale security operations',
-    outcome: 'Raw alerts → Prioritized, actionable decisions',
+    tagline: 'AI Situation Awareness & Alerting Command',
+    description: 'Centralizes intelligence for real-time alert prioritization and automated escalation',
+    outcome: 'Respond faster and smarter',
     icon: Radio,
-    heroDescription: 'AISAC is an AI-led Sensors and Control platform designed to modernize large-scale security operations. It acts as an intelligence and orchestration layer on top of existing cameras, sensors, alarms, and monitoring systems.',
+    heroDescription: 'AISAC centralizes intelligence from across your systems to deliver real-time alert prioritization, compressed AI summarization, and automated escalation for urgent events. With video & sensor fusion, predictive health monitoring, and rich operational dashboards, AISAC surfaces actionable alerts and predictions before issues escalate — enabling teams to respond faster and smarter.',
     keyBenefits: [
       'Real-time alert prioritization correlating motion, tamper, vibration, video, temperature, and fire signals',
       'Video & sensor fusion for visual confirmation and false positive elimination',
@@ -82,11 +82,11 @@ export const products: Product[] = [
   {
     id: 'aivi',
     name: 'AIVI',
-    tagline: 'AI Visibility Intelligence',
-    description: 'AI tool to improve your AI-search ranking',
-    outcome: 'Intelligence that gets found',
+    tagline: 'AI Visibility & Insight Platform',
+    description: 'Transform raw data into clear, actionable understanding across systems and operations',
+    outcome: 'Trust what you see and act with confidence',
     icon: Search,
-    heroDescription: 'AIVI (AI Visibility Intelligence) is the observability layer for AI-assisted search. It helps brands understand how they appear, are interpreted, and are recommended across AI systems such as large language models, AI browsers, and answer engines beyond traditional SEO.',
+    heroDescription: "Transform your raw data into a clear, actionable understanding of what's happening across systems and operations. AIVI combines content enhancement for AI visibility, metadata optimization, and continuous AI monitoring to ensure your business always sees the signals that matter — with precision and clarity. Whether auditing performance, tuning models, or benchmarking accuracy, AIVI makes AI outcomes transparent, traceable, and reliable so you can trust what you see and act with confidence.",
     keyBenefits: [
       'Monitors AI search visibility - Tracks how a brand, its products, and categories surface across AI-assisted queries',
       'Maps source attribution - Identifies where AI systems are pulling information from',
