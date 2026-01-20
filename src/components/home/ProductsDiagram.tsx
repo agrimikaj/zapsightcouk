@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Database, Radio, MessageSquare, Search, Users, Package, ClipboardList, Factory } from 'lucide-react';
+import { Database, Radio, MessageSquare, Search, Users, Package, ClipboardList, Factory, FileCheck } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
 interface ProductLayer {
@@ -77,12 +77,20 @@ const layers: ProductLayer[] = [
     icon: ClipboardList,
   },
   {
-    id: 'clip',
-    name: 'CLiP',
+    id: 'arios',
+    name: 'Arios',
     tagline: 'AI Production Planning & Optimization Toolkit',
     description: 'AI-generated production plans with explainable reasoning',
     outcome: 'Reduce variability, maximize efficiency',
     icon: Factory,
+  },
+  {
+    id: 'claim',
+    name: 'CLaiM',
+    tagline: 'AI Claims Analysis & Adjudication Platform',
+    description: 'Automated claims categorization, tariff review, and AI adjudication',
+    outcome: 'Faster, fairer claims processing',
+    icon: FileCheck,
   },
 ];
 

@@ -1,4 +1,4 @@
-import { Radio, Search } from 'lucide-react';
+import { Radio, Search, FileCheck } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
 export interface Product {
@@ -115,6 +115,44 @@ export const products: Product[] = [
     ],
     demoUrl: 'https://v0.app/chat/aivi-dashboard-design-kqe8KTizDTk?ref=LOE3T2',
   },
+  {
+    id: 'claim',
+    name: 'CLaiM',
+    tagline: 'AI Claims Analysis & Adjudication Platform',
+    description: 'Automated claims categorization, tariff review, and AI-powered adjudication',
+    outcome: 'Faster, fairer claims processing',
+    icon: FileCheck,
+    heroDescription: 'CLaiM transforms claims processing with AI-powered analysis across multiple sources including hospitals and mechanics. It categorizes claims across coverage areas with associated amounts, reviews policies and outstanding limits, verifies expected tariffs for line items, and performs intelligent claims adjudication — calculating both insurance payable and claimant payable amounts with full transparency.',
+    keyBenefits: [
+      'Multi-source claims analysis (hospitals, mechanics, etc.)',
+      'Automatic categorization across coverage areas with amounts',
+      'Policy and outstanding limits review across claim categories',
+      'Expected tariff verification for line items',
+      'AI-powered claims adjudication',
+      'Automated insurance payable and claimant payable calculation',
+    ],
+    features: [
+      'Multi-source claims ingestion',
+      'Coverage categorization engine',
+      'Policy limit tracking',
+      'Tariff verification system',
+      'AI adjudication engine',
+      'Payment calculation automation',
+    ],
+    benefits: [
+      'Faster claims processing',
+      'Reduced manual review effort',
+      'Consistent adjudication decisions',
+      'Transparent payment calculations',
+      'Lower claims leakage',
+    ],
+    useCases: [
+      'Health insurance claims',
+      'Motor insurance claims',
+      'Property damage claims',
+      'Multi-line insurance processing',
+    ],
+  },
 ];
 
 // Import archived products for backward compatibility
@@ -127,7 +165,8 @@ export const allProducts: Product[] = [...products, ...archivedProducts];
 const productIdAliases: Record<string, string> = {
   'custex': '5on5',
   'profast': 'voyager',
-  'proman': 'clip',
+  'proman': 'arios',
+  'clip': 'arios',
 };
 
 export const getProductById = (id: string): Product | undefined => {

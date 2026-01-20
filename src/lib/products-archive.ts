@@ -231,13 +231,13 @@ export const archivedProducts: Product[] = [
     ],
   },
   {
-    id: 'clip',
-    name: 'CLiP',
+    id: 'arios',
+    name: 'Arios',
     tagline: 'AI Production Planning & Optimization Toolkit',
     description: 'Turns production complexity into clarity with AI-generated plans',
     outcome: 'Reduce variability and maximize efficiency',
     icon: Factory,
-    heroDescription: 'CLiP turns complexity into clarity with AI-generated daily and weekly production plans, constraint-based resource planning, and explainable AI reasoning for plan choices. Whether simulating scenarios, communicating plans broadly, tracking performance, or surfacing optimization opportunities, CLiP empowers operations leaders to reduce variability, increase throughput, and maximize efficiency.',
+    heroDescription: 'Arios turns complexity into clarity with AI-generated daily and weekly production plans, constraint-based resource planning, and explainable AI reasoning for plan choices. Whether simulating scenarios, communicating plans broadly, tracking performance, or surfacing optimization opportunities, Arios empowers operations leaders to reduce variability, increase throughput, and maximize efficiency.',
     keyBenefits: [
       'AI-generated daily and weekly production plans',
       'Constraint-based resource planning',
