@@ -64,17 +64,22 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://zapsight.co.uk/products/custex</loc>
+    <loc>https://zapsight.co.uk/products/5on5</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://zapsight.co.uk/products/profast</loc>
+    <loc>https://zapsight.co.uk/products/voyager</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://zapsight.co.uk/products/proman</loc>
+    <loc>https://zapsight.co.uk/products/arios</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://zapsight.co.uk/products/claim</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

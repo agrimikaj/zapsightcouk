@@ -66,7 +66,8 @@ const Footer = () => {
                 { name: 'AIVEN', id: 'aiven' },
                 { name: '5on5', id: '5on5' },
                 { name: 'Voyager', id: 'voyager' },
-                { name: 'CLiP', id: 'clip' },
+                { name: 'Arios', id: 'arios' },
+                { name: 'CLaiM', id: 'claim' },
               ].map((product) => (
                 <Link 
                   key={product.id}
