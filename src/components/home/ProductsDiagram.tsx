@@ -69,10 +69,10 @@ const layers: ProductLayer[] = [
     icon: MessageSquare,
   },
   {
-    id: 'voyager',
-    name: 'Voyager',
+    id: 'tars',
+    name: 'TARS',
     tagline: 'AI Project Execution Agent',
-    description: 'Continuous oversight from kickoff to close',
+    description: 'Project KPI tracking, budget monitoring, and AI-driven insights',
     outcome: 'Timely delivery with AI-assisted decisions',
     icon: ClipboardList,
   },

@@ -12,7 +12,7 @@ const products = [
   { name: 'SAPRO', href: '/products/sapro' },
   { name: 'AIVEN', href: '/products/aiven' },
   { name: '5on5', href: '/products/5on5' },
-  { name: 'Voyager', href: '/products/voyager' },
+  { name: 'TARS', href: '/products/tars' },
   { name: 'Arios', href: '/products/arios' },
   { name: 'CLaiM', href: '/products/claim' },
 ];
