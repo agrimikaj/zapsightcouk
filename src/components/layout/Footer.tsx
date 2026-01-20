@@ -65,7 +65,7 @@ const Footer = () => {
                 { name: 'SAPRO', id: 'sapro' },
                 { name: 'AIVEN', id: 'aiven' },
                 { name: '5on5', id: '5on5' },
-                { name: 'Voyager', id: 'voyager' },
+                { name: 'TARS', id: 'tars' },
                 { name: 'Arios', id: 'arios' },
                 { name: 'CLaiM', id: 'claim' },
               ].map((product) => (
