@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronDown, Menu, X, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 import logo from '@/assets/zapsight-logo.png';
 
 const products = [
@@ -186,9 +187,16 @@ const Navbar = () => {
 
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center gap-3">
-            <Button variant="outline" size="lg" asChild>
-              <Link to="/console">My Console</Link>
-            </Button>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button variant="outline" size="lg" asChild>
+                  <Link to="/console">My Console</Link>
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent side="bottom" className="max-w-[280px] text-center">
+                <p>Create a custom dashboard for you, powered by AI-driven downloadable evaluation and insights.</p>
+              </TooltipContent>
+            </Tooltip>
             <Button variant="hero" size="lg" className="shadow-glow" asChild>
               <Link to="/contact">Contact Us</Link>
             </Button>
