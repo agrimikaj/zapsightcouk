@@ -99,7 +99,7 @@ const ProductsMegaMenu = ({ isOpen, onMouseEnter, onMouseLeave, onLinkClick }: P
               </div>
               
               {/* Right Panel - Feature Display */}
-              <div className="flex-1 p-6">
+              <div className="flex-1 p-6 bg-[hsl(220,20%,4%)]">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={hoveredProduct.id}
@@ -132,11 +132,11 @@ const ProductsMegaMenu = ({ isOpen, onMouseEnter, onMouseLeave, onLinkClick }: P
                     </div>
                     
                     {/* Features Grid */}
-                    <div className="grid grid-cols-2 gap-x-6 gap-y-3 mb-6 flex-1">
+                    <div className="grid grid-cols-2 gap-x-6 gap-y-2 mb-6 flex-1">
                       {hoveredProduct.features.slice(0, 4).map((feature, index) => (
                         <div key={index} className="flex items-start gap-2">
-                          <div className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" />
-                          <p className="text-sm text-muted-foreground leading-snug">{feature}</p>
+                          <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                          <p className="text-sm text-muted-foreground leading-relaxed">{feature}</p>
                         </div>
                       ))}
                     </div>
