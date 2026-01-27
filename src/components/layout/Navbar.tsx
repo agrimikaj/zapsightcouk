@@ -31,9 +31,14 @@ const aboutUs = [
   { name: 'FAQs', href: '/faqs' },
 ];
 
-const Navbar = () => {
+interface NavbarProps {
+  variant?: 'default' | 'console';
+}
+
+const Navbar = ({ variant = 'default' }: NavbarProps) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const isConsole = variant === 'console';
   const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const handleMouseEnter = (name: string) => {
@@ -73,32 +78,34 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-1">
-            <ProductsMegaMenu
-              isOpen={openDropdown === 'products'}
-              onMouseEnter={() => handleMouseEnter('products')}
-              onMouseLeave={handleMouseLeave}
-              onLinkClick={handleLinkClick}
-            />
-            <IndustriesMegaMenu
-              isOpen={openDropdown === 'industries'}
-              onMouseEnter={() => handleMouseEnter('industries')}
-              onMouseLeave={handleMouseLeave}
-              onLinkClick={handleLinkClick}
-            />
-            <CaseStudiesMegaMenu
-              isOpen={openDropdown === 'caseStudies'}
-              onMouseEnter={() => handleMouseEnter('caseStudies')}
-              onMouseLeave={handleMouseLeave}
-              onLinkClick={handleLinkClick}
-            />
-            <AboutMegaMenu
-              isOpen={openDropdown === 'aboutUs'}
-              onMouseEnter={() => handleMouseEnter('aboutUs')}
-              onMouseLeave={handleMouseLeave}
-              onLinkClick={handleLinkClick}
-            />
-          </div>
+          {!isConsole && (
+            <div className="hidden lg:flex items-center gap-1">
+              <ProductsMegaMenu
+                isOpen={openDropdown === 'products'}
+                onMouseEnter={() => handleMouseEnter('products')}
+                onMouseLeave={handleMouseLeave}
+                onLinkClick={handleLinkClick}
+              />
+              <IndustriesMegaMenu
+                isOpen={openDropdown === 'industries'}
+                onMouseEnter={() => handleMouseEnter('industries')}
+                onMouseLeave={handleMouseLeave}
+                onLinkClick={handleLinkClick}
+              />
+              <CaseStudiesMegaMenu
+                isOpen={openDropdown === 'caseStudies'}
+                onMouseEnter={() => handleMouseEnter('caseStudies')}
+                onMouseLeave={handleMouseLeave}
+                onLinkClick={handleLinkClick}
+              />
+              <AboutMegaMenu
+                isOpen={openDropdown === 'aboutUs'}
+                onMouseEnter={() => handleMouseEnter('aboutUs')}
+                onMouseLeave={handleMouseLeave}
+                onLinkClick={handleLinkClick}
+              />
+            </div>
+          )}
 
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center gap-3">

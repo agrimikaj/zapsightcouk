@@ -8,7 +8,7 @@ const Console = () => {
         <title>My Console | ZapSight</title>
         <meta name="description" content="ZapSight Console - Create a custom dashboard powered by AI-driven downloadable evaluation and insights." />
       </Helmet>
-      <Navbar />
+      <Navbar variant="console" />
       <main className="min-h-screen bg-background pt-16 lg:pt-20">
         <iframe
           src="https://zap-showcase-experience.lovable.app"
