@@ -1,10 +1,13 @@
 import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronDown, Menu, X, ExternalLink } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 import logo from '@/assets/zapsight-logo.png';
 import ProductsMegaMenu from './ProductsMegaMenu';
+import IndustriesMegaMenu from './IndustriesMegaMenu';
+import CaseStudiesMegaMenu from './CaseStudiesMegaMenu';
+import AboutMegaMenu from './AboutMegaMenu';
 import { allProducts } from '@/lib/products';
 
 const industries = [
@@ -18,84 +21,15 @@ const industries = [
 
 const caseStudies = [
   { name: 'Overview', href: '/case-studies' },
-  { name: 'Customer Analytics', href: '/case-studies/vca', featured: true },
-  { name: 'Predictive Maintenance', href: '/case-studies/bosch', featured: true },
+  { name: 'Customer Analytics', href: '/case-studies/customer-analytics' },
+  { name: 'Predictive Maintenance', href: '/case-studies/predictive-maintenance' },
 ];
 
 const aboutUs = [
-  { name: 'Overview', href: '/about' },
+  { name: 'About ZapSight', href: '/about' },
   { name: 'How We Work', href: '/about/how-we-work' },
   { name: 'FAQs', href: '/faqs' },
 ];
-
-interface NavItem {
-  name: string;
-  href: string;
-  external?: boolean;
-  featured?: boolean;
-}
-
-interface DropdownProps {
-  label: string;
-  items: NavItem[];
-  isOpen: boolean;
-  onMouseEnter: () => void;
-  onMouseLeave: () => void;
-  onLinkClick: () => void;
-}
-
-const Dropdown = ({ label, items, isOpen, onMouseEnter, onMouseLeave, onLinkClick }: DropdownProps) => (
-  <div 
-    className="relative"
-    onMouseEnter={onMouseEnter}
-    onMouseLeave={onMouseLeave}
-  >
-    <button
-      className="flex items-center gap-1.5 py-2 px-4 text-sm font-medium text-[hsl(220,10%,60%)] hover:text-[hsl(0,0%,94%)] transition-colors duration-200"
-    >
-      {label}
-      <ChevronDown className={`h-4 w-4 text-[hsl(220,10%,45%)] transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} strokeWidth={1.5} />
-    </button>
-    {isOpen && (
-      <div className="absolute top-full left-0 mt-3 w-64 bg-[hsl(220,20%,10%)] border border-[hsl(220,16%,14%)] rounded-2xl shadow-floating overflow-hidden animate-scale-in">
-        <div className="py-2">
-          {items.map((item) => (
-            <div key={item.name}>
-              {item.external ? (
-                <a
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={onLinkClick}
-                  className="flex items-center justify-between px-5 py-3 text-sm text-[hsl(220,10%,60%)] hover:bg-primary/10 hover:text-[hsl(0,0%,94%)] transition-all duration-200"
-                >
-                  <span className="flex items-center gap-2">
-                    {item.name}
-                    {item.featured && (
-                      <span className="text-[10px] font-semibold uppercase tracking-wider text-primary bg-primary/10 px-1.5 py-0.5 rounded">Featured</span>
-                    )}
-                  </span>
-                  <ExternalLink className="h-3.5 w-3.5 text-[hsl(220,10%,40%)]" strokeWidth={1.5} />
-                </a>
-              ) : (
-                <Link
-                  to={item.href}
-                  onClick={onLinkClick}
-                  className="flex items-center gap-2 px-5 py-3 text-sm text-[hsl(220,10%,60%)] hover:bg-primary/10 hover:text-[hsl(0,0%,94%)] transition-all duration-200"
-                >
-                  {item.name}
-                  {item.featured && (
-                    <span className="text-[10px] font-semibold uppercase tracking-wider text-primary bg-primary/10 px-1.5 py-0.5 rounded">Featured</span>
-                  )}
-                </Link>
-              )}
-            </div>
-          ))}
-        </div>
-      </div>
-    )}
-  </div>
-);
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -146,25 +80,19 @@ const Navbar = () => {
               onMouseLeave={handleMouseLeave}
               onLinkClick={handleLinkClick}
             />
-            <Dropdown
-              label="Industries"
-              items={industries}
+            <IndustriesMegaMenu
               isOpen={openDropdown === 'industries'}
               onMouseEnter={() => handleMouseEnter('industries')}
               onMouseLeave={handleMouseLeave}
               onLinkClick={handleLinkClick}
             />
-            <Dropdown
-              label="Case Studies"
-              items={caseStudies}
+            <CaseStudiesMegaMenu
               isOpen={openDropdown === 'caseStudies'}
               onMouseEnter={() => handleMouseEnter('caseStudies')}
               onMouseLeave={handleMouseLeave}
               onLinkClick={handleLinkClick}
             />
-            <Dropdown
-              label="About Us"
-              items={aboutUs}
+            <AboutMegaMenu
               isOpen={openDropdown === 'aboutUs'}
               onMouseEnter={() => handleMouseEnter('aboutUs')}
               onMouseLeave={handleMouseLeave}
