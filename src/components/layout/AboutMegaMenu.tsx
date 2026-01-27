@@ -1,0 +1,168 @@
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronDown, ArrowRight, Users, Workflow, HelpCircle } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+
+const aboutPages = [
+  { 
+    id: 'overview',
+    name: 'About ZapSight', 
+    href: '/about',
+    icon: Users,
+    gradient: 'from-primary to-orange-600',
+    description: 'Our mission & expertise',
+    features: ['Founded by industry experts', 'SME-first approach', 'Proven track record', 'Global reach']
+  },
+  { 
+    id: 'how-we-work',
+    name: 'How We Work', 
+    href: '/about/how-we-work',
+    icon: Workflow,
+    gradient: 'from-blue-500 to-cyan-500',
+    description: 'Our engagement process',
+    features: ['Discovery workshops', 'Rapid prototyping', 'Iterative development', 'Continuous support']
+  },
+  { 
+    id: 'faqs',
+    name: 'FAQs', 
+    href: '/faqs',
+    icon: HelpCircle,
+    gradient: 'from-purple-500 to-violet-500',
+    description: 'Common questions answered',
+    features: ['Implementation timeline', 'Pricing models', 'Integration details', 'Support options']
+  },
+];
+
+interface AboutMegaMenuProps {
+  isOpen: boolean;
+  onMouseEnter: () => void;
+  onMouseLeave: () => void;
+  onLinkClick: () => void;
+}
+
+const AboutMegaMenu = ({ isOpen, onMouseEnter, onMouseLeave, onLinkClick }: AboutMegaMenuProps) => {
+  const [hoveredPage, setHoveredPage] = useState(aboutPages[0]);
+
+  return (
+    <div 
+      className="relative"
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    >
+      <button
+        className="flex items-center gap-1.5 py-2 px-4 text-sm font-medium text-[hsl(220,10%,70%)] hover:text-white transition-colors duration-200"
+        aria-expanded={isOpen}
+        aria-haspopup="true"
+      >
+        About Us
+        <ChevronDown className={`h-4 w-4 text-[hsl(220,10%,55%)] transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} strokeWidth={1.5} />
+      </button>
+      
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: 8, scale: 0.96 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 8, scale: 0.96 }}
+            transition={{ duration: 0.2, ease: 'easeOut' }}
+            className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[580px] bg-[hsl(220,15%,7%)] border border-[hsl(220,15%,18%)] rounded-2xl shadow-2xl overflow-hidden"
+            role="menu"
+          >
+            <div className="flex">
+              {/* Left Panel - Pages List */}
+              <div className="w-[220px] bg-[hsl(220,15%,10%)] border-r border-[hsl(220,15%,18%)] p-4">
+                <p className="text-xs font-semibold text-[hsl(220,10%,50%)] uppercase tracking-wider mb-4 px-2">
+                  About Us
+                </p>
+                <div className="space-y-1">
+                  {aboutPages.map((page) => {
+                    const Icon = page.icon;
+                    const isActive = hoveredPage.id === page.id;
+                    
+                    return (
+                      <motion.div
+                        key={page.id}
+                        onMouseEnter={() => setHoveredPage(page)}
+                        whileHover={{ x: 4 }}
+                        transition={{ duration: 0.15 }}
+                      >
+                        <Link
+                          to={page.href}
+                          onClick={onLinkClick}
+                          role="menuitem"
+                          className={`flex items-center gap-3 px-3 py-2.5 rounded-xl transition-all duration-200 ${
+                            isActive 
+                              ? 'bg-[hsl(220,15%,15%)] shadow-lg' 
+                              : 'hover:bg-[hsl(220,15%,13%)]'
+                          }`}
+                        >
+                          <div className={`w-9 h-9 rounded-lg flex items-center justify-center bg-gradient-to-br ${page.gradient} shadow-md`}>
+                            <Icon className="w-5 h-5 text-white" strokeWidth={1.5} />
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <p className="text-sm font-semibold text-white">{page.name}</p>
+                            <p className="text-xs text-[hsl(220,10%,55%)] truncate">{page.description}</p>
+                          </div>
+                        </Link>
+                      </motion.div>
+                    );
+                  })}
+                </div>
+              </div>
+              
+              {/* Right Panel - Feature Display */}
+              <div className="flex-1 p-6 bg-[hsl(220,15%,5%)]">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={hoveredPage.id}
+                    initial={{ opacity: 0, x: 10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -10 }}
+                    transition={{ duration: 0.15 }}
+                    className="h-full flex flex-col"
+                  >
+                    {/* Header */}
+                    <div className="flex items-center gap-4 mb-5">
+                      <div className={`w-14 h-14 rounded-xl flex items-center justify-center bg-gradient-to-br ${hoveredPage.gradient} shadow-lg`}>
+                        <hoveredPage.icon className="w-7 h-7 text-white" strokeWidth={1.5} />
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-bold text-white">{hoveredPage.name}</h3>
+                        <p className="text-sm text-[hsl(220,10%,60%)]">{hoveredPage.description}</p>
+                      </div>
+                    </div>
+                    
+                    {/* Features List */}
+                    <div className="grid grid-cols-2 gap-x-6 gap-y-1 mb-6 flex-1 content-start">
+                      {hoveredPage.features.map((feature, index) => (
+                        <div key={index} className="flex items-start gap-2.5 py-1">
+                          <div className="w-1.5 h-1.5 rounded-full bg-primary mt-[7px] flex-shrink-0" />
+                          <p className="text-sm text-[hsl(220,10%,75%)] leading-snug">{feature}</p>
+                        </div>
+                      ))}
+                    </div>
+                    
+                    {/* CTA Button */}
+                    <Button
+                      asChild
+                      size="lg"
+                      className="w-fit bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-white font-semibold shadow-glow"
+                    >
+                      <Link to={hoveredPage.href} onClick={onLinkClick}>
+                        <ArrowRight className="w-4 h-4 mr-2" />
+                        Learn More
+                      </Link>
+                    </Button>
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+};
+
+export default AboutMegaMenu;
