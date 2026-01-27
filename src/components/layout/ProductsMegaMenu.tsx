@@ -1,9 +1,12 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, Sparkles } from 'lucide-react';
-import { products } from '@/lib/products';
+import { ChevronDown, Sparkles, Star } from 'lucide-react';
+import { allProducts } from '@/lib/products';
 import { Button } from '@/components/ui/button';
+
+// Featured product IDs
+const featuredProductIds = ['aivi', 'claim'];
 
 interface ProductsMegaMenuProps {
   isOpen: boolean;
@@ -13,7 +16,7 @@ interface ProductsMegaMenuProps {
 }
 
 const ProductsMegaMenu = ({ isOpen, onMouseEnter, onMouseLeave, onLinkClick }: ProductsMegaMenuProps) => {
-  const [hoveredProduct, setHoveredProduct] = useState(products[0]);
+  const [hoveredProduct, setHoveredProduct] = useState(allProducts[0]);
 
   return (
     <div 
@@ -41,12 +44,13 @@ const ProductsMegaMenu = ({ isOpen, onMouseEnter, onMouseLeave, onLinkClick }: P
               {/* Left Panel - Product List */}
               <div className="w-[280px] bg-muted/30 border-r border-[hsl(220,16%,14%)] p-3">
                 <p className="text-xs font-semibold text-[hsl(220,10%,40%)] uppercase tracking-wider mb-3 px-3">
-                  {products.length} AI Products
+                  {allProducts.length} AI Products
                 </p>
                 <div className="space-y-1">
-                  {products.map((product) => {
+                  {allProducts.map((product) => {
                     const Icon = product.icon;
                     const isActive = hoveredProduct.id === product.id;
+                    const isFeatured = featuredProductIds.includes(product.id);
                     
                     return (
                       <motion.div
@@ -79,7 +83,12 @@ const ProductsMegaMenu = ({ isOpen, onMouseEnter, onMouseLeave, onLinkClick }: P
                             <Icon className="w-5 h-5 text-white" strokeWidth={1.5} />
                           </div>
                           <div className="flex-1 min-w-0">
-                            <p className="text-sm font-semibold text-foreground">{product.name}</p>
+                            <div className="flex items-center gap-2">
+                              <p className="text-sm font-semibold text-foreground">{product.name}</p>
+                              {isFeatured && (
+                                <Star className="w-3 h-3 text-primary fill-primary" />
+                              )}
+                            </div>
                             <p className="text-xs text-muted-foreground truncate">{product.tagline.split(' ').slice(0, 3).join(' ')}</p>
                           </div>
                         </Link>

@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 import logo from '@/assets/zapsight-logo.png';
 import ProductsMegaMenu from './ProductsMegaMenu';
-import { products } from '@/lib/products';
+import { allProducts } from '@/lib/products';
 
 const industries = [
   { name: 'Retail', href: '/industries/retail' },
@@ -204,7 +204,7 @@ const Navbar = () => {
             <div className="space-y-4">
               <div className="px-2">
                 <p className="text-xs font-semibold text-[hsl(220,10%,40%)] uppercase tracking-wider mb-3">Products</p>
-                {products.map((product) => {
+                {allProducts.map((product) => {
                   const Icon = product.icon;
                   return (
                     <Link
