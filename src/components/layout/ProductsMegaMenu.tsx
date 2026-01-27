@@ -131,11 +131,11 @@ const ProductsMegaMenu = ({ isOpen, onMouseEnter, onMouseLeave, onLinkClick }: P
                     </div>
                     
                     {/* Features Grid */}
-                    <div className="grid grid-cols-2 gap-x-8 gap-y-3 mb-6 flex-1">
+                    <div className="grid grid-cols-2 gap-x-8 gap-y-1 mb-6 flex-1 content-start">
                       {hoveredProduct.features.slice(0, 4).map((feature, index) => (
-                        <div key={index} className="flex items-start gap-3">
-                          <div className="w-2 h-2 rounded-full bg-primary mt-1.5 flex-shrink-0" />
-                          <p className="text-sm text-[hsl(220,10%,75%)] leading-relaxed">{feature}</p>
+                        <div key={index} className="flex items-start gap-2.5 py-1">
+                          <div className="w-1.5 h-1.5 rounded-full bg-primary mt-[7px] flex-shrink-0" />
+                          <p className="text-sm text-[hsl(220,10%,75%)] leading-snug">{feature}</p>
                         </div>
                       ))}
                     </div>
