@@ -4,19 +4,8 @@ import { ChevronDown, Menu, X, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 import logo from '@/assets/zapsight-logo.png';
-
-const products = [
-  { name: 'AISAC', href: '/products/aisac', featured: true },
-  { name: 'AIVI', href: '/products/aivi', featured: true },
-  { name: 'Unifyer', href: '/products/unifyer' },
-  { name: 'AIDR', href: '/products/aidr' },
-  { name: 'SAPRO', href: '/products/sapro' },
-  { name: 'AIVEN', href: '/products/aiven' },
-  { name: '5on5', href: '/products/5on5' },
-  { name: 'TARS', href: '/products/tars' },
-  { name: 'Arios', href: '/products/arios' },
-  { name: 'CLaiM', href: '/products/claim' },
-];
+import ProductsMegaMenu from './ProductsMegaMenu';
+import { products } from '@/lib/products';
 
 const industries = [
   { name: 'Retail', href: '/industries/retail' },
@@ -151,9 +140,7 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-1">
-            <Dropdown
-              label="Products"
-              items={products}
+            <ProductsMegaMenu
               isOpen={openDropdown === 'products'}
               onMouseEnter={() => handleMouseEnter('products')}
               onMouseLeave={handleMouseLeave}
@@ -217,19 +204,20 @@ const Navbar = () => {
             <div className="space-y-4">
               <div className="px-2">
                 <p className="text-xs font-semibold text-[hsl(220,10%,40%)] uppercase tracking-wider mb-3">Products</p>
-                {products.map((product) => (
-                  <Link
-                    key={product.name}
-                    to={product.href}
-                    className="flex items-center gap-2 py-2.5 px-3 text-sm text-[hsl(220,10%,60%)] hover:text-primary transition-colors"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    {product.name}
-                    {product.featured && (
-                      <span className="text-[10px] font-semibold uppercase tracking-wider text-primary bg-primary/10 px-1.5 py-0.5 rounded">Featured</span>
-                    )}
-                  </Link>
-                ))}
+                {products.map((product) => {
+                  const Icon = product.icon;
+                  return (
+                    <Link
+                      key={product.name}
+                      to={`/products/${product.id}`}
+                      className="flex items-center gap-3 py-2.5 px-3 text-sm text-[hsl(220,10%,60%)] hover:text-primary transition-colors"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      <Icon className="w-4 h-4" strokeWidth={1.5} />
+                      {product.name}
+                    </Link>
+                  );
+                })}
               </div>
               <div className="px-2 pt-4 border-t border-[hsl(220,16%,10%)]">
                 <p className="text-xs font-semibold text-[hsl(220,10%,40%)] uppercase tracking-wider mb-3">Industries</p>
