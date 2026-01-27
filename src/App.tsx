@@ -27,6 +27,7 @@ const CaseStudies = lazy(() => import("./pages/CaseStudies"));
 const CaseStudyDetail = lazy(() => import("./pages/CaseStudyDetail"));
 const FAQs = lazy(() => import("./pages/FAQs"));
 const Insights = lazy(() => import("./pages/Insights"));
+const Console = lazy(() => import("./pages/Console"));
 
 const queryClient = new QueryClient();
 
@@ -56,6 +57,7 @@ const App = () => (
               <Route path="/industries/insurance" element={<InsuranceIndustry />} />
               <Route path="/industries/construction" element={<ConstructionIndustry />} />
               <Route path="/industries/retail" element={<RetailIndustry />} />
+              <Route path="/console" element={<Console />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
