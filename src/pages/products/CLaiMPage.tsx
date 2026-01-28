@@ -1,11 +1,40 @@
+import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Diamond, Target, Square } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import DimensionCard from '@/components/claim/DimensionCard';
+import ConvergenceDiagram from '@/components/claim/ConvergenceDiagram';
 
 const CLaiMPage = () => {
+  const [highlightedDimension, setHighlightedDimension] = useState<string | null>(null);
+
+  const dimensions = [
+    {
+      id: 'traceability',
+      icon: Diamond,
+      title: 'Traceability',
+      body: 'Every claim component mapped to its source. The trail connects hospital discharge summaries to tariff line items to policy clauses to final payable calculation. Nothing emerges from black boxes; everything exists in an unbroken chain of custody from data to decision.',
+      meta: 'Source → Logic → Output',
+    },
+    {
+      id: 'intelligibility',
+      icon: Target,
+      title: 'Intelligibility',
+      body: 'From ICD codes to line-item exclusions, reasoning is made visible. Stakeholders witness not just what was decided, but why—through transparent calculation of insurance payable versus claimant payable, deductible applications, and non-covered item rationales.',
+      meta: 'Logic → Rationale → Defense',
+    },
+    {
+      id: 'solidity',
+      icon: Square,
+      title: 'Solidity',
+      body: 'Outcomes withstand actuarial and operational scrutiny. Recommendations emerge already validated against medical admissibility standards, tariff compliance, and policy constraints—solutions that can be deployed because their feasibility is structurally verified.',
+      meta: 'Validation → Execution → Impact',
+    },
+  ];
+
   return (
     <>
       <Helmet>
@@ -212,37 +241,71 @@ const CLaiMPage = () => {
                 CLaiM embeds ZapSight's accountability framework into claims operations. These three dimensions evolve in parallel, preventing the common failure modes: ideas that sound logical but can't be executed, insights that are actionable but poorly explained, or results that look impressive but fail to create real impact.
               </p>
 
-              {/* 3-Column Pillars */}
+              {/* 3-Column Pillars with hover effects */}
               <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
-                {[
-                  {
-                    icon: Diamond,
-                    title: 'Traceability',
-                    body: 'Every claim component mapped to its source. The trail connects hospital discharge summaries to tariff line items to policy clauses to final payable calculation. Nothing emerges from black boxes; everything exists in an unbroken chain of custody from data to decision.',
-                    meta: 'Source → Logic → Output',
-                  },
-                  {
-                    icon: Target,
-                    title: 'Intelligibility',
-                    body: 'From ICD codes to line-item exclusions, reasoning is made visible. Stakeholders witness not just what was decided, but why—through transparent calculation of insurance payable versus claimant payable, deductible applications, and non-covered item rationales.',
-                    meta: 'Logic → Rationale → Defense',
-                  },
-                  {
-                    icon: Square,
-                    title: 'Solidity',
-                    body: 'Outcomes withstand actuarial and operational scrutiny. Recommendations emerge already validated against medical admissibility standards, tariff compliance, and policy constraints—solutions that can be deployed because their feasibility is structurally verified.',
-                    meta: 'Validation → Execution → Impact',
-                  },
-                ].map((pillar, i) => (
-                  <div key={i} className="bg-[hsl(220,15%,8%)] border border-[hsl(220,16%,12%)] rounded-2xl p-6 lg:p-8 hover:border-primary/20 transition-colors duration-300">
-                    <div className="w-12 h-12 rounded-xl bg-primary/15 border border-primary/20 flex items-center justify-center mb-6">
-                      <pillar.icon className="h-6 w-6 text-primary" strokeWidth={1.5} />
-                    </div>
-                    <h3 className="font-display text-xl font-bold text-[hsl(0,0%,93%)] mb-4">{pillar.title}</h3>
-                    <p className="text-[hsl(220,10%,55%)] leading-relaxed mb-4">{pillar.body}</p>
-                    <p className="text-primary/70 text-sm font-medium">{pillar.meta}</p>
-                  </div>
+                {dimensions.map((dimension) => (
+                  <DimensionCard
+                    key={dimension.id}
+                    icon={dimension.icon}
+                    title={dimension.title}
+                    body={dimension.body}
+                    meta={dimension.meta}
+                    isHighlighted={highlightedDimension === dimension.id}
+                  />
                 ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Convergence Diagram Section */}
+          <section className="py-16 lg:py-24 relative overflow-hidden">
+            <div className="absolute inset-0 bg-[hsl(220,20%,6%)]" />
+            
+            {/* Subtle radial glow */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/[0.03] rounded-full blur-[180px]" />
+
+            <div className="container mx-auto px-4 lg:px-8 relative z-10">
+              <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                {/* Left: Text content */}
+                <div>
+                  <p className="text-primary font-medium mb-4 tracking-wide uppercase text-sm">The Convergence</p>
+                  <h2 className="font-display text-3xl lg:text-4xl font-bold tracking-tight text-[hsl(0,0%,97%)] mb-6">
+                    Cyclical Validation, Not Linear Flow
+                  </h2>
+                  <p className="text-[hsl(220,10%,55%)] text-lg leading-relaxed mb-6">
+                    Traditional claims processing follows a linear path—each step completed before the next begins. CLaiM operates through convergent validation, where Traceability, Intelligibility, and Solidity reinforce each other continuously.
+                  </p>
+                  <p className="text-[hsl(220,10%,55%)] leading-relaxed">
+                    The result is not sequential verification but simultaneous assurance: every decision is traceable, explicable, and operationally sound from the moment it emerges.
+                  </p>
+                  
+                  {/* Dimension highlights */}
+                  <div className="mt-8 space-y-3">
+                    {dimensions.map((dim) => (
+                      <div
+                        key={dim.id}
+                        className={`flex items-center gap-3 p-3 rounded-lg transition-all duration-300 cursor-pointer ${
+                          highlightedDimension === dim.id
+                            ? 'bg-primary/10 border border-primary/30'
+                            : 'bg-[hsl(220,15%,8%)] border border-transparent hover:border-[hsl(220,16%,15%)]'
+                        }`}
+                        onMouseEnter={() => setHighlightedDimension(dim.id)}
+                        onMouseLeave={() => setHighlightedDimension(null)}
+                      >
+                        <dim.icon className={`h-5 w-5 ${highlightedDimension === dim.id ? 'text-primary' : 'text-[hsl(220,10%,50%)]'}`} strokeWidth={1.5} />
+                        <span className={`font-medium ${highlightedDimension === dim.id ? 'text-primary' : 'text-[hsl(0,0%,85%)]'}`}>
+                          {dim.title}
+                        </span>
+                        <span className="text-[hsl(220,10%,45%)] text-sm ml-auto">{dim.meta}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Right: Diagram */}
+                <div className="flex items-center justify-center">
+                  <ConvergenceDiagram onNodeHover={setHighlightedDimension} />
+                </div>
               </div>
             </div>
           </section>
