@@ -14,6 +14,7 @@ import Index from "./pages/Index";
 const About = lazy(() => import("./pages/About"));
 const Contact = lazy(() => import("./pages/Contact"));
 const ProductPage = lazy(() => import("./pages/ProductPage"));
+const CLaiMPage = lazy(() => import("./pages/products/CLaiMPage"));
 const AIVIDemo = lazy(() => import("./pages/AIVIDemo"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const EnergyIndustry = lazy(() => import("./pages/industries/EnergyIndustry"));
@@ -49,6 +50,7 @@ const App = () => (
               <Route path="/faqs" element={<FAQs />} />
               <Route path="/insights" element={<Insights />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/products/claim" element={<CLaiMPage />} />
               <Route path="/products/:productId" element={<ProductPage />} />
               <Route path="/demo/aivi" element={<AIVIDemo />} />
               <Route path="/industries/energy" element={<EnergyIndustry />} />
