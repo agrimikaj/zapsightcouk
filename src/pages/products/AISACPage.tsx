@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Eye, Link2, Zap, Camera, Radio, Bell, Lock, Smartphone } from 'lucide-react';
+import { ArrowRight, Eye, Link2, Zap, Camera, Radio, Bell, Lock, Smartphone, Play } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
@@ -85,12 +85,20 @@ const AISACPage = () => {
                     </div>
                   </div>
 
-                  <Button variant="hero" size="xl" asChild>
-                    <Link to="/contact">
-                      Initiate Security Consultation
-                      <ArrowRight className="h-5 w-5" strokeWidth={1.5} />
-                    </Link>
-                  </Button>
+                  <div className="flex flex-wrap gap-4">
+                    <Button variant="hero" size="xl" asChild>
+                      <Link to="/contact">
+                        Initiate Security Consultation
+                        <ArrowRight className="h-5 w-5" strokeWidth={1.5} />
+                      </Link>
+                    </Button>
+                    <Button variant="heroOutline" size="xl" asChild>
+                      <a href="#demo">
+                        <Play className="h-5 w-5" strokeWidth={1.5} />
+                        Watch Demo
+                      </a>
+                    </Button>
+                  </div>
                 </div>
 
                 {/* Visual - 40% - Converging Signal Diagram */}
@@ -134,6 +142,57 @@ const AISACPage = () => {
                     <p className="absolute -right-2 bottom-0 text-primary/70 text-xs uppercase tracking-wider">Actions</p>
                   </div>
                 </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Video Demo Section */}
+          <section id="demo" className="py-16 lg:py-24 relative overflow-hidden">
+            <div className="absolute inset-0 bg-[hsl(220,20%,6%)]" />
+            <div className="absolute inset-0 opacity-[0.015]" style={{
+              backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--primary)) 1px, transparent 0)`,
+              backgroundSize: '48px 48px'
+            }} />
+            
+            <div className="container mx-auto px-4 lg:px-8 relative z-10">
+              <div className="text-center mb-10">
+                <p className="text-primary font-medium mb-3 tracking-wide uppercase text-sm">Product Demo</p>
+                <h2 className="font-display text-2xl lg:text-3xl font-bold tracking-tight text-[hsl(0,0%,97%)]">
+                  See It In Action
+                </h2>
+              </div>
+
+              <div className="max-w-5xl mx-auto">
+                <div className="relative overflow-hidden rounded-2xl border border-[hsl(220,16%,15%)] bg-[hsl(220,20%,8%)] shadow-2xl">
+                  {/* Browser-like header */}
+                  <div className="flex items-center gap-2 px-4 py-3 bg-[hsl(220,20%,10%)] border-b border-[hsl(220,16%,15%)]">
+                    <div className="flex gap-1.5">
+                      <div className="w-3 h-3 rounded-full bg-red-500/80" />
+                      <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
+                      <div className="w-3 h-3 rounded-full bg-green-500/80" />
+                    </div>
+                    <div className="flex-1 flex justify-center">
+                      <div className="px-4 py-1 bg-[hsl(220,20%,8%)] rounded-md text-[hsl(220,10%,50%)] text-xs">
+                        app.zapsight.ai
+                      </div>
+                    </div>
+                  </div>
+                  {/* Video */}
+                  <div className="overflow-hidden">
+                    <video
+                      src="/videos/aisac-demo.mp4"
+                      controls
+                      className="w-full h-auto"
+                      preload="metadata"
+                    >
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                </div>
+                {/* Caption */}
+                <p className="text-center text-[hsl(220,10%,55%)] mt-4 text-sm">
+                  AISAC Security Operations Demo
+                </p>
               </div>
             </div>
           </section>
