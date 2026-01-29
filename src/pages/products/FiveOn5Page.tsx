@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Infinity, PenTool, Zap } from 'lucide-react';
+import { ArrowRight, Infinity as InfinityIcon, Target, Mic2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
@@ -15,26 +15,26 @@ const FiveOn5Page = () => {
   const dimensions = [
     {
       id: 'continuity',
-      icon: Infinity,
+      icon: InfinityIcon,
       title: 'Continuity',
       body: 'Conversations persist across channels. Email to chat to phone—context never resets. Every interaction builds on the last, creating relationships instead of isolated tickets.',
       meta: 'Threads, not tickets',
     },
     {
       id: 'relevance',
-      icon: Zap,
+      icon: Target,
       title: 'Relevance',
       body: 'Real-time data transforms generic into personal instantly. Right message, right moment—situational precision that makes every response feel tailored, not templated.',
       meta: 'Right moment, right message',
     },
     {
       id: 'voice',
-      icon: PenTool,
+      icon: Mic2,
       title: 'Voice',
       body: 'Brand DNA enforced by design. Inexperienced agents sound like your best veterans. One brand, many agents—consistency becomes structural, not accidental.',
       meta: 'One brand, many agents',
     },
-  ];
+  ] as const;
 
   return (
     <>
@@ -295,31 +295,29 @@ const FiveOn5Page = () => {
               </h2>
 
               <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
-                {[
-                  {
-                    icon: '∞',
-                    title: 'Thread Memory',
-                    body: 'Conversations persist as relationships, not isolated tickets. Channel switches don\'t reset context.',
-                  },
-                  {
-                    icon: '✍',
-                    title: 'Assisted Authorship',
-                    body: 'AI drafts; humans decide. Judgment stays human, velocity becomes software.',
-                  },
-                  {
-                    icon: '⚡',
-                    title: 'Service-Sales Fusion',
-                    body: 'Upsell prompts appear only at gratitude peaks—turning resolution moments into revenue without friction.',
-                  },
-                ].map((item, i) => (
-                  <div key={i} className="bg-[hsl(220,15%,8%)] border border-[hsl(220,16%,12%)] rounded-2xl p-6 lg:p-8 hover:border-primary/20 transition-colors duration-300">
-                    <div className="w-14 h-14 rounded-2xl bg-[hsl(220,15%,12%)] flex items-center justify-center mb-5">
-                      <span className="text-2xl">{item.icon}</span>
-                    </div>
-                    <h3 className="font-display text-xl font-bold text-[hsl(0,0%,93%)] mb-3">{item.title}</h3>
-                    <p className="text-[hsl(220,10%,55%)] leading-relaxed">{item.body}</p>
+                <div className="bg-[hsl(220,15%,8%)] border border-[hsl(220,16%,12%)] rounded-2xl p-6 lg:p-8 hover:border-primary/20 transition-colors duration-300">
+                  <div className="w-14 h-14 rounded-2xl bg-[hsl(220,15%,12%)] flex items-center justify-center mb-5">
+                    <InfinityIcon className="h-7 w-7 text-[hsl(220,10%,50%)]" strokeWidth={1.5} />
                   </div>
-                ))}
+                  <h3 className="font-display text-xl font-bold text-[hsl(0,0%,93%)] mb-3">Thread Memory</h3>
+                  <p className="text-[hsl(220,10%,55%)] leading-relaxed">Conversations persist as relationships, not isolated tickets. Channel switches don't reset context.</p>
+                </div>
+                
+                <div className="bg-[hsl(220,15%,8%)] border border-[hsl(220,16%,12%)] rounded-2xl p-6 lg:p-8 hover:border-primary/20 transition-colors duration-300">
+                  <div className="w-14 h-14 rounded-2xl bg-[hsl(220,15%,12%)] flex items-center justify-center mb-5">
+                    <Mic2 className="h-7 w-7 text-[hsl(220,10%,50%)]" strokeWidth={1.5} />
+                  </div>
+                  <h3 className="font-display text-xl font-bold text-[hsl(0,0%,93%)] mb-3">Assisted Authorship</h3>
+                  <p className="text-[hsl(220,10%,55%)] leading-relaxed">AI drafts; humans decide. Judgment stays human, velocity becomes software.</p>
+                </div>
+                
+                <div className="bg-[hsl(220,15%,8%)] border border-[hsl(220,16%,12%)] rounded-2xl p-6 lg:p-8 hover:border-primary/20 transition-colors duration-300">
+                  <div className="w-14 h-14 rounded-2xl bg-[hsl(220,15%,12%)] flex items-center justify-center mb-5">
+                    <Target className="h-7 w-7 text-[hsl(220,10%,50%)]" strokeWidth={1.5} />
+                  </div>
+                  <h3 className="font-display text-xl font-bold text-[hsl(0,0%,93%)] mb-3">Service-Sales Fusion</h3>
+                  <p className="text-[hsl(220,10%,55%)] leading-relaxed">Upsell prompts appear only at gratitude peaks—turning resolution moments into revenue without friction.</p>
+                </div>
               </div>
             </div>
           </section>
