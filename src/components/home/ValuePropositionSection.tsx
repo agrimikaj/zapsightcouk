@@ -1,48 +1,48 @@
-import { Check } from 'lucide-react';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Search, Compass, Code, Rocket, TrendingUp } from 'lucide-react';
 
 const steps = [
   {
     number: '01',
     title: 'Discovery',
-    description: 'We start by understanding your business context, data landscape, and specific challenges. This phase includes stakeholder interviews and technical assessment.',
+    description: 'Understanding your business context, data landscape, and specific challenges through stakeholder interviews and technical assessment.',
     duration: '1 Week',
+    icon: Search,
   },
   {
     number: '02',
     title: 'Design',
-    description: 'Our team designs the AI agent architecture, data pipelines, and workflow integrations tailored to your requirements.',
+    description: 'Designing the AI agent architecture, data pipelines, and workflow integrations tailored to your requirements.',
     duration: '1 Week',
+    icon: Compass,
   },
   {
     number: '03',
     title: 'Development',
-    description: 'We build and train the AI agents, establish data connections, and develop the agentic workflows.',
+    description: 'Building and training AI agents, establishing data connections, and developing agentic workflows.',
     duration: '2-3 Weeks',
+    icon: Code,
   },
   {
     number: '04',
     title: 'Deployment',
-    description: 'Solutions are deployed in your environment with monitoring, testing, and user training.',
+    description: 'Deploying solutions in your environment with monitoring, testing, and comprehensive user training.',
     duration: '1 Week',
+    icon: Rocket,
   },
   {
     number: '05',
     title: 'Optimization',
     description: 'Continuous monitoring and enhancement to improve accuracy and performance over time.',
     duration: 'Ongoing',
+    icon: TrendingUp,
   },
 ];
 
-const deliverables = [
-  'AI-ready data pipelines',
-  'Custom ML models & agents',
-  'Agentic workflow automation',
-  'Integration with existing systems',
-  'Monitoring & analytics dashboard',
-  'Documentation & training',
-];
-
 const ValuePropositionSection = () => {
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
   return (
     <section className="py-12 lg:py-16 relative overflow-hidden">
       {/* Unified dark background */}
@@ -57,10 +57,10 @@ const ValuePropositionSection = () => {
         }}
       />
       
-      {/* Ambient glows for depth */}
-      <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-primary/[0.02] rounded-full blur-[180px]" />
+      {/* Ambient glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-primary/[0.02] rounded-full blur-[150px]" />
       
-      <div className="container relative z-10 mx-auto px-4 lg:px-8 max-w-4xl">
+      <div className="container relative z-10 mx-auto px-4 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-10 lg:mb-12">
           <p className="text-primary font-medium mb-3 tracking-wide uppercase text-sm">Our Methodology</p>
@@ -68,63 +68,101 @@ const ValuePropositionSection = () => {
             How We <span className="text-primary">Work</span>
           </h2>
           <p className="text-lg text-[hsl(220,10%,55%)] max-w-2xl mx-auto">
-            A proven, structured approach to delivering AI solutions that work from day one. We combine deep technical expertise with practical business understanding.
+            A proven, structured approach to delivering AI solutions that work from day one.
           </p>
         </div>
 
-        {/* Process Steps */}
-        <div className="space-y-6 mb-12">
-          {steps.map((step, index) => (
-            <div key={step.number} className="relative flex gap-5 lg:gap-6">
-              {/* Timeline line */}
-              {index < steps.length - 1 && (
-                <div className="absolute left-5 top-14 bottom-0 w-px bg-gradient-to-b from-primary/30 to-primary/5" />
-              )}
-              
-              {/* Step number */}
-              <div className="flex-shrink-0">
-                <div className="w-10 h-10 rounded-xl flex items-center justify-center font-display font-bold text-xs text-primary-foreground"
-                     style={{
-                       background: 'linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-dark)) 100%)',
-                       boxShadow: '0 0 20px hsl(var(--primary) / 0.25)'
-                     }}>
-                  {step.number}
-                </div>
-              </div>
-              
-              {/* Content */}
-              <div className="flex-1 pb-2">
-                <div className="bg-[hsl(220,20%,8%)] border border-[hsl(220,16%,12%)] rounded-2xl p-5 lg:p-6"
-                     style={{ boxShadow: '0 0 40px hsl(var(--primary) / 0.02)' }}>
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="font-display text-lg font-bold text-[hsl(0,0%,94%)] tracking-tight">{step.title}</h3>
-                    <span className="text-[10px] font-semibold uppercase tracking-wider text-primary bg-primary/10 px-2 py-1 rounded">
-                      {step.duration}
-                    </span>
+        {/* Horizontal Cards */}
+        <div className="flex flex-col lg:flex-row gap-3 lg:gap-2">
+          {steps.map((step, index) => {
+            const Icon = step.icon;
+            const isHovered = hoveredIndex === index;
+            
+            return (
+              <motion.div
+                key={step.number}
+                className="relative cursor-pointer"
+                onMouseEnter={() => setHoveredIndex(index)}
+                onMouseLeave={() => setHoveredIndex(null)}
+                animate={{
+                  flex: isHovered ? 2.5 : 1,
+                }}
+                transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+              >
+                <div 
+                  className={`
+                    h-full min-h-[180px] lg:min-h-[220px] 
+                    bg-[hsl(220,20%,8%)] border rounded-2xl p-5 lg:p-6
+                    transition-all duration-300
+                    ${isHovered 
+                      ? 'border-primary/30 shadow-lg' 
+                      : 'border-[hsl(220,16%,12%)]'
+                    }
+                  `}
+                  style={{ 
+                    boxShadow: isHovered 
+                      ? '0 0 40px hsl(var(--primary) / 0.08)' 
+                      : '0 0 40px hsl(var(--primary) / 0.02)' 
+                  }}
+                >
+                  {/* Number badge */}
+                  <div 
+                    className="w-8 h-8 rounded-lg flex items-center justify-center font-display font-bold text-xs text-primary-foreground mb-4"
+                    style={{
+                      background: 'linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-dark)) 100%)',
+                      boxShadow: isHovered ? '0 0 20px hsl(var(--primary) / 0.35)' : '0 0 15px hsl(var(--primary) / 0.2)'
+                    }}
+                  >
+                    {step.number}
                   </div>
-                  <p className="text-[hsl(220,10%,55%)] text-sm leading-relaxed">{step.description}</p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
 
-        {/* Deliverables */}
-        <div>
-          <h3 className="font-display text-2xl md:text-3xl font-bold text-center mb-8 text-[hsl(0,0%,97%)] tracking-tight">
-            What You <span className="text-primary">Get</span>
-          </h3>
-          
-          <div className="grid sm:grid-cols-2 gap-3">
-            {deliverables.map((item) => (
-              <div key={item} className="flex items-center gap-3 bg-[hsl(220,20%,8%)] border border-[hsl(220,16%,12%)] rounded-xl p-4">
-                <div className="w-7 h-7 rounded-lg bg-primary/15 border border-primary/20 flex items-center justify-center flex-shrink-0">
-                  <Check className="h-3.5 w-3.5 text-primary" strokeWidth={2} />
+                  {/* Icon */}
+                  <div className={`
+                    w-10 h-10 rounded-xl flex items-center justify-center mb-4
+                    bg-primary/10 border border-primary/15
+                    transition-all duration-300
+                    ${isHovered ? 'scale-110' : ''}
+                  `}>
+                    <Icon className="w-5 h-5 text-primary" strokeWidth={1.5} />
+                  </div>
+
+                  {/* Title */}
+                  <h3 className={`
+                    font-display text-lg font-bold tracking-tight mb-2
+                    transition-colors duration-200
+                    ${isHovered ? 'text-primary' : 'text-[hsl(0,0%,94%)]'}
+                  `}>
+                    {step.title}
+                  </h3>
+
+                  {/* Duration badge */}
+                  <span className="inline-block text-[10px] font-semibold uppercase tracking-wider text-primary bg-primary/10 px-2 py-1 rounded mb-3">
+                    {step.duration}
+                  </span>
+
+                  {/* Description - shows on hover */}
+                  <AnimatePresence>
+                    {isHovered && (
+                      <motion.p
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="text-[hsl(220,10%,60%)] text-sm leading-relaxed overflow-hidden"
+                      >
+                        {step.description}
+                      </motion.p>
+                    )}
+                  </AnimatePresence>
                 </div>
-                <span className="text-[hsl(220,10%,70%)] text-sm font-medium">{item}</span>
-              </div>
-            ))}
-          </div>
+
+                {/* Connector line (desktop only) */}
+                {index < steps.length - 1 && (
+                  <div className="hidden lg:block absolute top-1/2 -right-1 w-2 h-px bg-gradient-to-r from-primary/30 to-primary/10" />
+                )}
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
