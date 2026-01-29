@@ -2,12 +2,12 @@ import { Helmet } from 'react-helmet-async';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import HeroBanner from '@/components/home/HeroBanner';
+import ConfessionalBooth from '@/components/home/ConfessionalBooth';
 import ProductsDiagram from '@/components/home/ProductsDiagram';
 import ValuePropositionSection from '@/components/home/ValuePropositionSection';
 import IndustriesSection from '@/components/home/IndustriesSection';
 import CaseStudiesSection from '@/components/home/CaseStudiesSection';
 import ProgressiveValueOverlay from '@/components/home/ProgressiveValueOverlay';
-import DataFlowWaves from '@/components/ui/DataFlowWaves';
 
 const Index = () => {
   return (
@@ -23,6 +23,7 @@ const Index = () => {
         <Navbar />
         <main className="relative">
           <HeroBanner />
+          <ConfessionalBooth />
           <ProductsDiagram />
           <ValuePropositionSection />
           <IndustriesSection />
