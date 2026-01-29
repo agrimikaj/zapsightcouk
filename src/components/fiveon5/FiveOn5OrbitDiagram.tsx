@@ -1,148 +1,288 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { Infinity as InfinityIcon, Target, Mic2, LucideIcon } from 'lucide-react';
 
 interface FiveOn5OrbitDiagramProps {
-  onNodeHover: (node: string | null) => void;
+  onNodeHover?: (nodeId: string | null) => void;
+  highlightedNode?: string | null;
 }
 
-const FiveOn5OrbitDiagram = ({ onNodeHover }: FiveOn5OrbitDiagramProps) => {
+interface NodeConfig {
+  id: string;
+  label: string;
+  caption: string;
+  icon: LucideIcon;
+  angle: number;
+}
+
+const FiveOn5OrbitDiagram = ({ onNodeHover, highlightedNode }: FiveOn5OrbitDiagramProps) => {
+  const [activeNode, setActiveNode] = useState<string | null>(null);
+  const currentHighlight = highlightedNode ?? activeNode;
+
+  const handleNodeHover = (nodeId: string | null) => {
+    setActiveNode(nodeId);
+    onNodeHover?.(nodeId);
+  };
+
+  const nodes: NodeConfig[] = [
+    { id: 'continuity', label: 'Continuity', caption: 'Threads, not tickets. Context never resets.', icon: InfinityIcon, angle: -90 },
+    { id: 'relevance', label: 'Relevance', caption: 'Right message, right moment.', icon: Target, angle: 150 },
+    { id: 'voice', label: 'Voice', caption: 'One brand, many agents.', icon: Mic2, angle: 30 },
+  ];
+
   return (
-    <div className="relative w-full max-w-md aspect-square">
-      {/* Orbit rings */}
-      <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 400">
-        {/* Outer orbit */}
+    <div className="relative w-full max-w-xl mx-auto aspect-square">
+      {/* SVG Container */}
+      <svg viewBox="0 0 400 400" className="w-full h-full">
+        {/* Outer source ring - faint silhouettes */}
         <motion.circle
           cx="200"
           cy="200"
-          r="150"
+          r="170"
           fill="none"
-          stroke="hsl(24, 92%, 50%)"
+          stroke="hsl(220, 10%, 15%)"
           strokeWidth="1"
-          strokeOpacity="0.15"
+          strokeDasharray="4 8"
+          initial={{ rotate: 0 }}
+          animate={{ rotate: 360 }}
+          transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+          style={{ transformOrigin: '200px 200px' }}
+        />
+
+        {/* Main animated rotating ring */}
+        <motion.circle
+          cx="200"
+          cy="200"
+          r="140"
+          fill="none"
+          stroke="url(#fiveon5RotatingGradient)"
+          strokeWidth="1.5"
+          strokeDasharray="15 8"
+          initial={{ rotate: 0 }}
+          animate={{ rotate: -360 }}
+          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+          style={{ transformOrigin: '200px 200px' }}
+        />
+
+        {/* Inner glow ring */}
+        <circle
+          cx="200"
+          cy="200"
+          r="145"
+          fill="none"
+          stroke="hsl(var(--primary) / 0.08)"
+          strokeWidth="40"
+          className="blur-sm"
+        />
+
+        {/* Triangle connecting lines */}
+        <motion.path
+          d="M 200 60 L 320 280 L 80 280 Z"
+          fill="none"
+          stroke={currentHighlight ? 'hsl(var(--primary) / 0.5)' : 'hsl(var(--primary) / 0.15)'}
+          strokeWidth="1.5"
+          strokeDasharray="6 4"
           initial={{ pathLength: 0 }}
           animate={{ pathLength: 1 }}
           transition={{ duration: 2, ease: "easeOut" }}
         />
-        
-        {/* Inner orbit */}
-        <motion.circle
-          cx="200"
-          cy="200"
-          r="80"
-          fill="none"
-          stroke="hsl(24, 92%, 50%)"
-          strokeWidth="1"
-          strokeOpacity="0.1"
-          initial={{ pathLength: 0 }}
-          animate={{ pathLength: 1 }}
-          transition={{ duration: 1.5, ease: "easeOut", delay: 0.3 }}
-        />
 
-        {/* Connecting lines to center */}
-        {[
-          { angle: 270, id: 'continuity' }, // Bottom-left
-          { angle: 30, id: 'relevance' },   // Top
-          { angle: 150, id: 'voice' },      // Bottom-right
-        ].map((node, i) => {
-          const x = 200 + 150 * Math.cos((node.angle * Math.PI) / 180);
-          const y = 200 + 150 * Math.sin((node.angle * Math.PI) / 180);
+        {/* Connection lines to center - pulsing */}
+        {nodes.map((node, i) => {
+          const angle = node.angle * (Math.PI / 180);
+          const radius = 140;
+          const x = 200 + radius * Math.cos(angle);
+          const y = 200 + radius * Math.sin(angle);
+          const isActive = currentHighlight === node.id;
+
           return (
             <motion.line
-              key={node.id}
+              key={`line-${node.id}`}
               x1="200"
               y1="200"
               x2={x}
               y2={y}
-              stroke="hsl(24, 92%, 50%)"
-              strokeWidth="1"
-              strokeOpacity="0.2"
-              strokeDasharray="4 4"
+              stroke={isActive ? 'hsl(var(--primary))' : 'hsl(var(--primary) / 0.2)'}
+              strokeWidth={isActive ? 2.5 : 1}
               initial={{ pathLength: 0 }}
-              animate={{ pathLength: 1 }}
-              transition={{ duration: 1, delay: 0.5 + i * 0.2 }}
+              animate={{ 
+                pathLength: 1,
+                opacity: isActive ? [0.6, 1, 0.6] : 1
+              }}
+              transition={{ 
+                pathLength: { duration: 1, delay: i * 0.2 },
+                opacity: { duration: 1.5, repeat: Infinity }
+              }}
             />
           );
         })}
+
+        {/* Gradient definitions */}
+        <defs>
+          <linearGradient id="fiveon5RotatingGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.9" />
+            <stop offset="50%" stopColor="hsl(var(--primary))" stopOpacity="0.15" />
+            <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0.9" />
+          </linearGradient>
+          <radialGradient id="coreGlowGradient5" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stopColor="hsl(var(--primary) / 0.4)" />
+            <stop offset="100%" stopColor="hsl(var(--primary) / 0.05)" />
+          </radialGradient>
+          <filter id="glow5">
+            <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+            <feMerge>
+              <feMergeNode in="coloredBlur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+        </defs>
       </svg>
 
-      {/* Center Core */}
+      {/* Central Hexagonal Core */}
       <motion.div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/30 flex items-center justify-center"
-        initial={{ scale: 0, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 0.6, delay: 0.3 }}
+        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 flex flex-col items-center justify-center"
+        style={{
+          clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)',
+          background: 'linear-gradient(135deg, hsl(var(--primary) / 0.2) 0%, hsl(220, 20%, 8%) 60%)',
+          boxShadow: '0 0 60px hsl(var(--primary) / 0.25), inset 0 0 30px hsl(var(--primary) / 0.1)',
+        }}
+        initial={{ scale: 0 }}
+        animate={{ 
+          scale: 1,
+          boxShadow: [
+            '0 0 40px hsl(var(--primary) / 0.2)',
+            '0 0 60px hsl(var(--primary) / 0.3)',
+            '0 0 40px hsl(var(--primary) / 0.2)',
+          ]
+        }}
+        transition={{ 
+          scale: { duration: 0.5, delay: 0.5 },
+          boxShadow: { duration: 3, repeat: Infinity }
+        }}
       >
-        <div className="text-center">
-          <p className="font-display font-bold text-primary text-lg">5on5</p>
-          <p className="text-[hsl(220,10%,55%)] text-xs">Context Core</p>
-        </div>
+        <span className="font-display text-lg font-bold text-primary">5on5</span>
+        <span className="text-[hsl(220,10%,50%)] text-[10px] uppercase tracking-widest mt-1">Context</span>
+        <span className="text-[hsl(220,10%,50%)] text-[10px] uppercase tracking-widest">Core</span>
       </motion.div>
 
       {/* Orbiting Nodes */}
-      {/* Continuity - Bottom-left */}
-      <motion.div
-        className="absolute w-20 h-20 rounded-full bg-[hsl(220,15%,10%)] border border-[hsl(220,16%,15%)] flex items-center justify-center cursor-pointer hover:border-primary/50 transition-colors duration-300"
-        style={{ bottom: '5%', left: '10%' }}
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.5, delay: 0.8 }}
-        onMouseEnter={() => onNodeHover('continuity')}
-        onMouseLeave={() => onNodeHover(null)}
-      >
-        <div className="text-center">
-          <span className="text-2xl">∞</span>
-          <p className="text-[hsl(220,10%,55%)] text-[10px] uppercase tracking-wider mt-1">Continuity</p>
-        </div>
-      </motion.div>
+      {nodes.map((node, i) => {
+        const angle = node.angle * (Math.PI / 180);
+        const radius = 35; // percentage from center
+        const left = 50 + radius * Math.cos(angle);
+        const top = 50 + radius * Math.sin(angle);
+        const isActive = currentHighlight === node.id;
+        const NodeIcon = node.icon;
 
-      {/* Relevance - Top */}
-      <motion.div
-        className="absolute w-20 h-20 rounded-full bg-[hsl(220,15%,10%)] border border-[hsl(220,16%,15%)] flex items-center justify-center cursor-pointer hover:border-primary/50 transition-colors duration-300"
-        style={{ top: '5%', left: '50%', transform: 'translateX(-50%)' }}
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.5, delay: 1 }}
-        onMouseEnter={() => onNodeHover('relevance')}
-        onMouseLeave={() => onNodeHover(null)}
-      >
-        <div className="text-center">
-          <span className="text-2xl">🎯</span>
-          <p className="text-[hsl(220,10%,55%)] text-[10px] uppercase tracking-wider mt-1">Relevance</p>
-        </div>
-      </motion.div>
+        return (
+          <motion.div
+            key={node.id}
+            className="absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer group"
+            style={{ left: `${left}%`, top: `${top}%` }}
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.8 + i * 0.15 }}
+            onMouseEnter={() => handleNodeHover(node.id)}
+            onMouseLeave={() => handleNodeHover(null)}
+          >
+            <motion.div
+              className="relative flex flex-col items-center gap-2"
+              animate={{
+                scale: isActive ? 1.15 : 1,
+              }}
+              transition={{ duration: 0.2 }}
+            >
+              {/* Node circle */}
+              <div
+                className={`w-16 h-16 rounded-full flex items-center justify-center transition-all duration-300 ${
+                  isActive
+                    ? 'bg-primary/30 border-2 border-primary shadow-[0_0_30px_hsl(var(--primary)/0.6)]'
+                    : 'bg-[hsl(220,20%,10%)] border border-[hsl(220,16%,18%)] group-hover:border-primary/50'
+                }`}
+              >
+                <NodeIcon
+                  className={`h-7 w-7 transition-colors duration-300 ${
+                    isActive ? 'text-primary' : 'text-[hsl(220,10%,50%)] group-hover:text-primary'
+                  }`}
+                  strokeWidth={1.5}
+                />
+              </div>
+              
+              {/* Label */}
+              <span
+                className={`text-sm font-semibold whitespace-nowrap transition-colors duration-300 ${
+                  isActive ? 'text-primary' : 'text-[hsl(220,10%,60%)]'
+                }`}
+              >
+                {node.label}
+              </span>
+              
+              {/* Caption - shows on hover */}
+              {isActive && (
+                <motion.div
+                  initial={{ opacity: 0, y: 5 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="absolute top-full mt-3 px-3 py-1.5 bg-[hsl(220,15%,8%)] border border-primary/30 rounded-lg"
+                >
+                  <span className="text-[hsl(220,10%,70%)] text-xs whitespace-nowrap">
+                    {node.caption}
+                  </span>
+                </motion.div>
+              )}
+            </motion.div>
+          </motion.div>
+        );
+      })}
 
-      {/* Voice - Bottom-right */}
-      <motion.div
-        className="absolute w-20 h-20 rounded-full bg-[hsl(220,15%,10%)] border border-[hsl(220,16%,15%)] flex items-center justify-center cursor-pointer hover:border-primary/50 transition-colors duration-300"
-        style={{ bottom: '5%', right: '10%' }}
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.5, delay: 1.2 }}
-        onMouseEnter={() => onNodeHover('voice')}
-        onMouseLeave={() => onNodeHover(null)}
-      >
-        <div className="text-center">
-          <span className="text-2xl">🎭</span>
-          <p className="text-[hsl(220,10%,55%)] text-[10px] uppercase tracking-wider mt-1">Voice</p>
-        </div>
-      </motion.div>
+      {/* Animated particles on the ring */}
+      {[0, 120, 240].map((startAngle, i) => (
+        <motion.div
+          key={`particle-${i}`}
+          className="absolute w-2 h-2 rounded-full bg-primary/70"
+          style={{
+            left: '50%',
+            top: '50%',
+            marginLeft: '-4px',
+            marginTop: '-4px',
+          }}
+          animate={{
+            x: [
+              140 * Math.cos((startAngle) * Math.PI / 180),
+              140 * Math.cos((startAngle + 120) * Math.PI / 180),
+              140 * Math.cos((startAngle + 240) * Math.PI / 180),
+              140 * Math.cos((startAngle + 360) * Math.PI / 180),
+            ],
+            y: [
+              140 * Math.sin((startAngle) * Math.PI / 180),
+              140 * Math.sin((startAngle + 120) * Math.PI / 180),
+              140 * Math.sin((startAngle + 240) * Math.PI / 180),
+              140 * Math.sin((startAngle + 360) * Math.PI / 180),
+            ],
+          }}
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+            ease: "linear",
+            delay: i * 0.4,
+          }}
+        />
+      ))}
 
-      {/* Bottom coda - 5 stars */}
+      {/* Bottom 5 stars coda */}
       <motion.div
-        className="absolute -bottom-8 left-1/2 -translate-x-1/2 flex gap-1"
+        className="absolute -bottom-4 left-1/2 -translate-x-1/2 flex gap-1"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 1.5 }}
       >
         {[...Array(5)].map((_, i) => (
-          <motion.span
+          <motion.div
             key={i}
-            className="text-primary text-lg"
+            className="w-3 h-3 bg-primary rounded-sm rotate-45"
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.3, delay: 1.6 + i * 0.1 }}
-          >
-            ★
-          </motion.span>
+          />
         ))}
       </motion.div>
     </div>
