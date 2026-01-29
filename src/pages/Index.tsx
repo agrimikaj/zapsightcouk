@@ -2,7 +2,6 @@ import { Helmet } from 'react-helmet-async';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import HeroBanner from '@/components/home/HeroBanner';
-import SolutionGenerator from '@/components/home/SolutionGenerator';
 import ProductsDiagram from '@/components/home/ProductsDiagram';
 import ValuePropositionSection from '@/components/home/ValuePropositionSection';
 import IndustriesSection from '@/components/home/IndustriesSection';
@@ -24,7 +23,6 @@ const Index = () => {
         <Navbar />
         <main className="relative">
           <HeroBanner />
-          <SolutionGenerator />
           <ProductsDiagram />
           <ValuePropositionSection />
           <IndustriesSection />
