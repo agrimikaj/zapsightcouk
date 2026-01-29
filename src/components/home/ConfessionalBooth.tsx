@@ -139,7 +139,7 @@ const ConfessionalBooth = () => {
   };
 
   return (
-    <section className="py-20 lg:py-28 relative overflow-hidden">
+    <section className="py-12 lg:py-16 relative overflow-hidden">
       {/* Cozy dark background */}
       <div className="absolute inset-0 bg-gradient-to-b from-[hsl(220,20%,7%)] via-[hsl(220,18%,8%)] to-[hsl(220,20%,6%)]" />
       
@@ -148,16 +148,13 @@ const ConfessionalBooth = () => {
       
       <div className="container mx-auto px-4 lg:px-8 relative z-10 max-w-3xl">
         {/* Section header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-10">
           <p className="text-[hsl(220,10%,50%)] text-sm uppercase tracking-widest mb-4">
             The Confession Booth
           </p>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-4 tracking-tight text-[hsl(0,0%,97%)]">
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[hsl(0,0%,97%)]">
             Whisper Your <span className="text-primary">AI Questions</span>
           </h2>
-          <p className="text-[hsl(220,10%,55%)] text-lg max-w-xl mx-auto">
-            The ones you're too embarrassed to ask your CTO. We've all been there.
-          </p>
         </div>
 
         {/* The Whisper Input */}
@@ -210,11 +207,6 @@ const ConfessionalBooth = () => {
               No logs. No judgment. Just relief.
             </p>
           </div>
-
-          {/* Keyboard shortcut hint */}
-          <p className="text-center text-[hsl(220,10%,35%)] text-xs mt-4">
-            Press <kbd className="px-1.5 py-0.5 rounded bg-[hsl(220,15%,15%)] text-[hsl(220,10%,50%)] font-mono text-[10px]">⌘+K</kbd> to whisper from anywhere
-          </p>
         </div>
 
         {/* Validation Overlay */}
@@ -224,7 +216,7 @@ const ConfessionalBooth = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
-              className="mt-8 text-center"
+              className="mt-4 text-center"
             >
               <div className="inline-flex items-center gap-3 px-6 py-4 rounded-2xl bg-[hsl(220,15%,12%)] border border-[hsl(220,12%,18%)]">
                 <div className="flex gap-1">
@@ -257,7 +249,7 @@ const ConfessionalBooth = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="mt-8 text-center"
+              className="mt-4 text-center"
             >
               <div className="inline-flex items-center gap-3 px-6 py-4 rounded-2xl bg-[hsl(220,15%,12%)] border border-[hsl(220,12%,18%)]">
                 <div className="flex gap-1">
