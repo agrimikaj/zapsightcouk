@@ -1,16 +1,13 @@
 import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { 
   Target, 
   Copy, 
   RefreshCw, 
   ArrowRight, 
-  TrendingUp,
   Eye,
   Shield,
-  Layers,
   Zap,
   Globe
 } from 'lucide-react';
@@ -19,18 +16,9 @@ import Footer from '@/components/layout/Footer';
 import { Button } from '@/components/ui/button';
 import AIVIDimensionCard from '@/components/aivi/AIVIDimensionCard';
 import AIVIConvergenceDiagram from '@/components/aivi/AIVIConvergenceDiagram';
-import { useScrollFadeIn } from '@/hooks/useScrollFadeIn';
 
 const AIVIPage = () => {
   const [highlightedDimension, setHighlightedDimension] = useState<string | null>(null);
-
-  const heroFade = useScrollFadeIn();
-  const problemFade = useScrollFadeIn();
-  const architectureFade = useScrollFadeIn();
-  const triadFade = useScrollFadeIn();
-  const differentiatorFade = useScrollFadeIn();
-  const metricsFade = useScrollFadeIn();
-  const ctaFade = useScrollFadeIn();
 
   const problemCards = [
     {
@@ -147,367 +135,358 @@ const AIVIPage = () => {
         <meta name="description" content="AIVI translates corporate identity into AI-native comprehension—ensuring accurate brand representation when customers ask, not merely indexed when they search." />
       </Helmet>
 
-      <Navbar />
+      <div className="min-h-screen bg-[hsl(220,20%,6%)]">
+        <Navbar />
+        
+        <main>
+          {/* Hero Section - Split Layout */}
+          <section className="pt-28 pb-16 lg:pt-36 lg:pb-24 relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-b from-[hsl(220,20%,8%)] via-[hsl(220,20%,6%)] to-[hsl(220,20%,6%)]" />
+            
+            {/* Grid texture overlay */}
+            <div className="absolute inset-0 opacity-[0.02]" style={{
+              backgroundImage: `linear-gradient(hsl(var(--primary)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary)) 1px, transparent 1px)`,
+              backgroundSize: '60px 60px'
+            }} />
 
-      <main className="min-h-screen bg-background pt-20">
-        {/* Hero Section */}
-        <section
-          ref={heroFade.ref}
-          className={`relative py-24 lg:py-32 overflow-hidden transition-all duration-700 ${
-            heroFade.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
-        >
-          <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
-          
-          <div className="container mx-auto px-6 relative z-10">
-            <div className="max-w-4xl">
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="text-primary text-sm uppercase tracking-widest mb-4"
-              >
-                AI Visibility & Insight
-              </motion.p>
+            <div className="container mx-auto px-4 lg:px-8 relative z-10">
+              <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-center">
+                {/* Content - 60% */}
+                <div className="lg:col-span-3">
+                  <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-[hsl(0,0%,97%)] mb-6 tracking-tight">
+                    Brand as{' '}
+                    <span className="text-primary italic">Machine-Readable Truth</span>
+                  </h1>
+                  
+                  <p className="text-xl lg:text-2xl text-[hsl(220,10%,55%)] mb-10 leading-relaxed max-w-2xl">
+                    Translating corporate identity into AI-native comprehension—ensuring you're represented accurately when customers ask, not merely indexed when they search.
+                  </p>
 
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6"
-              >
-                Brand as{' '}
-                <span className="text-primary italic">Machine-Readable Truth</span>
-              </motion.h1>
-
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                className="text-xl text-muted-foreground leading-relaxed mb-12 max-w-3xl"
-              >
-                Translating corporate identity into AI-native comprehension—ensuring you're represented accurately when customers ask, not merely indexed when they search.
-              </motion.p>
-
-              {/* Metric Trio */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-                className="grid grid-cols-3 gap-6 max-w-2xl"
-              >
-                {[
-                  { value: '↑80%', label: 'Answer Inclusion Rate' },
-                  { value: '3x', label: 'Competitor Contrast Clarity' },
-                  { value: '∞', label: 'Prompt-Level Granularity' },
-                ].map((metric, index) => (
-                  <div key={index} className="text-center">
-                    <div className="text-3xl md:text-4xl font-bold text-primary mb-1">
-                      {metric.value}
+                  {/* Metric Trio */}
+                  <div className="grid grid-cols-3 gap-6 mb-10">
+                    <div className="text-center">
+                      <p className="font-display text-4xl lg:text-5xl font-bold text-primary mb-2">↑80%</p>
+                      <p className="text-[hsl(220,10%,50%)] text-sm uppercase tracking-wider">Answer Inclusion Rate</p>
                     </div>
-                    <div className="text-xs text-muted-foreground uppercase tracking-wider">
-                      {metric.label}
+                    <div className="text-center border-x border-[hsl(220,16%,12%)]">
+                      <p className="font-display text-4xl lg:text-5xl font-bold text-primary mb-2">3x</p>
+                      <p className="text-[hsl(220,10%,50%)] text-sm uppercase tracking-wider">Competitor Contrast</p>
                     </div>
+                    <div className="text-center">
+                      <p className="font-display text-4xl lg:text-5xl font-bold text-primary mb-2">∞</p>
+                      <p className="text-[hsl(220,10%,50%)] text-sm uppercase tracking-wider">Prompt Granularity</p>
+                    </div>
+                  </div>
+
+                  <Button variant="hero" size="xl" asChild>
+                    <Link to="/contact">
+                      Audit Your AI Presence
+                      <ArrowRight className="h-5 w-5" strokeWidth={1.5} />
+                    </Link>
+                  </Button>
+                </div>
+
+                {/* Visual - 40% - Brand Truth Diagram */}
+                <div className="lg:col-span-2">
+                  <div className="relative">
+                    {/* Vertical line */}
+                    <div className="absolute left-6 top-0 bottom-0 w-px bg-gradient-to-b from-primary/50 via-primary to-primary/50" />
+                    
+                    {/* Trail nodes */}
+                    <div className="space-y-8">
+                      {[
+                        { label: 'Signal Detection', sublabel: 'AI Engine Monitoring' },
+                        { label: 'Semantic Calibration', sublabel: 'Intent Structuring' },
+                        { label: 'Fidelity Preservation', sublabel: 'Brand Voice Alignment' },
+                        { label: 'Resilient Adaptation', sublabel: 'Model Evolution' },
+                      ].map((node, i) => (
+                        <div key={i} className="flex items-center gap-5 group">
+                          <div className="relative z-10 w-12 h-12 rounded-full border-2 border-primary bg-[hsl(220,20%,8%)] flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
+                            <span className="font-display font-bold text-primary">{i + 1}</span>
+                          </div>
+                          <div className="bg-[hsl(220,20%,8%)] border border-[hsl(220,16%,12%)] rounded-xl px-5 py-3 flex-1 group-hover:border-primary/30 transition-colors duration-300">
+                            <p className="font-display font-semibold text-[hsl(0,0%,90%)]">{node.label}</p>
+                            <p className="text-[hsl(220,10%,50%)] text-sm">{node.sublabel}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Dark Problem Section */}
+          <section className="py-16 lg:py-24 relative overflow-hidden">
+            <div className="absolute inset-0 bg-[hsl(220,15%,5%)]" />
+            
+            {/* Grid texture */}
+            <div className="absolute inset-0 opacity-[0.03]" style={{
+              backgroundImage: `radial-gradient(circle at 1px 1px, hsl(220,10%,30%) 1px, transparent 0)`,
+              backgroundSize: '32px 32px'
+            }} />
+
+            <div className="container mx-auto px-4 lg:px-8 relative z-10">
+              <p className="text-primary font-medium mb-4 tracking-wide uppercase text-sm">The Fracture</p>
+              <h2 className="font-display text-3xl lg:text-4xl font-bold tracking-tight text-[hsl(0,0%,97%)] mb-6">
+                Algorithmic Misrepresentation
+              </h2>
+              <p className="text-[hsl(220,10%,55%)] text-lg lg:text-xl max-w-4xl mb-12 leading-relaxed">
+                AI curates discovery but distorts intent. Content gets compressed, context stripped, meaning drifts. Brands exist in the index but disappear in the answer.
+              </p>
+
+              {/* 3-Card Grid - Friction Points */}
+              <div className="grid md:grid-cols-3 gap-6">
+                {problemCards.map((card, i) => (
+                  <div key={i} className="bg-[hsl(220,15%,8%)] border border-[hsl(220,16%,12%)] rounded-2xl p-6 lg:p-8 hover:border-primary/20 transition-colors duration-300">
+                    <span className="font-display text-4xl font-bold text-primary/40 mb-4 block">{card.number}</span>
+                    <h3 className="font-display text-xl font-bold text-[hsl(0,0%,93%)] mb-3">{card.title}</h3>
+                    <p className="text-[hsl(220,10%,55%)] leading-relaxed">{card.body}</p>
                   </div>
                 ))}
-              </motion.div>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        {/* Problem Section (Dark) */}
-        <section
-          ref={problemFade.ref}
-          className={`relative py-24 bg-[hsl(220,20%,6%)] transition-all duration-700 ${
-            problemFade.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
-        >
-          <div 
-            className="absolute inset-0 opacity-10"
-            style={{
-              backgroundImage: `
-                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)
-              `,
-              backgroundSize: '50px 50px',
-            }}
-          />
+          {/* Process Architecture - 4-Column Flow */}
+          <section className="py-16 lg:py-24 relative overflow-hidden">
+            <div className="absolute inset-0 bg-[hsl(220,20%,6%)]" />
 
-          <div className="container mx-auto px-6 relative z-10">
-            <p className="text-primary text-sm uppercase tracking-widest mb-4">
-              The Fracture
-            </p>
+            <div className="container mx-auto px-4 lg:px-8 relative z-10">
+              <p className="text-primary font-medium mb-4 tracking-wide uppercase text-sm">The Translation</p>
+              <h2 className="font-display text-3xl lg:text-4xl font-bold tracking-tight text-[hsl(0,0%,97%)] mb-6">
+                Intent-First Infrastructure
+              </h2>
+              <p className="text-[hsl(220,10%,55%)] text-lg lg:text-xl max-w-4xl mb-12 leading-relaxed">
+                AIVI creates an intelligence layer that translates your brand for AI comprehension—monitoring, calibrating, and adapting to ensure accurate representation across all generative platforms.
+              </p>
 
-            <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">
-              Algorithmic Misrepresentation
-            </h2>
+              {/* Horizontal timeline connector */}
+              <div className="hidden lg:block relative mb-8">
+                <div className="absolute top-6 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+              </div>
 
-            <p className="text-lg text-muted-foreground max-w-3xl mb-16 leading-relaxed">
-              AI curates discovery but distorts intent. Content gets compressed, context stripped, meaning drifts. Brands exist in the index but disappear in the answer.
-            </p>
-
-            {/* 3-Card Grid */}
-            <div className="grid md:grid-cols-3 gap-6">
-              {problemCards.map((card, index) => (
-                <motion.div
-                  key={card.number}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="p-6 bg-[hsl(220,16%,10%)] border border-[hsl(220,16%,16%)] rounded-xl"
-                >
-                  <span className="text-primary text-sm font-mono mb-4 block">
-                    {card.number}
-                  </span>
-                  <h3 className="text-xl font-semibold mb-3">{card.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
-                    {card.body}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Architecture Section */}
-        <section
-          ref={architectureFade.ref}
-          className={`py-24 transition-all duration-700 ${
-            architectureFade.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
-        >
-          <div className="container mx-auto px-6">
-            <p className="text-primary text-sm uppercase tracking-widest mb-4">
-              The Translation
-            </p>
-
-            <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">
-              Intent-First Infrastructure
-            </h2>
-
-            {/* 4-Step Flow */}
-            <div className="grid md:grid-cols-4 gap-6 mt-16">
-              {architectureSteps.map((step, index) => (
-                <motion.div
-                  key={step.number}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="relative"
-                >
-                  {/* Connector line */}
-                  {index < architectureSteps.length - 1 && (
-                    <div className="hidden md:block absolute top-8 left-full w-full h-px bg-gradient-to-r from-primary/50 to-transparent z-0" />
-                  )}
-
-                  <div className="relative z-10">
-                    <div className="w-16 h-16 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center mb-4">
-                      <span className="text-2xl font-bold text-primary">{step.number}</span>
+              {/* 4-Column Steps */}
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {architectureSteps.map((step, i) => (
+                  <div key={i} className="relative">
+                    {/* Step number */}
+                    <div className="w-12 h-12 rounded-full border-2 border-primary bg-[hsl(220,20%,8%)] flex items-center justify-center mb-6 relative z-10">
+                      <span className="font-display text-xl font-bold text-primary">{step.number}</span>
                     </div>
-                    <h3 className="text-lg font-semibold mb-2">{step.title}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      {step.body}
-                    </p>
+                    <h3 className="font-display text-lg font-bold text-[hsl(0,0%,93%)] mb-3">{step.title}</h3>
+                    <p className="text-[hsl(220,10%,55%)] text-sm leading-relaxed">{step.body}</p>
                   </div>
-                </motion.div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        {/* Triad Framework Section */}
-        <section
-          ref={triadFade.ref}
-          className={`py-24 bg-[hsl(220,20%,6%)] transition-all duration-700 ${
-            triadFade.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
-        >
-          <div className="container mx-auto px-6">
-            <p className="text-primary text-sm uppercase tracking-widest mb-4">
-              Operational Dimensions
-            </p>
+          {/* Triad Framework - 3-Column Dark */}
+          <section className="py-16 lg:py-24 relative overflow-hidden">
+            <div className="absolute inset-0 bg-[hsl(220,15%,5%)]" />
 
-            <h2 className="text-3xl md:text-4xl font-display font-bold mb-16">
-              Intent <span className="text-primary">∙</span> Fidelity <span className="text-primary">∙</span> Resilience
-            </h2>
+            <div className="container mx-auto px-4 lg:px-8 relative z-10">
+              <p className="text-primary font-medium mb-4 tracking-wide uppercase text-sm">Operational Dimensions</p>
+              <h2 className="font-display text-3xl lg:text-4xl font-bold tracking-tight text-[hsl(0,0%,97%)] mb-6">
+                Intent <span className="text-primary">∙</span> Fidelity <span className="text-primary">∙</span> Resilience
+              </h2>
+              <p className="text-[hsl(220,10%,55%)] text-lg lg:text-xl max-w-4xl mb-12 leading-relaxed">
+                AIVI's coherence triangle ensures your brand is understood, represented accurately, and remains stable across model updates. These three dimensions work in parallel, not sequence.
+              </p>
 
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              {/* Left: Dimension Cards */}
-              <div className="space-y-6">
-                {dimensions.map((dim) => (
+              {/* 3-Column Pillars with hover effects */}
+              <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+                {dimensions.map((dimension) => (
                   <AIVIDimensionCard
-                    key={dim.id}
-                    icon={dim.icon}
-                    title={dim.title}
-                    body={dim.body}
-                    metaLabel={dim.metaLabel}
-                    microCaption={dim.microCaption}
-                    isHighlighted={highlightedDimension === dim.id}
-                    onHover={(isHovered) => setHighlightedDimension(isHovered ? dim.id : null)}
+                    key={dimension.id}
+                    icon={dimension.icon}
+                    title={dimension.title}
+                    body={dimension.body}
+                    metaLabel={dimension.metaLabel}
+                    microCaption={dimension.microCaption}
+                    isHighlighted={highlightedDimension === dimension.id}
+                    onHover={(isHovered) => setHighlightedDimension(isHovered ? dimension.id : null)}
                   />
                 ))}
               </div>
-
-              {/* Right: Convergence Diagram */}
-              <div className="flex justify-center">
-                <AIVIConvergenceDiagram
-                  onNodeHover={setHighlightedDimension}
-                  highlightedNode={highlightedDimension}
-                />
-              </div>
             </div>
+          </section>
 
-            {/* Bottom Coda */}
-            <div className="mt-16 pt-12 border-t border-[hsl(220,16%,16%)]">
-              <div className="grid md:grid-cols-2 gap-8">
-                <div className="p-6 bg-[hsl(220,16%,8%)] border border-[hsl(220,16%,14%)] rounded-xl">
-                  <p className="text-xs text-muted-foreground uppercase tracking-wider mb-3">Traditional SEO</p>
-                  <div className="flex items-center gap-2 text-sm text-[hsl(220,10%,50%)]">
-                    <span>Crawl</span>
-                    <span className="text-primary/50">→</span>
-                    <span>Index</span>
-                    <span className="text-primary/50">→</span>
-                    <span>Rank</span>
-                    <span className="text-primary/50">→</span>
-                    <span className="text-muted-foreground/50 italic">[Hope interpretation is correct]</span>
+          {/* Convergence Diagram Section */}
+          <section className="py-16 lg:py-24 relative overflow-hidden">
+            <div className="absolute inset-0 bg-[hsl(220,20%,6%)]" />
+            
+            {/* Subtle radial glow */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/[0.03] rounded-full blur-[180px]" />
+
+            <div className="container mx-auto px-4 lg:px-8 relative z-10">
+              <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                {/* Left: Text content */}
+                <div>
+                  <p className="text-primary font-medium mb-4 tracking-wide uppercase text-sm">The Coherence Triangle</p>
+                  <h2 className="font-display text-3xl lg:text-4xl font-bold tracking-tight text-[hsl(0,0%,97%)] mb-6">
+                    Unified Brand Truth
+                  </h2>
+                  <p className="text-[hsl(220,10%,55%)] text-lg leading-relaxed mb-6">
+                    Traditional SEO follows a linear path—crawl, index, rank, hope. AIVI operates through a coherence field where Intent, Fidelity, and Resilience reinforce each other continuously.
+                  </p>
+                  <p className="text-[hsl(220,10%,55%)] leading-relaxed mb-8">
+                    The result: <span className="text-primary font-medium">Understand-Represent-Preserve</span> as a unified operational pulse.
+                  </p>
+                  
+                  {/* Dimension highlights */}
+                  <div className="space-y-3">
+                    {dimensions.map((dim) => (
+                      <div
+                        key={dim.id}
+                        className={`flex items-center gap-3 p-3 rounded-lg transition-all duration-300 cursor-pointer ${
+                          highlightedDimension === dim.id
+                            ? 'bg-primary/10 border border-primary/30'
+                            : 'bg-[hsl(220,15%,8%)] border border-transparent hover:border-[hsl(220,16%,15%)]'
+                        }`}
+                        onMouseEnter={() => setHighlightedDimension(dim.id)}
+                        onMouseLeave={() => setHighlightedDimension(null)}
+                      >
+                        <dim.icon className={`h-5 w-5 ${highlightedDimension === dim.id ? 'text-primary' : 'text-[hsl(220,10%,50%)]'}`} strokeWidth={1.5} />
+                        <span className={`font-medium ${highlightedDimension === dim.id ? 'text-primary' : 'text-[hsl(0,0%,85%)]'}`}>
+                          {dim.title}
+                        </span>
+                        <span className="text-[hsl(220,10%,45%)] text-sm ml-auto">{dim.metaLabel}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
-                <div className="p-6 bg-primary/5 border border-primary/20 rounded-xl">
-                  <p className="text-xs text-primary uppercase tracking-wider mb-3">AIVI</p>
-                  <div className="flex items-center gap-2 text-sm text-foreground">
-                    <span>Understand</span>
-                    <span className="text-primary">→</span>
-                    <span>Represent</span>
-                    <span className="text-primary">→</span>
-                    <span className="text-primary font-semibold">[Truth preserved across platforms]</span>
+
+                {/* Right: Diagram */}
+                <div className="flex items-center justify-center">
+                  <AIVIConvergenceDiagram 
+                    onNodeHover={setHighlightedDimension}
+                    highlightedNode={highlightedDimension}
+                  />
+                </div>
+              </div>
+
+              {/* Bottom Coda */}
+              <div className="mt-16 pt-12 border-t border-[hsl(220,16%,12%)]">
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="bg-[hsl(220,15%,8%)] border border-[hsl(220,16%,12%)] rounded-xl p-6">
+                    <p className="text-[hsl(220,10%,45%)] text-xs uppercase tracking-wider mb-3">Traditional SEO</p>
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <span className="text-[hsl(220,10%,60%)]">Crawl</span>
+                      <span className="text-[hsl(220,16%,30%)]">→</span>
+                      <span className="text-[hsl(220,10%,60%)]">Index</span>
+                      <span className="text-[hsl(220,16%,30%)]">→</span>
+                      <span className="text-[hsl(220,10%,60%)]">Rank</span>
+                      <span className="text-[hsl(220,16%,30%)]">→</span>
+                      <span className="text-[hsl(220,10%,40%)] italic">[Hope interpretation is correct]</span>
+                    </div>
+                  </div>
+                  <div className="bg-primary/10 border border-primary/30 rounded-xl p-6">
+                    <p className="text-primary text-xs uppercase tracking-wider mb-3">AIVI</p>
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <span className="text-[hsl(0,0%,90%)]">Understand</span>
+                      <span className="text-primary">→</span>
+                      <span className="text-[hsl(0,0%,90%)]">Represent</span>
+                      <span className="text-primary">→</span>
+                      <span className="text-primary font-semibold">[Truth preserved across platforms]</span>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        {/* Differentiators Section */}
-        <section
-          ref={differentiatorFade.ref}
-          className={`py-24 transition-all duration-700 ${
-            differentiatorFade.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
-        >
-          <div className="container mx-auto px-6">
-            <p className="text-primary text-sm uppercase tracking-widest mb-4">
-              Differentiation
-            </p>
+          {/* Differentiator Grid - 2-Column */}
+          <section className="py-16 lg:py-24 relative overflow-hidden">
+            <div className="absolute inset-0 bg-[hsl(220,15%,5%)]" />
 
-            <h2 className="text-3xl md:text-4xl font-display font-bold mb-16">
-              Beyond Indexing
-            </h2>
+            <div className="container mx-auto px-4 lg:px-8 relative z-10">
+              <p className="text-primary font-medium mb-4 tracking-wide uppercase text-sm">Differentiation</p>
+              <h2 className="font-display text-3xl lg:text-4xl font-bold tracking-tight text-[hsl(0,0%,97%)] mb-6">
+                Beyond Indexing
+              </h2>
+              <p className="text-[hsl(220,10%,55%)] text-lg lg:text-xl max-w-4xl mb-12 leading-relaxed">
+                Traditional SEO tools optimize for crawlers. AIVI optimizes for comprehension—ensuring AI engines understand your brand, not just find it.
+              </p>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {differentiators.map((item, index) => {
-                const Icon = item.icon;
-                return (
-                  <motion.div
-                    key={item.title}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="p-6 bg-[hsl(220,16%,8%)] border border-[hsl(220,16%,14%)] rounded-xl hover:border-primary/30 transition-colors"
-                  >
-                    <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {differentiators.map((item, i) => {
+                  const Icon = item.icon;
+                  return (
+                    <div key={i} className="flex items-start gap-4 p-6 bg-[hsl(220,15%,8%)] border border-[hsl(220,16%,12%)] rounded-xl hover:border-primary/20 transition-colors duration-300">
+                      <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0">
                         <Icon className="h-5 w-5 text-primary" strokeWidth={1.5} />
                       </div>
                       <div>
-                        <h3 className="font-semibold mb-2">{item.title}</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
-                          {item.body}
-                        </p>
+                        <h3 className="font-display font-bold text-[hsl(0,0%,93%)] mb-2">{item.title}</h3>
+                        <p className="text-[hsl(220,10%,55%)] text-sm leading-relaxed">{item.body}</p>
                       </div>
                     </div>
-                  </motion.div>
-                );
-              })}
+                  );
+                })}
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        {/* Metrics Section */}
-        <section
-          ref={metricsFade.ref}
-          className={`py-24 bg-[hsl(220,20%,6%)] transition-all duration-700 ${
-            metricsFade.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
-        >
-          <div className="container mx-auto px-6">
-            <p className="text-primary text-sm uppercase tracking-widest mb-4">
-              Operational Impact
-            </p>
+          {/* Metrics Grid - 4-Column Stats */}
+          <section className="py-16 lg:py-24 relative overflow-hidden">
+            <div className="absolute inset-0 bg-[hsl(220,20%,6%)]" />
 
-            <h2 className="text-3xl md:text-4xl font-display font-bold mb-16">
-              The Clarity Metric
-            </h2>
-
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {metrics.map((metric, index) => (
-                <motion.div
-                  key={metric.label}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="text-center p-6 bg-[hsl(220,16%,10%)] border border-[hsl(220,16%,16%)] rounded-xl"
-                >
-                  <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
-                    {metric.value}
-                  </div>
-                  <div className="text-sm text-muted-foreground">
-                    {metric.label}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section
-          ref={ctaFade.ref}
-          className={`py-24 transition-all duration-700 ${
-            ctaFade.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
-        >
-          <div className="container mx-auto px-6">
-            <div className="relative max-w-3xl mx-auto text-center p-12 border border-primary/30 rounded-2xl bg-gradient-to-b from-primary/5 to-transparent">
-              {/* Corner accents */}
-              <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-primary rounded-tl-xl" />
-              <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-primary rounded-tr-xl" />
-              <div className="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-primary rounded-bl-xl" />
-              <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-primary rounded-br-xl" />
-
-              <h2 className="text-2xl md:text-3xl font-display font-bold mb-4">
-                Restore Narrative Sovereignty
+            <div className="container mx-auto px-4 lg:px-8 relative z-10">
+              <p className="text-primary font-medium mb-4 tracking-wide uppercase text-sm">Operational Impact</p>
+              <h2 className="font-display text-3xl lg:text-4xl font-bold tracking-tight text-[hsl(0,0%,97%)] mb-6">
+                The Clarity Metric
               </h2>
-
-              <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-                If AI shapes discovery but distorts your story, AIVI brings representation back to truth. Not just visibility—comprehension.
+              <p className="text-[hsl(220,10%,55%)] text-lg lg:text-xl max-w-4xl mb-12 leading-relaxed">
+                Higher inclusion. Lower misrepresentation. Real-time awareness. These metrics reflect a shift from hoping for visibility to engineering comprehension.
               </p>
 
-              <Button asChild size="lg" className="group">
-                <Link to="/contact">
-                  Audit Your AI Presence
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </Button>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+                {metrics.map((stat, i) => (
+                  <div key={i} className="bg-[hsl(220,15%,8%)] border border-[hsl(220,16%,12%)] rounded-xl p-6 text-center hover:border-primary/20 transition-colors duration-300">
+                    <p className="font-display text-4xl lg:text-5xl font-bold text-primary mb-2">{stat.value}</p>
+                    <p className="text-[hsl(220,10%,50%)] text-sm uppercase tracking-wider">{stat.label}</p>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-        </section>
-      </main>
+          </section>
 
-      <Footer />
+          {/* CTA Section */}
+          <section className="py-16 lg:py-24 relative overflow-hidden">
+            <div className="absolute inset-0 bg-[hsl(220,15%,5%)]" />
+
+            <div className="container mx-auto px-4 lg:px-8 relative z-10">
+              <div className="max-w-3xl mx-auto text-center">
+                {/* Corner accents */}
+                <div className="relative bg-[hsl(220,15%,8%)] border border-[hsl(220,16%,12%)] rounded-2xl p-10 lg:p-16">
+                  <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-primary/50 rounded-tl-2xl" />
+                  <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-primary/50 rounded-tr-2xl" />
+                  <div className="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-primary/50 rounded-bl-2xl" />
+                  <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-primary/50 rounded-br-2xl" />
+                  
+                  <h2 className="font-display text-3xl lg:text-4xl font-bold text-[hsl(0,0%,97%)] mb-6">
+                    Restore Narrative Sovereignty
+                  </h2>
+                  <p className="text-[hsl(220,10%,55%)] text-lg mb-8 leading-relaxed">
+                    If AI shapes discovery but distorts your story, AIVI brings representation back to truth. Not just visibility—comprehension.
+                  </p>
+                  <Button variant="hero" size="xl" asChild>
+                    <Link to="/contact">
+                      Audit Your AI Presence
+                      <ArrowRight className="h-5 w-5" strokeWidth={1.5} />
+                    </Link>
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+
+        <Footer />
+      </div>
     </>
   );
 };
