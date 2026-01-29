@@ -1,4 +1,46 @@
-import { Target, Brain, Shield, TrendingUp } from 'lucide-react';
+import { Check } from 'lucide-react';
+
+const steps = [
+  {
+    number: '01',
+    title: 'Discovery',
+    description: 'We start by understanding your business context, data landscape, and specific challenges. This phase includes stakeholder interviews and technical assessment.',
+    duration: '1 Week',
+  },
+  {
+    number: '02',
+    title: 'Design',
+    description: 'Our team designs the AI agent architecture, data pipelines, and workflow integrations tailored to your requirements.',
+    duration: '1 Week',
+  },
+  {
+    number: '03',
+    title: 'Development',
+    description: 'We build and train the AI agents, establish data connections, and develop the agentic workflows.',
+    duration: '2-3 Weeks',
+  },
+  {
+    number: '04',
+    title: 'Deployment',
+    description: 'Solutions are deployed in your environment with monitoring, testing, and user training.',
+    duration: '1 Week',
+  },
+  {
+    number: '05',
+    title: 'Optimization',
+    description: 'Continuous monitoring and enhancement to improve accuracy and performance over time.',
+    duration: 'Ongoing',
+  },
+];
+
+const deliverables = [
+  'AI-ready data pipelines',
+  'Custom ML models & agents',
+  'Agentic workflow automation',
+  'Integration with existing systems',
+  'Monitoring & analytics dashboard',
+  'Documentation & training',
+];
 
 const ValuePropositionSection = () => {
   return (
@@ -17,108 +59,71 @@ const ValuePropositionSection = () => {
       
       {/* Ambient glows for depth */}
       <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-primary/[0.02] rounded-full blur-[180px]" />
-      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-primary/[0.015] rounded-full blur-[150px]" />
       
-      <div className="container relative z-10 mx-auto px-4 lg:px-8 max-w-5xl">
+      <div className="container relative z-10 mx-auto px-4 lg:px-8 max-w-4xl">
         {/* Section Header */}
         <div className="text-center mb-10 lg:mb-12">
-          <p className="text-primary font-medium mb-3 tracking-wide uppercase text-sm">Our Approach</p>
+          <p className="text-primary font-medium mb-3 tracking-wide uppercase text-sm">Our Methodology</p>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-4 tracking-tight text-[hsl(0,0%,97%)]">
-            Engineering intelligence meets <span className="text-primary">SME expertise</span>
+            How We <span className="text-primary">Work</span>
           </h2>
+          <p className="text-lg text-[hsl(220,10%,55%)] max-w-2xl mx-auto">
+            A proven, structured approach to delivering AI solutions that work from day one. We combine deep technical expertise with practical business understanding.
+          </p>
         </div>
 
-        {/* Sub-sections Grid */}
-        <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
-          {/* SME Intelligence */}
-          <div className="group relative bg-[hsl(220,20%,8%)] border border-[hsl(220,16%,12%)] rounded-2xl p-6 lg:p-8 transition-all duration-300 hover:border-primary/25"
-               style={{ boxShadow: '0 0 40px hsl(var(--primary) / 0.02)' }}>
-            {/* Inner glow overlay */}
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
-            
-            <div className="relative">
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 group-hover:scale-105 transition-transform duration-300 bg-primary/10 border border-primary/15">
-                <Brain className="w-6 h-6 text-primary" strokeWidth={1.5} />
-                <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                     style={{ boxShadow: '0 0 20px hsl(var(--primary) / 0.25)' }} />
+        {/* Process Steps */}
+        <div className="space-y-6 mb-12">
+          {steps.map((step, index) => (
+            <div key={step.number} className="relative flex gap-5 lg:gap-6">
+              {/* Timeline line */}
+              {index < steps.length - 1 && (
+                <div className="absolute left-5 top-14 bottom-0 w-px bg-gradient-to-b from-primary/30 to-primary/5" />
+              )}
+              
+              {/* Step number */}
+              <div className="flex-shrink-0">
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center font-display font-bold text-xs text-primary-foreground"
+                     style={{
+                       background: 'linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-dark)) 100%)',
+                       boxShadow: '0 0 20px hsl(var(--primary) / 0.25)'
+                     }}>
+                  {step.number}
+                </div>
               </div>
-              <h3 className="font-display text-xl font-bold text-[hsl(0,0%,94%)] mb-3 tracking-tight group-hover:text-primary transition-colors duration-200">
-                SME Intelligence
-              </h3>
-              <p className="text-[hsl(220,10%,60%)] text-sm leading-relaxed">
-                Our SMEs systematize—brand nuance, craftsmanship, operational judgment, risk logic—into reusable intelligence with our engineers that powers discovery engines, AI assistants, and autonomous workflows.
-              </p>
-            </div>
-          </div>
-
-          {/* Engineering Proximity */}
-          <div className="group relative bg-[hsl(220,20%,8%)] border border-[hsl(220,16%,12%)] rounded-2xl p-6 lg:p-8 transition-all duration-300 hover:border-primary/25"
-               style={{ boxShadow: '0 0 40px hsl(var(--primary) / 0.02)' }}>
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
-            
-            <div className="relative">
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 group-hover:scale-105 transition-transform duration-300 bg-primary/10 border border-primary/15">
-                <Target className="w-6 h-6 text-primary" strokeWidth={1.5} />
-                <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                     style={{ boxShadow: '0 0 20px hsl(var(--primary) / 0.25)' }} />
+              
+              {/* Content */}
+              <div className="flex-1 pb-2">
+                <div className="bg-[hsl(220,20%,8%)] border border-[hsl(220,16%,12%)] rounded-2xl p-5 lg:p-6"
+                     style={{ boxShadow: '0 0 40px hsl(var(--primary) / 0.02)' }}>
+                  <div className="flex items-center justify-between mb-2">
+                    <h3 className="font-display text-lg font-bold text-[hsl(0,0%,94%)] tracking-tight">{step.title}</h3>
+                    <span className="text-[10px] font-semibold uppercase tracking-wider text-primary bg-primary/10 px-2 py-1 rounded">
+                      {step.duration}
+                    </span>
+                  </div>
+                  <p className="text-[hsl(220,10%,55%)] text-sm leading-relaxed">{step.description}</p>
+                </div>
               </div>
-              <h3 className="font-display text-xl font-bold text-[hsl(0,0%,94%)] mb-3 tracking-tight group-hover:text-primary transition-colors duration-200">
-                Engineering Proximity
-              </h3>
-              <p className="text-[hsl(220,10%,60%)] text-sm leading-relaxed">
-                ZapSight's engineers operate inside client teams—not from the outside. We work closely with product, marketing, security, and operations to identify where AI is misinterpreting, overlooking, or underperforming—and intervene directly.
-              </p>
             </div>
-          </div>
-
-          {/* Production Reality */}
-          <div className="group relative bg-[hsl(220,20%,8%)] border border-[hsl(220,16%,12%)] rounded-2xl p-6 lg:p-8 transition-all duration-300 hover:border-primary/25"
-               style={{ boxShadow: '0 0 40px hsl(var(--primary) / 0.02)' }}>
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
-            
-            <div className="relative">
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 group-hover:scale-105 transition-transform duration-300 bg-primary/10 border border-primary/15">
-                <Shield className="w-6 h-6 text-primary" strokeWidth={1.5} />
-                <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                     style={{ boxShadow: '0 0 20px hsl(var(--primary) / 0.25)' }} />
-              </div>
-              <h3 className="font-display text-xl font-bold text-[hsl(0,0%,94%)] mb-3 tracking-tight group-hover:text-primary transition-colors duration-200">
-                Built for Production Reality
-              </h3>
-              <p className="text-[hsl(220,10%,60%)] text-sm leading-relaxed">
-                Everything we build is designed for messy data, partial automation, regulatory constraints, and human-in-the-loop requirements. Our infrastructure prioritizes reliability, observability, and adaptability.
-              </p>
-            </div>
-          </div>
-
-          {/* Measured Impact */}
-          <div className="group relative bg-[hsl(220,20%,8%)] border border-[hsl(220,16%,12%)] rounded-2xl p-6 lg:p-8 transition-all duration-300 hover:border-primary/25"
-               style={{ boxShadow: '0 0 40px hsl(var(--primary) / 0.02)' }}>
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
-            
-            <div className="relative">
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 group-hover:scale-105 transition-transform duration-300 bg-primary/10 border border-primary/15">
-                <TrendingUp className="w-6 h-6 text-primary" strokeWidth={1.5} />
-                <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                     style={{ boxShadow: '0 0 20px hsl(var(--primary) / 0.25)' }} />
-              </div>
-              <h3 className="font-display text-xl font-bold text-[hsl(0,0%,94%)] mb-3 tracking-tight group-hover:text-primary transition-colors duration-200">
-                Measured by Real Impact
-              </h3>
-              <p className="text-[hsl(220,10%,60%)] text-sm leading-relaxed">
-                Success isn't models or dashboards—it's stronger AI-led discovery, faster and more accurate decisions, reduced operational noise and cost, and compounding system-level gains.
-              </p>
-            </div>
-          </div>
+          ))}
         </div>
 
-        {/* Concluding Statement */}
-        <div className="mt-12 lg:mt-16 text-center">
-          <div className="inline-block bg-[hsl(220,20%,8%)] border border-[hsl(220,16%,12%)] rounded-2xl px-8 py-6"
-               style={{ boxShadow: '0 0 60px hsl(var(--primary) / 0.03)' }}>
-            <p className="text-[hsl(0,0%,90%)] text-base md:text-lg font-medium max-w-3xl">
-              We don't "add AI." We re-architect how intelligence flows from expertise to system to outcome.
-            </p>
+        {/* Deliverables */}
+        <div>
+          <h3 className="font-display text-2xl md:text-3xl font-bold text-center mb-8 text-[hsl(0,0%,97%)] tracking-tight">
+            What You <span className="text-primary">Get</span>
+          </h3>
+          
+          <div className="grid sm:grid-cols-2 gap-3">
+            {deliverables.map((item) => (
+              <div key={item} className="flex items-center gap-3 bg-[hsl(220,20%,8%)] border border-[hsl(220,16%,12%)] rounded-xl p-4">
+                <div className="w-7 h-7 rounded-lg bg-primary/15 border border-primary/20 flex items-center justify-center flex-shrink-0">
+                  <Check className="h-3.5 w-3.5 text-primary" strokeWidth={2} />
+                </div>
+                <span className="text-[hsl(220,10%,70%)] text-sm font-medium">{item}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>
