@@ -16,6 +16,7 @@ const Contact = lazy(() => import("./pages/Contact"));
 const ProductPage = lazy(() => import("./pages/ProductPage"));
 const CLaiMPage = lazy(() => import("./pages/products/CLaiMPage"));
 const AISACPage = lazy(() => import("./pages/products/AISACPage"));
+const AIVIPage = lazy(() => import("./pages/products/AIVIPage"));
 const AIVIDemo = lazy(() => import("./pages/AIVIDemo"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const EnergyIndustry = lazy(() => import("./pages/industries/EnergyIndustry"));
@@ -53,6 +54,7 @@ const App = () => (
               <Route path="/contact" element={<Contact />} />
               <Route path="/products/claim" element={<CLaiMPage />} />
               <Route path="/products/aisac" element={<AISACPage />} />
+              <Route path="/products/aivi" element={<AIVIPage />} />
               <Route path="/products/:productId" element={<ProductPage />} />
               <Route path="/demo/aivi" element={<AIVIDemo />} />
               <Route path="/industries/energy" element={<EnergyIndustry />} />
