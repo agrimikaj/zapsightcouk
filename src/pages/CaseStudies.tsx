@@ -2,10 +2,12 @@ import { Helmet } from 'react-helmet-async';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import NeuralBackground from '@/components/ui/NeuralBackground';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Rss } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { caseStudies } from '@/lib/case-studies';
+
+const RSS_FEED_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/rss-case-studies`;
 
 const CaseStudies = () => {
   return (
@@ -13,6 +15,7 @@ const CaseStudies = () => {
       <Helmet>
         <title>Case Studies - ZapSight</title>
         <meta name="description" content="Explore how ZapSight has helped enterprises across industries transform their operations with AI agents. Real results, measurable ROI." />
+        <link rel="alternate" type="application/rss+xml" title="ZapSight Case Studies RSS Feed" href={RSS_FEED_URL} />
       </Helmet>
 
       <div className="min-h-screen bg-[hsl(220,20%,6%)]">
@@ -29,9 +32,18 @@ const CaseStudies = () => {
                 <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-[hsl(0,0%,97%)] tracking-tight">
                   Case <span className="text-primary">Studies</span>
                 </h1>
-                <p className="text-lg lg:text-xl text-[hsl(220,10%,55%)] max-w-3xl mx-auto">
+                <p className="text-lg lg:text-xl text-[hsl(220,10%,55%)] max-w-3xl mx-auto mb-6">
                   Real-world examples of how we've helped enterprises transform their operations with AI agents. Measurable outcomes, proven results.
                 </p>
+                <a
+                  href={RSS_FEED_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors"
+                >
+                  <Rss className="h-4 w-4" />
+                  Subscribe via RSS
+                </a>
               </div>
             </div>
           </section>
