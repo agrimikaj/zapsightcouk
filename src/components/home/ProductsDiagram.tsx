@@ -106,11 +106,11 @@ const ProductsDiagram = () => {
         backgroundSize: '48px 48px'
       }} />
       
-      {/* Soft ambient glows */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/[0.015] rounded-full blur-[200px]" />
+      {/* Soft ambient glows - reduced blur on mobile for better scroll performance */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/[0.015] rounded-full blur-[80px] sm:blur-[200px]" />
       
-      {/* Tech wave backgrounds */}
-      <svg className="absolute inset-0 w-full h-full opacity-[0.08]" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 100 100">
+      {/* Tech wave backgrounds - hidden on mobile to improve scroll performance */}
+      <svg className="absolute inset-0 w-full h-full opacity-[0.08] hidden sm:block" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 100 100">
         <defs>
           <linearGradient id="waveGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
             <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0" />

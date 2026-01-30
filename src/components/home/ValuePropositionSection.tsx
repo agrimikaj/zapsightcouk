@@ -57,8 +57,8 @@ const ValuePropositionSection = () => {
         }}
       />
       
-      {/* Ambient glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-primary/[0.02] rounded-full blur-[150px]" />
+      {/* Ambient glow - reduced blur on mobile for better scroll performance */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-primary/[0.02] rounded-full blur-[60px] sm:blur-[150px]" />
       
       <div className="container relative z-10 mx-auto px-4 lg:px-8">
         {/* Section Header */}

@@ -69,8 +69,10 @@ const HeroBanner = () => {
       {/* Unified dark background */}
       <div className="absolute inset-0 bg-gradient-to-b from-[hsl(220,20%,8%)] via-[hsl(220,20%,6%)] to-[hsl(220,20%,6%)]" />
       
-      {/* Neural network animation */}
-      <NeuralBackground />
+      {/* Neural network animation - hidden on mobile to improve scroll performance */}
+      <div className="hidden sm:block">
+        <NeuralBackground />
+      </div>
       
       
 
