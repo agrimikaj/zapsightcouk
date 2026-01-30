@@ -18,7 +18,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="space-y-5 lg:col-span-1">
             <Link to="/" className="flex items-center gap-2.5">
-              <img src={logo} alt="ZapSight AI Agents Platform - Enterprise AI Solutions Logo" className="h-10" />
+              <img src={logo} alt="ZapSight AI Agents Platform - Enterprise AI Solutions Logo" className="h-10" width={40} height={40} />
               <span className="font-display font-bold text-xl text-[hsl(0,0%,94%)] tracking-tight">ZapSight</span>
             </Link>
             <p className="text-[hsl(220,10%,50%)] text-sm leading-relaxed">
