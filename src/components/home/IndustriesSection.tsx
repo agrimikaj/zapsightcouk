@@ -61,8 +61,8 @@ const IndustriesSection = () => {
         backgroundSize: '48px 48px'
       }} />
       
-      {/* Soft ambient glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-primary/[0.015] rounded-full blur-[200px]" />
+      {/* Soft ambient glow - reduced blur on mobile for better scroll performance */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-primary/[0.015] rounded-full blur-[80px] sm:blur-[200px]" />
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         {/* Header */}

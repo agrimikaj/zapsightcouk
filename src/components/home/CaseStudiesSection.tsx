@@ -61,8 +61,8 @@ const CaseStudiesSection = () => {
         backgroundSize: '48px 48px'
       }} />
       
-      {/* Soft ambient glow */}
-      <div className="absolute bottom-0 right-1/4 w-[500px] h-[400px] bg-primary/[0.02] rounded-full blur-[180px]" />
+      {/* Soft ambient glow - reduced blur on mobile for better scroll performance */}
+      <div className="absolute bottom-0 right-1/4 w-[500px] h-[400px] bg-primary/[0.02] rounded-full blur-[60px] sm:blur-[180px]" />
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         {/* Header */}

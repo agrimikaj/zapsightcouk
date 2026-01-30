@@ -143,8 +143,8 @@ const ConfessionalBooth = () => {
       {/* Cozy dark background */}
       <div className="absolute inset-0 bg-gradient-to-b from-[hsl(220,20%,7%)] via-[hsl(220,18%,8%)] to-[hsl(220,20%,6%)]" />
       
-      {/* Soft ambient glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-primary/[0.02] rounded-full blur-[150px]" />
+      {/* Soft ambient glow - reduced blur on mobile for better scroll performance */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-primary/[0.02] rounded-full blur-[60px] sm:blur-[150px]" />
       
       <div className="container mx-auto px-4 lg:px-8 relative z-10 max-w-3xl">
         {/* Section header */}
