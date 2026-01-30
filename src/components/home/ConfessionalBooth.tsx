@@ -203,7 +203,7 @@ const ConfessionalBooth = () => {
             </div>
 
             {/* Microcopy */}
-            <p className="text-[hsl(220,10%,40%)] text-xs mt-4 text-center">
+            <p className="text-[hsl(220,10%,55%)] text-xs mt-4 text-center">
               No logs. No judgment. Just relief.
             </p>
           </div>
