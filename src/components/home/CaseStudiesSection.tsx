@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -8,23 +8,38 @@ const CaseStudiesSection = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
+  const rafRef = useRef<number | null>(null);
 
-  const checkScrollPosition = () => {
+  const checkScrollPosition = useCallback(() => {
     const container = scrollContainerRef.current;
     if (container) {
       setCanScrollLeft(container.scrollLeft > 0);
       setCanScrollRight(container.scrollLeft < container.scrollWidth - container.clientWidth - 10);
     }
-  };
+    rafRef.current = null;
+  }, []);
+
+  const handleScroll = useCallback(() => {
+    // Use RAF to batch layout reads and avoid forced reflows
+    if (rafRef.current === null) {
+      rafRef.current = requestAnimationFrame(checkScrollPosition);
+    }
+  }, [checkScrollPosition]);
 
   useEffect(() => {
     const container = scrollContainerRef.current;
     if (container) {
-      container.addEventListener('scroll', checkScrollPosition);
-      checkScrollPosition();
-      return () => container.removeEventListener('scroll', checkScrollPosition);
+      container.addEventListener('scroll', handleScroll, { passive: true });
+      // Initial check after layout settles
+      requestAnimationFrame(checkScrollPosition);
+      return () => {
+        container.removeEventListener('scroll', handleScroll);
+        if (rafRef.current !== null) {
+          cancelAnimationFrame(rafRef.current);
+        }
+      };
     }
-  }, []);
+  }, [handleScroll, checkScrollPosition]);
 
   const scroll = (direction: 'left' | 'right') => {
     const container = scrollContainerRef.current;

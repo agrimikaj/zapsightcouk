@@ -84,10 +84,11 @@ const ValuePropositionSection = () => {
                 className="relative cursor-pointer"
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
-                animate={{
+                initial={false}
+                style={{
                   flex: isHovered ? 2.5 : 1,
+                  transition: 'flex 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
                 }}
-                transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
               >
                 <div 
                   className={`
