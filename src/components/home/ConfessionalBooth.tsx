@@ -344,11 +344,11 @@ const ConfessionalBooth = () => {
         </AnimatePresence>
 
         {/* Confession Roulette */}
-        <div className="mt-16 pt-10 border-t border-[hsl(220,12%,14%)]">
-          <p className="text-center text-[hsl(220,10%,40%)] text-xs uppercase tracking-widest mb-4">
+        <div className="mt-16 pt-10 border-t border-[hsl(220,12%,18%)]">
+          <p className="text-center text-[hsl(220,10%,60%)] text-sm uppercase tracking-widest mb-4 font-medium">
             You're not alone
           </p>
-          <div className="h-8 overflow-hidden relative">
+          <div className="h-7 overflow-hidden relative">
             <AnimatePresence mode="wait">
               <motion.p
                 key={currentRoulette}
@@ -356,7 +356,7 @@ const ConfessionalBooth = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.4 }}
-                className="text-center text-[hsl(220,10%,50%)] text-sm italic"
+                className="text-center text-[hsl(220,8%,70%)] text-base italic"
               >
                 {confessionRoulette[currentRoulette]}
               </motion.p>
