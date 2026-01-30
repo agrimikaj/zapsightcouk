@@ -128,7 +128,7 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden py-6 animate-fade-in border-t border-[hsl(220,16%,10%)]">
+          <div className="lg:hidden py-6 animate-fade-in border-t border-[hsl(220,16%,10%)] max-h-[calc(100vh-4rem)] overflow-y-auto overscroll-contain">
             <div className="space-y-4">
               <div className="px-2">
                 <p className="text-xs font-semibold text-[hsl(220,10%,40%)] uppercase tracking-wider mb-3">Products</p>
@@ -186,7 +186,7 @@ const Navbar = () => {
                   </Link>
                 ))}
               </div>
-              <div className="pt-4 px-2">
+              <div className="pt-4 px-2 pb-4">
                 <Button variant="hero" className="w-full shadow-glow" asChild>
                   <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>Contact Us</Link>
                 </Button>
