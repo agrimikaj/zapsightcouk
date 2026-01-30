@@ -110,7 +110,7 @@ const ProductsDiagram = () => {
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/[0.015] rounded-full blur-[200px]" />
       
       {/* Tech wave backgrounds */}
-      <svg className="absolute inset-0 w-full h-full opacity-[0.08]" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <svg className="absolute inset-0 w-full h-full opacity-[0.08]" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 100 100">
         <defs>
           <linearGradient id="waveGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
             <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0" />
@@ -118,9 +118,9 @@ const ProductsDiagram = () => {
             <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0" />
           </linearGradient>
         </defs>
-        <path d="M0,30% Q25%,25% 50%,30% T100%,30%" fill="none" stroke="url(#waveGradient1)" strokeWidth="1" className="animate-pulse" style={{ animationDuration: '8s' }} />
-        <path d="M0,50% Q25%,45% 50%,50% T100%,50%" fill="none" stroke="url(#waveGradient1)" strokeWidth="1" className="animate-pulse" style={{ animationDuration: '10s', animationDelay: '1s' }} />
-        <path d="M0,70% Q25%,65% 50%,70% T100%,70%" fill="none" stroke="url(#waveGradient1)" strokeWidth="1" className="animate-pulse" style={{ animationDuration: '9s', animationDelay: '2s' }} />
+        <path d="M0,30 Q25,25 50,30 T100,30" fill="none" stroke="url(#waveGradient1)" strokeWidth="0.5" className="animate-pulse" style={{ animationDuration: '8s' }} />
+        <path d="M0,50 Q25,45 50,50 T100,50" fill="none" stroke="url(#waveGradient1)" strokeWidth="0.5" className="animate-pulse" style={{ animationDuration: '10s', animationDelay: '1s' }} />
+        <path d="M0,70 Q25,65 50,70 T100,70" fill="none" stroke="url(#waveGradient1)" strokeWidth="0.5" className="animate-pulse" style={{ animationDuration: '9s', animationDelay: '2s' }} />
       </svg>
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
