@@ -334,8 +334,8 @@ const ConfessionalBooth = () => {
                   className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[hsl(220,15%,12%)] hover:bg-[hsl(220,15%,15%)] border border-[hsl(220,12%,18%)] text-[hsl(220,10%,60%)] hover:text-[hsl(220,10%,75%)] transition-all duration-200 disabled:opacity-50"
                 >
                   <ChevronDown className="h-4 w-4" />
-                  {simplerLevel === 0 ? "Still confused—explain dumber" : 
-                   simplerLevel === 1 ? "Even dumber please" : 
+                  {simplerLevel === 0 ? "Still confused—explain it simpler" : 
+                   simplerLevel === 1 ? "Even simpler please" : 
                    "Okay, like I'm five"}
                 </button>
               </div>
