@@ -31,6 +31,8 @@ const CaseStudies = lazy(() => import("./pages/CaseStudies"));
 const CaseStudyDetail = lazy(() => import("./pages/CaseStudyDetail"));
 const FAQs = lazy(() => import("./pages/FAQs"));
 const Insights = lazy(() => import("./pages/Insights"));
+const AgenticAIArchitecture = lazy(() => import("./pages/insights/AgenticAIArchitecture"));
+const DecisionIntelligence = lazy(() => import("./pages/insights/DecisionIntelligence"));
 const Console = lazy(() => import("./pages/Console"));
 
 const queryClient = new QueryClient();
@@ -52,6 +54,8 @@ const App = () => (
               <Route path="/case-studies/:caseStudyId" element={<CaseStudyDetail />} />
               <Route path="/faqs" element={<FAQs />} />
               <Route path="/insights" element={<Insights />} />
+              <Route path="/insights/agentic-ai-architecture" element={<AgenticAIArchitecture />} />
+              <Route path="/insights/decision-intelligence" element={<DecisionIntelligence />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/products/claim" element={<CLaiMPage />} />
               <Route path="/products/aisac" element={<AISACPage />} />

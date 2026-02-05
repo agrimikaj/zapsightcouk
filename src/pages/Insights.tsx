@@ -2,7 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import NeuralBackground from '@/components/ui/NeuralBackground';
-import { ArrowRight, FileText, BookOpen, Video } from 'lucide-react';
+import { ArrowRight, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
@@ -10,34 +10,18 @@ const insights = [
   {
     type: 'Blog',
     icon: FileText,
-    title: 'The Future of AI Agents in Enterprise',
-    description: 'Exploring how autonomous AI agents are transforming enterprise operations and decision-making.',
-    date: 'Dec 2024',
-    href: '/insights/blogs',
-  },
-  {
-    type: 'Whitepaper',
-    icon: BookOpen,
-    title: 'Building ROI-Driven AI Solutions',
-    description: 'A comprehensive guide to measuring and maximizing return on AI investments.',
-    date: 'Nov 2024',
-    href: '/insights/whitepapers',
+    title: 'From Data to Decisions: How Agentic AI Architecture Powers the Next Generation of Business Intelligence',
+    description: 'Traditional business intelligence was built for reports. Modern enterprises need systems built for decisions. Learn about the five-layer agentic stack.',
+    date: 'Jan 2025',
+    href: '/insights/agentic-ai-architecture',
   },
   {
     type: 'Blog',
     icon: FileText,
-    title: 'AI in Manufacturing: A Practical Guide',
-    description: 'How manufacturers are leveraging AI for predictive maintenance and quality control.',
-    date: 'Nov 2024',
-    href: '/insights/blogs',
-  },
-  {
-    type: 'Webinar',
-    icon: Video,
-    title: 'Data Pipelines for AI Success',
-    description: 'Best practices for building AI-ready data infrastructure.',
-    date: 'Oct 2024',
-    href: '/insights/webinars',
+    title: 'ZapSight: A Decision Intelligence Environment for AI That Holds Up in the Real World',
+    description: 'AI has become remarkably good at generating answers. What it still struggles with is making decisions that hold up inside real businesses.',
+    date: 'Jan 2025',
+    href: '/insights/decision-intelligence',
   },
 ];
 
