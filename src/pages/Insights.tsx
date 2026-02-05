@@ -4,6 +4,7 @@ import Footer from '@/components/layout/Footer';
 import NeuralBackground from '@/components/ui/NeuralBackground';
 import { ArrowRight, FileText, Video, BookOpen } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import Autoplay from 'embla-carousel-autoplay';
 import {
   Carousel,
   CarouselContent,
@@ -135,6 +136,12 @@ const Insights = () => {
                     align: 'start',
                     loop: true,
                   }}
+                  plugins={[
+                    Autoplay({
+                      delay: 2000,
+                      stopOnInteraction: true,
+                    }),
+                  ]}
                   className="w-full"
                 >
                   <CarouselContent className="-ml-4">
@@ -204,6 +211,12 @@ const Insights = () => {
                     align: 'start',
                     loop: true,
                   }}
+                  plugins={[
+                    Autoplay({
+                      delay: 2000,
+                      stopOnInteraction: true,
+                    }),
+                  ]}
                   className="w-full"
                 >
                   <CarouselContent className="-ml-4">
@@ -269,6 +282,12 @@ const Insights = () => {
                     align: 'start',
                     loop: true,
                   }}
+                  plugins={[
+                    Autoplay({
+                      delay: 2000,
+                      stopOnInteraction: true,
+                    }),
+                  ]}
                   className="w-full"
                 >
                   <CarouselContent className="-ml-4">
