@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, ArrowRight, Users, Workflow, HelpCircle } from 'lucide-react';
+import { ChevronDown, ArrowRight, Users, Workflow, HelpCircle, Lightbulb } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const aboutPages = [
@@ -31,6 +31,15 @@ const aboutPages = [
     gradient: 'from-purple-500 to-violet-500',
     description: 'Common questions answered',
     features: ['Implementation timeline', 'Pricing models', 'Integration details', 'Support options']
+  },
+  { 
+    id: 'insights',
+    name: 'Insights', 
+    href: '/insights',
+    icon: Lightbulb,
+    gradient: 'from-amber-500 to-yellow-500',
+    description: 'Knowledge & resources',
+    features: ['Industry blogs', 'Whitepapers', 'Webinars', 'AI trends']
   },
 ];
 
