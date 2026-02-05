@@ -3,6 +3,7 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import NeuralBackground from '@/components/ui/NeuralBackground';
 import { ArrowRight, FileText } from 'lucide-react';
+ import { Newspaper } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
@@ -23,6 +24,22 @@ const insights = [
     date: 'Jan 2025',
     href: '/insights/decision-intelligence',
   },
+   {
+     type: 'Blog',
+     icon: FileText,
+     title: "The Future of Business Intelligence is Here, and It's Powered by AI",
+     description: 'Discover how AI-powered BI transforms raw data into strategic insights with predictive analytics and actionable recommendations.',
+     date: 'Jan 2025',
+     href: '/insights/future-of-bi',
+   },
+   {
+     type: 'Case Study',
+     icon: Newspaper,
+     title: 'The Wait is the Killer: How Solar Infrastructure Leaders Killed the "File a Ticket" Data Culture',
+     description: 'Inside a deployment that turned 5 disparate systems and 100+ database tables into a 6–8x ROI — in under a month.',
+     date: 'Jan 2025',
+     href: '/insights/solar-data-culture',
+   },
 ];
 
 const Insights = () => {

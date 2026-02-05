@@ -33,6 +33,8 @@ const FAQs = lazy(() => import("./pages/FAQs"));
 const Insights = lazy(() => import("./pages/Insights"));
 const AgenticAIArchitecture = lazy(() => import("./pages/insights/AgenticAIArchitecture"));
 const DecisionIntelligence = lazy(() => import("./pages/insights/DecisionIntelligence"));
+ const FutureOfBI = lazy(() => import("./pages/insights/FutureOfBI"));
+ const SolarDataCulture = lazy(() => import("./pages/insights/SolarDataCulture"));
 const Console = lazy(() => import("./pages/Console"));
 
 const queryClient = new QueryClient();
@@ -56,6 +58,8 @@ const App = () => (
               <Route path="/insights" element={<Insights />} />
               <Route path="/insights/agentic-ai-architecture" element={<AgenticAIArchitecture />} />
               <Route path="/insights/decision-intelligence" element={<DecisionIntelligence />} />
+               <Route path="/insights/future-of-bi" element={<FutureOfBI />} />
+               <Route path="/insights/solar-data-culture" element={<SolarDataCulture />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/products/claim" element={<CLaiMPage />} />
               <Route path="/products/aisac" element={<AISACPage />} />
