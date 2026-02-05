@@ -2,8 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import NeuralBackground from '@/components/ui/NeuralBackground';
-import { ArrowRight, FileText } from 'lucide-react';
- import { Newspaper } from 'lucide-react';
+import { ArrowRight, FileText, Newspaper } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
