@@ -48,11 +48,28 @@ const faqs = [
 ];
 
 const FAQs = () => {
+  // Generate FAQ Schema for rich snippets
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+
   return (
     <>
       <Helmet>
         <title>FAQs - ZapSight</title>
         <meta name="description" content="Frequently asked questions about ZapSight's AI solutions, engagement process, and how we help enterprises transform with AI agents." />
+        <script type="application/ld+json">
+          {JSON.stringify(faqSchema)}
+        </script>
       </Helmet>
 
       <div className="min-h-screen bg-[hsl(220,20%,6%)]">

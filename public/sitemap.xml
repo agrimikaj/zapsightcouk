@@ -32,6 +32,33 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Insights Pages -->
+  <url>
+    <loc>https://zapsight.co.uk/insights</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zapsight.co.uk/insights/agentic-ai-architecture</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://zapsight.co.uk/insights/decision-intelligence</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://zapsight.co.uk/insights/future-of-bi</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://zapsight.co.uk/insights/solar-data-culture</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Product Pages -->
   <url>
     <loc>https://zapsight.co.uk/products/aisac</loc>
@@ -121,5 +148,12 @@
     <loc>https://zapsight.co.uk/demo/aivi</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+
+  <!-- Console -->
+  <url>
+    <loc>https://zapsight.co.uk/console</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>
