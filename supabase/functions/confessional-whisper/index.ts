@@ -44,17 +44,94 @@ Return valid JSON:
   "signoff": "A friendly sign-off"
 }`;
 
+// Configuration
+const MAX_QUESTION_LENGTH = 2000;
+const RATE_LIMIT_WINDOW_MS = 60000; // 1 minute
+const MAX_REQUESTS_PER_WINDOW = 10;
+const ipRequestCounts = new Map<string, { count: number; resetTime: number }>();
+
+// Rate limiting check
+function checkRateLimit(ip: string): { allowed: boolean; retryAfter?: number } {
+  const now = Date.now();
+  const record = ipRequestCounts.get(ip);
+  
+  if (!record || now > record.resetTime) {
+    ipRequestCounts.set(ip, { count: 1, resetTime: now + RATE_LIMIT_WINDOW_MS });
+    return { allowed: true };
+  }
+  
+  if (record.count >= MAX_REQUESTS_PER_WINDOW) {
+    const retryAfter = Math.ceil((record.resetTime - now) / 1000);
+    return { allowed: false, retryAfter };
+  }
+  
+  record.count++;
+  return { allowed: true };
+}
+
+// Cleanup old rate limit entries
+function cleanupRateLimits() {
+  const now = Date.now();
+  for (const [ip, record] of ipRequestCounts.entries()) {
+    if (now > record.resetTime) {
+      ipRequestCounts.delete(ip);
+    }
+  }
+}
+
 serve(async (req) => {
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
   }
 
+  // Get client IP for rate limiting
+  const clientIP = req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 
+                   req.headers.get('cf-connecting-ip') || 
+                   'unknown';
+  
+  // Check rate limit
+  const rateLimitResult = checkRateLimit(clientIP);
+  if (!rateLimitResult.allowed) {
+    console.log(`Rate limit exceeded for IP: ${clientIP}`);
+    return new Response(
+      JSON.stringify({ error: "Too many questions! Take a breath and try again in a moment." }),
+      { 
+        status: 429, 
+        headers: { 
+          ...corsHeaders, 
+          "Content-Type": "application/json",
+          "Retry-After": String(rateLimitResult.retryAfter)
+        } 
+      }
+    );
+  }
+
+  // Cleanup old rate limit entries periodically
+  cleanupRateLimits();
+
   try {
     const { question, simpler = false, previousAnswer = "" } = await req.json();
     
+    // Validate question exists and is a string
     if (!question || typeof question !== "string") {
       return new Response(
         JSON.stringify({ error: "Question is required" }),
+        { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
+
+    // Validate question length
+    const trimmedQuestion = question.trim();
+    if (trimmedQuestion.length === 0) {
+      return new Response(
+        JSON.stringify({ error: "Question cannot be empty" }),
+        { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
+
+    if (trimmedQuestion.length > MAX_QUESTION_LENGTH) {
+      return new Response(
+        JSON.stringify({ error: `Question must be ${MAX_QUESTION_LENGTH} characters or less. Keep it simple!` }),
         { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
       );
     }
@@ -71,11 +148,11 @@ serve(async (req) => {
     const messages = simpler && previousAnswer
       ? [
           { role: "system", content: SIMPLER_SYSTEM_PROMPT },
-          { role: "user", content: `Original question: "${question}"\n\nMy previous explanation that was too complicated: "${previousAnswer}"\n\nPlease explain this simpler.` }
+          { role: "user", content: `Original question: "${trimmedQuestion}"\n\nMy previous explanation that was too complicated: "${previousAnswer}"\n\nPlease explain this simpler.` }
         ]
       : [
           { role: "system", content: SYSTEM_PROMPT },
-          { role: "user", content: question }
+          { role: "user", content: trimmedQuestion }
         ];
 
     console.log("Calling Lovable AI with question:", question.substring(0, 100));
