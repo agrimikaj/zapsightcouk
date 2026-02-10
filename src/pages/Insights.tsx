@@ -2,7 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import NeuralBackground from '@/components/ui/NeuralBackground';
-import { ArrowRight, FileText, Video, BookOpen } from 'lucide-react';
+import { ArrowRight, FileText, Video, BookOpen, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Autoplay from 'embla-carousel-autoplay';
 import {
@@ -42,6 +42,12 @@ const blogs = [
 
 const resources = [
   {
+    title: 'AI Simplified Through Easy Flashcards',
+    description: 'Master AI concepts at your own pace with interactive flashcards. Break down complex topics into bite-sized, easy-to-understand learning cards.',
+    type: 'Tool',
+    href: 'https://flashcardsforanything.info/',
+  },
+  {
     title: 'Agentic AI Architecture Whitepaper',
     description: 'A comprehensive guide to building decision-driven AI systems for enterprise environments.',
     type: 'Whitepaper',
@@ -60,19 +66,14 @@ const resources = [
 
 const videos = [
   {
-    title: 'ZapSight Platform Overview',
-    description: 'A 5-minute introduction to the ZapSight decision intelligence platform.',
-    duration: '5:00',
+    title: 'AI for Commerce | ZapSight | Agentic AI Simplified',
+    description: 'The step back for Traditional Checkout: How AI Agents Are Now Buying Your Products.',
+    youtubeId: 'ULdJkBhYgTo',
   },
   {
-    title: 'Building Your First Data Access Agent',
-    description: 'Watch how to set up a semantic layer and deploy your first agent.',
-    duration: '12:30',
-  },
-  {
-    title: 'Customer Success: Solar Infrastructure Case Study',
-    description: 'Hear directly from our customers about their transformation journey.',
-    duration: '8:45',
+    title: 'AI for Business Leaders | ZapSight | Agentic AI Simplified',
+    description: 'We break down the intimidating, buzzword-heavy world of AI into something you can actually use.',
+    youtubeId: 'wfUr7xC4NyQ',
   },
 ];
 
@@ -138,7 +139,7 @@ const Insights = () => {
                   }}
                   plugins={[
                     Autoplay({
-                      delay: 2000,
+                      delay: 8000,
                       stopOnInteraction: true,
                     }),
                   ]}
@@ -213,41 +214,52 @@ const Insights = () => {
                   }}
                   plugins={[
                     Autoplay({
-                      delay: 2000,
+                      delay: 8000,
                       stopOnInteraction: true,
                     }),
                   ]}
                   className="w-full"
                 >
                   <CarouselContent className="-ml-4">
-                    {resources.map((resource, index) => (
-                      <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
-                        <div className="group block h-full">
-                          <div className="relative bg-[hsl(220,20%,8%)] border border-[hsl(220,16%,12%)] rounded-2xl p-6 transition-all duration-300 hover:border-primary/25 h-full min-h-[180px] flex flex-col"
-                               style={{ boxShadow: '0 0 40px hsl(var(--primary) / 0.02)' }}>
-                            <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
-                            
-                            <div className="relative flex flex-col flex-1">
-                              <span className="text-xs font-semibold uppercase tracking-wider text-primary/70 mb-3">
-                                {resource.type}
-                              </span>
+                    {resources.map((resource, index) => {
+                      const Wrapper = resource.href ? 'a' : 'div';
+                      const wrapperProps = resource.href ? { href: resource.href, target: '_blank', rel: 'noopener noreferrer' } : {};
+                      return (
+                        <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                          <Wrapper {...wrapperProps} className="group block h-full">
+                            <div className="relative bg-[hsl(220,20%,8%)] border border-[hsl(220,16%,12%)] rounded-2xl p-6 transition-all duration-300 hover:border-primary/25 h-full min-h-[180px] flex flex-col"
+                                 style={{ boxShadow: '0 0 40px hsl(var(--primary) / 0.02)' }}>
+                              <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
                               
-                              <h3 className="font-display font-bold text-lg text-[hsl(0,0%,94%)] tracking-tight mb-3 group-hover:text-primary transition-colors duration-200">
-                                {resource.title}
-                              </h3>
-                              
-                              <p className="text-[hsl(220,10%,50%)] text-sm leading-relaxed flex-1">
-                                {resource.description}
-                              </p>
+                              <div className="relative flex flex-col flex-1">
+                                <span className="text-xs font-semibold uppercase tracking-wider text-primary/70 mb-3">
+                                  {resource.type}
+                                </span>
+                                
+                                <h3 className="font-display font-bold text-lg text-[hsl(0,0%,94%)] tracking-tight mb-3 group-hover:text-primary transition-colors duration-200">
+                                  {resource.title}
+                                </h3>
+                                
+                                <p className="text-[hsl(220,10%,50%)] text-sm leading-relaxed flex-1">
+                                  {resource.description}
+                                </p>
 
-                              <div className="flex items-center gap-2 text-[hsl(220,10%,45%)] text-sm font-medium mt-4">
-                                <span>Coming Soon</span>
+                                <div className="flex items-center gap-2 text-primary text-sm font-medium mt-4">
+                                  {resource.href ? (
+                                    <>
+                                      <span>Explore</span>
+                                      <ArrowRight className="h-4 w-4" strokeWidth={1.5} />
+                                    </>
+                                  ) : (
+                                    <span className="text-[hsl(220,10%,45%)]">Coming Soon</span>
+                                  )}
+                                </div>
                               </div>
                             </div>
-                          </div>
-                        </div>
-                      </CarouselItem>
-                    ))}
+                          </Wrapper>
+                        </CarouselItem>
+                      );
+                    })}
                   </CarouselContent>
                   <CarouselPrevious className="left-0 lg:-left-12 bg-[hsl(220,20%,10%)] border-[hsl(220,16%,20%)] text-[hsl(0,0%,80%)] hover:bg-[hsl(220,20%,15%)] hover:text-white" />
                   <CarouselNext className="right-0 lg:-right-12 bg-[hsl(220,20%,10%)] border-[hsl(220,16%,20%)] text-[hsl(0,0%,80%)] hover:bg-[hsl(220,20%,15%)] hover:text-white" />
@@ -284,7 +296,7 @@ const Insights = () => {
                   }}
                   plugins={[
                     Autoplay({
-                      delay: 2000,
+                      delay: 8000,
                       stopOnInteraction: true,
                     }),
                   ]}
@@ -292,20 +304,25 @@ const Insights = () => {
                 >
                   <CarouselContent className="-ml-4">
                     {videos.map((video, index) => (
-                      <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
-                        <div className="group block h-full">
-                          <div className="relative bg-[hsl(220,20%,8%)] border border-[hsl(220,16%,12%)] rounded-2xl overflow-hidden transition-all duration-300 hover:border-primary/25 h-full min-h-[240px] flex flex-col"
+                      <CarouselItem key={index} className="pl-4 md:basis-1/2">
+                        <a href={`https://youtu.be/${video.youtubeId}`} target="_blank" rel="noopener noreferrer" className="group block h-full">
+                          <div className="relative bg-[hsl(220,20%,8%)] border border-[hsl(220,16%,12%)] rounded-2xl overflow-hidden transition-all duration-300 hover:border-primary/25 h-full flex flex-col"
                                style={{ boxShadow: '0 0 40px hsl(var(--primary) / 0.02)' }}>
-                            <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                            <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none" />
                             
-                            {/* Video Thumbnail Placeholder */}
-                            <div className="relative h-32 bg-[hsl(220,20%,10%)] flex items-center justify-center">
-                              <div className="w-12 h-12 rounded-full bg-primary/20 border border-primary/30 flex items-center justify-center">
-                                <Video className="h-5 w-5 text-primary" strokeWidth={1.5} />
+                            {/* YouTube Thumbnail */}
+                            <div className="relative aspect-video bg-[hsl(220,20%,10%)]">
+                              <img
+                                src={`https://img.youtube.com/vi/${video.youtubeId}/maxresdefault.jpg`}
+                                alt={video.title}
+                                className="w-full h-full object-cover"
+                                loading="lazy"
+                              />
+                              <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/10 transition-colors">
+                                <div className="w-14 h-14 rounded-full bg-red-600 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                                  <svg viewBox="0 0 24 24" fill="white" className="w-6 h-6 ml-1"><polygon points="5,3 19,12 5,21" /></svg>
+                                </div>
                               </div>
-                              <span className="absolute bottom-2 right-2 text-xs bg-black/60 px-2 py-1 rounded text-[hsl(0,0%,80%)]">
-                                {video.duration}
-                              </span>
                             </div>
                             
                             <div className="relative flex flex-col flex-1 p-5">
@@ -317,12 +334,13 @@ const Insights = () => {
                                 {video.description}
                               </p>
 
-                              <div className="flex items-center gap-2 text-[hsl(220,10%,45%)] text-sm font-medium mt-3">
-                                <span>Coming Soon</span>
+                              <div className="flex items-center gap-2 text-red-500 text-sm font-medium mt-3 group-hover:gap-3 transition-all">
+                                <span>Watch on YouTube</span>
+                                <ArrowRight className="h-4 w-4" strokeWidth={1.5} />
                               </div>
                             </div>
                           </div>
-                        </div>
+                        </a>
                       </CarouselItem>
                     ))}
                   </CarouselContent>
