@@ -187,12 +187,12 @@ const ZhopAssist = () => {
 
               <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-[1.1]">
                 From Website to{' '}
-                <span className="bg-gradient-to-r from-primary via-primary-light to-primary-glow bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-primary-light via-primary-glow to-primary bg-clip-text text-transparent" style={{ filter: 'drop-shadow(0 0 24px hsl(24 92% 50% / 0.4))' }}>
                   Shopping Concierge
                 </span>
               </h1>
 
-              <p className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto mb-10 leading-relaxed">
+              <p className="text-lg text-white/60 max-w-2xl mx-auto mb-10 leading-relaxed">
                 Gen Z expects a concierge service, a shopping assistant with a character — not just a chatbot. 
                 Zhop Assist transforms your digital presence into an AI-powered shopping experience.
               </p>
@@ -254,8 +254,8 @@ const ZhopAssist = () => {
                     className="text-center"
                   >
                     <Icon className="w-5 h-5 text-primary mx-auto mb-2" />
-                    <p className="font-display text-3xl md:text-4xl font-bold text-foreground">{stat.value}</p>
-                    <p className="text-sm text-muted-foreground mt-1">{stat.label}</p>
+                    <p className="font-display text-3xl md:text-4xl font-bold text-foreground leading-tight">{stat.value}</p>
+                    <p className="text-sm text-muted-foreground mt-1 leading-relaxed">{stat.label}</p>
                   </motion.div>
                 );
               })}
@@ -274,10 +274,10 @@ const ZhopAssist = () => {
               className="max-w-3xl mx-auto text-center mb-16"
             >
               <span className="text-xs font-semibold uppercase tracking-wider text-primary mb-4 block">The Problem</span>
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-5">
                 AI is Disrupting Shopping — Are You Ready?
               </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <p className="text-base text-muted-foreground leading-relaxed">
                 Merchants should engage customers at the point of consideration — providing knowledge, advice and 
                 information about the category <span className="text-foreground font-medium">before</span> sharing about their products.
               </p>
@@ -335,10 +335,10 @@ const ZhopAssist = () => {
               className="text-center mb-16"
             >
               <span className="text-xs font-semibold uppercase tracking-wider text-primary mb-4 block">The Experience</span>
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-5">
                 A Concierge at Every Stage
               </h2>
-              <p className="text-white/50 max-w-xl mx-auto">
+              <p className="text-base text-white/60 max-w-xl mx-auto">
                 Click each stage to explore how Zhop Assist transforms the entire shopping journey.
               </p>
             </motion.div>
@@ -381,8 +381,8 @@ const ZhopAssist = () => {
                       {(() => { const Icon = journeyStages[activeStage].icon; return <Icon className="w-4 h-4 text-white" />; })()}
                       <span className="text-sm font-semibold text-white">{journeyStages[activeStage].subtitle}</span>
                     </div>
-                    <h3 className="font-display text-3xl font-bold text-white mb-4">{journeyStages[activeStage].title}</h3>
-                    <p className="text-white/60 text-lg leading-relaxed mb-8">{journeyStages[activeStage].description}</p>
+                    <h3 className="font-display text-2xl md:text-3xl font-bold text-white mb-4">{journeyStages[activeStage].title}</h3>
+                    <p className="text-white/60 text-base leading-relaxed mb-8">{journeyStages[activeStage].description}</p>
                     <div className="space-y-3">
                       {journeyStages[activeStage].features.map((f, idx) => (
                         <motion.div
@@ -426,10 +426,10 @@ const ZhopAssist = () => {
                 viewport={{ once: true }}
               >
                 <span className="text-xs font-semibold uppercase tracking-wider text-primary mb-4 block">Bi-Directional Sync</span>
-                <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
+                <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-5">
                   Control Website Through Chat & Vice-Versa
                 </h2>
-                <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
+                <p className="text-muted-foreground text-base mb-8 leading-relaxed">
                   Website reflects the chat interactions or clicks on the website. A truly synchronised shopping experience.
                 </p>
                 <div className="space-y-4">
@@ -487,10 +487,10 @@ const ZhopAssist = () => {
               className="text-center mb-16"
             >
               <span className="text-xs font-semibold uppercase tracking-wider text-primary mb-4 block">Our Solution</span>
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-5">
                 Built on 30+ Years of Retail Expertise
               </h2>
-              <p className="text-muted-foreground max-w-xl mx-auto">
+              <p className="text-base text-muted-foreground max-w-xl mx-auto leading-relaxed">
                 We've combined decades of retail knowledge, data & analytics mastery, and AI-application experience into Zhop Assist.
               </p>
             </motion.div>
@@ -554,10 +554,10 @@ const ZhopAssist = () => {
               <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
                 <DollarSign className="w-8 h-8 text-primary" />
               </div>
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-5">
                 This Must Be Expensive?
               </h2>
-              <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
                 Pay for <span className="text-foreground font-semibold">Interactions + Impact</span>, not for the development.
               </p>
 
@@ -600,10 +600,10 @@ const ZhopAssist = () => {
               className="max-w-3xl mx-auto text-center"
             >
               <Zap className="w-10 h-10 text-primary mx-auto mb-6" />
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-5">
                 Build Your Competitive Advantage
               </h2>
-              <p className="text-white/50 text-lg mb-10 leading-relaxed max-w-xl mx-auto">
+              <p className="text-base text-white/60 mb-10 leading-relaxed max-w-xl mx-auto">
                 Develop the experience that auto-improves and build a compounding growth driver for your retail business.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
