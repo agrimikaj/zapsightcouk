@@ -36,6 +36,7 @@ const DecisionIntelligence = lazy(() => import("./pages/insights/DecisionIntelli
  const FutureOfBI = lazy(() => import("./pages/insights/FutureOfBI"));
  const SolarDataCulture = lazy(() => import("./pages/insights/SolarDataCulture"));
 const Console = lazy(() => import("./pages/Console"));
+const ZhopAssist = lazy(() => import("./pages/case-studies/ZhopAssist"));
 
 const queryClient = new QueryClient();
 
@@ -53,6 +54,7 @@ const App = () => (
               <Route path="/about" element={<About />} />
               <Route path="/about/how-we-work" element={<HowWeWork />} />
               <Route path="/case-studies" element={<CaseStudies />} />
+              <Route path="/case-studies/zhop-assist" element={<ZhopAssist />} />
               <Route path="/case-studies/:caseStudyId" element={<CaseStudyDetail />} />
               <Route path="/faqs" element={<FAQs />} />
               <Route path="/insights" element={<Insights />} />

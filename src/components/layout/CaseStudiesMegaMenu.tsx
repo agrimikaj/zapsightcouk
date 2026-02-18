@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, ArrowRight, Star, BarChart3, Settings, Briefcase } from 'lucide-react';
+import { ChevronDown, ArrowRight, Star, BarChart3, Settings, Briefcase, ShoppingCart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const caseStudies = [
@@ -14,6 +14,16 @@ const caseStudies = [
     description: 'Browse our complete portfolio',
     features: ['8 detailed case studies', 'Multiple industries', 'Proven ROI results', 'Implementation insights'],
     featured: false
+  },
+  { 
+    id: 'zhop-assist',
+    name: 'Zhop Assist', 
+    href: '/case-studies/zhop-assist',
+    icon: ShoppingCart,
+    gradient: 'from-primary to-orange-600',
+    description: 'AI-powered shopping concierge',
+    features: ['Agentic commerce', 'Full journey coverage', 'Website-chat sync', 'Third-party connectors'],
+    featured: true
   },
   { 
     id: 'customer-analytics',
