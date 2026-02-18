@@ -21,6 +21,7 @@ const industries = [
 
 const caseStudies = [
   { name: 'Overview', href: '/case-studies' },
+  { name: 'Zhop Assist', href: '/case-studies/zhop-assist' },
   { name: 'Customer Analytics', href: '/case-studies/customer-analytics' },
   { name: 'Predictive Maintenance', href: '/case-studies/predictive-maintenance' },
 ];
