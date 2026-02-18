@@ -265,6 +265,13 @@ const ChatSyncSection = () => {
 const ZhopAssist = () => {
   const [activeStage, setActiveStage] = useState(0);
   const [hoveredPillar, setHoveredPillar] = useState<number | null>(null);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveStage((prev) => (prev + 1) % journeyStages.length);
+    }, 8000);
+    return () => clearInterval(interval);
+  }, []);
   const scrollToDemo = () => {
     document.getElementById('zhop-chat-sync')?.scrollIntoView({ behavior: 'smooth' });
   };
