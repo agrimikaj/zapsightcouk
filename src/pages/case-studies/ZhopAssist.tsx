@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -147,10 +147,124 @@ const websiteControlFeatures = [
   { text: 'Scroll through history', detail: 'See all past considerations' },
 ];
 
+const ChatSyncSection = () => {
+  const videoRef = useRef<HTMLDivElement>(null);
+  const [videoHeight, setVideoHeight] = useState(0);
+  const [activeFeature, setActiveFeature] = useState(0);
+
+  useEffect(() => {
+    const observer = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        setVideoHeight(entry.contentRect.height);
+      }
+    });
+    if (videoRef.current) observer.observe(videoRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveFeature((prev) => (prev + 1) % websiteControlFeatures.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const getItemIndex = (offset: number) => {
+    return (activeFeature + offset + websiteControlFeatures.length) % websiteControlFeatures.length;
+  };
+
+  return (
+    <section id="zhop-chat-sync" className="relative py-20 lg:py-28">
+      <NeuralBackground />
+      <div className="container mx-auto px-4 lg:px-8 relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <span className="text-xs font-semibold uppercase tracking-wider text-primary mb-4 block">Bi-Directional Sync</span>
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-5">
+            Control Website Through Chat & Vice-Versa
+          </h2>
+          <p className="text-muted-foreground text-base max-w-xl mx-auto leading-relaxed">
+            Website reflects the chat interactions or clicks on the website. A truly synchronised shopping experience.
+          </p>
+        </motion.div>
+
+        <div className="max-w-5xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+          {/* Carousel column */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="flex flex-col justify-center gap-3 overflow-hidden"
+            style={{ height: videoHeight > 0 ? videoHeight : 'auto' }}
+          >
+            <AnimatePresence mode="popLayout">
+              {[-1, 0, 1].map((offset) => {
+                const idx = getItemIndex(offset);
+                const feat = websiteControlFeatures[idx];
+                const isActive = offset === 0;
+                return (
+                  <motion.div
+                    key={`${activeFeature}-${offset}`}
+                    initial={{ opacity: 0, y: offset === -1 ? -30 : 30 }}
+                    animate={{
+                      opacity: isActive ? 1 : 0.4,
+                      y: 0,
+                      scale: isActive ? 1 : 0.92,
+                    }}
+                    exit={{ opacity: 0, y: offset === -1 ? -30 : 30 }}
+                    transition={{ duration: 0.5, ease: 'easeInOut' }}
+                    className={`flex items-start gap-4 p-5 rounded-xl border transition-colors ${
+                      isActive
+                        ? 'bg-muted/50 border-primary/30 shadow-glow'
+                        : 'bg-muted/30 border-border/50'
+                    }`}
+                  >
+                    <div className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5 ${
+                      isActive ? 'bg-primary/20' : 'bg-primary/10'
+                    }`}>
+                      <ChevronRight className={`w-4 h-4 ${isActive ? 'text-primary' : 'text-primary/50'}`} />
+                    </div>
+                    <div>
+                      <p className={`font-semibold text-sm ${isActive ? 'text-foreground' : 'text-foreground/50'}`}>&quot;{feat.text}&quot;</p>
+                      <p className={`text-xs mt-0.5 ${isActive ? 'text-muted-foreground' : 'text-muted-foreground/50'}`}>{feat.detail}</p>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </AnimatePresence>
+          </motion.div>
+
+          {/* Video column */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
+            <div ref={videoRef} className="rounded-2xl border border-border overflow-hidden bg-black">
+              <video
+                className="w-full h-auto block"
+                autoPlay
+                muted
+                loop
+                playsInline
+              >
+                <source src="/videos/zhop-design-demo.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const ZhopAssist = () => {
   const [activeStage, setActiveStage] = useState(0);
   const [hoveredPillar, setHoveredPillar] = useState<number | null>(null);
-
   const scrollToDemo = () => {
     document.getElementById('zhop-chat-sync')?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -415,66 +529,7 @@ const ZhopAssist = () => {
           </div>
         </section>
 
-        {/* ── Chat Controls Website ── */}
-        <section id="zhop-chat-sync" className="relative py-20 lg:py-28">
-          <NeuralBackground />
-          <div className="container mx-auto px-4 lg:px-8 relative z-10">
-            <div className="max-w-5xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-              >
-                <span className="text-xs font-semibold uppercase tracking-wider text-primary mb-4 block">Bi-Directional Sync</span>
-                <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-5">
-                  Control Website Through Chat & Vice-Versa
-                </h2>
-                <p className="text-muted-foreground text-base mb-8 leading-relaxed">
-                  Website reflects the chat interactions or clicks on the website. A truly synchronised shopping experience.
-                </p>
-                <div className="space-y-4">
-                  {websiteControlFeatures.map((feat, i) => (
-                    <motion.div
-                      key={i}
-                      initial={{ opacity: 0, y: 10 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: i * 0.08 }}
-                      className="flex items-start gap-4 p-4 rounded-xl bg-muted/50 border border-border hover:border-primary/20 transition-colors"
-                    >
-                      <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <ChevronRight className="w-4 h-4 text-primary" />
-                      </div>
-                      <div>
-                        <p className="font-semibold text-foreground text-sm">&quot;{feat.text}&quot;</p>
-                        <p className="text-muted-foreground text-xs mt-0.5">{feat.detail}</p>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
-
-              {/* Demo placeholder */}
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-              >
-                <div className="rounded-2xl border border-border overflow-hidden bg-black">
-                  <video
-                    className="w-full h-auto block"
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                  >
-                    <source src="/videos/zhop-design-demo.mp4" type="video/mp4" />
-                  </video>
-                </div>
-              </motion.div>
-            </div>
-          </div>
-        </section>
+        <ChatSyncSection />
 
         {/* ── Our Solution ── */}
         <section className="relative py-20 lg:py-28 overflow-hidden" style={{ background: 'linear-gradient(135deg, hsl(24 92% 50% / 0.06) 0%, hsl(28 100% 58% / 0.03) 50%, hsl(var(--muted) / 0.3) 100%)' }}>
