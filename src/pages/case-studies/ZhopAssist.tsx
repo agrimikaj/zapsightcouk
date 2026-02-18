@@ -12,6 +12,21 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import NeuralBackground from '@/components/ui/NeuralBackground';
+
+import zhopWelcome from '@/assets/zhop-welcome.png';
+import zhopCategory from '@/assets/zhop-category.png';
+import zhopProduct from '@/assets/zhop-product.png';
+import zhopCheckout from '@/assets/zhop-checkout.png';
+import zhopTransaction from '@/assets/zhop-transaction.png';
+
+const stageImages: Record<string, string> = {
+  welcome: zhopWelcome,
+  category: zhopCategory,
+  product: zhopProduct,
+  checkout: zhopCheckout,
+  service: zhopTransaction,
+};
 
 const stats = [
   { value: '73%', label: 'of shoppers use AI in purchasing decisions', icon: Users },
@@ -136,6 +151,10 @@ const ZhopAssist = () => {
   const [activeStage, setActiveStage] = useState(0);
   const [hoveredPillar, setHoveredPillar] = useState<number | null>(null);
 
+  const scrollToDemo = () => {
+    document.getElementById('zhop-demo-video')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <>
       <Helmet>
@@ -147,8 +166,8 @@ const ZhopAssist = () => {
 
         {/* ── Hero ── */}
         <section className="relative pt-28 pb-20 lg:pt-36 lg:pb-28 overflow-hidden">
-          {/* Background effects */}
           <div className="absolute inset-0 bg-gradient-to-b from-foreground via-foreground/95 to-foreground/90" />
+          <NeuralBackground />
           <div className="absolute inset-0 opacity-20">
             <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/30 rounded-full blur-[120px]" />
             <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-blue-500/20 rounded-full blur-[100px]" />
@@ -184,35 +203,44 @@ const ZhopAssist = () => {
                     Get Started <ArrowRight className="w-4 h-4 ml-2" />
                   </Link>
                 </Button>
-                <Button variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/10 text-base">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="border-white/20 text-white hover:bg-white/10 text-base"
+                  onClick={scrollToDemo}
+                >
                   <Play className="w-4 h-4 mr-2" /> Watch Demo
                 </Button>
               </div>
             </motion.div>
 
-            {/* YouTube Video Placeholder */}
+            {/* Video Banner */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.3 }}
               className="mt-16 max-w-4xl mx-auto"
             >
-              <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-sm aspect-video flex items-center justify-center group cursor-pointer hover:border-primary/30 transition-colors">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-blue-500/5" />
-                <div className="relative z-10 text-center">
-                  <div className="w-20 h-20 rounded-full bg-primary/20 border border-primary/30 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                    <Play className="w-8 h-8 text-primary ml-1" />
-                  </div>
-                  <p className="text-white/50 text-sm font-medium">YouTube Demo Video — Coming Soon</p>
-                </div>
+              <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-black aspect-video">
+                <video
+                  className="w-full h-full object-cover"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  poster=""
+                >
+                  <source src="/videos/zhop-demo.mp4" type="video/mp4" />
+                </video>
               </div>
             </motion.div>
           </div>
         </section>
 
         {/* ── Stats Bar ── */}
-        <section className="py-12 bg-muted/50 border-y border-border">
-          <div className="container mx-auto px-4 lg:px-8">
+        <section className="relative py-12 bg-muted/50 border-y border-border">
+          <NeuralBackground />
+          <div className="container mx-auto px-4 lg:px-8 relative z-10">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {stats.map((stat, i) => {
                 const Icon = stat.icon;
@@ -236,8 +264,9 @@ const ZhopAssist = () => {
         </section>
 
         {/* ── Problem Statement ── */}
-        <section className="py-20 lg:py-28">
-          <div className="container mx-auto px-4 lg:px-8">
+        <section className="relative py-20 lg:py-28">
+          <NeuralBackground />
+          <div className="container mx-auto px-4 lg:px-8 relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -296,8 +325,9 @@ const ZhopAssist = () => {
         </section>
 
         {/* ── Customer Journey — Interactive ── */}
-        <section className="py-20 lg:py-28 bg-foreground">
-          <div className="container mx-auto px-4 lg:px-8">
+        <section className="relative py-20 lg:py-28 bg-foreground">
+          <NeuralBackground />
+          <div className="container mx-auto px-4 lg:px-8 relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -369,16 +399,14 @@ const ZhopAssist = () => {
                     </div>
                   </div>
 
-                  {/* Demo Screen Placeholder */}
+                  {/* Demo Screen with actual images */}
                   <div className="relative">
-                    <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm aspect-[4/3] flex items-center justify-center">
-                      <div className="text-center p-8">
-                        <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${journeyStages[activeStage].color} flex items-center justify-center mx-auto mb-4 shadow-lg`}>
-                          {(() => { const Icon = journeyStages[activeStage].icon; return <Icon className="w-8 h-8 text-white" />; })()}
-                        </div>
-                        <p className="text-white/40 text-sm font-medium">Demo Screen — {journeyStages[activeStage].title}</p>
-                        <p className="text-white/25 text-xs mt-1">Screenshot placeholder</p>
-                      </div>
+                    <div className="rounded-2xl border border-white/10 overflow-hidden bg-white/5 backdrop-blur-sm">
+                      <img
+                        src={stageImages[journeyStages[activeStage].id]}
+                        alt={`${journeyStages[activeStage].title} demo screen`}
+                        className="w-full h-auto object-cover"
+                      />
                     </div>
                   </div>
                 </div>
@@ -388,8 +416,9 @@ const ZhopAssist = () => {
         </section>
 
         {/* ── Chat Controls Website ── */}
-        <section className="py-20 lg:py-28">
-          <div className="container mx-auto px-4 lg:px-8">
+        <section className="relative py-20 lg:py-28">
+          <NeuralBackground />
+          <div className="container mx-auto px-4 lg:px-8 relative z-10">
             <div className="max-w-5xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
@@ -444,8 +473,9 @@ const ZhopAssist = () => {
         </section>
 
         {/* ── Our Solution ── */}
-        <section className="py-20 lg:py-28 bg-muted/30">
-          <div className="container mx-auto px-4 lg:px-8">
+        <section className="relative py-20 lg:py-28 bg-muted/30">
+          <NeuralBackground />
+          <div className="container mx-auto px-4 lg:px-8 relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -507,9 +537,10 @@ const ZhopAssist = () => {
           </div>
         </section>
 
-        {/* ── YouTube Video Banner Placeholder ── */}
-        <section className="py-20 lg:py-28 bg-foreground">
-          <div className="container mx-auto px-4 lg:px-8">
+        {/* ── Demo Video Section ── */}
+        <section id="zhop-demo-video" className="relative py-20 lg:py-28 bg-foreground">
+          <NeuralBackground />
+          <div className="container mx-auto px-4 lg:px-8 relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -518,28 +549,29 @@ const ZhopAssist = () => {
             >
               <span className="text-xs font-semibold uppercase tracking-wider text-primary mb-4 block">See It In Action</span>
               <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
-                Watch Zhop Assist Demo
+                Learn More About ZapSight's Futuristic Shopping Experience
               </h2>
             </motion.div>
 
             <div className="max-w-4xl mx-auto">
-              <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-sm aspect-video flex items-center justify-center group cursor-pointer hover:border-primary/30 transition-colors">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-blue-500/5" />
-                <div className="relative z-10 text-center">
-                  <div className="w-24 h-24 rounded-full bg-primary/20 border-2 border-primary/30 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                    <Play className="w-10 h-10 text-primary ml-1" />
-                  </div>
-                  <p className="text-white/50 text-sm font-medium">YouTube Video Embed — Coming Soon</p>
-                  <p className="text-white/30 text-xs mt-1">Zhop Assist full demo walkthrough</p>
-                </div>
+              <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-black">
+                <video
+                  className="w-full h-auto"
+                  controls
+                  playsInline
+                  poster=""
+                >
+                  <source src="/videos/zhop-demo.mp4" type="video/mp4" />
+                </video>
               </div>
             </div>
           </div>
         </section>
 
         {/* ── Pricing Teaser ── */}
-        <section className="py-20 lg:py-28">
-          <div className="container mx-auto px-4 lg:px-8">
+        <section className="relative py-20 lg:py-28">
+          <NeuralBackground />
+          <div className="container mx-auto px-4 lg:px-8 relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -585,8 +617,9 @@ const ZhopAssist = () => {
         </section>
 
         {/* ── CTA ── */}
-        <section className="py-20 lg:py-28 bg-gradient-to-b from-foreground to-foreground/95">
-          <div className="container mx-auto px-4 lg:px-8">
+        <section className="relative py-20 lg:py-28 bg-gradient-to-b from-foreground to-foreground/95">
+          <NeuralBackground />
+          <div className="container mx-auto px-4 lg:px-8 relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
