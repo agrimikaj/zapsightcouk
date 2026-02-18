@@ -460,9 +460,9 @@ const ZhopAssist = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
               >
-                <div className="rounded-2xl border border-border overflow-hidden bg-black aspect-square">
+                <div className="rounded-2xl border border-border overflow-hidden bg-black">
                   <video
-                    className="w-full h-full object-cover"
+                    className="w-full h-auto block"
                     autoPlay
                     muted
                     loop
