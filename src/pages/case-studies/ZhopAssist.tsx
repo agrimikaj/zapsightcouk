@@ -6,7 +6,7 @@ import {
   ShoppingCart, MessageCircle, Brain, Database, Globe, Zap, 
   ArrowRight, Play, ChevronRight, Users, TrendingUp, Shield,
   Sparkles, Eye, CreditCard, Headphones, Package, BarChart3,
-  Bot, Layers, Plug, DollarSign
+  Bot, Plug, DollarSign
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -152,7 +152,7 @@ const ZhopAssist = () => {
   const [hoveredPillar, setHoveredPillar] = useState<number | null>(null);
 
   const scrollToDemo = () => {
-    document.getElementById('zhop-demo-video')?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('zhop-chat-sync')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -416,7 +416,7 @@ const ZhopAssist = () => {
         </section>
 
         {/* ── Chat Controls Website ── */}
-        <section className="relative py-20 lg:py-28">
+        <section id="zhop-chat-sync" className="relative py-20 lg:py-28">
           <NeuralBackground />
           <div className="container mx-auto px-4 lg:px-8 relative z-10">
             <div className="max-w-5xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
@@ -460,12 +460,16 @@ const ZhopAssist = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
               >
-                <div className="rounded-2xl border border-border bg-muted/30 aspect-square flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <Layers className="w-12 h-12 text-muted-foreground/30 mx-auto mb-4" />
-                    <p className="text-muted-foreground/50 text-sm font-medium">Interactive Demo Screen</p>
-                    <p className="text-muted-foreground/30 text-xs mt-1">Chat ↔ Website sync placeholder</p>
-                  </div>
+                <div className="rounded-2xl border border-border overflow-hidden bg-black aspect-square">
+                  <video
+                    className="w-full h-full object-cover"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                  >
+                    <source src="/videos/zhop-design-demo.mp4" type="video/mp4" />
+                  </video>
                 </div>
               </motion.div>
             </div>
@@ -533,37 +537,6 @@ const ZhopAssist = () => {
                   </motion.div>
                 );
               })}
-            </div>
-          </div>
-        </section>
-
-        {/* ── Demo Video Section ── */}
-        <section id="zhop-demo-video" className="relative py-20 lg:py-28 bg-foreground">
-          <NeuralBackground />
-          <div className="container mx-auto px-4 lg:px-8 relative z-10">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center mb-12"
-            >
-              <span className="text-xs font-semibold uppercase tracking-wider text-primary mb-4 block">See It In Action</span>
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
-                Learn More About ZapSight's Futuristic Shopping Experience
-              </h2>
-            </motion.div>
-
-            <div className="max-w-4xl mx-auto">
-              <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-black">
-                <video
-                  className="w-full h-auto"
-                  controls
-                  playsInline
-                  poster=""
-                >
-                  <source src="/videos/zhop-demo.mp4" type="video/mp4" />
-                </video>
-              </div>
             </div>
           </div>
         </section>
