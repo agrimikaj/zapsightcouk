@@ -477,7 +477,7 @@ const ZhopAssist = () => {
         </section>
 
         {/* ── Our Solution ── */}
-        <section className="relative py-20 lg:py-28 bg-muted/30">
+        <section className="relative py-20 lg:py-28 overflow-hidden" style={{ background: 'linear-gradient(135deg, hsl(24 92% 50% / 0.06) 0%, hsl(28 100% 58% / 0.03) 50%, hsl(var(--muted) / 0.3) 100%)' }}>
           <NeuralBackground />
           <div className="container mx-auto px-4 lg:px-8 relative z-10">
             <motion.div
