@@ -51,7 +51,7 @@ const resources = [
     title: 'CX Curated',
     description: 'Curated collection of the best customer experience insights, trends, and resources — all in one place to help you stay ahead in CX.',
     type: 'Tool',
-    href: 'https://cxcurated.com/',
+    href: 'https://cxcurated.digital/',
   },
   {
     title: 'Agentic AI Architecture Whitepaper',
