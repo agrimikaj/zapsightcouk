@@ -48,6 +48,12 @@ const resources = [
     href: 'https://flashcardsforanything.info/',
   },
   {
+    title: 'CX Curated',
+    description: 'Curated collection of the best customer experience insights, trends, and resources — all in one place to help you stay ahead in CX.',
+    type: 'Tool',
+    href: 'https://cxcurated.com/',
+  },
+  {
     title: 'Agentic AI Architecture Whitepaper',
     description: 'A comprehensive guide to building decision-driven AI systems for enterprise environments.',
     type: 'Whitepaper',
