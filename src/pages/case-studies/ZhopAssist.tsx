@@ -279,8 +279,8 @@ const ZhopAssist = () => {
   return (
     <>
       <Helmet>
-        <title>Zhop Assist — AI Shopping Concierge | ZapSight</title>
-        <meta name="description" content="Transform your website into an AI-powered shopping concierge. Zhop Assist provides agentic commerce experiences that guide customers from discovery to post-purchase." />
+        <title>Shop Assist — AI Shopping Concierge | ZapSight</title>
+        <meta name="description" content="Transform your website into an AI-powered shopping concierge. Shop Assist provides agentic commerce experiences that guide customers from discovery to post-purchase." />
       </Helmet>
       <Navbar />
       <main className="min-h-screen bg-background">
@@ -315,7 +315,7 @@ const ZhopAssist = () => {
 
               <p className="text-lg text-white/60 max-w-2xl mx-auto mb-10 leading-relaxed">
                 Gen Z expects a concierge service, a shopping assistant with a character — not just a chatbot. 
-                Zhop Assist transforms your digital presence into an AI-powered shopping experience.
+                Shop Assist transforms your digital presence into an AI-powered shopping experience.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -460,7 +460,7 @@ const ZhopAssist = () => {
                 A Concierge at Every Stage
               </h2>
               <p className="text-base text-white/60 max-w-xl mx-auto">
-                Click each stage to explore how Zhop Assist transforms the entire shopping journey.
+                Click each stage to explore how Shop Assist transforms the entire shopping journey.
               </p>
             </motion.div>
 
@@ -553,7 +553,7 @@ const ZhopAssist = () => {
                 Built on 30+ Years of Retail Expertise
               </h2>
               <p className="text-base text-muted-foreground max-w-xl mx-auto leading-relaxed">
-                We've combined decades of retail knowledge, data & analytics mastery, and AI-application experience into Zhop Assist.
+                We've combined decades of retail knowledge, data & analytics mastery, and AI-application experience into Shop Assist.
               </p>
             </motion.div>
 
