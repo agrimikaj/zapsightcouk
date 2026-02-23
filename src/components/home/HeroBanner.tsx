@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Clock, TrendingUp, Target, Shield, ArrowLeftRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Clock, TrendingUp, Target, Shield, ArrowLeftRight, ArrowRight, Sparkles } from 'lucide-react';
 import NeuralBackground from '@/components/ui/NeuralBackground';
 
 const usps = [
@@ -100,6 +101,19 @@ const HeroBanner = () => {
               <ArrowLeftRight className="h-5 w-5 text-primary" strokeWidth={1.5} />
               <span className="text-lg lg:text-xl font-semibold text-[hsl(220,10%,75%)] uppercase">Workflows</span>
             </div>
+
+            {/* Featured Solution Banner */}
+            <Link 
+              to="/case-studies/shop-assist"
+              className="group flex items-center gap-3 bg-primary/[0.06] border border-primary/15 rounded-xl px-5 py-3 hover:border-primary/30 transition-all duration-300 w-fit"
+            >
+              <Sparkles className="h-4 w-4 text-primary flex-shrink-0" strokeWidth={1.5} />
+              <span className="text-sm text-[hsl(220,10%,60%)]">
+                <span className="text-primary font-semibold">Featured Solution</span>
+                {' — '}Shop Assist: AI-powered shopping concierge for retail
+              </span>
+              <ArrowRight className="h-4 w-4 text-primary/50 group-hover:text-primary group-hover:translate-x-0.5 transition-all duration-200 flex-shrink-0" strokeWidth={1.5} />
+            </Link>
 
             {/* Trust Indicators */}
             <div className="flex items-center gap-8 pt-2">
