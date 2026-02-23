@@ -16,9 +16,9 @@ const caseStudies = [
     featured: false
   },
   { 
-    id: 'zhop-assist',
-    name: 'Zhop Assist', 
-    href: '/case-studies/zhop-assist',
+    id: 'shop-assist',
+    name: 'Shop Assist', 
+    href: '/case-studies/shop-assist',
     icon: ShoppingCart,
     gradient: 'from-primary to-orange-600',
     description: 'AI-powered shopping concierge',
