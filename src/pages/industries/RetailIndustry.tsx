@@ -39,7 +39,7 @@ const RetailIndustry = () => {
         />
 
         {/* Testimonials Section */}
-        <section className="relative py-16 lg:py-24 overflow-hidden bg-[hsl(220,20%,6%)]">
+        <section id="testimonials" className="relative py-16 lg:py-24 overflow-hidden bg-[hsl(220,20%,6%)]">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-primary/[0.03] rounded-full blur-[120px]" />
 
           <div className="container mx-auto px-4 lg:px-8 relative z-10 max-w-5xl">

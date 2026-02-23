@@ -6,6 +6,7 @@ import ConfessionalBooth from '@/components/home/ConfessionalBooth';
 import ProductsDiagram from '@/components/home/ProductsDiagram';
 import ValuePropositionSection from '@/components/home/ValuePropositionSection';
 import IndustriesSection from '@/components/home/IndustriesSection';
+import ClientLogosSection from '@/components/home/ClientLogosSection';
 import CaseStudiesSection from '@/components/home/CaseStudiesSection';
 import ProgressiveValueOverlay from '@/components/home/ProgressiveValueOverlay';
 
@@ -27,6 +28,7 @@ const Index = () => {
           <ProductsDiagram />
           <ValuePropositionSection />
           <IndustriesSection />
+          <ClientLogosSection />
           <CaseStudiesSection />
         </main>
         <Footer />
