@@ -34,7 +34,7 @@ const ClientLogosSection = () => {
               <motion.div
                 whileHover={{ scale: 1.08 }}
                 transition={{ duration: 0.2 }}
-                className="group w-40 h-24 lg:w-48 lg:h-28 rounded-xl bg-[hsl(220,20%,10%)] border border-[hsl(220,16%,14%)] hover:border-primary/25 flex items-center justify-center p-5 transition-colors duration-300 cursor-pointer"
+                className="group w-48 h-28 lg:w-56 lg:h-32 rounded-xl bg-[hsl(220,20%,10%)] border border-[hsl(220,16%,14%)] hover:border-primary/25 flex items-center justify-center p-3 transition-colors duration-300 cursor-pointer"
                 style={{ boxShadow: '0 0 30px hsl(var(--primary) / 0.02)' }}
               >
                 <img
