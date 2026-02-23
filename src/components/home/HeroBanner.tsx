@@ -102,19 +102,6 @@ const HeroBanner = () => {
               <span className="text-lg lg:text-xl font-semibold text-[hsl(220,10%,75%)] uppercase">Workflows</span>
             </div>
 
-            {/* Featured Solution Banner */}
-            <Link 
-              to="/case-studies/shop-assist"
-              className="group flex items-center gap-3 bg-primary/[0.06] border border-primary/15 rounded-xl px-5 py-3 hover:border-primary/30 transition-all duration-300 w-fit"
-            >
-              <Sparkles className="h-4 w-4 text-primary flex-shrink-0" strokeWidth={1.5} />
-              <span className="text-sm text-[hsl(220,10%,60%)]">
-                <span className="text-primary font-semibold">Featured Solution</span>
-                {' — '}Shop Assist: AI-powered shopping concierge for retail
-              </span>
-              <ArrowRight className="h-4 w-4 text-primary/50 group-hover:text-primary group-hover:translate-x-0.5 transition-all duration-200 flex-shrink-0" strokeWidth={1.5} />
-            </Link>
-
             {/* Trust Indicators */}
             <div className="flex items-center gap-8 pt-2">
               <div className="text-center">
@@ -136,10 +123,31 @@ const HeroBanner = () => {
 
           {/* Right Content - USP Cards */}
           <div 
-            className="relative"
+            className="relative space-y-4"
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
           >
+            {/* Featured Solution Banner */}
+            <Link 
+              to="/case-studies/shop-assist"
+              className="group relative flex items-center gap-3 rounded-2xl px-5 py-3.5 overflow-hidden transition-all duration-300 hover:scale-[1.02]"
+              style={{
+                background: 'linear-gradient(135deg, hsl(var(--primary) / 0.15) 0%, hsl(var(--primary) / 0.05) 100%)',
+                border: '1px solid hsl(var(--primary) / 0.3)',
+                boxShadow: '0 0 30px hsl(var(--primary) / 0.1), inset 0 1px 0 hsl(var(--primary) / 0.15)'
+              }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center flex-shrink-0 relative z-10">
+                <Sparkles className="h-4 w-4 text-primary" strokeWidth={2} />
+              </div>
+              <div className="flex-1 relative z-10">
+                <p className="text-xs font-bold text-primary uppercase tracking-wider">Featured Solution</p>
+                <p className="text-sm text-[hsl(0,0%,85%)]">Shop Assist — AI shopping concierge for retail</p>
+              </div>
+              <ArrowRight className="h-5 w-5 text-primary group-hover:translate-x-1 transition-transform duration-200 flex-shrink-0 relative z-10" strokeWidth={1.5} />
+            </Link>
+
             <div className="relative bg-[hsl(220,20%,8%)] border border-[hsl(220,16%,12%)] rounded-3xl p-8 lg:p-10"
                  style={{ boxShadow: '0 0 60px hsl(var(--primary) / 0.05)' }}>
               {/* Card Header */}
