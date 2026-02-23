@@ -9,14 +9,14 @@ const testimonials = [
     quote: "ZapSight's AI-powered floor analytics transformed how we understand customer behavior across our stores. The real-time insights have driven measurable improvements in both sales performance and customer experience.",
     logo: ashleyLogo,
     logoAlt: "Ashley Furniture logo",
-    attribution: "Retail Operations Leadership",
+    attribution: "Ashley Furniture",
     invertLogo: true,
   },
   {
     quote: "The precision of ZapSight's traffic intelligence gave us clarity we never had before — from peak-hour staffing to layout optimization, every decision is now backed by data.",
     logo: southLogo,
     logoAlt: "1915 South logo",
-    attribution: "Store Management",
+    attribution: "1915 South",
     invertLogo: false,
   },
 ];
