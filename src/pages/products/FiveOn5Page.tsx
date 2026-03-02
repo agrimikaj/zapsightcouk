@@ -39,8 +39,23 @@ const FiveOn5Page = () => {
   return (
     <>
       <Helmet>
-        <title>5on5 - Customer Experience AI Engine | ZapSight</title>
-        <meta name="description" content="5on5 transforms fragmented customer interactions into coherent relationships. A continuity layer where every agent knows the full story." />
+        <title>5on5 - AI Customer Experience Engine | ZapSight</title>
+        <meta name="description" content="5on5 transforms fragmented customer interactions into coherent relationships. Every agent knows the full story — continuity, relevance, and voice in one platform." />
+        <link rel="canonical" href="https://zapsight.co.uk/products/5on5" />
+        <meta property="og:title" content="5on5 - AI Customer Experience Engine | ZapSight" />
+        <meta property="og:description" content="Transform customer interactions into coherent relationships with AI-powered continuity." />
+        <meta property="og:url" content="https://zapsight.co.uk/products/5on5" />
+        <meta property="og:image" content="https://zapsight.co.uk/og-image.png" />
+        <meta property="og:type" content="product" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="5on5 - CX AI Engine | ZapSight" />
+        <meta name="twitter:description" content="AI-powered customer experience with full conversation continuity." />
+        <meta name="twitter:image" content="https://zapsight.co.uk/og-image.png" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "5on5",
+          "applicationCategory": "BusinessApplication", "description": "AI customer experience engine with conversation continuity across channels",
+          "operatingSystem": "Web Browser", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free consultation available" }
+        })}</script>
       </Helmet>
 
       <div className="min-h-screen bg-[hsl(220,20%,6%)]">

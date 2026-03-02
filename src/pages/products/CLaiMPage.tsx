@@ -38,8 +38,23 @@ const CLaiMPage = () => {
   return (
     <>
       <Helmet>
-        <title>CLaiM - AI Claims Analysis & Adjudication Platform | ZapSight</title>
-        <meta name="description" content="CLaiM transforms fragmented transactions into transparent adjudication—rendering every decision traceable from medical reality to policy intent." />
+        <title>CLaiM - AI Claims Analysis & Adjudication | ZapSight</title>
+        <meta name="description" content="CLaiM transforms fragmented insurance claims into transparent adjudication — every decision traceable from medical reality to policy intent. 80% faster processing." />
+        <link rel="canonical" href="https://zapsight.co.uk/products/claim" />
+        <meta property="og:title" content="CLaiM - AI Claims Analysis & Adjudication | ZapSight" />
+        <meta property="og:description" content="Transform insurance claims processing with AI — 80% faster, fully transparent adjudication." />
+        <meta property="og:url" content="https://zapsight.co.uk/products/claim" />
+        <meta property="og:image" content="https://zapsight.co.uk/og-image.png" />
+        <meta property="og:type" content="product" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="CLaiM - AI Claims Platform | ZapSight" />
+        <meta name="twitter:description" content="AI-powered claims adjudication — 80% faster, fully traceable." />
+        <meta name="twitter:image" content="https://zapsight.co.uk/og-image.png" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "CLaiM",
+          "applicationCategory": "BusinessApplication", "description": "AI-powered claims analysis and adjudication platform for insurance",
+          "operatingSystem": "Web Browser", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free consultation available" }
+        })}</script>
       </Helmet>
 
       <div className="min-h-screen bg-[hsl(220,20%,6%)]">

@@ -16,8 +16,18 @@ const Index = () => {
       <Helmet>
         <title>ZapSight - AI Agents That Deliver 6-8X ROI in Weeks</title>
         <meta name="description" content="Build ROI-driven AI agents in 4-6 weeks with ZapSight. 95-99% accuracy, 99.9% uptime. Enterprise AI solutions for Energy, Retail, Manufacturing & Insurance." />
+        <link rel="canonical" href="https://zapsight.co.uk/" />
         <meta property="og:title" content="ZapSight - Transform Data Into Intelligent AI Agents" />
         <meta property="og:description" content="Deploy AI agents that deliver 6-8X ROI in 4-6 weeks. Enterprise solutions with 95-99% accuracy for Energy, Retail, Manufacturing, Security & Insurance." />
+        <meta property="og:url" content="https://zapsight.co.uk/" />
+        <meta property="og:image" content="https://zapsight.co.uk/og-image.png" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="ZapSight" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@ZapSight" />
+        <meta name="twitter:title" content="ZapSight - AI Agents That Deliver 6-8X ROI" />
+        <meta name="twitter:description" content="Build ROI-driven AI agents in 4-6 weeks. 95-99% accuracy, 99.9% uptime." />
+        <meta name="twitter:image" content="https://zapsight.co.uk/og-image.png" />
       </Helmet>
 
       <div className="min-h-screen bg-background relative">

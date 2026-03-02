@@ -5,8 +5,14 @@ const Console = () => {
   return (
     <>
       <Helmet>
-        <title>My Console | ZapSight</title>
+        <title>AI Console Dashboard | ZapSight</title>
         <meta name="description" content="ZapSight Console - Create a custom dashboard powered by AI-driven downloadable evaluation and insights." />
+        <link rel="canonical" href="https://zapsight.co.uk/console" />
+        <meta property="og:title" content="AI Console Dashboard | ZapSight" />
+        <meta property="og:description" content="Create a custom dashboard powered by AI-driven evaluation and insights." />
+        <meta property="og:url" content="https://zapsight.co.uk/console" />
+        <meta property="og:image" content="https://zapsight.co.uk/og-image.png" />
+        <meta property="og:type" content="website" />
       </Helmet>
       <Navbar />
       <main className="min-h-screen bg-background pt-16 lg:pt-20">

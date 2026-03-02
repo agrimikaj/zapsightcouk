@@ -51,8 +51,18 @@ const Contact = () => {
   return (
     <>
       <Helmet>
-        <title>Contact Us - ZapSight</title>
-        <meta name="description" content="Get in touch with ZapSight. Schedule a discovery call to discuss your AI and data transformation needs." />
+        <title>Contact Us - ZapSight | Book a Free AI Consultation</title>
+        <meta name="description" content="Get in touch with ZapSight. Schedule a free discovery call to discuss your AI and data transformation needs. Response within 24 hours." />
+        <link rel="canonical" href="https://zapsight.co.uk/contact" />
+        <meta property="og:title" content="Contact Us - ZapSight | Book a Free AI Consultation" />
+        <meta property="og:description" content="Schedule a free discovery call to discuss your AI and data transformation needs. Response within 24 hours." />
+        <meta property="og:url" content="https://zapsight.co.uk/contact" />
+        <meta property="og:image" content="https://zapsight.co.uk/og-image.png" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Contact Us - ZapSight" />
+        <meta name="twitter:description" content="Schedule a free AI discovery call with ZapSight." />
+        <meta name="twitter:image" content="https://zapsight.co.uk/og-image.png" />
       </Helmet>
 
       <div className="min-h-screen bg-[hsl(220,20%,6%)]">

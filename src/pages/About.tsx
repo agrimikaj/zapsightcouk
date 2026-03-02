@@ -12,8 +12,18 @@ const About = () => {
   return (
     <>
       <Helmet>
-        <title>About Us - ZapSight</title>
+        <title>About Us - ZapSight | Enterprise AI Solutions Company</title>
         <meta name="description" content="Learn about ZapSight's mission to transform data into intelligent AI agents. Meet our leadership team and discover our global presence." />
+        <link rel="canonical" href="https://zapsight.co.uk/about" />
+        <meta property="og:title" content="About Us - ZapSight | Enterprise AI Solutions Company" />
+        <meta property="og:description" content="Learn about ZapSight's mission to transform data into intelligent AI agents. Meet our leadership team and discover our global presence." />
+        <meta property="og:url" content="https://zapsight.co.uk/about" />
+        <meta property="og:image" content="https://zapsight.co.uk/og-image.png" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About Us - ZapSight" />
+        <meta name="twitter:description" content="Learn about ZapSight's mission to transform data into intelligent AI agents." />
+        <meta name="twitter:image" content="https://zapsight.co.uk/og-image.png" />
       </Helmet>
 
       <div className="min-h-screen bg-[hsl(220,20%,6%)]">

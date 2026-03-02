@@ -13,9 +13,19 @@ const CaseStudies = () => {
   return (
     <>
       <Helmet>
-        <title>Case Studies - ZapSight</title>
+        <title>AI Case Studies - Real Enterprise Results | ZapSight</title>
         <meta name="description" content="Explore how ZapSight has helped enterprises across industries transform their operations with AI agents. Real results, measurable ROI." />
+        <link rel="canonical" href="https://zapsight.co.uk/case-studies" />
         <link rel="alternate" type="application/rss+xml" title="ZapSight Case Studies RSS Feed" href={RSS_FEED_URL} />
+        <meta property="og:title" content="AI Case Studies - Real Enterprise Results | ZapSight" />
+        <meta property="og:description" content="See how enterprises achieve 6-8X ROI with ZapSight AI agents. Real results, measurable outcomes." />
+        <meta property="og:url" content="https://zapsight.co.uk/case-studies" />
+        <meta property="og:image" content="https://zapsight.co.uk/og-image.png" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="AI Case Studies | ZapSight" />
+        <meta name="twitter:description" content="See how enterprises achieve 6-8X ROI with ZapSight AI agents." />
+        <meta name="twitter:image" content="https://zapsight.co.uk/og-image.png" />
       </Helmet>
 
       <div className="min-h-screen bg-[hsl(220,20%,6%)]">

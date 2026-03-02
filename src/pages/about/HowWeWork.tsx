@@ -53,8 +53,18 @@ const HowWeWork = () => {
   return (
     <>
       <Helmet>
-        <title>How We Work - ZapSight</title>
-        <meta name="description" content="Discover ZapSight's proven methodology for delivering AI solutions. From discovery to deployment in 4-6 weeks." />
+        <title>How We Work - AI Delivery in 4-6 Weeks | ZapSight</title>
+        <meta name="description" content="Discover ZapSight's proven methodology for delivering AI solutions. From discovery to deployment in 4-6 weeks with measurable ROI." />
+        <link rel="canonical" href="https://zapsight.co.uk/about/how-we-work" />
+        <meta property="og:title" content="How We Work - AI Delivery in 4-6 Weeks | ZapSight" />
+        <meta property="og:description" content="Discover ZapSight's proven methodology for delivering AI solutions from discovery to deployment in 4-6 weeks." />
+        <meta property="og:url" content="https://zapsight.co.uk/about/how-we-work" />
+        <meta property="og:image" content="https://zapsight.co.uk/og-image.png" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="How We Work | ZapSight" />
+        <meta name="twitter:description" content="ZapSight's proven AI delivery methodology — discovery to deployment in 4-6 weeks." />
+        <meta name="twitter:image" content="https://zapsight.co.uk/og-image.png" />
       </Helmet>
 
       <div className="min-h-screen bg-[hsl(220,20%,6%)]">

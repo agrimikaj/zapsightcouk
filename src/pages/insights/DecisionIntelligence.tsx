@@ -9,10 +9,24 @@
  const DecisionIntelligence = () => {
    return (
      <>
-       <Helmet>
-         <title>ZapSight: A Decision Intelligence Environment - ZapSight</title>
-         <meta name="description" content="ZapSight is a decision intelligence environment for AI that holds up in the real world. Decisions that are plausible, coherent, and legitimate." />
-       </Helmet>
+        <Helmet>
+          <title>Decision Intelligence Environment for Enterprise AI | ZapSight</title>
+          <meta name="description" content="ZapSight is a decision intelligence environment for AI that holds up in the real world. Decisions that are plausible, coherent, and legitimate." />
+          <link rel="canonical" href="https://zapsight.co.uk/insights/decision-intelligence" />
+          <meta property="og:title" content="Decision Intelligence Environment | ZapSight" />
+          <meta property="og:description" content="A decision intelligence environment for AI that holds up in the real world." />
+          <meta property="og:url" content="https://zapsight.co.uk/insights/decision-intelligence" />
+          <meta property="og:image" content="https://zapsight.co.uk/og-image.png" />
+          <meta property="og:type" content="article" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:image" content="https://zapsight.co.uk/og-image.png" />
+          <script type="application/ld+json">{JSON.stringify({
+            "@context": "https://schema.org", "@type": "Article",
+            "headline": "ZapSight: A Decision Intelligence Environment for AI That Holds Up in the Real World",
+            "datePublished": "2025-01-15", "author": { "@type": "Organization", "name": "ZapSight" },
+            "publisher": { "@type": "Organization", "name": "ZapSight", "logo": { "@type": "ImageObject", "url": "https://zapsight.co.uk/favicon.png" } }
+          })}</script>
+        </Helmet>
  
        <div className="min-h-screen bg-[hsl(220,20%,6%)]">
          <Navbar />

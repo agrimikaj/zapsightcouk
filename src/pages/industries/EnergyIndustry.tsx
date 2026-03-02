@@ -52,8 +52,16 @@ const EnergyIndustry = () => {
   return (
     <>
       <Helmet>
-        <title>AI in Energy Sector | ZapSight</title>
-        <meta name="description" content="Specialized AI agents for the energy sector covering project origination to operations and maintenance." />
+        <title>AI for Energy Sector - Solar, Wind & Renewables | ZapSight</title>
+        <meta name="description" content="Purpose-built AI agents for the energy sector covering project origination, construction monitoring, and O&M. 60% renewable growth enablement." />
+        <link rel="canonical" href="https://zapsight.co.uk/industries/energy" />
+        <meta property="og:title" content="AI for Energy Sector | ZapSight" />
+        <meta property="og:description" content="Purpose-built AI agents for the full energy project lifecycle — origination to operations." />
+        <meta property="og:url" content="https://zapsight.co.uk/industries/energy" />
+        <meta property="og:image" content="https://zapsight.co.uk/og-image.png" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://zapsight.co.uk/og-image.png" />
       </Helmet>
       
       <div className="min-h-screen bg-[hsl(220,20%,6%)]">

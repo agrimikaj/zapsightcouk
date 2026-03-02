@@ -52,8 +52,16 @@ const InsuranceIndustry = () => {
   return (
     <>
       <Helmet>
-        <title>AI in Insurance | ZapSight</title>
-        <meta name="description" content="AI-powered insurance solutions for claims processing, underwriting automation, and fraud detection." />
+        <title>AI for Insurance - Claims, Underwriting & Fraud | ZapSight</title>
+        <meta name="description" content="AI-powered insurance automation — 80% faster claims processing, 35% cost savings in underwriting, and intelligent fraud detection across the value chain." />
+        <link rel="canonical" href="https://zapsight.co.uk/industries/insurance" />
+        <meta property="og:title" content="AI for Insurance | ZapSight" />
+        <meta property="og:description" content="Intelligent automation for claims, underwriting, and fraud detection." />
+        <meta property="og:url" content="https://zapsight.co.uk/industries/insurance" />
+        <meta property="og:image" content="https://zapsight.co.uk/og-image.png" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://zapsight.co.uk/og-image.png" />
       </Helmet>
       
       <div className="min-h-screen bg-[hsl(220,20%,6%)]">

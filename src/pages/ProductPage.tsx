@@ -39,7 +39,17 @@ const ProductPage = () => {
     <>
       <Helmet>
         <title>{product.name} - {product.tagline} | ZapSight</title>
-        <meta name="description" content={product.heroDescription} />
+        <meta name="description" content={product.heroDescription.slice(0, 155)} />
+        <link rel="canonical" href={`https://zapsight.co.uk/products/${product.id}`} />
+        <meta property="og:title" content={`${product.name} - ${product.tagline} | ZapSight`} />
+        <meta property="og:description" content={product.heroDescription.slice(0, 155)} />
+        <meta property="og:url" content={`https://zapsight.co.uk/products/${product.id}`} />
+        <meta property="og:image" content="https://zapsight.co.uk/og-image.png" />
+        <meta property="og:type" content="product" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`${product.name} | ZapSight`} />
+        <meta name="twitter:description" content={product.tagline} />
+        <meta name="twitter:image" content="https://zapsight.co.uk/og-image.png" />
       </Helmet>
 
       <div className="min-h-screen bg-[hsl(220,20%,6%)]">

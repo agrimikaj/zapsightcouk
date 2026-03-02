@@ -9,10 +9,24 @@
  const FutureOfBI = () => {
    return (
      <>
-       <Helmet>
-         <title>The Future of Business Intelligence is Here, and It's Powered by AI - ZapSight</title>
-         <meta name="description" content="Discover how AI-powered business intelligence transforms raw data into strategic, actionable insights with predictive analytics." />
-       </Helmet>
+        <Helmet>
+          <title>Future of Business Intelligence Powered by AI | ZapSight</title>
+          <meta name="description" content="Discover how AI-powered business intelligence transforms raw data into strategic, actionable insights with predictive analytics and autonomous agents." />
+          <link rel="canonical" href="https://zapsight.co.uk/insights/future-of-bi" />
+          <meta property="og:title" content="Future of Business Intelligence Powered by AI | ZapSight" />
+          <meta property="og:description" content="How AI-powered BI transforms raw data into strategic, actionable insights." />
+          <meta property="og:url" content="https://zapsight.co.uk/insights/future-of-bi" />
+          <meta property="og:image" content="https://zapsight.co.uk/og-image.png" />
+          <meta property="og:type" content="article" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:image" content="https://zapsight.co.uk/og-image.png" />
+          <script type="application/ld+json">{JSON.stringify({
+            "@context": "https://schema.org", "@type": "Article",
+            "headline": "The Future of Business Intelligence is Here, and It's Powered by AI",
+            "datePublished": "2025-01-15", "author": { "@type": "Organization", "name": "ZapSight" },
+            "publisher": { "@type": "Organization", "name": "ZapSight", "logo": { "@type": "ImageObject", "url": "https://zapsight.co.uk/favicon.png" } }
+          })}</script>
+        </Helmet>
  
        <div className="min-h-screen bg-[hsl(220,20%,6%)]">
          <Navbar />

@@ -132,7 +132,22 @@ const AIVIPage = () => {
     <>
       <Helmet>
         <title>AIVI - AI Visibility & Insight Platform | ZapSight</title>
-        <meta name="description" content="AIVI translates corporate identity into AI-native comprehension—ensuring accurate brand representation when customers ask, not merely indexed when they search." />
+        <meta name="description" content="AIVI ensures accurate brand representation in AI answers. Monitor visibility across ChatGPT, Gemini, Claude — 80% more answer inclusion, 60% less misrepresentation." />
+        <link rel="canonical" href="https://zapsight.co.uk/products/aivi" />
+        <meta property="og:title" content="AIVI - AI Visibility & Insight Platform | ZapSight" />
+        <meta property="og:description" content="Ensure accurate brand representation across ChatGPT, Gemini, Claude and other AI answer engines." />
+        <meta property="og:url" content="https://zapsight.co.uk/products/aivi" />
+        <meta property="og:image" content="https://zapsight.co.uk/og-image.png" />
+        <meta property="og:type" content="product" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="AIVI - AI Visibility Platform | ZapSight" />
+        <meta name="twitter:description" content="Monitor and optimize your brand's presence across AI answer engines." />
+        <meta name="twitter:image" content="https://zapsight.co.uk/og-image.png" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "AIVI",
+          "applicationCategory": "BusinessApplication", "description": "AI Visibility & Insight platform for brand monitoring across LLMs and answer engines",
+          "operatingSystem": "Web Browser", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free consultation available" }
+        })}</script>
       </Helmet>
 
       <div className="min-h-screen bg-[hsl(220,20%,6%)]">

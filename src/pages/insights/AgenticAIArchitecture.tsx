@@ -9,10 +9,24 @@
  const AgenticAIArchitecture = () => {
    return (
      <>
-       <Helmet>
-         <title>From Data to Decisions: Agentic AI Architecture - ZapSight</title>
-         <meta name="description" content="Learn how Agentic AI Architecture powers the next generation of business intelligence, moving beyond dashboards toward decision-driven systems." />
-       </Helmet>
+        <Helmet>
+          <title>Agentic AI Architecture for Business Intelligence | ZapSight</title>
+          <meta name="description" content="How Agentic AI Architecture powers the next generation of business intelligence — moving beyond dashboards toward decision-driven systems." />
+          <link rel="canonical" href="https://zapsight.co.uk/insights/agentic-ai-architecture" />
+          <meta property="og:title" content="Agentic AI Architecture for Business Intelligence | ZapSight" />
+          <meta property="og:description" content="How Agentic AI Architecture powers the next generation of business intelligence." />
+          <meta property="og:url" content="https://zapsight.co.uk/insights/agentic-ai-architecture" />
+          <meta property="og:image" content="https://zapsight.co.uk/og-image.png" />
+          <meta property="og:type" content="article" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:image" content="https://zapsight.co.uk/og-image.png" />
+          <script type="application/ld+json">{JSON.stringify({
+            "@context": "https://schema.org", "@type": "Article",
+            "headline": "From Data to Decisions: How Agentic AI Architecture Powers Business Intelligence",
+            "datePublished": "2025-01-15", "author": { "@type": "Organization", "name": "ZapSight" },
+            "publisher": { "@type": "Organization", "name": "ZapSight", "logo": { "@type": "ImageObject", "url": "https://zapsight.co.uk/favicon.png" } }
+          })}</script>
+        </Helmet>
  
        <div className="min-h-screen bg-[hsl(220,20%,6%)]">
          <Navbar />

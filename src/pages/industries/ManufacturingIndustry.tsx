@@ -52,8 +52,16 @@ const ManufacturingIndustry = () => {
   return (
     <>
       <Helmet>
-        <title>AI in Manufacturing | ZapSight</title>
-        <meta name="description" content="AI-powered solutions for manufacturing operations, supply chain optimization, and quality control." />
+        <title>AI for Manufacturing - Industry 4.0 Intelligence | ZapSight</title>
+        <meta name="description" content="AI-powered manufacturing solutions for production optimization, quality assurance, and supply chain management. 45% less downtime, 99.5% defect detection." />
+        <link rel="canonical" href="https://zapsight.co.uk/industries/manufacturing" />
+        <meta property="og:title" content="AI for Manufacturing | ZapSight" />
+        <meta property="og:description" content="Industry 4.0 AI — production optimization, quality control, supply chain intelligence." />
+        <meta property="og:url" content="https://zapsight.co.uk/industries/manufacturing" />
+        <meta property="og:image" content="https://zapsight.co.uk/og-image.png" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://zapsight.co.uk/og-image.png" />
       </Helmet>
       
       <div className="min-h-screen bg-[hsl(220,20%,6%)]">

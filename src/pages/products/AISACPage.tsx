@@ -38,8 +38,23 @@ const AISACPage = () => {
   return (
     <>
       <Helmet>
-        <title>AISAC - AI Situation Awareness & Alerting Command | ZapSight</title>
-        <meta name="description" content="AISAC transforms distributed sensor chaos into coherent command—creating an accountability trail between physical events and decisive action." />
+        <title>AISAC - AI Security Awareness & Command Platform | ZapSight</title>
+        <meta name="description" content="AISAC transforms distributed sensor chaos into coherent command — real-time AI-powered security with sub-100ms alert processing and 10K+ events/hour." />
+        <link rel="canonical" href="https://zapsight.co.uk/products/aisac" />
+        <meta property="og:title" content="AISAC - AI Security Awareness & Command | ZapSight" />
+        <meta property="og:description" content="Transform security operations from reactive to proactive with AI-powered real-time intelligence." />
+        <meta property="og:url" content="https://zapsight.co.uk/products/aisac" />
+        <meta property="og:image" content="https://zapsight.co.uk/og-image.png" />
+        <meta property="og:type" content="product" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="AISAC - AI Security Platform | ZapSight" />
+        <meta name="twitter:description" content="Real-time AI security with sub-100ms alert processing." />
+        <meta name="twitter:image" content="https://zapsight.co.uk/og-image.png" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "AISAC",
+          "applicationCategory": "SecurityApplication", "description": "AI-powered security awareness and command platform with real-time threat detection",
+          "operatingSystem": "Web Browser", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free consultation available" }
+        })}</script>
       </Helmet>
 
       <div className="min-h-screen bg-[hsl(220,20%,6%)]">
