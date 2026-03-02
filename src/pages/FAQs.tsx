@@ -65,8 +65,18 @@ const FAQs = () => {
   return (
     <>
       <Helmet>
-        <title>FAQs - ZapSight</title>
-        <meta name="description" content="Frequently asked questions about ZapSight's AI solutions, engagement process, and how we help enterprises transform with AI agents." />
+        <title>FAQs - ZapSight | AI Solutions Questions Answered</title>
+        <meta name="description" content="Frequently asked questions about ZapSight's AI solutions, engagement process, ROI expectations, and how we help enterprises transform with AI agents." />
+        <link rel="canonical" href="https://zapsight.co.uk/faqs" />
+        <meta property="og:title" content="FAQs - ZapSight | AI Solutions Questions Answered" />
+        <meta property="og:description" content="Get answers about ZapSight's AI solutions, engagement timelines, ROI, and enterprise transformation." />
+        <meta property="og:url" content="https://zapsight.co.uk/faqs" />
+        <meta property="og:image" content="https://zapsight.co.uk/og-image.png" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="FAQs - ZapSight" />
+        <meta name="twitter:description" content="Get answers about ZapSight's AI solutions and enterprise transformation." />
+        <meta name="twitter:image" content="https://zapsight.co.uk/og-image.png" />
         <script type="application/ld+json">
           {JSON.stringify(faqSchema)}
         </script>

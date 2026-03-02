@@ -52,8 +52,16 @@ const SecurityIndustry = () => {
   return (
     <>
       <Helmet>
-        <title>AI in Security | ZapSight</title>
-        <meta name="description" content="Advanced AI-powered security solutions for threat detection, surveillance analytics, and risk management." />
+        <title>AI for Security - Threat Detection & Surveillance | ZapSight</title>
+        <meta name="description" content="Advanced AI security solutions — 90% faster threat detection, 75% fewer false alarms. Video analytics, behavioural analysis, and automated incident response." />
+        <link rel="canonical" href="https://zapsight.co.uk/industries/security" />
+        <meta property="og:title" content="AI for Security | ZapSight" />
+        <meta property="og:description" content="AI-powered threat detection, surveillance analytics, and automated incident response." />
+        <meta property="og:url" content="https://zapsight.co.uk/industries/security" />
+        <meta property="og:image" content="https://zapsight.co.uk/og-image.png" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://zapsight.co.uk/og-image.png" />
       </Helmet>
       
       <div className="min-h-screen bg-[hsl(220,20%,6%)]">

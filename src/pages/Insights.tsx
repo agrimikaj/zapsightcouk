@@ -87,8 +87,18 @@ const Insights = () => {
   return (
     <>
       <Helmet>
-        <title>Insights - ZapSight</title>
-        <meta name="description" content="Explore ZapSight's insights on AI, data engineering, and enterprise transformation. Blogs, whitepapers, and industry analysis." />
+        <title>AI Insights & Resources | ZapSight Knowledge Hub</title>
+        <meta name="description" content="Explore ZapSight's insights on agentic AI, decision intelligence, and enterprise transformation. Blogs, videos, and industry analysis." />
+        <link rel="canonical" href="https://zapsight.co.uk/insights" />
+        <meta property="og:title" content="AI Insights & Resources | ZapSight Knowledge Hub" />
+        <meta property="og:description" content="Explore ZapSight's insights on agentic AI, decision intelligence, and enterprise transformation." />
+        <meta property="og:url" content="https://zapsight.co.uk/insights" />
+        <meta property="og:image" content="https://zapsight.co.uk/og-image.png" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="AI Insights & Resources | ZapSight" />
+        <meta name="twitter:description" content="Explore ZapSight's insights on agentic AI and enterprise transformation." />
+        <meta name="twitter:image" content="https://zapsight.co.uk/og-image.png" />
       </Helmet>
 
       <div className="min-h-screen bg-[hsl(220,20%,6%)]">

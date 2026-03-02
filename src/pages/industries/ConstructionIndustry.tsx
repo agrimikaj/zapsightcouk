@@ -52,8 +52,16 @@ const ConstructionIndustry = () => {
   return (
     <>
       <Helmet>
-        <title>AI in Construction | ZapSight</title>
-        <meta name="description" content="AI-powered solutions for construction project management, resource planning, and safety compliance." />
+        <title>AI for Construction - Project Management & Safety | ZapSight</title>
+        <meta name="description" content="AI-powered construction solutions — 35% faster project delivery, 25% cost reduction. Smart project management, resource planning, and safety monitoring." />
+        <link rel="canonical" href="https://zapsight.co.uk/industries/construction" />
+        <meta property="og:title" content="AI for Construction | ZapSight" />
+        <meta property="og:description" content="AI-powered project management, resource planning, and safety monitoring." />
+        <meta property="og:url" content="https://zapsight.co.uk/industries/construction" />
+        <meta property="og:image" content="https://zapsight.co.uk/og-image.png" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://zapsight.co.uk/og-image.png" />
       </Helmet>
       
       <div className="min-h-screen bg-[hsl(220,20%,6%)]">

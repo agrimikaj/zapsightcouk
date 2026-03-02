@@ -279,8 +279,23 @@ const ZhopAssist = () => {
   return (
     <>
       <Helmet>
-        <title>Shop Assist — AI Shopping Concierge | ZapSight</title>
-        <meta name="description" content="Transform your website into an AI-powered shopping concierge. Shop Assist provides agentic commerce experiences that guide customers from discovery to post-purchase." />
+        <title>Shop Assist — AI Shopping Concierge Case Study | ZapSight</title>
+        <meta name="description" content="How Shop Assist transforms ecommerce with AI-powered shopping concierge. 73% of shoppers use AI in purchasing decisions. From discovery to post-purchase." />
+        <link rel="canonical" href="https://zapsight.co.uk/case-studies/shop-assist" />
+        <meta property="og:title" content="Shop Assist — AI Shopping Concierge | ZapSight" />
+        <meta property="og:description" content="Transform your website into an AI-powered shopping concierge. Guide customers from discovery to post-purchase." />
+        <meta property="og:url" content="https://zapsight.co.uk/case-studies/shop-assist" />
+        <meta property="og:image" content="https://zapsight.co.uk/og-image.png" />
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Shop Assist — AI Commerce Case Study | ZapSight" />
+        <meta name="twitter:description" content="AI-powered shopping concierge — 73% of shoppers use AI in purchasing decisions." />
+        <meta name="twitter:image" content="https://zapsight.co.uk/og-image.png" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org", "@type": "Article", "headline": "Shop Assist — AI Shopping Concierge",
+          "description": "Transform your website into an AI-powered shopping concierge", "author": { "@type": "Organization", "name": "ZapSight" },
+          "publisher": { "@type": "Organization", "name": "ZapSight", "logo": { "@type": "ImageObject", "url": "https://zapsight.co.uk/favicon.png" } }
+        })}</script>
       </Helmet>
       <Navbar />
       <main className="min-h-screen bg-background">

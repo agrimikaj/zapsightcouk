@@ -9,10 +9,24 @@
  const SolarDataCulture = () => {
    return (
      <>
-       <Helmet>
-         <title>How Solar Infrastructure Leaders Killed the "File a Ticket" Data Culture - ZapSight</title>
-         <meta name="description" content="Inside a deployment that turned 5 disparate systems and 100+ database tables into a 6-8x ROI — in under a month." />
-       </Helmet>
+        <Helmet>
+          <title>Solar Infrastructure AI: 6-8X ROI in Under a Month | ZapSight</title>
+          <meta name="description" content="How solar infrastructure leaders turned 5 disparate systems and 100+ database tables into a 6-8x ROI with AI — in under a month." />
+          <link rel="canonical" href="https://zapsight.co.uk/insights/solar-data-culture" />
+          <meta property="og:title" content="Solar Infrastructure AI: 6-8X ROI in Under a Month | ZapSight" />
+          <meta property="og:description" content="5 disparate systems, 100+ tables, 6-8x ROI — in under a month." />
+          <meta property="og:url" content="https://zapsight.co.uk/insights/solar-data-culture" />
+          <meta property="og:image" content="https://zapsight.co.uk/og-image.png" />
+          <meta property="og:type" content="article" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:image" content="https://zapsight.co.uk/og-image.png" />
+          <script type="application/ld+json">{JSON.stringify({
+            "@context": "https://schema.org", "@type": "Article",
+            "headline": "How Solar Infrastructure Leaders Killed the 'File a Ticket' Data Culture",
+            "datePublished": "2025-01-15", "author": { "@type": "Organization", "name": "ZapSight" },
+            "publisher": { "@type": "Organization", "name": "ZapSight", "logo": { "@type": "ImageObject", "url": "https://zapsight.co.uk/favicon.png" } }
+          })}</script>
+        </Helmet>
  
        <div className="min-h-screen bg-[hsl(220,20%,6%)]">
          <Navbar />

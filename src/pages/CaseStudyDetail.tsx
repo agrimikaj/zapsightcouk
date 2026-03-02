@@ -23,8 +23,18 @@ const CaseStudyDetail = () => {
   return (
     <>
       <Helmet>
-        <title>{caseStudy.title} - Case Study | ZapSight</title>
+        <title>{caseStudy.title} - AI Case Study | ZapSight</title>
         <meta name="description" content={caseStudy.description} />
+        <link rel="canonical" href={`https://zapsight.co.uk/case-studies/${caseStudyId}`} />
+        <meta property="og:title" content={`${caseStudy.title} | ZapSight Case Study`} />
+        <meta property="og:description" content={caseStudy.description} />
+        <meta property="og:url" content={`https://zapsight.co.uk/case-studies/${caseStudyId}`} />
+        <meta property="og:image" content="https://zapsight.co.uk/og-image.png" />
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`${caseStudy.title} | ZapSight`} />
+        <meta name="twitter:description" content={caseStudy.description} />
+        <meta name="twitter:image" content="https://zapsight.co.uk/og-image.png" />
       </Helmet>
 
       <div className="min-h-screen bg-[hsl(220,20%,6%)]">

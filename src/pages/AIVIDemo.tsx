@@ -105,7 +105,13 @@ const AIVIDemo = () => {
     <>
       <Helmet>
         <title>AIVI Demo - AI Visibility Intelligence Dashboard | ZapSight</title>
-        <meta name="description" content="Interactive demo of AIVI - Monitor your brand's presence across AI systems, LLMs, and answer engines." />
+        <meta name="description" content="Interactive demo of AIVI - Monitor your brand's presence across AI systems, LLMs, and answer engines in real-time." />
+        <link rel="canonical" href="https://zapsight.co.uk/demo/aivi" />
+        <meta property="og:title" content="AIVI Demo - AI Visibility Intelligence Dashboard | ZapSight" />
+        <meta property="og:description" content="Interactive demo of AIVI - Monitor your brand's presence across AI systems and answer engines." />
+        <meta property="og:url" content="https://zapsight.co.uk/demo/aivi" />
+        <meta property="og:image" content="https://zapsight.co.uk/og-image.png" />
+        <meta property="og:type" content="website" />
       </Helmet>
 
       <div className="min-h-screen bg-[hsl(30,25%,96%)]">
