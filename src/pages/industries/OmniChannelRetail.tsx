@@ -489,13 +489,13 @@ const OmniChannelRetail = () => {
         </section>
 
         {/* ── CTA ── */}
-        <section className="relative py-16 lg:py-24 overflow-hidden">
+        <section className="relative py-10 lg:py-14 overflow-hidden">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-primary/[0.05] rounded-full blur-[140px]" />
           <div className="container mx-auto px-4 lg:px-8 relative z-10 max-w-3xl text-center">
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[hsl(0,0%,97%)] mb-6">
+            <h2 className="font-display text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-[hsl(0,0%,97%)] mb-5">
               Ready to Lead <span className="text-primary">AI-Native Commerce?</span>
             </h2>
-            <p className="text-[hsl(220,10%,55%)] text-lg mb-10 max-w-xl mx-auto">
+            <p className="text-[hsl(220,10%,55%)] text-base mb-8 max-w-xl mx-auto">
               Let's build your intelligent commerce infrastructure — from concierge to agentic visibility.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
