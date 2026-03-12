@@ -143,7 +143,7 @@ const OmniChannelRetail = () => {
       <main className="min-h-screen bg-[hsl(220,20%,6%)] pt-16 lg:pt-20">
 
         {/* ── HERO ── */}
-        <section className="relative py-20 lg:py-32 overflow-hidden">
+        <section className="relative py-16 lg:py-24 overflow-hidden">
           {/* ambient glow */}
           <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] bg-primary/[0.06] rounded-full blur-[160px]" />
           <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-blue-500/[0.03] rounded-full blur-[120px]" />
