@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 const industries = [
   { 
     id: 'retail',
-    name: 'Retail', 
+    name: 'Furniture Retail', 
     href: '/industries/retail',
     icon: Store,
     gradient: 'from-pink-500 to-rose-500',
