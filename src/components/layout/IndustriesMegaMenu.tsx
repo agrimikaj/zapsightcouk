@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, ArrowRight, Store, Factory, HardHat, Zap, Shield, Building2 } from 'lucide-react';
+import { ChevronDown, ArrowRight, Store, Factory, HardHat, Zap, Shield, Building2, ShoppingCart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const industries = [
