@@ -236,12 +236,12 @@ const ManufacturingIndustry = () => {
                             </div>
                           </div>
 
-                          <div className="flex items-center gap-4">
-                            <div className="bg-primary/10 border border-primary/15 rounded-xl px-5 py-3">
+                          <div className="flex items-center gap-4 flex-wrap">
+                            <div className="bg-[hsl(220,20%,10%)] border border-[hsl(220,16%,14%)] rounded-xl px-5 py-3">
                               <p className="font-display text-2xl font-bold text-primary">{uc.impact.value}</p>
                               <p className="text-xs text-background/50 uppercase tracking-wider">{uc.impact.label}</p>
                             </div>
-                            <p className="text-sm text-primary/70 italic">{uc.secondaryImpact}</p>
+                            <p className="text-sm text-background/40 italic max-w-[200px]">{uc.secondaryImpact}</p>
                           </div>
                         </div>
 
