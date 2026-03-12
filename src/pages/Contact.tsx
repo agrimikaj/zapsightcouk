@@ -148,6 +148,33 @@ const Contact = () => {
 
                   {/* Contact Info */}
                   <div className="space-y-6">
+                    {/* Blake Austin Card */}
+                    <div className="bg-[hsl(220,20%,8%)] border border-[hsl(220,16%,12%)] rounded-3xl p-8"
+                         style={{ boxShadow: '0 0 40px hsl(var(--primary) / 0.02)' }}>
+                      <div className="flex items-center gap-4 mb-5">
+                        <div className="w-16 h-16 rounded-2xl bg-primary/15 border border-primary/20 flex items-center justify-center overflow-hidden">
+                          <img src="https://zapsight.us/blake-headshot.jpg" alt="Blake Austin" className="w-full h-full object-cover" />
+                        </div>
+                        <div>
+                          <h3 className="font-display text-xl font-bold text-[hsl(0,0%,94%)]">Blake Austin</h3>
+                          <p className="text-sm text-primary">Director of Sales, North America</p>
+                        </div>
+                      </div>
+                      <p className="text-[hsl(220,10%,55%)] text-sm leading-relaxed mb-5">
+                        10+ years in furniture and mattress retail. Deep relationships with major retailers, understands retail tech stacks. Not here to sell — here to solve.
+                      </p>
+                      <a
+                        href="https://calendly.com/blake-zapsight/30min"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-primary/15 border border-primary/25 text-primary text-sm font-medium hover:bg-primary/25 transition-colors"
+                      >
+                        <Calendar className="h-4 w-4" strokeWidth={1.5} />
+                        Book a Discovery Call
+                      </a>
+                    </div>
+
+                    {/* Global Offices */}
                     <div className="bg-[hsl(220,20%,8%)] border border-[hsl(220,16%,12%)] rounded-3xl p-8"
                          style={{ boxShadow: '0 0 40px hsl(var(--primary) / 0.02)' }}>
                       <h3 className="font-display text-xl font-bold mb-6 text-[hsl(0,0%,94%)]">Global Offices</h3>
@@ -163,6 +190,7 @@ const Contact = () => {
                       </div>
                     </div>
 
+                    {/* Get in Touch */}
                     <div className="bg-[hsl(220,20%,8%)] border border-[hsl(220,16%,12%)] rounded-3xl p-8"
                          style={{ boxShadow: '0 0 40px hsl(var(--primary) / 0.02)' }}>
                       <h3 className="font-display text-xl font-bold mb-6 text-[hsl(0,0%,94%)]">Get in Touch</h3>
@@ -172,12 +200,6 @@ const Contact = () => {
                             <Mail className="h-4 w-4 text-primary" strokeWidth={1.5} />
                           </div>
                           info@zapsight.com
-                        </a>
-                        <a href="tel:+1234567890" className="flex items-center gap-3 text-[hsl(220,10%,55%)] hover:text-primary transition-colors">
-                          <div className="w-8 h-8 rounded-lg bg-primary/15 border border-primary/20 flex items-center justify-center">
-                            <Phone className="h-4 w-4 text-primary" strokeWidth={1.5} />
-                          </div>
-                          Schedule a Call
                         </a>
                       </div>
                     </div>
