@@ -11,7 +11,7 @@ import AboutMegaMenu from './AboutMegaMenu';
 import { allProducts } from '@/lib/products';
 
 const industries = [
-  { name: 'Retail', href: '/industries/retail' },
+  { name: 'Furniture Retail', href: '/industries/retail' },
   { name: 'Manufacturing', href: '/industries/manufacturing' },
   { name: 'Construction', href: '/industries/construction' },
   { name: 'Energy', href: '/industries/energy' },

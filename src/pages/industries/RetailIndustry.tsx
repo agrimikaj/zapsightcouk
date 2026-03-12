@@ -25,11 +25,11 @@ const RetailIndustry = () => {
   return (
     <>
       <Helmet>
-        <title>AI for Retail - Floor Analytics & Customer Intelligence | ZapSight</title>
-        <meta name="description" content="AI-powered retail intelligence for floor analytics, team performance, and inventory optimization. Real-time customer insights and sales performance tracking." />
+        <title>AI for Furniture Retail - Floor Analytics & Customer Intelligence | ZapSight</title>
+        <meta name="description" content="AI-powered furniture retail intelligence for floor analytics, team performance, and inventory optimization. Real-time customer insights and sales performance tracking." />
         <link rel="canonical" href="https://zapsight.co.uk/industries/retail" />
-        <meta property="og:title" content="AI for Retail | ZapSight" />
-        <meta property="og:description" content="AI-powered floor analytics, team performance, and inventory optimization." />
+        <meta property="og:title" content="AI for Furniture Retail | ZapSight" />
+        <meta property="og:description" content="AI-powered furniture retail floor analytics, team performance, and inventory optimization." />
         <meta property="og:url" content="https://zapsight.co.uk/industries/retail" />
         <meta property="og:image" content="https://zapsight.co.uk/og-image.png" />
         <meta property="og:type" content="website" />
@@ -41,7 +41,7 @@ const RetailIndustry = () => {
         <iframe
           src="https://zapsightindustriesfurniture.lovable.app"
           className="w-full h-[calc(100vh-4rem)] lg:h-[calc(100vh-5rem)] border-0"
-          title="ZapSight Retail Industry Solutions"
+          title="ZapSight Furniture Retail Industry Solutions"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         />

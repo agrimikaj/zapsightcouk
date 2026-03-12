@@ -14,7 +14,7 @@ interface Industry {
 const industries: Industry[] = [
   {
     id: 'retail',
-    name: 'Retail & Security',
+    name: 'Furniture Retail & Security',
     description: 'AI-powered inventory optimization, customer analytics, security monitoring, and traffic assessment',
     icon: ShoppingCart,
     href: '/industries/retail',
