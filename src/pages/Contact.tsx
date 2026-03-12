@@ -4,7 +4,7 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import NeuralBackground from '@/components/ui/NeuralBackground';
 import { Button } from '@/components/ui/button';
-import { Mail, Phone, MapPin, Send, ArrowRight, Loader2 } from 'lucide-react';
+import { Mail, MapPin, Send, Loader2, Calendar, User } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
 
