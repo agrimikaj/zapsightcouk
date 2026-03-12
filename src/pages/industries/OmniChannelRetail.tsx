@@ -156,7 +156,7 @@ const OmniChannelRetail = () => {
               <motion.h1 variants={fadeUp} custom={1} className="font-display text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[hsl(0,0%,97%)] mb-5 leading-[1.1]">
                 Turning AI Into <span className="gradient-text">Sales</span>
               </motion.h1>
-              <motion.p variants={fadeUp} custom={2} className="text-[hsl(220,10%,60%)] text-lg lg:text-xl max-w-3xl mx-auto mb-10 leading-relaxed">
+              <motion.p variants={fadeUp} custom={2} className="text-[hsl(220,10%,60%)] text-base lg:text-lg max-w-3xl mx-auto mb-8 leading-relaxed">
                 Customers are moving from clicking through websites to asking AI what to buy. We build the infrastructure that enables brands to lead this new era of intelligent, conversational commerce.
               </motion.p>
               <motion.div variants={fadeUp} custom={3} className="flex flex-col sm:flex-row items-center justify-center gap-4">

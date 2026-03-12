@@ -5,14 +5,14 @@ import { ChevronDown, ArrowRight, Store, Factory, HardHat, Zap, Shield, Building
 import { Button } from '@/components/ui/button';
 
 const industries = [
-  { 
-    id: 'retail',
-    name: 'Furniture Retail', 
-    href: '/industries/retail',
-    icon: Store,
-    gradient: 'from-pink-500 to-rose-500',
-    description: 'Floor intelligence & customer analytics',
-    features: ['Customer behavior tracking', 'Inventory optimization', 'Sales forecasting', 'Loss prevention']
+  {
+    id: 'omni-channel-retail',
+    name: 'Omni Channel Retail',
+    href: '/industries/omni-channel-retail',
+    icon: ShoppingCart,
+    gradient: 'from-orange-500 to-amber-500',
+    description: 'AI-native conversational commerce',
+    features: ['Shop Assist concierge', 'S10x sales enablement', 'AIVI brand visibility', 'Shop Connect integrations']
   },
   { 
     id: 'manufacturing',
@@ -31,6 +31,15 @@ const industries = [
     gradient: 'from-amber-500 to-orange-500',
     description: 'Project management & safety compliance',
     features: ['Resource planning', 'Safety monitoring', 'Progress tracking', 'Cost management']
+  },
+  { 
+    id: 'retail',
+    name: 'Furniture Retail', 
+    href: '/industries/retail',
+    icon: Store,
+    gradient: 'from-pink-500 to-rose-500',
+    description: 'Floor intelligence & customer analytics',
+    features: ['Customer behavior tracking', 'Inventory optimization', 'Sales forecasting', 'Loss prevention']
   },
   { 
     id: 'energy',
@@ -58,15 +67,6 @@ const industries = [
     gradient: 'from-violet-500 to-purple-500',
     description: 'Sensor intelligence & threat detection',
     features: ['Alert prioritization', 'Video fusion', 'Threat detection', 'Incident response']
-  },
-  {
-    id: 'omni-channel-retail',
-    name: 'Omni Channel Retail',
-    href: '/industries/omni-channel-retail',
-    icon: ShoppingCart,
-    gradient: 'from-orange-500 to-amber-500',
-    description: 'AI-native conversational commerce',
-    features: ['Shop Assist concierge', 'S10x sales enablement', 'AIVI brand visibility', 'Shop Connect integrations']
   },
 ];
 

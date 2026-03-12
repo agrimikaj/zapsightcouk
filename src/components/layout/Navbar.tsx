@@ -11,13 +11,13 @@ import AboutMegaMenu from './AboutMegaMenu';
 import { allProducts } from '@/lib/products';
 
 const industries = [
-  { name: 'Furniture Retail', href: '/industries/retail' },
+  { name: 'Omni Channel Retail', href: '/industries/omni-channel-retail' },
   { name: 'Manufacturing', href: '/industries/manufacturing' },
   { name: 'Construction', href: '/industries/construction' },
+  { name: 'Furniture Retail', href: '/industries/retail' },
   { name: 'Energy', href: '/industries/energy' },
   { name: 'Insurance & Finance', href: '/industries/insurance' },
   { name: 'Security', href: '/industries/security' },
-  { name: 'Omni Channel Retail', href: '/industries/omni-channel-retail' },
 ];
 
 const caseStudies = [

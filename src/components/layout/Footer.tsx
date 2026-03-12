@@ -84,28 +84,21 @@ const Footer = () => {
           <div>
             <h4 className="font-display font-semibold text-lg mb-5 tracking-tight text-[hsl(0,0%,90%)]">Industries</h4>
             <ul className="space-y-3">
-              <li>
-                <Link to="/industries/retail" className="text-[hsl(220,10%,50%)] hover:text-primary text-sm transition-colors duration-200">
-                  Furniture Retail
-                </Link>
-              </li>
-              {['Energy', 'Manufacturing', 'Construction', 'Insurance'].map((industry) => (
-                <li key={industry}>
-                  <Link to={`/industries/${industry.toLowerCase().replace(' ', '-')}`} className="text-[hsl(220,10%,50%)] hover:text-primary text-sm transition-colors duration-200">
-                    {industry}
+              {[
+                { name: 'Omni Channel Retail', href: '/industries/omni-channel-retail' },
+                { name: 'Manufacturing', href: '/industries/manufacturing' },
+                { name: 'Construction', href: '/industries/construction' },
+                { name: 'Furniture Retail', href: '/industries/retail' },
+                { name: 'Energy', href: '/industries/energy' },
+                { name: 'Insurance', href: '/industries/insurance' },
+                { name: 'Security', href: '/industries/security' },
+              ].map((industry) => (
+                <li key={industry.name}>
+                  <Link to={industry.href} className="text-[hsl(220,10%,50%)] hover:text-primary text-sm transition-colors duration-200">
+                    {industry.name}
                   </Link>
                 </li>
               ))}
-              <li>
-                <Link to="/industries/security" className="text-[hsl(220,10%,50%)] hover:text-primary text-sm transition-colors duration-200">
-                  Security
-                </Link>
-              </li>
-              <li>
-                <Link to="/industries/omni-channel-retail" className="text-[hsl(220,10%,50%)] hover:text-primary text-sm transition-colors duration-200">
-                  Omni Channel Retail
-                </Link>
-              </li>
             </ul>
           </div>
 
