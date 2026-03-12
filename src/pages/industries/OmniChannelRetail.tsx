@@ -194,7 +194,7 @@ const OmniChannelRetail = () => {
                   className="group relative bg-[hsl(220,20%,8%)] border border-[hsl(220,16%,12%)] rounded-2xl p-8 text-center hover:border-primary/25 transition-all duration-300"
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
-                  <p className="font-display text-5xl lg:text-6xl font-bold gradient-text mb-3 relative">{stat.value}</p>
+                  <p className="font-display text-4xl lg:text-5xl font-bold gradient-text mb-3 relative">{stat.value}</p>
                   <p className="text-[hsl(220,10%,60%)] text-sm leading-relaxed relative">{stat.label}</p>
                 </motion.div>
               ))}
