@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, ArrowRight, Store, Factory, HardHat, Zap, Shield, Building2 } from 'lucide-react';
+import { ChevronDown, ArrowRight, Store, Factory, HardHat, Zap, Shield, Building2, ShoppingCart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const industries = [
@@ -58,6 +58,15 @@ const industries = [
     gradient: 'from-violet-500 to-purple-500',
     description: 'Sensor intelligence & threat detection',
     features: ['Alert prioritization', 'Video fusion', 'Threat detection', 'Incident response']
+  },
+  {
+    id: 'omni-channel-retail',
+    name: 'Omni Channel Retail',
+    href: '/industries/omni-channel-retail',
+    icon: ShoppingCart,
+    gradient: 'from-orange-500 to-amber-500',
+    description: 'AI-native conversational commerce',
+    features: ['Shop Assist concierge', 'S10x sales enablement', 'AIVI brand visibility', 'Shop Connect integrations']
   },
 ];
 

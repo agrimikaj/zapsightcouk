@@ -101,6 +101,11 @@ const Footer = () => {
                   Security
                 </Link>
               </li>
+              <li>
+                <Link to="/industries/omni-channel-retail" className="text-[hsl(220,10%,50%)] hover:text-primary text-sm transition-colors duration-200">
+                  Omni Channel Retail
+                </Link>
+              </li>
             </ul>
           </div>
 

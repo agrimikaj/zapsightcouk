@@ -26,6 +26,7 @@ const SecurityIndustry = lazy(() => import("./pages/industries/SecurityIndustry"
 const InsuranceIndustry = lazy(() => import("./pages/industries/InsuranceIndustry"));
 const ConstructionIndustry = lazy(() => import("./pages/industries/ConstructionIndustry"));
 const RetailIndustry = lazy(() => import("./pages/industries/RetailIndustry"));
+const OmniChannelRetail = lazy(() => import("./pages/industries/OmniChannelRetail"));
 const HowWeWork = lazy(() => import("./pages/about/HowWeWork"));
 const CaseStudies = lazy(() => import("./pages/CaseStudies"));
 const CaseStudyDetail = lazy(() => import("./pages/CaseStudyDetail"));
@@ -75,6 +76,7 @@ const App = () => (
               <Route path="/industries/insurance" element={<InsuranceIndustry />} />
               <Route path="/industries/construction" element={<ConstructionIndustry />} />
               <Route path="/industries/retail" element={<RetailIndustry />} />
+              <Route path="/industries/omni-channel-retail" element={<OmniChannelRetail />} />
               <Route path="/console" element={<Console />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
