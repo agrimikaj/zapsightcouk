@@ -47,6 +47,13 @@ const industries: Industry[] = [
     icon: Shield,
     href: '/industries/insurance',
   },
+  {
+    id: 'omni-channel-retail',
+    name: 'Omni Channel Retail',
+    description: 'AI-native conversational commerce, sales enablement, and agentic visibility',
+    icon: ShoppingCart,
+    href: '/industries/omni-channel-retail',
+  },
 ];
 
 const IndustriesSection = () => {

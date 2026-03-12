@@ -17,6 +17,7 @@ const industries = [
   { name: 'Energy', href: '/industries/energy' },
   { name: 'Insurance & Finance', href: '/industries/insurance' },
   { name: 'Security', href: '/industries/security' },
+  { name: 'Omni Channel Retail', href: '/industries/omni-channel-retail' },
 ];
 
 const caseStudies = [

@@ -59,6 +59,15 @@ const industries = [
     description: 'Sensor intelligence & threat detection',
     features: ['Alert prioritization', 'Video fusion', 'Threat detection', 'Incident response']
   },
+  {
+    id: 'omni-channel-retail',
+    name: 'Omni Channel Retail',
+    href: '/industries/omni-channel-retail',
+    icon: ShoppingCart,
+    gradient: 'from-orange-500 to-amber-500',
+    description: 'AI-native conversational commerce',
+    features: ['Shop Assist concierge', 'S10x sales enablement', 'AIVI brand visibility', 'Shop Connect integrations']
+  },
 ];
 
 interface IndustriesMegaMenuProps {
