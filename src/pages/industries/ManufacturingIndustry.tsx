@@ -219,11 +219,11 @@ const ManufacturingIndustry = () => {
                       variants={fadeUp}
                       className="group relative bg-[hsl(220,20%,8%)] border border-[hsl(220,16%,14%)] rounded-2xl p-6 lg:p-8 hover:border-primary/20 transition-all duration-300"
                     >
-                      <div className="absolute -top-3 left-6 px-3 py-1 bg-primary rounded-full">
-                        <span className="text-xs font-bold text-primary-foreground uppercase tracking-wider">{uc.id.replace('-', ' ')}</span>
+                      <div className="inline-flex items-center px-3 py-1 bg-primary rounded-full mb-4">
+                        <span className="text-xs font-bold text-primary-foreground uppercase tracking-wider">{uc.id.replaceAll('-', ' ')}</span>
                       </div>
 
-                      <div className="grid lg:grid-cols-[1fr,1.5fr] gap-6 pt-4">
+                      <div className="grid lg:grid-cols-[1fr,1.5fr] gap-6">
                         {/* Left — problem & impact */}
                         <div className="space-y-5">
                           <div className="flex items-start gap-3">
