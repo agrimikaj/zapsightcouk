@@ -26,6 +26,7 @@ const SecurityIndustry = lazy(() => import("./pages/industries/SecurityIndustry"
 const InsuranceIndustry = lazy(() => import("./pages/industries/InsuranceIndustry"));
 const ConstructionIndustry = lazy(() => import("./pages/industries/ConstructionIndustry"));
 const RetailIndustry = lazy(() => import("./pages/industries/RetailIndustry"));
+const OmniChannelRetail = lazy(() => import("./pages/industries/OmniChannelRetail"));
 const HowWeWork = lazy(() => import("./pages/about/HowWeWork"));
 const CaseStudies = lazy(() => import("./pages/CaseStudies"));
 const CaseStudyDetail = lazy(() => import("./pages/CaseStudyDetail"));
