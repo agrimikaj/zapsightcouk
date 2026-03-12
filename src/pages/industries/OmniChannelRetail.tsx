@@ -299,7 +299,7 @@ const OmniChannelRetail = () => {
         </section>
 
         {/* ── DESIGN PRINCIPLES ── */}
-        <section className="relative py-16 lg:py-24 overflow-hidden">
+        <section className="relative py-10 lg:py-14 overflow-hidden">
           <div className="container mx-auto px-4 lg:px-8 relative z-10 max-w-5xl">
             <div className="grid md:grid-cols-3 gap-8">
               {[
