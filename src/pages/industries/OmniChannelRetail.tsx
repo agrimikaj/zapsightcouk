@@ -177,10 +177,10 @@ const OmniChannelRetail = () => {
           <div className="container mx-auto px-4 lg:px-8 relative z-10 max-w-6xl">
             <div className="text-center mb-12">
               <p className="text-primary font-medium mb-3 tracking-wide uppercase text-sm">Market Opportunity</p>
-              <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[hsl(0,0%,97%)] mb-4">
+              <h2 className="font-display text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-[hsl(0,0%,97%)] mb-4">
                 The Shift Is <span className="text-primary">Already Happening</span>
               </h2>
-              <p className="text-[hsl(220,10%,55%)] text-lg max-w-2xl mx-auto">Discovery is becoming AI-driven. Static websites are losing influence. AI assistants are deciding what gets recommended.</p>
+              <p className="text-[hsl(220,10%,55%)] text-base max-w-2xl mx-auto">Discovery is becoming AI-driven. Static websites are losing influence. AI assistants are deciding what gets recommended.</p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
