@@ -41,7 +41,7 @@ const RetailIndustry = () => {
         <iframe
           src="https://zapsightindustriesfurniture.lovable.app"
           className="w-full h-[calc(100vh-4rem)] lg:h-[calc(100vh-5rem)] border-0"
-          title="ZapSight Retail Industry Solutions"
+          title="ZapSight Furniture Retail Industry Solutions"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         />

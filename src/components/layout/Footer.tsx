@@ -86,7 +86,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li>
                 <Link to="/industries/retail" className="text-[hsl(220,10%,50%)] hover:text-primary text-sm transition-colors duration-200">
-                  Retail
+                  Furniture Retail
                 </Link>
               </li>
               {['Energy', 'Manufacturing', 'Construction', 'Insurance'].map((industry) => (
