@@ -203,15 +203,15 @@ const OmniChannelRetail = () => {
         </section>
 
         {/* ── OMNICHANNEL SOLUTION OVERVIEW ── */}
-        <section className="relative py-16 lg:py-24 overflow-hidden">
+        <section className="relative py-10 lg:py-14 overflow-hidden">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-primary/[0.02] rounded-full blur-[140px]" />
           <div className="container mx-auto px-4 lg:px-8 relative z-10 max-w-6xl">
-            <div className="text-center mb-14">
+            <div className="text-center mb-10">
               <p className="text-primary font-medium mb-3 tracking-wide uppercase text-sm">Omnichannel Solution</p>
-              <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[hsl(0,0%,97%)] mb-4">
+              <h2 className="font-display text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-[hsl(0,0%,97%)] mb-4">
                 Four Products. <span className="text-primary">One Ecosystem.</span>
               </h2>
-              <p className="text-[hsl(220,10%,55%)] text-lg max-w-2xl mx-auto">Be the key strategic partner helping retailers embark on the AI-native commerce journey.</p>
+              <p className="text-[hsl(220,10%,55%)] text-base max-w-2xl mx-auto">Be the key strategic partner helping retailers embark on the AI-native commerce journey.</p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
