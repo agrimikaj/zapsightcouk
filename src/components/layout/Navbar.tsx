@@ -35,7 +35,7 @@ const aboutUs = [
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-  const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const closeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const handleMouseEnter = (name: string) => {
     if (closeTimeoutRef.current) {
