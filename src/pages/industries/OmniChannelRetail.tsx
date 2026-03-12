@@ -143,7 +143,7 @@ const OmniChannelRetail = () => {
       <main className="min-h-screen bg-[hsl(220,20%,6%)] pt-16 lg:pt-20">
 
         {/* ── HERO ── */}
-        <section className="relative py-20 lg:py-32 overflow-hidden">
+        <section className="relative py-16 lg:py-24 overflow-hidden">
           {/* ambient glow */}
           <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] bg-primary/[0.06] rounded-full blur-[160px]" />
           <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-blue-500/[0.03] rounded-full blur-[120px]" />
@@ -153,10 +153,10 @@ const OmniChannelRetail = () => {
               <motion.p variants={fadeUp} custom={0} className="text-primary font-medium mb-4 tracking-wide uppercase text-sm flex items-center justify-center gap-2">
                 <Sparkles className="w-4 h-4" strokeWidth={1.5} /> Omni Channel Retail
               </motion.p>
-              <motion.h1 variants={fadeUp} custom={1} className="font-display text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-[hsl(0,0%,97%)] mb-6 leading-[1.08]">
+              <motion.h1 variants={fadeUp} custom={1} className="font-display text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[hsl(0,0%,97%)] mb-5 leading-[1.1]">
                 Turning AI Into <span className="gradient-text">Sales</span>
               </motion.h1>
-              <motion.p variants={fadeUp} custom={2} className="text-[hsl(220,10%,60%)] text-lg lg:text-xl max-w-3xl mx-auto mb-10 leading-relaxed">
+              <motion.p variants={fadeUp} custom={2} className="text-[hsl(220,10%,60%)] text-base lg:text-lg max-w-3xl mx-auto mb-8 leading-relaxed">
                 Customers are moving from clicking through websites to asking AI what to buy. We build the infrastructure that enables brands to lead this new era of intelligent, conversational commerce.
               </motion.p>
               <motion.div variants={fadeUp} custom={3} className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -172,15 +172,15 @@ const OmniChannelRetail = () => {
         </section>
 
         {/* ── MARKET OPPORTUNITY ── */}
-        <section className="relative py-16 lg:py-24 overflow-hidden">
+        <section className="relative py-10 lg:py-14 overflow-hidden">
           <div className="absolute inset-0 bg-[hsl(220,20%,5%)]" />
           <div className="container mx-auto px-4 lg:px-8 relative z-10 max-w-6xl">
             <div className="text-center mb-12">
               <p className="text-primary font-medium mb-3 tracking-wide uppercase text-sm">Market Opportunity</p>
-              <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[hsl(0,0%,97%)] mb-4">
+              <h2 className="font-display text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-[hsl(0,0%,97%)] mb-4">
                 The Shift Is <span className="text-primary">Already Happening</span>
               </h2>
-              <p className="text-[hsl(220,10%,55%)] text-lg max-w-2xl mx-auto">Discovery is becoming AI-driven. Static websites are losing influence. AI assistants are deciding what gets recommended.</p>
+              <p className="text-[hsl(220,10%,55%)] text-base max-w-2xl mx-auto">Discovery is becoming AI-driven. Static websites are losing influence. AI assistants are deciding what gets recommended.</p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
@@ -194,7 +194,7 @@ const OmniChannelRetail = () => {
                   className="group relative bg-[hsl(220,20%,8%)] border border-[hsl(220,16%,12%)] rounded-2xl p-8 text-center hover:border-primary/25 transition-all duration-300"
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
-                  <p className="font-display text-5xl lg:text-6xl font-bold gradient-text mb-3 relative">{stat.value}</p>
+                  <p className="font-display text-4xl lg:text-5xl font-bold gradient-text mb-3 relative">{stat.value}</p>
                   <p className="text-[hsl(220,10%,60%)] text-sm leading-relaxed relative">{stat.label}</p>
                 </motion.div>
               ))}
@@ -203,15 +203,15 @@ const OmniChannelRetail = () => {
         </section>
 
         {/* ── OMNICHANNEL SOLUTION OVERVIEW ── */}
-        <section className="relative py-16 lg:py-24 overflow-hidden">
+        <section className="relative py-10 lg:py-14 overflow-hidden">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-primary/[0.02] rounded-full blur-[140px]" />
           <div className="container mx-auto px-4 lg:px-8 relative z-10 max-w-6xl">
-            <div className="text-center mb-14">
+            <div className="text-center mb-10">
               <p className="text-primary font-medium mb-3 tracking-wide uppercase text-sm">Omnichannel Solution</p>
-              <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[hsl(0,0%,97%)] mb-4">
+              <h2 className="font-display text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-[hsl(0,0%,97%)] mb-4">
                 Four Products. <span className="text-primary">One Ecosystem.</span>
               </h2>
-              <p className="text-[hsl(220,10%,55%)] text-lg max-w-2xl mx-auto">Be the key strategic partner helping retailers embark on the AI-native commerce journey.</p>
+              <p className="text-[hsl(220,10%,55%)] text-base max-w-2xl mx-auto">Be the key strategic partner helping retailers embark on the AI-native commerce journey.</p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
@@ -251,15 +251,15 @@ const OmniChannelRetail = () => {
         </section>
 
         {/* ── SHOP ASSIST JOURNEY ── */}
-        <section className="relative py-16 lg:py-24 overflow-hidden">
+        <section className="relative py-10 lg:py-14 overflow-hidden">
           <div className="absolute inset-0 bg-[hsl(220,20%,5%)]" />
           <div className="container mx-auto px-4 lg:px-8 relative z-10 max-w-6xl">
-            <div className="text-center mb-14">
+            <div className="text-center mb-10">
               <p className="text-primary font-medium mb-3 tracking-wide uppercase text-sm">Customer Journey</p>
-              <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[hsl(0,0%,97%)] mb-4">
+              <h2 className="font-display text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-[hsl(0,0%,97%)] mb-4">
                 AI at <span className="text-primary">Every Touchpoint</span>
               </h2>
-              <p className="text-[hsl(220,10%,55%)] text-lg max-w-2xl mx-auto">Shop Assist guides customers from first visit through post-purchase care, each stage enriching the next.</p>
+              <p className="text-[hsl(220,10%,55%)] text-base max-w-2xl mx-auto">Shop Assist guides customers from first visit through post-purchase care, each stage enriching the next.</p>
             </div>
 
             <div className="relative">
@@ -299,7 +299,7 @@ const OmniChannelRetail = () => {
         </section>
 
         {/* ── DESIGN PRINCIPLES ── */}
-        <section className="relative py-16 lg:py-24 overflow-hidden">
+        <section className="relative py-10 lg:py-14 overflow-hidden">
           <div className="container mx-auto px-4 lg:px-8 relative z-10 max-w-5xl">
             <div className="grid md:grid-cols-3 gap-8">
               {[
@@ -330,12 +330,12 @@ const OmniChannelRetail = () => {
         </section>
 
         {/* ── DIFFERENTIATION & MOAT ── */}
-        <section className="relative py-16 lg:py-24 overflow-hidden">
+        <section className="relative py-10 lg:py-14 overflow-hidden">
           <div className="absolute inset-0 bg-[hsl(220,20%,5%)]" />
           <div className="container mx-auto px-4 lg:px-8 relative z-10 max-w-6xl">
-            <div className="text-center mb-14">
+            <div className="text-center mb-10">
               <p className="text-primary font-medium mb-3 tracking-wide uppercase text-sm">Why ZapSight</p>
-              <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[hsl(0,0%,97%)] mb-4">
+              <h2 className="font-display text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-[hsl(0,0%,97%)] mb-4">
                 Your <span className="text-primary">Competitive Moat</span>
               </h2>
             </div>
@@ -365,11 +365,11 @@ const OmniChannelRetail = () => {
         </section>
 
         {/* ── ROADMAP ── */}
-        <section className="relative py-16 lg:py-24 overflow-hidden">
+        <section className="relative py-10 lg:py-14 overflow-hidden">
           <div className="container mx-auto px-4 lg:px-8 relative z-10 max-w-5xl">
-            <div className="text-center mb-14">
+            <div className="text-center mb-10">
               <p className="text-primary font-medium mb-3 tracking-wide uppercase text-sm">Implementation</p>
-              <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[hsl(0,0%,97%)] mb-4">
+              <h2 className="font-display text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-[hsl(0,0%,97%)] mb-4">
                 Your <span className="text-primary">Roadmap</span>
               </h2>
             </div>
@@ -408,12 +408,12 @@ const OmniChannelRetail = () => {
         </section>
 
         {/* ── CASE STUDY ── */}
-        <section className="relative py-16 lg:py-24 overflow-hidden">
+        <section className="relative py-10 lg:py-14 overflow-hidden">
           <div className="absolute inset-0 bg-[hsl(220,20%,5%)]" />
           <div className="container mx-auto px-4 lg:px-8 relative z-10 max-w-5xl">
-            <div className="text-center mb-12">
+            <div className="text-center mb-10">
               <p className="text-primary font-medium mb-3 tracking-wide uppercase text-sm">Case Study</p>
-              <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[hsl(0,0%,97%)] mb-4">
+              <h2 className="font-display text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-[hsl(0,0%,97%)] mb-4">
                 Mid-Market Furniture Retailer <span className="text-primary">(USA)</span>
               </h2>
             </div>
@@ -489,13 +489,13 @@ const OmniChannelRetail = () => {
         </section>
 
         {/* ── CTA ── */}
-        <section className="relative py-16 lg:py-24 overflow-hidden">
+        <section className="relative py-10 lg:py-14 overflow-hidden">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-primary/[0.05] rounded-full blur-[140px]" />
           <div className="container mx-auto px-4 lg:px-8 relative z-10 max-w-3xl text-center">
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[hsl(0,0%,97%)] mb-6">
+            <h2 className="font-display text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-[hsl(0,0%,97%)] mb-5">
               Ready to Lead <span className="text-primary">AI-Native Commerce?</span>
             </h2>
-            <p className="text-[hsl(220,10%,55%)] text-lg mb-10 max-w-xl mx-auto">
+            <p className="text-[hsl(220,10%,55%)] text-base mb-8 max-w-xl mx-auto">
               Let's build your intelligent commerce infrastructure — from concierge to agentic visibility.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

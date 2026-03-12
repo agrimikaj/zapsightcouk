@@ -13,11 +13,11 @@ interface Industry {
 
 const industries: Industry[] = [
   {
-    id: 'retail',
-    name: 'Furniture Retail & Security',
-    description: 'AI-powered inventory optimization, customer analytics, security monitoring, and traffic assessment',
+    id: 'omni-channel-retail',
+    name: 'Omni Channel Retail',
+    description: 'AI-native conversational commerce, sales enablement, and agentic visibility',
     icon: ShoppingCart,
-    href: '/industries/retail',
+    href: '/industries/omni-channel-retail',
   },
   {
     id: 'manufacturing',
@@ -34,6 +34,13 @@ const industries: Industry[] = [
     href: '/industries/construction',
   },
   {
+    id: 'retail',
+    name: 'Furniture Retail & Security',
+    description: 'AI-powered inventory optimization, customer analytics, security monitoring, and traffic assessment',
+    icon: ShoppingCart,
+    href: '/industries/retail',
+  },
+  {
     id: 'energy',
     name: 'Energy',
     description: 'Asset monitoring, predictive analytics, and operational efficiency',
@@ -46,13 +53,6 @@ const industries: Industry[] = [
     description: 'Claims processing, risk assessment, fraud detection, and customer engagement',
     icon: Shield,
     href: '/industries/insurance',
-  },
-  {
-    id: 'omni-channel-retail',
-    name: 'Omni Channel Retail',
-    description: 'AI-native conversational commerce, sales enablement, and agentic visibility',
-    icon: ShoppingCart,
-    href: '/industries/omni-channel-retail',
   },
 ];
 
