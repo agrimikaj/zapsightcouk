@@ -408,12 +408,12 @@ const OmniChannelRetail = () => {
         </section>
 
         {/* ── CASE STUDY ── */}
-        <section className="relative py-16 lg:py-24 overflow-hidden">
+        <section className="relative py-10 lg:py-14 overflow-hidden">
           <div className="absolute inset-0 bg-[hsl(220,20%,5%)]" />
           <div className="container mx-auto px-4 lg:px-8 relative z-10 max-w-5xl">
-            <div className="text-center mb-12">
+            <div className="text-center mb-10">
               <p className="text-primary font-medium mb-3 tracking-wide uppercase text-sm">Case Study</p>
-              <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[hsl(0,0%,97%)] mb-4">
+              <h2 className="font-display text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-[hsl(0,0%,97%)] mb-4">
                 Mid-Market Furniture Retailer <span className="text-primary">(USA)</span>
               </h2>
             </div>
