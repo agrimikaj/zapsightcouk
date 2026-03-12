@@ -172,7 +172,7 @@ const OmniChannelRetail = () => {
         </section>
 
         {/* ── MARKET OPPORTUNITY ── */}
-        <section className="relative py-16 lg:py-24 overflow-hidden">
+        <section className="relative py-10 lg:py-14 overflow-hidden">
           <div className="absolute inset-0 bg-[hsl(220,20%,5%)]" />
           <div className="container mx-auto px-4 lg:px-8 relative z-10 max-w-6xl">
             <div className="text-center mb-12">
