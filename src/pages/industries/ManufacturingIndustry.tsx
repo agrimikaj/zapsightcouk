@@ -282,7 +282,7 @@ const ManufacturingIndustry = () => {
                 </p>
               </div>
 
-              <div className="grid md:grid-cols-3 gap-6">
+              <div className="grid md:grid-cols-3 gap-5">
                 {keyModules.map((mod, index) => {
                   const IconComponent = mod.icon;
                   return (
@@ -293,13 +293,15 @@ const ManufacturingIndustry = () => {
                       whileInView="visible"
                       viewport={{ once: true }}
                       variants={fadeUp}
-                      className="group bg-[hsl(220,20%,8%)] border border-[hsl(220,16%,14%)] rounded-2xl p-6 hover:border-primary/20 transition-all duration-300"
+                      className="group bg-[hsl(220,20%,8%)] border border-[hsl(220,16%,14%)] rounded-2xl p-5 hover:border-primary/20 transition-all duration-300"
                     >
-                      <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-primary/10 border border-primary/15 mb-5 group-hover:scale-105 transition-transform">
-                        <IconComponent className="h-6 w-6 text-primary" strokeWidth={1.5} />
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-primary/10 border border-primary/15 group-hover:scale-105 transition-transform">
+                          <IconComponent className="h-5 w-5 text-primary" strokeWidth={1.5} />
+                        </div>
+                        <h3 className="font-display text-base font-bold text-background">{mod.title}</h3>
                       </div>
-                      <h3 className="font-display text-lg font-bold text-background mb-4">{mod.title}</h3>
-                      <ul className="space-y-2.5">
+                      <ul className="space-y-2">
                         {mod.capabilities.map((cap) => (
                           <li key={cap} className="flex items-center gap-2.5 text-sm text-background/55">
                             <div className="w-1.5 h-1.5 rounded-full bg-primary/50 flex-shrink-0" />
@@ -318,16 +320,18 @@ const ManufacturingIndustry = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.3 }}
-                className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4"
+                className="mt-6 flex flex-wrap justify-center gap-3"
               >
                 {[
                   'Faster tender evaluation',
                   'Improved asset utilization',
                   'Early fault detection',
                   'Reduced cost leakages',
+                  'Faster reporting cycles',
+                  'Better vendor benchmarking',
                 ].map((outcome) => (
-                  <div key={outcome} className="bg-primary/5 border border-primary/10 rounded-xl px-4 py-3 text-center">
-                    <p className="text-sm text-primary/80 font-medium">{outcome}</p>
+                  <div key={outcome} className="bg-primary/5 border border-primary/10 rounded-full px-4 py-2">
+                    <p className="text-xs text-primary/70 font-medium">{outcome}</p>
                   </div>
                 ))}
               </motion.div>
