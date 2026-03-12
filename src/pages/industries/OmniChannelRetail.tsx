@@ -153,7 +153,7 @@ const OmniChannelRetail = () => {
               <motion.p variants={fadeUp} custom={0} className="text-primary font-medium mb-4 tracking-wide uppercase text-sm flex items-center justify-center gap-2">
                 <Sparkles className="w-4 h-4" strokeWidth={1.5} /> Omni Channel Retail
               </motion.p>
-              <motion.h1 variants={fadeUp} custom={1} className="font-display text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-[hsl(0,0%,97%)] mb-6 leading-[1.08]">
+              <motion.h1 variants={fadeUp} custom={1} className="font-display text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[hsl(0,0%,97%)] mb-5 leading-[1.1]">
                 Turning AI Into <span className="gradient-text">Sales</span>
               </motion.h1>
               <motion.p variants={fadeUp} custom={2} className="text-[hsl(220,10%,60%)] text-lg lg:text-xl max-w-3xl mx-auto mb-10 leading-relaxed">
