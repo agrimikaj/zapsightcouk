@@ -251,15 +251,15 @@ const OmniChannelRetail = () => {
         </section>
 
         {/* ── SHOP ASSIST JOURNEY ── */}
-        <section className="relative py-16 lg:py-24 overflow-hidden">
+        <section className="relative py-10 lg:py-14 overflow-hidden">
           <div className="absolute inset-0 bg-[hsl(220,20%,5%)]" />
           <div className="container mx-auto px-4 lg:px-8 relative z-10 max-w-6xl">
-            <div className="text-center mb-14">
+            <div className="text-center mb-10">
               <p className="text-primary font-medium mb-3 tracking-wide uppercase text-sm">Customer Journey</p>
-              <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[hsl(0,0%,97%)] mb-4">
+              <h2 className="font-display text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-[hsl(0,0%,97%)] mb-4">
                 AI at <span className="text-primary">Every Touchpoint</span>
               </h2>
-              <p className="text-[hsl(220,10%,55%)] text-lg max-w-2xl mx-auto">Shop Assist guides customers from first visit through post-purchase care, each stage enriching the next.</p>
+              <p className="text-[hsl(220,10%,55%)] text-base max-w-2xl mx-auto">Shop Assist guides customers from first visit through post-purchase care, each stage enriching the next.</p>
             </div>
 
             <div className="relative">
